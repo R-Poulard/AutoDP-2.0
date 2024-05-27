@@ -1,0 +1,2002 @@
+File name: /home/remipoul/pwb/test_sequence/example_L_little.txt
+Test: 1 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BAA2CCC0bbbaacc22c
+Test: 2 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAACbb1b000aaa0c3
+Test: 3 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AA2CC0b000aac222c3
+Test: 4 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAAACC2CCbbbaaacccc
+Test: 5 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA2222C2CCb1bacc2c3
+Test: 6 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B00AACCCCba00ac22ccc
+Test: 7 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAACC00b0aaacc33333
+Test: 8 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AA22CCCCbaa00cc2cc
+Test: 9 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BA00A0ACC00ba00aacc
+Test: 10 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAA2CCb1b1bbaacc3
+Test: 11 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B11BAACC0bba0a00cc333
+Test: 12 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA2CCC0bbaa000ccc
+Test: 13 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0A0ACCC0bb0aa0ccc
+Test: 14 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAAACCCb1baaaccc33
+Test: 15 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA0ACCb1b0aaa0cc3
+Test: 16 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAA2CCC0000b00aaccc
+Test: 17 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA0A2CC000b0a0aacc3
+Test: 18 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB111BA22CCbbbac2c3
+Test: 19 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAACCCbbaaaccc333
+Test: 20 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB000ACCbb000a00cc
+Test: 21 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB0AAA2C0000bbaaac3
+Test: 22 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAAA2CCCb1baa0accc
+Test: 23 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B0AAAACCbaaaa000cc
+Test: 24 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AC2CCC0ba0ccc2c333
+Test: 25 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAACbbbb00aac3333
+Test: 26 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333BAAAA22CC0baaaa0cc
+Test: 27 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBA2CC0bbbb00a0cc3
+Test: 28 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BA0A22222CCbaa000cc
+Test: 29 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBA0AA22Cbba00aac
+Test: 30 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AACCCbb0aa00ccc33
+Test: 31 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAA2CCC0bb0aa0c222cc
+Test: 32 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBA2CCC2Cbba000cccc
+Test: 33 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAACCbb1baa00000cc3
+Test: 34 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA0AACC00b0aa00aacc
+Test: 35 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBAA22CC0bb0aa0cc3
+Test: 36 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BBBAAA2CCbbbb0aaacc
+Test: 37 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BB11BAA2C0bbbaac
+Test: 38 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAACC000bb00aa0cc3
+Test: 39 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAA0AA2CC00ba0aaacc
+Test: 40 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAAACCCCbbaa0acccc
+Test: 41 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBBAACb1bbbbaac333
+Test: 42 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB00AAACCbbbaa00a0cc
+Test: 43 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB1BAC2CCbbb0accc3
+Test: 44 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BA0ACCCC00baa00cccc
+Test: 45 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBB0000AACCbbbbaa0cc
+Test: 46 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333BAAAACCbaa0aacc
+Test: 47 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAA0A2CC0bbaaac22c
+Test: 48 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0AACCbb0aa0000cc
+Test: 49 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB00A0AACbbbb0aaac
+Test: 50 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAACC2Cbbbaa0ccc3
+Test: 51 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBA0ACCCC000bbaacccc
+Test: 52 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBAA2CCbb0aacc333
+Test: 53 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0A0ACCbbb0aac2c33
+Test: 54 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0ACCCCbbacccc33333
+Test: 55 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBB0AC0bbbb0a00c
+Test: 56 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAACCC222Cba0aac2ccc
+Test: 57 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB00AAAACCbb00aaaacc3
+Test: 58 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAAACbb00aaaa00c3
+Test: 59 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBA00ACCbb00a0a0cc
+Test: 60 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBAACCbbb1b0a0acc
+Test: 61 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAC2CCC0bbaa0cccc
+Test: 62 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA2C000b00aa0000c33
+Test: 63 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A2CCCb00a00000c2cc
+Test: 64 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAA22CC0b1b0aacc33
+Test: 65 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAA2CCCb000000aaccc
+Test: 66 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BA22222CCb00ac222c3
+Test: 67 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA22C0b1bb000aac3
+Test: 68 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB000A0ACCCbbaaccc33
+Test: 69 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAACC0b11bba0acc3
+Test: 70 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0A0A2CCCb1baa0cc2c
+Test: 71 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBA0AC00bbbba00ac
+Test: 72 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00AAA2CCCCbaaacccc3
+Test: 73 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBA0AACC0bbbbaaacc
+Test: 74 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAA222CCbb0a0acc33
+Test: 75 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAA222CCC0baaa0ccc3
+Test: 76 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333BBBAACCbbb0aacc
+Test: 77 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0AAACC00bbbaaacc33
+Test: 78 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AAACCC00baaa00ccc3
+Test: 79 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBACCCCCCbbacc2cccc3
+Test: 80 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2CCCbb00a00a0ccc
+Test: 81 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAACC22Cb0aaa00ccc33
+Test: 82 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BBAACC0bbbbaacc33
+Test: 83 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB00000AAACbbb00aaac
+Test: 84 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBB00AA2CCbbbbaacc
+Test: 85 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAA2C0b0aa00000c33
+Test: 86 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAAA2CCbbbaaaacc
+Test: 87 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB1BAACC0000bbbaacc
+Test: 88 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBBAA0ACCbbbbaaa0cc
+Test: 89 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0A22CC00bb0a000cc3
+Test: 90 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA2C2CCbbb00accc33
+Test: 91 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAA2CCC0bbbbaac2cc
+Test: 92 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00AA0ACCCb00aaa0ccc
+Test: 93 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA2C2C2C0bbaaccc3
+Test: 94 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1B0AAACCbbaa0a0000cc
+Test: 95 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333BBAAA22C0bbaaac
+Test: 96 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA2CCbbb000a0cc333
+Test: 97 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BA0AACCCC0000baaacccc
+Test: 98 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAA2C0bbbbaa000c33
+Test: 99 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BB1B0ACCbbb00a0cc
+Test: 100 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B1B0AA2CCb1baa00cc
+Test: 101 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B1B0AAACCC00bbaaaccc
+Test: 102 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAACCC0000baaccc3333
+Test: 103 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BBAAACCbbb0aaacc3
+Test: 104 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BAAAACbb00aa0aac3
+Test: 105 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAACCCbbbba0a0ccc3
+Test: 106 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0ACC2C2CC00b00accccc
+Test: 107 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBA2CCC0bbbb0a0ccc
+Test: 108 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAA2CCbbb0aaacc3
+Test: 109 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBA222CCCb11baccc
+Test: 110 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAC22C00bbba0acc
+Test: 111 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0A0A22CCbba0a0c2c
+Test: 112 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB0AAA2C000bb0aaa00c
+Test: 113 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B00AAA2C2C2CCbaaacccc
+Test: 114 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBAA2Cb11b000aac33
+Test: 115 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BB00AAA2Cbbaa0ac
+Test: 116 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA0A2CCbbbaa0cc333
+Test: 117 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0A0A00ACCCb0aaaccc
+Test: 118 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBBA2CCbbb1bb00acc
+Test: 119 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBACCC0bbb0a0ccc
+Test: 120 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2C2C2Cbb00aacc2c
+Test: 121 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB00A2C00bbba0000c
+Test: 122 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0AA22CCC0b00000aaccc
+Test: 123 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBAAA2CCC00bb0aaaccc
+Test: 124 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBBB0AACCbbbbbaac2c
+Test: 125 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B000AAAACCbaa0aacc333
+Test: 126 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBB0ACCbb11ba0000cc
+Test: 127 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBA2C2CCCbbbacccc33
+Test: 128 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BAA2CCb0aa0cc333
+Test: 129 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB11BB0AC2Cbb1bbacc
+Test: 130 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00AA2CCC0b000aaccc3
+Test: 131 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BA0AAACCC00baaaaccc33
+Test: 132 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AACC0bbbaa0cc333
+Test: 133 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B00AC2CCb0acc2c33333
+Test: 134 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAAACC0000ba0aa0cc3
+Test: 135 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB1BBA2CCbbbb00acc
+Test: 136 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1B11BBBAACCbbbbbaacc
+Test: 137 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BB0000A2CCbbbbacc
+Test: 138 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333B000AACCb00a0acc3
+Test: 139 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBAAAAC0b111bbaaaac
+Test: 140 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBACC2C00bb00a0c2cc3
+Test: 141 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBB1BAACCbbb1baacc
+Test: 142 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAA2CCbb00a0a00cc3
+Test: 143 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2CCCb111baa00ccc
+Test: 144 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAAA0AC0b0aa000aac
+Test: 145 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBACC00bbb0000a0cc3
+Test: 146 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00AACCbb0aa00cc33
+Test: 147 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA2CCCb1baaa0c2cc
+Test: 148 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B1BB0AACb1bbb0aa0c
+Test: 149 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB0000ACCCbb0a0ccc3
+Test: 150 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BACC22CC00b000acccc
+Test: 151 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0A0AAACbb0aa0aa0c
+Test: 152 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B1B00ACC000bb0a0cc
+Test: 153 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACC00000bb0a0a0cc
+Test: 154 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAC2C00bbba0ac22c
+Test: 155 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAACC0b11bba0acc3
+Test: 156 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333B00A0A22CCb00aacc3
+Test: 157 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAACC00bbaa0aa0cc
+Test: 158 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB00ACC0bbb00a00c2c
+Test: 159 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAACC0b1bbaaacc3
+Test: 160 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0AACbbb000aa0000c3
+Test: 161 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BBAA22C0b11bba0ac
+Test: 162 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA0ACCbbb00aaa0cc
+Test: 163 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBB0ACCCbbbba0ccc
+Test: 164 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBB0A2CCCCbbbacccc33
+Test: 165 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A0AAA2CCb00aaa0acc
+Test: 166 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBAACCCbbbbaa0ccc
+Test: 167 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBAACC00bbbbaa0cc
+Test: 168 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333B0A2Cb0a0000000c3
+Test: 169 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B00A0A2222Cbaa0000c
+Test: 170 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2222C2Cbbaa00cc3
+Test: 171 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAAA22C2CCbaaacc2c
+Test: 172 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BBBAAC00bbbbaa0c33
+Test: 173 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAACC00bbb0aa0c22c
+Test: 174 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBA0AA222Cbb00aa0ac33
+Test: 175 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBACCC00bbb00a0ccc
+Test: 176 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBBBA0A22Cbbbb0a0ac
+Test: 177 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AAAC000bb00aaa0c
+Test: 178 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A00A0ACCb000a0aacc
+Test: 179 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A0A0A2C2C2Cbaaaccc
+Test: 180 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2CCC0bbaa000ccc3
+Test: 181 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAACCbbaaa00cc333
+Test: 182 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBACCC2Cbbbac22cc2c
+Test: 183 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333333BBAAAC0bbaaa0c3
+Test: 184 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBBA0ACbbbb11baa0c
+Test: 185 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B11BBBAACCbbb1baacc3
+Test: 186 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBACC2CCbb000acccc3
+Test: 187 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BB1B0AA2C0bbb0aac
+Test: 188 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00000A2CCCCbac22ccc
+Test: 189 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACCCC0bbaa0ccc22c
+Test: 190 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BAACCCb000aa0ccc3
+Test: 191 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0AA22Cba0a0000c333
+Test: 192 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00AAACCCCb0aa0acccc
+Test: 193 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA0AAA2CCbb0aa0aacc
+Test: 194 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAACCCC2Cbaacc22ccc33
+Test: 195 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00000AAACCb0a00aacc
+Test: 196 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BAAA222CC00baaa00cc3
+Test: 197 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB11BA0ACC0bbbaac22c
+Test: 198 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0ACCCCCba000ccccc33
+Test: 199 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAA0AACbb1bbaaaac
+Test: 200 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1B1BBBAACbbbb1baac
+Test: 201 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA00AACCbbba0aacc3
+Test: 202 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB0A0A22Cbb1bbaac3
+Test: 203 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAAAC00bbbbaaa000c
+Test: 204 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA2CCCCC000bbaccccc
+Test: 205 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB1BAAC0b1bbb0aac3
+Test: 206 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB1BBA2CCbb111bba0cc
+Test: 207 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AAA22Cbaaac3333333
+Test: 208 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAAC00bbb0a0aa0c
+Test: 209 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B1B0AC2CC0bb00accc
+Test: 210 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B0AAA2CCCCbaaacccc33
+Test: 211 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB0AA2CCC00b11baaccc
+Test: 212 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB1BAACCbbb0aa00cc33
+Test: 213 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB0ACC22Cbbbbac2cc
+Test: 214 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB00AA2Cb1bbba00ac
+Test: 215 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333333BB0A2CCbbacc
+Test: 216 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB1BAAC0bbbba0a000c
+Test: 217 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAAA2CCb1baaaaacc
+Test: 218 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAACCbb0aaacc3333
+Test: 219 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAA22222CCC00bbaaccc
+Test: 220 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAAA2C00b1baaaa000c
+Test: 221 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBA2CCCCCbbba0ccccc
+Test: 222 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB00AA22Cbbb00a00ac
+Test: 223 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAA2CC0bbbbaac2c3
+Test: 224 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA222CCCCb0a00cc22cc
+Test: 225 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB00AAAACC00bbaaaacc
+Test: 226 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBA0A0ACC0bb0aaacc3
+Test: 227 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00AA2222C0bba0ac3
+Test: 228 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB11BBAAC2C0bbbbaacc
+Test: 229 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB00AA2CCCCbbaacccc
+Test: 230 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A0A222CC00ba00a0cc
+Test: 231 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BBB000AA2Cbbb1baac
+Test: 232 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB0A2CC0bbbba00cc3
+Test: 233 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAACCC00bbbb0aaccc
+Test: 234 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0A22CCC2CCbbacc2ccc
+Test: 235 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00AAACCCbaa0a000ccc
+Test: 236 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBB1BA22CCbbbba0cc
+Test: 237 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACCC2Cbbaa000cccc
+Test: 238 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAAA2CCbb00aaaacc33
+Test: 239 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAA2C00bb000aaac3
+Test: 240 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333BBBBAA2Cbbb1baa0c3
+Test: 241 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A00AAACCb00aaa0acc
+Test: 242 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAAA2CCbbaa0aaacc
+Test: 243 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB1BAAA22Cbb1baaac3
+Test: 244 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0AACCCbbb0aa00ccc3
+Test: 245 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBA222CCb11ba0cc333
+Test: 246 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA2CCC00bb0a000ccc3
+Test: 247 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB00000AAC2Cbbaa00c2c
+Test: 248 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BB0ACCCbbbba0c2cc
+Test: 249 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0AAA22Cbbaaac333
+Test: 250 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB000AAAAC00bba0aaac
+Test: 251 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AAACCCCbaaacc2cc33
+Test: 252 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAAAACC000baaa0acc
+Test: 253 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBBA0AACC0bbbbaaacc
+Test: 254 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BBB0AAACCbbbb0aaacc
+Test: 255 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB1BA2CCCbbbb000accc
+Test: 256 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAACCCCbbaa0c2ccc3
+Test: 257 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAA22CCbbaaac222c
+Test: 258 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333BBA2CCCC000bbacccc
+Test: 259 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACC0bb0aa000000cc
+Test: 260 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAACCC0b0000aac2cc
+Test: 261 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAACCCCb0000aac2ccc
+Test: 262 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBAAC0bb1bb0aa0c3
+Test: 263 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA0ACC2Cb0aa0accc33
+Test: 264 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B1B1BB0AACbbb1baac
+Test: 265 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBA0AA2CC0bbbaa0acc
+Test: 266 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBAAC2Cbbaa0c222c
+Test: 267 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BA0ACCCC000baacccc33
+Test: 268 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0AACCC0ba0aa00ccc3
+Test: 269 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBA0A2222CCCbbaa0c2cc
+Test: 270 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAACCC0bba000a0accc
+Test: 271 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAAACCbbbaaaacc3
+Test: 272 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACCC0bb00aa0cc2c3
+Test: 273 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1B1BA0ACCCbbb0aac2cc
+Test: 274 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00AA2CC0bbaa0cc33
+Test: 275 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA00AA222CCbb0aaacc
+Test: 276 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB1BAC2CCCbbbbaccc2c
+Test: 277 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAAC2Cbbb0a0aac2c
+Test: 278 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBBA2CCCbbbbba0ccc
+Test: 279 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B1BAA0AACbb00aa0aac3
+Test: 280 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAACC000ba00000a0cc3
+Test: 281 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBAACC00bbbaa0cc3
+Test: 282 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBAA0AAC0bba0aaa0c
+Test: 283 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAAC0b1111bbaaac3
+Test: 284 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BBBB00ACbbbbbb0a0c
+Test: 285 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBA2CC0bbb000a0cc3
+Test: 286 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBAA0AA2Cbb0aaa0ac
+Test: 287 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A0AA2CCbaa00acc333
+Test: 288 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0ACCb1b00000acc33
+Test: 289 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAACbbb0a000ac333
+Test: 290 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B11BB0AACCbbb0aa00cc
+Test: 291 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBA2C0000bb1ba0c33
+Test: 292 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAA2CCC000b1bbaaccc
+Test: 293 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BAA2CCCCC0baac2cccc3
+Test: 294 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBB0AACCbbba00acc
+Test: 295 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAAA2C2C0bbaaaac22c
+Test: 296 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAA0AC2CCbbbaaa0ccc
+Test: 297 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB0AAACCb1bbbaaacc
+Test: 298 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBA0AC2Cbbba00ac2c33
+Test: 299 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAA0A22C0bbaaaa0c
+Test: 300 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAAACCCb00a0aacc2c3
+Test: 301 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA2C22C0bbbaac2c3
+Test: 302 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB0A22CCC0bbb0accc
+Test: 303 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBACC00bb0a00cc33
+Test: 304 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AA0A00A2C0baa0aac3
+Test: 305 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AA222CCbbbaa0cc3
+Test: 306 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BA0A0AC0bbb0a0aac
+Test: 307 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAA2CCCb1baaa0ccc
+Test: 308 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB1BAAC0b11bbbaa00c
+Test: 309 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBAACCbbaa0c222c3
+Test: 310 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AAC2CC0bba0a0c2cc3
+Test: 311 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BA00AAA2CCCb0aaaa0ccc
+Test: 312 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB0000AAACb1b0aaac3
+Test: 313 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBA0AC2C2Cbbaac2cc3
+Test: 314 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBBB00A2CC0bbbb0acc
+Test: 315 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBA2CCCCCbb0accccc3
+Test: 316 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAA2C2C2Cbbbaaccc
+Test: 317 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAC2CCC0b1bacc22cc
+Test: 318 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BA000ACCC2C00baac2ccc
+Test: 319 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAAACCCb11ba0aaccc
+Test: 320 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA0AAC2Cbbbaa0a0cc
+Test: 321 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBA2222CC00bbbbacc
+Test: 322 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BAAAACCbb0aa0aacc
+Test: 323 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA22CCb1bb00aacc3
+Test: 324 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00A0AA00ACb0aaaa00c
+Test: 325 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0A2CCCb1b1bacc2c3
+Test: 326 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BAA2CCCbbaa000ccc
+Test: 327 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB00ACbbbba0000c33
+Test: 328 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAAACCbb11baaaacc
+Test: 329 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBAAA222CC00bbaaa0cc
+Test: 330 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B1BBAAACCbbbaaac2c
+Test: 331 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCCbb00aaa00ccc
+Test: 332 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AAAACCCbbaaaaccc
+Test: 333 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAA0AC00bb00aaac33
+Test: 334 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AC2CCb00ac22cc3333
+Test: 335 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBA2222C222Cbba0cc3
+Test: 336 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBACCCC2Cbbba0ccccc
+Test: 337 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00AACCC0bbaacc2c3
+Test: 338 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA2CCCCbb1ba00cccc
+Test: 339 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BBBA2CCCbbbaccc3
+Test: 340 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333333BBBAC0bbb000ac
+Test: 341 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00A222CCbb000a0cc3
+Test: 342 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0AAC0000bbaa000c3
+Test: 343 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBBA0ACCbbbbb0aa0cc
+Test: 344 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0000AACCb11bbaacc
+Test: 345 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAC2CCCCbaa00ccccc3
+Test: 346 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2222C000b1baa0c3
+Test: 347 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAC2C2Cbbbaa0ccc
+Test: 348 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAACC000bbaa0ac2c
+Test: 349 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B1BAAAA222Cbbaaaa0c3
+Test: 350 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAACC2CCCbaaaccccc3
+Test: 351 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA2CCCbbba0accc33
+Test: 352 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAA2CC0bbbbaaacc
+Test: 353 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AC2C0b1b00a000cc
+Test: 354 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AA2C0b00000aac3333
+Test: 355 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAAC0b0a00a000c333
+Test: 356 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAC2CCCC0b0aaccc2cc
+Test: 357 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAACbb1bb00aaac3
+Test: 358 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACC00b11b00aaacc
+Test: 359 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BA0A22CCCCbbaacccc
+Test: 360 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAACC2CC000baacc22cc
+Test: 361 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB1BBA22CCbbbbacc33
+Test: 362 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB00AA2CCbb1ba0a0cc3
+Test: 363 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBA0ACbbbb0000aac
+Test: 364 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BB0AA2C22Cbbaacc3
+Test: 365 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB000AA22Cbbaa0c333
+Test: 366 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB000ACbb11bb0a0c3
+Test: 367 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAACCCbbbaac2cc33
+Test: 368 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAA2CCbbba0aa00cc
+Test: 369 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0000AAACbb000aaa00c
+Test: 370 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAA22C22C2Cbbaaccc33
+Test: 371 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAC000bb000a0aac
+Test: 372 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB1BB0AA2CCbbbba0acc
+Test: 373 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AAC2CCCbb00aa0cccc
+Test: 374 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B000AAA2CCCbaaacc2c3
+Test: 375 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333B00AA2Cbaa0000c
+Test: 376 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBAAC2C2C000bbaac2cc
+Test: 377 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAACCbbbaaa0cc33
+Test: 378 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB11BA2CCbbbba0cc33
+Test: 379 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B11BAAAACC0bbaaaa0cc
+Test: 380 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBAACCbbbaa00c2c
+Test: 381 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B00A0ACCCb00aac22cc
+Test: 382 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB11BAC000000bbba0c
+Test: 383 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B11BBAA22CCCbbbaaccc
+Test: 384 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0000AA2CC22Cbaaccc
+Test: 385 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BAAACC0bb00aa0acc
+Test: 386 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAACCCbbb00aac2cc33
+Test: 387 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBBAAAC0bbbbaaac
+Test: 388 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAA0AC2CCbb000aaaccc
+Test: 389 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0AAC2CCb1baac2cc
+Test: 390 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBAA22222C00bbaa00c
+Test: 391 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AAACC0bb00aaa00cc3
+Test: 392 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BBAAAAC0bbb0aaaa0c
+Test: 393 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A00AACCCb0aa0ac2cc
+Test: 394 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BBBACCCC0bbbbac2ccc
+Test: 395 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1B0ACCC0bbb00a0ccc3
+Test: 396 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBACCCC0bbb0a0cccc
+Test: 397 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBBAAC2Cbb1bbbaacc
+Test: 398 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBAA0AACbb0aaa0a0c
+Test: 399 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAC2Cbb0a0000cc333
+Test: 400 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB1BB00AA2Cbbbb0aac
+Test: 401 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBAA22C00bb0aa0c33
+Test: 402 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBB00AAC0b1bb0aac3
+Test: 403 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBA0AACC0bbbbaaacc
+Test: 404 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B000ACCCC00ba0cc2cc3
+Test: 405 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0A2CC0bb0000a000cc
+Test: 406 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3333B1BB0AAACbbbaaa0c
+Test: 407 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB000AAC2Cb1bbaa0cc3
+Test: 408 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCC0bb000aaaccc
+Test: 409 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B11BBAA2CCCbbb0aaccc
+Test: 410 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB00A0000ACCbbbaacc3
+Test: 411 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAC22Cbb0aaa00cc3
+Test: 412 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAACCCCbba0aacccc
+Test: 413 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB000A22C0bb000000ac
+Test: 414 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB1BACCC0bbbba0ccc
+Test: 415 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAACCCbbb0aaaccc
+Test: 416 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAA0ACCCCbaaac2222ccc
+Test: 417 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BBACCC00bbb000accc
+Test: 418 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA0000ACbb0000aa00c
+Test: 419 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0AA2CC00ba000acc33
+Test: 420 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA2222CCbaa0c2c3333
+Test: 421 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA0AC2Cbb1b0a0ac2c
+Test: 422 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB0AACCC00bba0ac2cc
+Test: 423 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAACCC0bbbaaa0ccc
+Test: 424 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB00AAACCbb1baaacc
+Test: 425 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBAACCC00bbaac2cc
+Test: 426 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B000AACCCbbaa0ccc3
+Test: 427 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0AC2CCCba00000cccc
+Test: 428 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B0AAAAACbaaa00a0ac33
+Test: 429 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1111B0AACCb1b0aa00cc
+Test: 430 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAACCCCCCbbaac2ccccc
+Test: 431 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAA00AAAAC00baaaaaac3
+Test: 432 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB000AAAA2Cbbaaaac33
+Test: 433 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AAAAACCbbaaaaacc33
+Test: 434 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAACCCC00baaccc2c3
+Test: 435 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBAACCCbba0a0ccc3
+Test: 436 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0AACCCbb000aaccc3
+Test: 437 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA22CCCC00bba0cc2cc
+Test: 438 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAACCCC0bbaaacccc33
+Test: 439 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA2CCbbbaa0000cc3
+Test: 440 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B111BAAAACCbbaa0aacc3
+Test: 441 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB00AAA2C0bbba00aac
+Test: 442 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0000AA222CC0bb0aacc
+Test: 443 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAA0ACCCCb00aaa0cc2cc
+Test: 444 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB000AA2Cbb000aa00c3
+Test: 445 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAC2222Cbbaa0c2c33
+Test: 446 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0ACCCCC0ba000cc2ccc
+Test: 447 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAACCCCC0b0aaa0ccccc
+Test: 448 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AA2CC22Cbbbaaccc
+Test: 449 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAAACbb1baaa0a0c
+Test: 450 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00AAAC22CC0baaaccc3
+Test: 451 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAACCCCba0acc22cc3
+Test: 452 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA2CCbbb000ac2c333
+Test: 453 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAAA22CCC0ba0aaaccc
+Test: 454 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAC2CCbbb00aaccc3
+Test: 455 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAC00000bb00aaac
+Test: 456 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA0AACCCbbbaaa0ccc
+Test: 457 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAC2C0bbb00aac22c
+Test: 458 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA00A222C000ba00a0c3
+Test: 459 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0AAACCCb00aaaa0ccc
+Test: 460 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB00ACCCbb1b00a0ccc
+Test: 461 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBB00000ACCbbb0a00cc
+Test: 462 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAACb1bb0a0aa000c
+Test: 463 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0A0ACCCCb0aaccc2c3
+Test: 464 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAACCCbbb1b00aaccc
+Test: 465 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BAACCCCCb1ba0accccc
+Test: 466 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BAAAACCCb0aaaaccc
+Test: 467 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B00AAACCC0bbaaaccc
+Test: 468 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB00AA22C00b1bbaac
+Test: 469 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1B0000A0AAC2Cbbaaacc
+Test: 470 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BA0A2222CCC0baaccc
+Test: 471 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333BAAACCCC0baaacccc3
+Test: 472 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB000AACCCCbbaa0cccc
+Test: 473 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBAA22CCCb1baaccc
+Test: 474 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBA0A22CC000bbaa0c2c
+Test: 475 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BBAC2Cbbb11bacc33
+Test: 476 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBA2CC2Cbbbba00ccc
+Test: 477 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAAAACC0baa0aaac22c
+Test: 478 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0A2222CCb1bacc333
+Test: 479 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0AAAC22Cbbaaa0c2c
+Test: 480 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0A0A22CC0baaa00cc3
+Test: 481 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BB0ACCC0bbbbaccc3
+Test: 482 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0000ACC00b1bbacc3
+Test: 483 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BA0AA2CCbbbaaa0cc
+Test: 484 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBAAC0bb0aa0000c3
+Test: 485 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB11BA2CC000b11bbacc
+Test: 486 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA222CCC0bbaaccc3
+Test: 487 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAACCCbba0aa0c2cc
+Test: 488 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAA2222CCbb0aaa00cc
+Test: 489 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA2CCC2CC0000baccccc
+Test: 490 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BAAAA0ACCb0aaaaa0cc3
+Test: 491 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA2C0b11bbaa0000c
+Test: 492 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBAAACC00bb1baaacc3
+Test: 493 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333B11BAACC0b1baacc
+Test: 494 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0AAAAA2Cb1bbaaaaac
+Test: 495 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAAA2CC0ba0aaa0c22c3
+Test: 496 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAAACCCb0aa00aa0ccc
+Test: 497 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B0000AAAA2CC0baaaacc
+Test: 498 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB000A22CCC0bba0ccc3
+Test: 499 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00A0AAAA22Cbaaaa0ac
+Test: 500 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAAAC0bbb00aaaac
+Test: 501 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBAA0AACbbbaaaa0c
+Test: 502 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAA22CCb1baacc3333
+Test: 503 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB1BAACCbbb0aacc33
+Test: 504 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A00AAAC000baaaa00c
+Test: 505 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAAC0bbb000aaa00c
+Test: 506 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0A0A0AACbb000aaaac
+Test: 507 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAA22222222Cbbaa0c
+Test: 508 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAA0ACCCb0a00aaccc
+Test: 509 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00A2CCCbb0a00ccc33
+Test: 510 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0A00ACCC00b0aa0ccc
+Test: 511 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBA0AAACC0bba0aa0acc
+Test: 512 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA2CCCb00000a000cc2c
+Test: 513 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0AAAC00baaaa00000c
+Test: 514 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333B000ACCCCba0cc2c2c
+Test: 515 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA0AACC0bbaaaacc3
+Test: 516 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BA0ACCC2Cbaac2ccc33
+Test: 517 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAACCCCba00aa00cccc
+Test: 518 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAAAC00bbbbaaaac
+Test: 519 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BAAA0ACCCbaaaa0ccc33
+Test: 520 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB1B0AAAC0bb1baaa0c
+Test: 521 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00AACCCbb0aa00ccc
+Test: 522 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAA0ACbba0aaaa0c
+Test: 523 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB0AAAAC000bbaaaa0c
+Test: 524 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCCb1baaa00cc2c
+Test: 525 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAAA0AACCb0aaa0aaacc
+Test: 526 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333BBB1B0ACC0b1bbbacc
+Test: 527 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAACCCb111bb0aaccc3
+Test: 528 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAA222CCb1ba000acc
+Test: 529 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BA00AC2CCbba00accc
+Test: 530 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0000AAC0bbb0a000ac
+Test: 531 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA0AA2CCC0b1baaaccc
+Test: 532 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BAAA22CCCbb0aaa0ccc
+Test: 533 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1B0AAAC000b1b0aaac
+Test: 534 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBAA2CC000bbaacc333
+Test: 535 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBB00A2C2Cbbbba0cc
+Test: 536 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB00AACbb11bb00aac
+Test: 537 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAA22CC0bba0aac2c
+Test: 538 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBAAAC2C00bbaaac2c
+Test: 539 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BAA2CC0b0aacc333
+Test: 540 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAACCCC0bbb0aacc2cc
+Test: 541 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B0A0AAACC2Cbaaaa0ccc
+Test: 542 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BBAAA22C0bbbbaaac3
+Test: 543 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0ACCCCbb00acccc33
+Test: 544 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B000AACCCb000aac2cc3
+Test: 545 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0A22C0000bbac333
+Test: 546 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBB0AACCCbbbaa00ccc3
+Test: 547 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0A2222CCbb1ba0cc3
+Test: 548 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BAAACCCb000aaaccc
+Test: 549 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAC2C2Cbbaaac2cc
+Test: 550 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BBA2222C0bbb1ba00c
+Test: 551 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAAACC0bbb0aaaacc
+Test: 552 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AA0A0ACCbaaaa0c22c
+Test: 553 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BBA2CCCCbbba000cccc
+Test: 554 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0A0A2CCCC0ba0acccc33
+Test: 555 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1B0AA0AACCbbbaaaacc
+Test: 556 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BAACCC0000baacc2c
+Test: 557 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B11BBAAAC000bbbaaa0c
+Test: 558 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB00A222CCCbba000cc2c
+Test: 559 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA2CCC0bbba0ccc333
+Test: 560 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBA000ACbb1ba0ac
+Test: 561 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0A0A2C2CC00bbaaccc
+Test: 562 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBAACCb111bb000aacc
+Test: 563 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333BBBB0ACb11bbb00ac3
+Test: 564 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BA0AACCCCC0baaaccccc3
+Test: 565 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAAA2222CC0b0aaaacc
+Test: 566 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB0AACCC00bb000aaccc
+Test: 567 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAAACCCb0a0a00accc3
+Test: 568 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAACCbbbbaacc3333
+Test: 569 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA0AC2Cbbbaa000c2c
+Test: 570 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0AACCC0000b00aa0ccc3
+Test: 571 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0AA0A2CCCbaaaccc33
+Test: 572 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0A0ACC0000bbbaacc
+Test: 573 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB1B0AC2Cbb1bb0acc33
+Test: 574 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB0AAACCb1bbaa0acc
+Test: 575 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAAAA2CC0bbaaaacc3
+Test: 576 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBA2CCbbb111b0a0c2c
+Test: 577 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0A0A22CCC0bbbaaccc
+Test: 578 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB000AAAA2CCbbaaaac2c
+Test: 579 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBAA22CCCC00bbaacccc
+Test: 580 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333BBBACCCbbba0ccc
+Test: 581 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2CC0bb000aacc333
+Test: 582 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAC00bb0aaa0c333
+Test: 583 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0000AA2CCC0baa00ccc3
+Test: 584 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAACCbb0aaa0000cc
+Test: 585 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAAAA2Cbbaa0a00aa0c
+Test: 586 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA00ACCCb1baa00c2cc
+Test: 587 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAACCbbb0000aac2c
+Test: 588 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB000AA22C2CCbbaaccc
+Test: 589 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAACC2C00b0a0a00cc2c
+Test: 590 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAACCCCCbbbaaccccc
+Test: 591 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333B0AAA2CCb0aaacc33
+Test: 592 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0000ACC0b1b0acc333
+Test: 593 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAACCbbaa00a00cc3
+Test: 594 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA0AA2Cbb000aaaac3
+Test: 595 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA0AACCCCbbaaaccc2c
+Test: 596 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAAACbbb0a0aaac3
+Test: 597 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0000AA22C0bbbaa0c
+Test: 598 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAAA2CCbbbaaaacc
+Test: 599 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB11B00ACC0000bbbacc
+Test: 600 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCC0bb00aaaccc3
+Test: 601 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0000AA0ACC0ba0aa0cc
+Test: 602 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAACCbbbbaaacc33
+Test: 603 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACC2C2Cb1baac2ccc
+Test: 604 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB1BB0A0ACbbbb0aac
+Test: 605 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0000AA222CC0bb0aacc
+Test: 606 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBB1BB0ACb1b1bbbb0ac
+Test: 607 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AAACCbb000aaac2c
+Test: 608 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA222C22Cbbaac2c33
+Test: 609 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2CCCbbaa000ccc33
+Test: 610 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAACCbbbbaa00cc33
+Test: 611 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1B000AAACCCb1baaaccc
+Test: 612 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA22CC0bba000a0cc3
+Test: 613 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3333B0AAC00b00aac3333
+Test: 614 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BB0A0ACCbbaacc33
+Test: 615 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB0AAACCC00bbaaa0ccc
+Test: 616 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAACCbbb0000aa0c2c
+Test: 617 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA00ACCC0ba00a0ccc33
+Test: 618 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BAA2CCb1b1baacc333
+Test: 619 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAA2C2Cbba00a0cc33
+Test: 620 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBACCCCCbba000ccccc3
+Test: 621 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCC0bb00aaacc2c
+Test: 622 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0A00AACCbbba0aacc
+Test: 623 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BACCCCCb00a000ccccc3
+Test: 624 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBBAAACCb1bbbbaaacc
+Test: 625 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAA2CCC0bbbaac2cc
+Test: 626 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BACCC000bbb0accc3
+Test: 627 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333B0A2C2C000bacc3
+Test: 628 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B1BBAAAC000bbb00aaac
+Test: 629 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B111BAAC000bb000aa0c
+Test: 630 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAAAAC000b0aa000aac
+Test: 631 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAC00b1bb000aa00c
+Test: 632 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BAAACC0000b00aaa0cc
+Test: 633 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0A0A0A2Cbbb00aa0ac
+Test: 634 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBAA22C2Cbb0aac2c333
+Test: 635 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCCb11baaa0ccc3
+Test: 636 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAA222Cbb0aaaa00c
+Test: 637 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACC00000bbaaa0cc
+Test: 638 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333B0AACCCC0baacccc
+Test: 639 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0A0ACCCb000aacc22c
+Test: 640 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB00AACCCCbb0aacccc33
+Test: 641 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0A2CC000000bb0acc3
+Test: 642 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B11BAA2C222Cbbaacc33
+Test: 643 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0AAAC00bb0aaac333
+Test: 644 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0AAAA2C0b00aaaa00c33
+Test: 645 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAAACbb1baaaa000c
+Test: 646 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB000AACCCbbb0aa0ccc
+Test: 647 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBB0ACCCbb1b0a00ccc3
+Test: 648 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBAAACCC0bbb0a0aaccc
+Test: 649 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1B0AAAA2Cb1baaa0ac
+Test: 650 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB1BAAC00bbb0a0a00c
+Test: 651 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBB0A2C2CCbbb0accc3
+Test: 652 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBA22CC0bb1ba00cc
+Test: 653 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33B0AAACCCba00aaccc33
+Test: 654 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA2C2CCbba00aaccc
+Test: 655 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AA0ACC0bbb0aaacc
+Test: 656 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BA22CC2C000b1baccc
+Test: 657 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBACCbb1b000a00cc
+Test: 658 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B11BAA2CC0000bba0acc
+Test: 659 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAA222C000bbaaaac
+Test: 660 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BBAAA0ACb1bbaaaac
+Test: 661 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BA222222CCCC0ba00cccc
+Test: 662 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB00A2CCCbbb0a00ccc
+Test: 663 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAACC0bb111baa0cc
+Test: 664 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB1BAA22Cbbbaac333
+Test: 665 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAC22C00bb00a0acc3
+Test: 666 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBBAA2CCbbbbbaacc33
+Test: 667 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBACCC0bbba00000ccc
+Test: 668 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAA2CCCbbb00aaccc
+Test: 669 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA22CCCbbbaacc22c
+Test: 670 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BAA0AA22Cb11baa0aac
+Test: 671 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B0A0000AC0b00aa0c3
+Test: 672 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAAAACbbba0aaaac
+Test: 673 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBACCb11b1b00acc333
+Test: 674 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00ACC2Cb11ba000ccc
+Test: 675 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA0A0A2CCC0bbaaaccc
+Test: 676 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBACCCCbbba0cc22cc3
+Test: 677 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BB00AAC00bbb0aa0c
+Test: 678 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBBAA0A2CCbbba0aacc
+Test: 679 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB1BAAA2Cb1bbbaaac33
+Test: 680 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AAACCCb00aaa0ccc33
+Test: 681 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBA2C2CCbbbac2cc
+Test: 682 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333B00ACCC0bac2cc3
+Test: 683 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBB1BAACCbbbb0aacc33
+Test: 684 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AAAAACbb00aaaaac
+Test: 685 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB000AAACCbbaaacc33
+Test: 686 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAACC0bba00aaacc
+Test: 687 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB000AAAC0bbb0aaa0c
+Test: 688 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AACCC000bba0ac2cc
+Test: 689 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BA2CCCCCba000ccccc3
+Test: 690 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AACbba000000a0c33
+Test: 691 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BAACCCbb1b00aa0ccc
+Test: 692 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BB0AA2CC0bb0aa0cc
+Test: 693 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAAA222CCCb0aaa0ccc
+Test: 694 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B000AAACCCba0aaccc33
+Test: 695 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB00AAAA0ACbb0aa0aaac
+Test: 696 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0A00ACb1b00000aac
+Test: 697 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA22CC2C0b1baa0ccc
+Test: 698 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0000AAAACCb00aaaacc3
+Test: 699 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBAACCCbbbaa0ccc3
+Test: 700 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B00AAACCC00b0a0aaccc
+Test: 701 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAACCCCCb0aa00cc2ccc
+Test: 702 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AACCC00bb0a0a0ccc
+Test: 703 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB00AAAA2CCCbbaaaaccc
+Test: 704 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAAACCbb1b0aaa0cc
+Test: 705 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0AA2CCC0bbaaccc3
+Test: 706 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAA2CC0bbb0a00acc
+Test: 707 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AACC0bbaa0000cc3
+Test: 708 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0AA222CC000ba0a0cc
+Test: 709 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB111BACb1bb00a0000c
+Test: 710 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BA0AACCC000baaa0ccc
+Test: 711 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0AA00ACC00bbbaaacc
+Test: 712 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA222Cbb1baa000c3
+Test: 713 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAA2Cbbbaa0000ac3
+Test: 714 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBAAACb11b1baaac
+Test: 715 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAA22C2C0bb0aaacc
+Test: 716 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0A0AAACCbbbaaa0acc
+Test: 717 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A22222CCCbac2222cc
+Test: 718 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA222CC22CCbaacccc3
+Test: 719 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAA2CCCC00bbaacccc
+Test: 720 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBA00AAC0000bbaa0ac
+Test: 721 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0AAACCCbb0aaaccc3
+Test: 722 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBA0ACCbb1baa00cc33
+Test: 723 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0AAAACCbbaaaac2c
+Test: 724 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA0AACC00000bbaaacc
+Test: 725 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333333BBBAACCbb1baacc
+Test: 726 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAAC22CCba00aa0ccc3
+Test: 727 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BB0A222CC00bbacc3
+Test: 728 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA2CCC00b1b0aaccc3
+Test: 729 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBB0A0ACC00bbbbaacc
+Test: 730 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB0AAACCbbb00aaacc
+Test: 731 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AAC2C2C2Cbaacc22cc
+Test: 732 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA0AACC0bbbaaaacc
+Test: 733 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA0AAA22C0bbaaaa0c3
+Test: 734 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBBA2CCC2Cbbbacccc3
+Test: 735 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBACCCCC0b1b0accc2cc
+Test: 736 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BB000ACCCbb1baccc3
+Test: 737 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B00A222CCb00a0000cc
+Test: 738 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAACCC0bbb0aaaccc
+Test: 739 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00ACC22Cbba0cc2c3
+Test: 740 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00AA2CCbb0aac222c
+Test: 741 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BB00AACbb0aac333
+Test: 742 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAAA2Cbb0a00a0aac
+Test: 743 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA0A2CC0b1baaacc33
+Test: 744 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAAACCCbba0a00accc
+Test: 745 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAC00b1bb1b00aac
+Test: 746 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAACCb11baa000cc33
+Test: 747 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BBA2C2CCbbbba00ccc
+Test: 748 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAACCbbb000aaacc
+Test: 749 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAACCbbb0aa000c2c
+Test: 750 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBB0A22CCbbb0acc33
+Test: 751 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAACC2Cb1bbaaaccc
+Test: 752 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AA2Cbbbaa000000c
+Test: 753 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA222CCC0bbaaccc3
+Test: 754 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B1BAC2CC0bbaccc333
+Test: 755 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAACC22CC0baa0cc22c2c
+Test: 756 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAAACb1b00aaaaac
+Test: 757 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAA0AAC2Cbaaaa0c2c
+Test: 758 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAC2CC22C22Cbaccccc
+Test: 759 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAACbbb0a00000ac3
+Test: 760 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB1BAA2CCbbbbaacc3
+Test: 761 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB0AAACb1b1b00aaac33
+Test: 762 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0AA2CCCC00ba00acccc3
+Test: 763 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBA2CCCCbb1ba0cccc
+Test: 764 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B111BACCCCbbac2cc22c
+Test: 765 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAA2222CCCbb0aa00ccc
+Test: 766 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBBAACC0bbbbbaac2c
+Test: 767 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+333BBB00ACCbbba000cc3
+Test: 768 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B00000AAACCCCbaaacccc
+Test: 769 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BBAACCbbbaa00cc33
+Test: 770 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AAA2CC0000bbaaac2c
+Test: 771 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA22C000bb0aa00c33
+Test: 772 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAAACCbbb000aaacc
+Test: 773 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAA2C0bb1baaa0c33
+Test: 774 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBAA2Cbb000aa0c3333
+Test: 775 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBBAAACb11bbbbaaac
+Test: 776 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B00A22C2CCCb00a0cc2cc
+Test: 777 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAACC2CC0b0aa0cccc3
+Test: 778 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACCCCb1b0a0ac2ccc
+Test: 779 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAA2222CCCbbaa00ccc3
+Test: 780 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAACCbb0000000aac2c3
+Test: 781 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB000AACCCbbba0a0ccc
+Test: 782 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB00AA22C00bbbaac3
+Test: 783 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BBAA2C00bb1b0aa00c
+Test: 784 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA2CCCb1bb0aaccc3
+Test: 785 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBAAACCCbbba0aaccc3
+Test: 786 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAA0AAACC000baa0aaacc
+Test: 787 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAA0ACCCb0a0a0accc
+Test: 788 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AC00b1ba000000c33
+Test: 789 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBB0ACCbbbb000a0c2c
+Test: 790 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BACCC2Cbb00ac22ccc
+Test: 791 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBB00AACbbb0a0ac33
+Test: 792 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBA0AC2CCbbbaaccc3
+Test: 793 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAA0A2Cbbb00aaa0c
+Test: 794 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBAAC0bbbb0000aac
+Test: 795 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACCCb111b0aa0ccc3
+Test: 796 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AAA2CCC0bb0aaaccc3
+Test: 797 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBB00AA0ACbbbbbaaac
+Test: 798 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BAA0AA222CCbaaaa0cc
+Test: 799 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00AA222CCCC0baacccc
+Test: 800 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0AACC222Cbbaa0ccc
+Test: 801 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAAA2CC2CCbaaacccc
+Test: 802 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA222Cbbb0000aac3
+Test: 803 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA2CCCbbaa0a0ccc3
+Test: 804 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA222222C2CC0b0acc2c
+Test: 805 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AACCC00bb0aaccc33
+Test: 806 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAACCbbbba0aacc3
+Test: 807 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA22222222CC0bba0cc
+Test: 808 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBBAAC00b1bb00aac
+Test: 809 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B0AA0AA2CC0b0aa00aacc
+Test: 810 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAACCCCbbb0aa0cccc
+Test: 811 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BAA22CCC0bbaa00ccc
+Test: 812 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAAACCC0ba0a0accc3
+Test: 813 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB1BBAAC2C0bbbbaacc3
+Test: 814 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAACC2Cb1bbaa0cc2c
+Test: 815 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAAA0ACC0bb0aaaaacc
+Test: 816 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B11BAACCCb1baac2c2c3
+Test: 817 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333BBBBAACbbbbaac3
+Test: 818 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B11BBA0AACCbbbaaacc33
+Test: 819 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCCC0bb0aaacccc
+Test: 820 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAACCCb11baaccc333
+Test: 821 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0A0AAACbb00aaaa0c
+Test: 822 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BAAA2CC0b000aaacc
+Test: 823 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA2Cbb0a0a00000c3
+Test: 824 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAACCCbbaaaa0c2cc
+Test: 825 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AAACC0bb1baaa0cc
+Test: 826 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA0AC22CCb00aaa0ccc
+Test: 827 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB00AACCCbbbaacc2c33
+Test: 828 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB0AA2222CCb1baa0cc
+Test: 829 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBBAAC000bbbbaa0c3
+Test: 830 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA2CCC00bbaaacc2c
+Test: 831 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B000A0ACC2Cba0a0c2cc
+Test: 832 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0AAC0bba0a00c3333
+Test: 833 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AACCCb1b00aaccc33
+Test: 834 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBBAA2CC0bbbbaa00cc
+Test: 835 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA2C2C22CCbbbacccc
+Test: 836 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B1BBBA0AA2C0bbbbaaac
+Test: 837 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAACC0bbb1baa00cc
+Test: 838 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA222222CCC0bba0ccc
+Test: 839 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00000AAACbb0aaac3
+Test: 840 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00A0AC0bbaa0000c3
+Test: 841 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A0ACC2CC0baaccc22c
+Test: 842 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAACC22C0b0aaac22cc
+Test: 843 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAACCCbb00aa000cc2c3
+Test: 844 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAAACC0bba0a0aacc
+Test: 845 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAA22CCC0bba0a0ccc
+Test: 846 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0A000ACCC0baaa0ccc
+Test: 847 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA222222Cbb00aac3
+Test: 848 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0000ACCCbbacc2c3
+Test: 849 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAACCCbb0aaa00ccc
+Test: 850 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAACCCCb0aaac2ccc33
+Test: 851 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA2CC0bb0a0acc333
+Test: 852 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AAA2CCCCbb0aaacccc
+Test: 853 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAC2C0bba0a00000cc
+Test: 854 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B111B1B00AACb1bbaac3
+Test: 855 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0A22CCCbbaccc3333
+Test: 856 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1BBBACCCbbbb000accc3
+Test: 857 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBACC2CCCbb0a00ccccc
+Test: 858 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BA00AACC0bb0aaacc
+Test: 859 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAAC0bbbb0aa0a0c
+Test: 860 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAC000b1b111b0a0c
+Test: 861 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBAAAA2C000bbbaaaac
+Test: 862 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBBA22CC00bbbbac22c
+Test: 863 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAACCbbb0aaa00c2c
+Test: 864 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAACCCCC0b1baaccccc3
+Test: 865 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBAACCCbb00aa00ccc3
+Test: 866 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00A0A0ACCbb0aaa0cc
+Test: 867 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB0A0ACCCbbb0aaccc
+Test: 868 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAACC22CCbbaa0ccc2c
+Test: 869 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBBAAC00bbbb0aac3
+Test: 870 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAACCCCCbb0aaccccc33
+Test: 871 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3333BBAC2CCCbbacc2cc3
+Test: 872 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33333BBB00AACbbba00ac
+Test: 873 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB1BBAA0ACb1bbbaaa00c
+Test: 874 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BBACC0bb0a00c2c3
+Test: 875 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B111BAA2C0bb00aac333
+Test: 876 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA2CC2Cbbaaa00ccc
+Test: 877 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AAACCC0bbaa0accc
+Test: 878 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAA22Cbb11baaac3
+Test: 879 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BB0AACC0bbaa0000cc
+Test: 880 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAACCCC0bb00aaacccc
+Test: 881 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0000ACC22CCbaacccc
+Test: 882 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAACCC22Cbaaa0c2ccc3
+Test: 883 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBB0AC0bbbba0c333
+Test: 884 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0AACC0bb00aac222c
+Test: 885 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BAA0AAACb0000aa0aaac
+Test: 886 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA0ACCCCba0aaccc22c
+Test: 887 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAAA2CCbb0aaaa0cc3
+Test: 888 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B00A0ACCCCb0aacccc33
+Test: 889 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBACCCCbbba00cc2cc3
+Test: 890 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0A00AACCbbaa00acc
+Test: 891 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBA0AACCbbbaaa00cc
+Test: 892 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0AA0ACCbbaaacc333
+Test: 893 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAAC0b1bbaaac333
+Test: 894 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBAAAACC0bbaaaa000cc
+Test: 895 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA0A2CCbbbaaa0c2c
+Test: 896 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B000000AAACb0aaa0c
+Test: 897 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBB00AAA222Cbbbbaaac
+Test: 898 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA2CC00bba0000cc333
+Test: 899 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B000000AA0AC000baaac
+Test: 900 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB0AA0ACCb1b0aa0acc
+Test: 901 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A00AACCb0a0000aacc
+Test: 902 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0AC22C00bb00acc33
+Test: 903 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA0AC2CC00bbaaaccc
+Test: 904 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAACC0b000aa000cc3
+Test: 905 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA2CCC0bbaaac22cc
+Test: 906 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B11BAAA2CCCbbaaacc2c
+Test: 907 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAC2C00bbbaa00c2c
+Test: 908 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA22CCCbbbacc22c33
+Test: 909 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB1BBACCbb1bb0a00cc
+Test: 910 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAACCbb0000aaa00cc3
+Test: 911 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBACCCb1b1b0ac2cc3
+Test: 912 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B0A000ACCb0aa000cc3
+Test: 913 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BBAA2CCbbba0acc33
+Test: 914 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BBA00ACCCbbaacc2c33
+Test: 915 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAACCbbb0000aa00cc
+Test: 916 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBA0AAACCbbb0a0aaacc
+Test: 917 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBAAAACCbbbaaaacc33
+Test: 918 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0AA2222C2C0b0aaacc
+Test: 919 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1B0A0ACC0bb0aa00cc3
+Test: 920 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB00AACCCbbba00accc3
+Test: 921 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33B1BAA2CC0bba0ac22c
+Test: 922 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBACCC0b1bbb0acc2c
+Test: 923 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAA000AAAC0b0aa0aaac
+Test: 924 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAACC2CCb0aaa0cc2cc
+Test: 925 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B000A222CC0bacc3333
+Test: 926 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB0AACC0bbbaac2c333
+Test: 927 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBB00ACCb1bbbacc3
+Test: 928 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBA0A22CCbb00aacc
+Test: 929 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3B0AAA0A2CC2Cbaaaaccc
+Test: 930 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBAACC00bbbaa0cc3
+Test: 931 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BAA22CCC00baacc2c33
+Test: 932 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00A2222CC00b1b0acc
+Test: 933 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB1BAAC2C0b1bbaac22c
+Test: 934 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBBAAAC2Cbbbb0aaacc
+Test: 935 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAC000000bb00aa0c3
+Test: 936 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0A0ACCCCC0baac2cccc
+Test: 937 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBA222CC2CCbb0acccc
+Test: 938 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BB0AACCCCbbaacccc3333
+Test: 939 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBB0A0AA2CCbbbbaaacc
+Test: 940 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0A0AC22Cbb0aa0c22c
+Test: 941 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BBBAACbbb111baa0c3
+Test: 942 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAC22C0bbb000ac22c
+Test: 943 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AACbb00a0a00c3333
+Test: 944 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB1BAA22CCbbbbaa0cc
+Test: 945 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BB1BBAACCbbbbaa000cc
+Test: 946 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAACCbbb11ba0acc33
+Test: 947 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAA2CCbb1baa00c2c3
+Test: 948 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AA0AC2CCbbaaac2cc
+Test: 949 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BAC222CCbbaccc333
+Test: 950 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA2CCCbbaa00accc3
+Test: 951 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAAACCb0aaaa00cc333
+Test: 952 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BA0AAC0baaa00000c333
+Test: 953 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA00ACCbb000aaacc3
+Test: 954 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BAACC2CCCbaaccccc3
+Test: 955 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBB0AC2CCCbbbb0acccc
+Test: 956 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+3BBBBAA222Cbbbb00a0ac
+Test: 957 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACC2Cbbaaa000ccc
+Test: 958 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB0AAA2Cb1bb0aaac3
+Test: 959 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAAA2222CCb0aaa0acc3
+Test: 960 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BAAAA2CCC00b0aaaa0ccc
+Test: 961 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AAAAACba0aaaa000c3
+Test: 962 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB00A0AACCbbaaa0c2c
+Test: 963 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAACCbb1bb00a00acc
+Test: 964 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBAAAACCbbbaaa0a0cc
+Test: 965 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAACCC00bbbaa0ccc
+Test: 966 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAACCbbb00a0a0cc3
+Test: 967 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B1BBBACCCb1bbba00ccc
+Test: 968 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBB00AAA22CCbbbaaa0cc
+Test: 969 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BBB00AACCbbbaa0cc
+Test: 970 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAA22C2C0bbaa0cc333
+Test: 971 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3B1BAACCCCb1baacccc3
+Test: 972 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33333BAAA2CC0b0aaacc
+Test: 973 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333B0AAAC2222Cbaaacc
+Test: 974 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBBA000ACCbbb0aacc33
+Test: 975 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBA00A222CCCb1baaccc
+Test: 976 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBB1B0A2C00bbbb00ac
+Test: 977 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+B0AAAACba0aaa0c33333
+Test: 978 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAACCCbb0aaac2cc33
+Test: 979 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAACCCCCbb0a00accccc
+Test: 980 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAA2C22Cbbbbaacc33
+Test: 981 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA22C2CCCCb0a0ccc2cc
+Test: 982 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB00AACCCCbbaacc2cc3
+Test: 983 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+333BB00AACbba000a00c
+Test: 984 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33333BAA2222CCba00acc
+Test: 985 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BB1BB0AACbbb1b0a0ac
+Test: 986 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBAAA2CCCbb0aaa00ccc3
+Test: 987 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BA0A00ACCb0a0aa0cc33
+Test: 988 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B11BACC222CCb1b0acccc
+Test: 989 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+33BB1BAACCb1bbaacc333
+Test: 990 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BB0AAA0A2Cbb0aa00aac
+Test: 991 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BAAAA2CCCCbaa0aacccc
+Test: 992 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBAAA22CCCCbbaaacccc
+Test: 993 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB00ACC2C00bbbaccc3
+Test: 994 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+BBB000AAAC0bbb00aaac
+Test: 995 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+33BBBBA2CCbbbb0ac22c
+Test: 996 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+B1B000AAAC2Cbb00aaacc
+Test: 997 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3BBBAAACCbbbaaa0cc33
+Test: 998 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBB00AACCCbbbbaac2cc
+Test: 999 Size of the Sequence: 21 ---Correct(backtrack impurty= 0)
+BBBBAACCCbbb1baacc2c3
+Test: 1000 Size of the Sequence: 20 ---Correct(backtrack impurty= 0)
+3333BBACCC0bb0accc33
+End of file, 1000 tested Total execution time: 13.8556 seconds(mean 0.0128 seconds)

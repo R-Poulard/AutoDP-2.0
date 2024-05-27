@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+\def\spacing{0.5}
+\def\radius{0.05}
+
+\filldraw[black!20!white] (0,0) .. controls +(-3,0) and +(-3,0) .. (1.25,2) .. controls +(3,0) and +(3,0) .. (2.5,0) -- (2.5,0.5) .. controls +(1.5,0) and +(1.5,0) .. (1.25,1.5) .. controls +(-1.5,0) and +(-1.5,0) .. (0,0.5) -- cycle;
+
+\fill (0,0) circle (2pt) node[below] {$u_1$};
+\fill (0,.5) circle (2pt) node[above] {$v_1$};
+\fill (.5,0) circle (2pt) node[below] {$u_2$};
+\fill (.5,.5) circle (2pt) node[above] {$v_2$};
+\fill (1,0) circle (2pt) node[below] {$u_3$};
+\fill (1,0.5) circle (2pt) node[above] {$v_3$};
+\fill (2.5,0) circle (2pt) node[below] {$u_l$};
+\fill (2.5,0.5) circle (2pt) node[above] {$v_l$};
+
+\draw (0,0) -- (0,0.5) -- (0.5,0.5) -- (0.5,0) -- (0,0);
+\draw (0.5,0.5) -- (1,0.5) -- (1,0) -- (0.5,0) -- (0.5,0.5);
+\draw (2.5,0) -- (2.5,.5);
+
+\draw[dotted] (1,0) -- (2.5,0);
+\draw[dotted] (1,0.5) -- (2.5,0.5);
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,54 @@
+label H0 ['6', '10', '16', '20']
+label H1 ['1', '5', '11', '15']
+5
+['1', '5']
+inward??? True
+1
+H1_0
+H1_7 ended
+10
+H0_0 ended
+res  c d
+2
+ici c a 0 2
+I= 0
+I= 1
+res  c -1 d 
+iciiiiiiiiiiiiiii H0_0 <autodp.equation_classes.CliqueCaseHelix object at 0x7f5a3e9aacd0> BagType.CLIQUE
+condition       if(!evaluate(c,h-1)||!evaluate(d-1,g)){continue;}
+nooo BagType.CLIQUE 0
+['//declarations', 'int compute_C0(HashTable *hashTable,int a, int f, int c,int d);\n', 'int compute_C1(HashTable *hashTable,int a, int f, int c,int d);\n', 'void backtrace_C0(HashTable *hashTable, int score, int a, int f, int c,int d) ;\n', 'void backtrace_C1(HashTable *hashTable, int score, int a, int f, int c,int d) ;\n', 'int compute_B(HashTable *hashTable,int c,int d,int f,int h) ;\n', 'void backtrace_B(HashTable *hashTable,int score,int c,int d,int f,int h) ;\n']
+iciiiiiiiiiiiiiii 10 <autodp.equation_classes.TransitionalEquation object at 0x7f5a3e9aad50> BagType.TRANSITIONAL
+iciiiiiiiiiiiiiii H1_7 <autodp.equation_classes.DiagCaseHelix object at 0x7f5a3e9aab50> BagType.DIAG_SECOND
+condition               if(!evaluate(a,f-1)){continue;}
+nooo BagType.DIAG_SECOND 1
+['//declarations', 'int compute_C0(HashTable *hashTable,int a, int f, int c,int d);\n', 'int compute_C1(HashTable *hashTable,int a, int f, int c,int d);\n', 'void backtrace_C0(HashTable *hashTable, int score, int a, int f, int c,int d) ;\n', 'void backtrace_C1(HashTable *hashTable, int score, int a, int f, int c,int d) ;\n', 'int compute_B(HashTable *hashTable,int c,int d,int f,int h) ;\n', 'void backtrace_B(HashTable *hashTable,int score,int c,int d,int f,int h) ;\n', 'int compute_A(HashTable *hashTable,int a,int h) ;\n', 'void backtrace_A(HashTable *hashTable,int score,int a,int h) ;\n']
+iciiii ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] 3
+/home/remipoul/pwb/Turner/EXAMPLE/H.c: In function ‘main’:
+/home/remipoul/pwb/Turner/EXAMPLE/H.c:470:27: warning: passing argument 2 of ‘getline’ from incompatible pointer type [-Wincompatible-pointer-types]
+  470 |         len=getline(&line,&b_len, fp);
+      |                           ^~~~~~
+      |                           |
+      |                           int *
+In file included from /home/remipoul/pwb/Turner/EXAMPLE/H.c:1:
+/usr/include/stdio.h:617:46: note: expected ‘size_t * restrict’ {aka ‘long unsigned int * restrict’} but argument is of type ‘int *’
+  617 |                           size_t *__restrict __n,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+/home/remipoul/pwb/Turner/EXAMPLE/H.c:492:25: warning: passing argument 2 of ‘getline’ from incompatible pointer type [-Wincompatible-pointer-types]
+  492 |         len=getline(&ss,&b_len, fp);
+      |                         ^~~~~~
+      |                         |
+      |                         int *
+In file included from /home/remipoul/pwb/Turner/EXAMPLE/H.c:1:
+/usr/include/stdio.h:617:46: note: expected ‘size_t * restrict’ {aka ‘long unsigned int * restrict’} but argument is of type ‘int *’
+  617 |                           size_t *__restrict __n,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+/home/remipoul/pwb/Turner/EXAMPLE/H.c:495:36: warning: passing argument 2 of ‘getline’ from incompatible pointer type [-Wincompatible-pointer-types]
+  495 |         len=getline(&correct_score,&b_len, fp);
+      |                                    ^~~~~~
+      |                                    |
+      |                                    int *
+In file included from /home/remipoul/pwb/Turner/EXAMPLE/H.c:1:
+/usr/include/stdio.h:617:46: note: expected ‘size_t * restrict’ {aka ‘long unsigned int * restrict’} but argument is of type ‘int *’
+  617 |                           size_t *__restrict __n,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~

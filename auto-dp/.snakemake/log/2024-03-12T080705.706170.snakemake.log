@@ -1,0 +1,66 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 8
+Job counts:
+	count	jobs
+	1	all
+	1	band_diagram
+	1	band_diagram_latextopdf
+	1	c_compilation
+	1	colored_dbn
+	3	compact_dottopdf
+	1	compute_td
+	1	concatenation
+	1	decomposition_scheme
+	1	dot_process
+	1	extract_compact_tree
+	1	extract_compact_tree_letters
+	1	extract_elimination_ordering
+	1	extract_gr
+	1	extract_helices
+	1	extract_tree_equations
+	1	extremities_label
+	1	make_dot_file
+	1	pdflatex_dec
+	1	pdflatex_equations
+	1	process_helices
+	1	produce_c_code
+	1	produce_latex_equations
+	1	state_of_the_results
+	1	textopdf
+	1	unprocessed_from_td_to_dot
+	1	unprocessed_td
+	29
+
+[Tue Mar 12 08:07:05 2024]
+rule extract_gr:
+    input: resources/dbn_files/C5.dbn
+    output: results/gr_files/C5.gr
+    jobid: 17
+    wildcards: shadow=C5
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Mar 12 08:07:05 2024]
+rule extract_helices:
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+    jobid: 16
+    wildcards: shadow=C5
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Mar 12 08:07:05 2024]
+rule band_diagram:
+    input: resources/dbn_files/C5.dbn
+    output: results/colored_dbn/band_diagram_C5.tex
+    jobid: 22
+    wildcards: family=C5
+
+Error submitting jobscript (exit code 127):
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/remipoul/pwb/auto-dp/.snakemake/log/2024-03-12T080705.706170.snakemake.log

@@ -1,0 +1,48 @@
+digraph G {
+    node [shape=box];
+    subgraph cluster0 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#8DD3C7";
+        H0_0 -> H0_5;
+        label="H0 (6-10-21-25) (diag)";
+    }
+    subgraph cluster1 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#FFFFB3";
+        H1_0 -> H1_5;
+        label="H1 (16-20-26-30) (diag)";
+    }
+    subgraph cluster2 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#BEBADA";
+        H2_0 -> H2_7;
+        label="H2 (1-5-11-15) (diag)";
+    }
+     20 [shape=record,label= <{  <FONT COLOR="RED">A</FONT>  <FONT COLOR="DARKGREEN">1</FONT>  <FONT COLOR="DARKGREEN">15</FONT>  <FONT COLOR="DARKGREEN">20</FONT>  <FONT COLOR="DARKGREEN">26</FONT>}> ];
+     -1  ->  20;
+     18 [shape=record,label= <{  <FONT COLOR="RED">B</FONT> <b>1</b> <b>15</b> <b>20</b>  <FONT COLOR="DARKGREEN">21</FONT>}> ];
+     20  ->  18;
+     1 [shape=record,label= <{  <FONT COLOR="RED">C</FONT> <b>1</b> <b>15</b> <b>21</b>  <FONT COLOR="DARKGREEN">25</FONT>}> ];
+     18  ->  1;
+     H2_0 [shape=record,label= <{  <FONT COLOR="RED">D</FONT> <b>15</b> <b>1</b>|  <b>21</b>}> ];
+     1  ->  H2_0;
+     H2_7 [shape=record,label= <{ <b>5</b> <b>11</b>|  <b>21</b>}> ];
+     6 [shape=record,label= <{  <FONT COLOR="RED">E</FONT> <b>11</b> <b>21</b> <b>25</b>  <FONT COLOR="DARKGREEN">5</FONT>}> ];
+     H2_7  ->  6;
+     10 [shape=record,label= <{  <FONT COLOR="RED">F</FONT>  <FONT COLOR="DARKGREEN">10</FONT> <b>11</b> <b>21</b> <b>25</b>}> ];
+     6  ->  10;
+     H0_0 [shape=record,label= <{  <FONT COLOR="RED">G</FONT> <b>21</b> <b>10</b>|  <b>6</b> <b>21</b> <b>25</b> <b>10</b>}> ];
+     10  ->  H0_0;
+     H0_5 [shape=record,label= <{ <b>6</b> <b>10</b> <b>21</b> <b>25</b>}> ];
+     21 [shape=record,label= <{  <FONT COLOR="RED">H</FONT> <b>15</b>  <FONT COLOR="DARKGREEN">16</FONT> <b>20</b> <b>26</b>}> ];
+     20  ->  21;
+     H1_0 [shape=record,label= <{  <FONT COLOR="RED">I</FONT> <b>20</b> <b>26</b>|  <b>20</b> <b>26</b>}> ];
+     21  ->  H1_0;
+     H1_5 [shape=record,label= <{ <b>16</b> <b>30</b>|  <b>20</b> <b>26</b>}> ];
+}

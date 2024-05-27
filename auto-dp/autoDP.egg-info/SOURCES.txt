@@ -1,0 +1,12 @@
+README.md
+setup.py
+autoDP.egg-info/PKG-INFO
+autoDP.egg-info/SOURCES.txt
+autoDP.egg-info/dependency_links.txt
+autoDP.egg-info/top_level.txt
+python/equation_classes.py
+python/equation_tree.py
+python/minimal_expansion.py
+python/tree_decomposition.py
+python/tree_of_bags.py
+test/test_minimal_expansion.py

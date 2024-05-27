@@ -1,0 +1,3 @@
+WorkflowError in line 1 of /home/remipoul/pwb/auto-dp/workflow/Snakefile:
+Config file config/config.json not found.
+  File "/home/remipoul/pwb/auto-dp/workflow/Snakefile", line 1, in <module>

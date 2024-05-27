@@ -1,0 +1,290 @@
+configfile: "config/config.json"
+
+shadows = ['C5']
+
+rule all:
+    input:
+        expand('results/processed_td_files/processed_{family}.td', family=shadows),
+        expand('results/td_files/{shadow}.td', shadow=shadows),
+        expand('results/elim_order/{shadow}.order', shadow=shadows),
+        expand('results/td_images/processed_{shadow}.pdf', shadow=shadows),
+        expand('results/decomposition_schemes/decomposition_{shadow}.pdf', shadow=shadows),
+        expand('results/td_images/unprocessed_{shadow}.pdf', shadow=shadows),
+        expand('results/colored_dbn/colored_dbn_{shadow}.pdf',shadow=shadows),
+        expand('results/colored_dbn/band_diagram_{shadow}.pdf',shadow=shadows),
+        expand('results/compact_td_images/compact_{shadow}.pdf',shadow=shadows),
+        expand('results/compact_td_images/compact_{shadow}_letters.pdf',shadow=shadows),
+        expand('results/compact_td_images/compact_{shadow}_equations.pdf',shadow=shadows),
+        expand('results/latex_equations/{shadow}_latex_equations.pdf',shadow=shadows),
+        expand('results/binaries/{shadow}_folding',shadow=shadows),
+        expand('results/concatenations/concatenation_{shadow}.pdf',shadow=shadows),
+        'results/state_of_the_results.pdf'
+
+rule state_of_the_results:
+    input:
+        expand('results/latex_equations/{shadow}_latex_equations.pdf',shadow=shadows)
+    output:
+        'results/state_of_the_results.pdf'
+    shell:
+        'pdftk {input} cat output {output}'
+
+rule c_compilation:
+    input:
+        'results/c_code/{family}_folding.c'
+    output:
+        'results/binaries/{family}_folding'
+    shell:
+        'gcc {input} -o {output}'
+
+rule decomposition_scheme:
+    input:
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/decomposition_schemes/decomposition_{family}.tex'
+    script:
+        'scripts/display_decomposition_scheme.py'
+
+rule pdflatex_dec:
+    input:
+        'results/decomposition_schemes/decomposition_{family}.tex'
+    output:
+        'results/decomposition_schemes/decomposition_{family}.pdf'
+    shell:
+        'pdflatex -output-directory=results/decomposition_schemes/ {input}'
+
+rule pdflatex_equations:
+    input:
+        'results/latex_equations/{shadow}_latex_equations.tex'
+    output:
+        'results/latex_equations/{shadow}_latex_equations.pdf'
+    shell:
+        'pdflatex -output-directory=results/latex_equations/ {input}'
+
+rule produce_c_code:
+    input:
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/c_code/{family}_folding.c'
+    script:
+        'scripts/produce_c_code.py'
+        
+
+rule produce_latex_equations:
+    input:
+        colored_dbn='results/colored_dbn/colored_dbn_{family}.pdf',
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/latex_equations/{family}_latex_equations.tex'
+    wildcard_constraints:
+        family='[A-Z]*[0-9]*'
+    script:
+        'scripts/produce_latex_equations.py' 
+
+rule extremities_label:
+    input:
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/json_files/extremities_label_{family}.json'
+    run:
+        from autodp.equation_tree import TreeOfEquations
+
+        eq_tree = TreeOfEquations()
+        eq_tree.read_from_file(input.tdname)
+        eq_tree.set_helices(open(input.helix).readlines())
+        eq_tree.set_ext_to_letter()
+
+        import json
+        with open(output[0],'w') as f:
+            json.dump(eq_tree.ext_to_letter, f)
+
+rule concatenation:
+    input:
+        colored_dbn='results/colored_dbn/colored_dbn_{shadow}.pdf',
+        colored_td='results/td_images/processed_{shadow}.pdf',
+        compact_td='results/compact_td_images/compact_{shadow}.pdf',
+        dp_eq='results/latex_equations/{shadow}_latex_equations.pdf',
+    output:
+        'results/concatenations/concatenation_{shadow}.pdf'
+    shell:
+        'pdftk {input.colored_dbn} {input.dp_eq} {input.colored_td} {input.compact_td} cat output {output}'
+
+rule extract_compact_tree:
+    input:
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/compact_dot_files/compact_{family}.dot'
+    wildcard_constraints:
+        family='[A-Z]*[0-9]*'
+    script:
+        'scripts/compact_tree_extraction.py'
+
+rule compact_dottopdf:
+    input:
+        'results/compact_dot_files/{file}.dot'
+    output:
+        'results/compact_td_images/{file}.pdf'
+    shell:
+        'dot -Tpdf -o {output} {input}' 
+
+rule extract_compact_tree_letters:
+    input:
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/compact_dot_files/compact_{family}_letters.dot'
+    script:
+        'scripts/compact_tree_extraction_letters.py'
+
+rule extract_tree_equations:
+    input:
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/compact_dot_files/compact_{family}_equations.dot'
+    script:
+        'scripts/compact_tree_extraction_equations.py'
+
+rule extract_processed_elimination_ordering:
+    input:
+        'results/processed_td_files/processed_{shadow}.td'
+    output:
+        'results/processed_elim_order/processed_{shadow}.order'
+    script:
+        'scripts/td_to_elim.py'
+
+rule extract_elimination_ordering:
+    input:
+        'results/td_files/{shadow}.td'
+    output:
+        'results/elim_order/{shadow}.order'
+    script:
+        'scripts/td_to_elim.py'
+
+# calling Tamaki's solver on the graph
+rule compute_td:
+    input:
+        'results/gr_files/{shadow}.gr'
+    output:
+        'results/td_files/{shadow}.td'
+    shell:
+        'java -Xmx3g -Xms3g -Xss10m -Duser.dir=workflow/scripts/PACE2017-TrackA tw.exact.MainDecomposer < {input} > {output}'
+
+rule from_td_to_dot:
+    input:
+        'results/td_files/{shadow}.td'
+    output:
+        'results/td_files/{shadow}.td1.dot'
+    script: 
+        'scripts/from_pace_td_to_td1dot.py'
+
+# from fatgraph input to graph of minimal expansion
+rule extract_gr:
+    input:
+        'resources/dbn_files/{shadow}.dbn'
+    output:
+        'results/gr_files/{shadow}.gr' 
+    script:
+        'scripts/dbn_to_gr.py'
+
+rule extract_helices:
+    input:
+        dbn='resources/dbn_files/{shadow}.dbn'
+    output:
+        'results/helix_annotations/{shadow}.helix'
+    script:
+        'scripts/annotate_helices.py'
+
+# the most important rule. Makes the tree decomposition canonical.
+rule process_helices:
+    input:
+        dbn='resources/dbn_files/{shadow}.dbn', 
+        tdname='results/td_files/{shadow}.td',
+        helix='results/helix_annotations/{shadow}.helix'
+    output:
+        'results/processed_td_files/processed_{shadow}.td'
+    log:
+        'results/processed_td_files/exec_logs/{shadow}_processing.log'
+    script:
+        "scripts/process_helices.py"
+
+rule make_dot_file:
+    input:
+        dbn='resources/dbn_files/{family}.dbn',
+        tdname='results/processed_td_files/processed_{family}.td',
+        helix='results/helix_annotations/{family}.helix'
+    output:
+        'results/dot_files/processed_{family}.dot' 
+    script:
+        "scripts/make_dot_file.py"
+
+rule unprocessed_from_td_to_dot:
+    input:
+        'results/td_files/{shadow}.td'
+    output:
+        'results/dot_files/unprocessed_{shadow}.td1.dot'
+    script:
+        'scripts/from_pace_td_to_td1dot.py'
+
+rule unprocessed_td:
+    input:
+        'results/dot_files/unprocessed_{shadow}.td1.dot'
+    output:
+        'results/td_images/unprocessed_{shadow}.pdf'
+    shell:
+        'dot -Tpdf -o {output} {input}' 
+
+rule dot_process:
+    input:
+        'results/dot_files/processed_{family}.dot' 
+    output:
+        'results/td_images/processed_{family}.pdf'
+    shell:
+        'dot -Tpdf -o {output} {input}' 
+
+rule band_diagram:
+    input:
+        dbn='resources/dbn_files/{family}.dbn'
+    output:
+        'results/colored_dbn/band_diagram_{family}.tex'
+    script:
+        'scripts/band_diagram_from_helix.py'
+
+rule band_diagram_latextopdf:
+    input:
+        'results/colored_dbn/band_diagram_{family}.tex'
+    output:
+        'results/colored_dbn/band_diagram_{family}.pdf'
+    shell:
+        'pdflatex -output-directory=results/colored_dbn/ {input}'
+
+
+rule colored_dbn:
+    input:
+        dbn='resources/dbn_files/{family}.dbn',
+        helix='results/helix_annotations/{family}.helix',
+        extremities_label='results/json_files/extremities_label_{family}.json'
+    output:
+        'results/colored_dbn/colored_dbn_{family}.tex'
+    script:
+        'scripts/colored_dbn.py'
+
+rule textopdf:
+    input:
+        'results/colored_dbn/colored_dbn_{family}.tex'
+    output:
+        'results/colored_dbn/colored_dbn_{family}.pdf'
+    shell:
+        'pdflatex -output-directory=results/colored_dbn/ {input}'
+
+rule pdftops:
+    input:
+        'results/colored_dbn/colored_dbn_{family}.pdf'
+    output:
+        'results/colored_dbn/colored_dbn_{family}.ps'
+    shell:
+        'pdf2ps {input} {output}'

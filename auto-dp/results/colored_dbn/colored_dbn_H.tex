@@ -1,0 +1,69 @@
+\documentclass{standalone}
+\usepackage[x11names]{xcolor}
+\usepackage{tikz}
+\usepackage{relsize}
+\begin{document}
+\definecolor{c0}{rgb}{0.5529411764705883, 0.8274509803921568, 0.7803921568627451}
+\definecolor{c1}{rgb}{1.0, 1.0, 0.7019607843137254}
+\definecolor{c2}{rgb}{0.7450980392156863, 0.7294117647058823, 0.8549019607843137}
+\definecolor{c3}{rgb}{0.984313725490196, 0.5019607843137255, 0.4470588235294118}
+\definecolor{c4}{rgb}{0.5019607843137255, 0.6941176470588235, 0.8274509803921568}
+\definecolor{c5}{rgb}{0.9921568627450981, 0.7058823529411765, 0.3843137254901961}
+\definecolor{c6}{rgb}{0.7019607843137254, 0.8705882352941177, 0.4117647058823529}
+\definecolor{c7}{rgb}{0.9882352941176471, 0.803921568627451, 0.8980392156862745}
+\definecolor{c8}{rgb}{0.8509803921568627, 0.8509803921568627, 0.8509803921568627}
+\definecolor{c9}{rgb}{0.7372549019607844, 0.5019607843137255, 0.7411764705882353}
+\definecolor{c10}{rgb}{0.8, 0.9215686274509803, 0.7725490196078432}
+\definecolor{c11}{rgb}{1.0, 0.9294117647058824, 0.43529411764705883}
+\begin{tikzpicture}
+\fill (0,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{a}}};
+\fill (4,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{b}}};
+\fill (5,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{c}}};
+\fill (9,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{d}}};
+\fill (10,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{e}}};
+\fill (14,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{f}}};
+\fill (15,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{g}}};
+\fill (19,0) circle (0.) node[below=1cm] {\relsize{+5}{\textbf{h}}};
+\node at (0,-2.5) {(1)};
+\node at (4,-2.5) {(5)};
+\node at (5,-2.5) {(6)};
+\node at (9,-2.5) {(10)};
+\node at (10,-2.5) {(11)};
+\node at (14,-2.5) {(15)};
+\node at (15,-2.5) {(16)};
+\node at (19,-2.5) {(20)};
+\draw[thick] (0,0) -- (1,0);
+\draw[thick] (1,0) -- (2,0);
+\draw[thick] (2,0) -- (3,0);
+\draw[thick] (3,0) -- (4,0);
+\draw[thick] (4,0) -- (5,0);
+\draw[thick] (5,0) -- (6,0);
+\draw[thick] (6,0) -- (7,0);
+\draw[thick] (7,0) -- (8,0);
+\draw[thick] (8,0) -- (9,0);
+\draw[thick] (9,0) -- (10,0);
+\draw[thick] (10,0) -- (11,0);
+\draw[thick] (11,0) -- (12,0);
+\draw[thick] (12,0) -- (13,0);
+\draw[thick] (13,0) -- (14,0);
+\draw[thick] (14,0) -- (15,0);
+\draw[thick] (15,0) -- (16,0);
+\draw[thick] (16,0) -- (17,0);
+\draw[thick] (17,0) -- (18,0);
+\draw[very thick] (11,0) arc                 (0:180:4.0);
+\draw[very thick] (12,0) arc                 (0:180:5.0);
+\draw[very thick] (17,0) arc                 (0:180:5.0);
+\draw[very thick] (16,0) arc                 (0:180:4.0);
+\draw[very thick] (13,0) arc                 (0:180:6.0);
+\draw[very thick] (14,0) arc                 (0:180:7.0);
+\draw[very thick] (19,0) arc                 (0:180:7.0);
+\draw[very thick] (18,0) arc                 (0:180:6.0);
+\draw[very thick] (19,0) arc                 (0:180:9.5);
+\draw[very thick] (10,0) arc                 (0:180:3.0);
+\draw[very thick] (15,0) arc                 (0:180:3.0);
+\filldraw[fill=c0,rounded corners]  (4.8,-0.5) rectangle (9.2,+0.5);
+\filldraw[fill=c0,rounded corners]  (14.8,-0.5) rectangle (19.2,+0.5);
+\filldraw[fill=c1,rounded corners]  (-0.2,-0.5) rectangle (4.2,+0.5);
+\filldraw[fill=c1,rounded corners]  (9.8,-0.5) rectangle (14.2,+0.5);
+\end{tikzpicture}
+\end{document}
