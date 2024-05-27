@@ -1,0 +1,139 @@
+graph G {
+
+	bag0 [label="1 2 20
+ "]
+	bag1 [label="2 3 19 20
+ "]
+	bag2 [label="3 18 19 20
+ "]
+	bag3 [label="3 4 18 20
+ "]
+	bag4 [label="4 17 18 20
+ "]
+	bag5 [label="4 5 17 20
+ "]
+	bag6 [label="5 16 17 20
+ "]
+	bag7 [label="5 16 20 21
+ "]
+	bag8 [label="5 14 16 21 26
+ "]
+	bag9 [label="14 15 16 26
+ "]
+	bag10 [label="5 14 21 26 35 41
+ "]
+	bag11 [label="21 26 35 39 41
+ "]
+	bag12 [label="21 39 40 41
+ "]
+	bag13 [label="21 23 26 35 39
+ "]
+	bag14 [label="23 25 26 35 39
+ "]
+	bag15 [label="23 25 35 37 39
+ "]
+	bag16 [label="23 37 38 39
+ "]
+	bag17 [label="25 35 36 37
+ "]
+	bag18 [label="23 24 25 37
+ "]
+	bag19 [label="21 22 23 39
+ "]
+	bag20 [label="5 14 26 28 35 41
+ "]
+	bag21 [label="14 26 27 28
+ "]
+	bag22 [label="5 12 14 28 35 41
+ "]
+	bag23 [label="12 13 14 28
+ "]
+	bag24 [label="5 6 12 28 35 41
+ "]
+	bag25 [label="6 12 28 30 35 41
+ "]
+	bag26 [label="12 28 29 30
+ "]
+	bag27 [label="6 10 12 30 35 41
+ "]
+	bag28 [label="10 11 12 30
+ "]
+	bag29 [label="6 10 30 35 41 46
+ "]
+	bag30 [label="6 10 41 44 46
+ "]
+	bag31 [label="6 44 45 46
+ "]
+	bag32 [label="6 8 10 41 44
+ "]
+	bag33 [label="8 10 41 42 44
+ "]
+	bag34 [label="8 42 43 44
+ "]
+	bag35 [label="8 9 10 42
+ "]
+	bag36 [label="6 7 8 44
+ "]
+	bag37 [label="30 35 46 47
+ "]
+	bag38 [label="30 34 35 47
+ "]
+	bag39 [label="30 34 47 48
+ "]
+	bag40 [label="30 33 34 48
+ "]
+	bag41 [label="30 33 48 49
+ "]
+	bag42 [label="30 32 33 49
+ "]
+	bag43 [label="30 31 32 49
+ "]
+	bag44 [label="31 49 50
+ "]
+
+	bag0 -- bag1
+	bag1 -- bag2
+	bag2 -- bag3
+	bag3 -- bag4
+	bag4 -- bag5
+	bag5 -- bag6
+	bag6 -- bag7
+	bag7 -- bag8
+	bag8 -- bag9
+	bag8 -- bag10
+	bag10 -- bag11
+	bag10 -- bag20
+	bag11 -- bag12
+	bag11 -- bag13
+	bag13 -- bag14
+	bag13 -- bag19
+	bag14 -- bag15
+	bag15 -- bag16
+	bag15 -- bag17
+	bag15 -- bag18
+	bag20 -- bag21
+	bag20 -- bag22
+	bag22 -- bag23
+	bag22 -- bag24
+	bag24 -- bag25
+	bag25 -- bag26
+	bag25 -- bag27
+	bag27 -- bag28
+	bag27 -- bag29
+	bag29 -- bag30
+	bag29 -- bag37
+	bag30 -- bag31
+	bag30 -- bag32
+	bag32 -- bag33
+	bag32 -- bag36
+	bag33 -- bag34
+	bag33 -- bag35
+	bag37 -- bag38
+	bag38 -- bag39
+	bag39 -- bag40
+	bag40 -- bag41
+	bag41 -- bag42
+	bag42 -- bag43
+	bag43 -- bag44
+
+}

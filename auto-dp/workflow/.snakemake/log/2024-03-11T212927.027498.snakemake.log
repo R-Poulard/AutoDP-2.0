@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 193 of /home/remipoul/pwb/auto-dp/workflow/Snakefile:
+Missing input files for rule extract_helices:
+resources/dbn_files/H.dbn

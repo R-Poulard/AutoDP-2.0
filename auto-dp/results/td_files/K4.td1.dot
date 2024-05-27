@@ -1,0 +1,109 @@
+graph G {
+
+	bag0 [label="1 2 25
+ "]
+	bag1 [label="2 3 24 25
+ "]
+	bag2 [label="3 23 24 25
+ "]
+	bag3 [label="3 4 23 25
+ "]
+	bag4 [label="4 22 23 25
+ "]
+	bag5 [label="4 5 22 25
+ "]
+	bag6 [label="5 21 22 25
+ "]
+	bag7 [label="5 20 21 25
+ "]
+	bag8 [label="5 20 25 26
+ "]
+	bag9 [label="5 11 20 26 30
+ "]
+	bag10 [label="11 15 20 30 34
+ "]
+	bag11 [label="11 15 20 34 36
+ "]
+	bag12 [label="11 34 35 36
+ "]
+	bag13 [label="15 20 36 37
+ "]
+	bag14 [label="15 19 20 37
+ "]
+	bag15 [label="15 19 37 38
+ "]
+	bag16 [label="15 18 19 38
+ "]
+	bag17 [label="15 18 38 39
+ "]
+	bag18 [label="15 17 18 39
+ "]
+	bag19 [label="15 16 17 39
+ "]
+	bag20 [label="16 39 40
+ "]
+	bag21 [label="11 15 30 32 34
+ "]
+	bag22 [label="15 30 31 32
+ "]
+	bag23 [label="11 13 15 32 34
+ "]
+	bag24 [label="13 32 33 34
+ "]
+	bag25 [label="13 14 15 32
+ "]
+	bag26 [label="11 12 13 34
+ "]
+	bag27 [label="5 6 11 26 30
+ "]
+	bag28 [label="6 9 11 26 30
+ "]
+	bag29 [label="9 10 11 26
+ "]
+	bag30 [label="6 7 9 26 30
+ "]
+	bag31 [label="7 9 26 28 30
+ "]
+	bag32 [label="7 28 29 30
+ "]
+	bag33 [label="9 26 27 28
+ "]
+	bag34 [label="7 8 9 28
+ "]
+
+	bag0 -- bag1
+	bag1 -- bag2
+	bag2 -- bag3
+	bag3 -- bag4
+	bag4 -- bag5
+	bag5 -- bag6
+	bag6 -- bag7
+	bag7 -- bag8
+	bag8 -- bag9
+	bag9 -- bag10
+	bag9 -- bag27
+	bag10 -- bag11
+	bag10 -- bag21
+	bag11 -- bag12
+	bag11 -- bag13
+	bag13 -- bag14
+	bag14 -- bag15
+	bag15 -- bag16
+	bag16 -- bag17
+	bag17 -- bag18
+	bag18 -- bag19
+	bag19 -- bag20
+	bag21 -- bag22
+	bag21 -- bag23
+	bag23 -- bag24
+	bag23 -- bag25
+	bag23 -- bag26
+	bag27 -- bag28
+	bag28 -- bag29
+	bag28 -- bag30
+	bag30 -- bag31
+	bag31 -- bag32
+	bag31 -- bag33
+	bag31 -- bag34
+
+}

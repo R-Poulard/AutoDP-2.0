@@ -1,0 +1,79 @@
+digraph G {
+    node [shape=box];
+    subgraph cluster0 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#8DD3C7";
+        H0_0 -> H0_5;
+        label="H0 (6-10-31-35) (diag)";
+    }
+    subgraph cluster1 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#FFFFB3";
+        H1_0 -> H1_7;
+        label="H1 (1-5-26-30) (diag)";
+    }
+    subgraph cluster2 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#BEBADA";
+        H2_0 -> H2_5;
+        label="H2 (16-20-41-45) (diag)";
+    }
+    subgraph cluster3 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#FB8072";
+        H3_0 -> H3_5;
+        label="H3 (21-25-46-50) (diag)";
+    }
+    subgraph cluster4 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#80B1D3";
+        H4_0 -> H4_7;
+        label="H4 (11-15-36-40) (diag)";
+    }
+     1 [shape=record,label= <{  <FONT COLOR="RED"><b>K</b></FONT> <b><FONT COLOR="DARKGREEN">a </FONT></b> <b><FONT COLOR="DARKGREEN">g </FONT></b> <b><FONT COLOR="DARKGREEN">j </FONT></b> <b><FONT COLOR="DARKGREEN">l </FONT></b> <b><FONT COLOR="DARKGREEN">q </FONT></b>}> ];
+     -1  ->  1;
+     10 [shape=record,label= <{  <FONT COLOR="RED"><b>L</b></FONT> <b><FONT COLOR="DARKGREEN">d </FONT></b> <b>g </b> <b>l </b> <b><FONT COLOR="DARKGREEN">n </FONT></b> <b>q </b>}> ];
+     1  ->  10;
+     11 [shape=record,label= <{  <FONT COLOR="RED"><b>M</b></FONT> <b>d </b> <b>l </b> <b><FONT COLOR="DARKGREEN">m </FONT></b> <b>n </b>}> ];
+     10  ->  11;
+     H0_0 [shape=record,label= <{  <FONT COLOR="RED"><b>N</b></FONT> <b>n </b> <b>d </b> <b>m </b> <b>c </b>| }> ];
+     11  ->  H0_0;
+     H0_5 [shape=record,label= <{ <b>c </b> <b>d </b> <b>m </b> <b>n </b>}> ];
+     18 [shape=record,label= <{  <FONT COLOR="RED"><b>O</b></FONT> <b>d </b> <b>g </b> <b>n </b> <b><FONT COLOR="DARKGREEN">p </FONT></b>}> ];
+     10  ->  18;
+     19 [shape=record,label= <{  <FONT COLOR="RED"><b>P</b></FONT> <b>d </b> <b><FONT COLOR="DARKGREEN">e </FONT></b> <b>g </b> <b>n </b>}> ];
+     18  ->  19;
+     H4_0 [shape=record,label= <{  <FONT COLOR="RED"><b>Q</b></FONT> <b>e </b>|  <b>g </b> <b>n </b>}> ];
+     19  ->  H4_0;
+     H4_7 [shape=record,label= <{  <FONT COLOR="RED"><b>R</b></FONT> <b>e </b> <b>p </b>|  <b>g </b> <b>n </b>}> ];
+     H1_0 [shape=record,label= <{  <FONT COLOR="RED"><b>S</b></FONT> <b>a </b> <b>l </b>|  <b>j </b>}> ];
+     1  ->  H1_0;
+     H1_7 [shape=record,label= <{  <FONT COLOR="RED"><b>T</b></FONT> <b>a </b> <b>l </b>|  <b>j </b>}> ];
+     28 [shape=record,label= <{  <FONT COLOR="RED"><b>U</b></FONT> <b>a </b> <b>g </b> <b><FONT COLOR="DARKGREEN">h </FONT></b> <b>j </b> <b>q </b>}> ];
+     1  ->  28;
+     H2_0 [shape=record,label= <{  <FONT COLOR="RED"><b>V</b></FONT> <b>q </b> <b>g </b> <b>h </b>| }> ];
+     28  ->  H2_0;
+     H2_5 [shape=record,label= <{  <FONT COLOR="RED"><b>W</b></FONT> <b>q </b> <b>h </b>| }> ];
+     35 [shape=record,label= <{  <FONT COLOR="RED"><b>X</b></FONT> <b>a </b> <b>h </b> <b><FONT COLOR="DARKGREEN">i </FONT></b> <b>j </b>}> ];
+     28  ->  35;
+     36 [shape=record,label= <{  <FONT COLOR="RED"><b>Y</b></FONT> <b>a </b> <b>i </b> <b>j </b> <b>h </b>}> ];
+     35  ->  36;
+     39 [shape=record,label= <{  <FONT COLOR="RED"><b>Z</b></FONT> <b>i </b> <b>j </b> <b>h </b> <b><FONT COLOR="DARKGREEN">s </FONT></b>}> ];
+     36  ->  39;
+     H3_0 [shape=record,label= <{  <FONT COLOR="RED"><b>BA</b></FONT> <b>i </b> <b>s </b> <b>j </b>| }> ];
+     39  ->  H3_0;
+     H3_5 [shape=record,label= <{  <FONT COLOR="RED"><b>BB</b></FONT> <b>s </b> <b>j </b>| }> ];
+     _1 [shape=record,label= <{  <FONT COLOR="RED"><b>BC</b></FONT>}> ];
+     36  ->  _1;
+    labels [shape=record,label= <{<b>a</b>=&#956;(1) | <b>l</b>=&#956;(5) | <b>c</b>=&#956;(6) | <b>d</b>=&#956;(10) | <b>e</b>=&#956;(11) | <b>p</b>=&#956;(15) | <b>g</b>=&#956;(16) | <b>h</b>=&#956;(20) | <b>i</b>=&#956;(21) | <b>j</b>=&#956;(25) | <b>a</b>=&#956;(26) | <b>l</b>=&#956;(30) | <b>m</b>=&#956;(31) | <b>n</b>=&#956;(35) | <b>e</b>=&#956;(36) | <b>p</b>=&#956;(40) | <b>q</b>=&#956;(41) | <b>h</b>=&#956;(45) | <b>s</b>=&#956;(46) | <b>j</b>=&#956;(50) | }> ];
+}

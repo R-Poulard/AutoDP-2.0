@@ -1,0 +1,277 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: -1
+Job counts:
+	count	jobs
+	1	all
+	8	band_diagram
+	8	band_diagram_latextopdf
+	8	c_compilation
+	8	colored_dbn
+	24	compact_dottopdf
+	8	compute_td
+	8	concatenation
+	8	decomposition_scheme
+	8	dot_process
+	8	extract_compact_tree
+	8	extract_compact_tree_letters
+	8	extract_elimination_ordering
+	8	extract_gr
+	8	extract_helices
+	8	extract_tree_equations
+	8	extremities_label
+	8	make_dot_file
+	8	pdflatex_dec
+	8	pdflatex_equations
+	8	process_helices
+	8	produce_c_code
+	8	produce_latex_equations
+	1	state_of_the_results
+	8	textopdf
+	8	unprocessed_from_td_to_dot
+	8	unprocessed_td
+	218
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/H2.dbn
+    output: results/helix_annotations/H2.helix
+    jobid: 115
+    wildcards: shadow=H2
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/M.dbn
+    output: results/gr_files/M.gr
+    jobid: 126
+    wildcards: shadow=M
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/K4.dbn
+    output: results/colored_dbn/band_diagram_K4.tex
+    jobid: 168
+    wildcards: family=K4
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+    jobid: 119
+    wildcards: shadow=C5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/H2.dbn
+    output: results/gr_files/H2.gr
+    jobid: 123
+    wildcards: shadow=H2
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/K5.dbn
+    output: results/colored_dbn/band_diagram_K5.tex
+    jobid: 169
+    wildcards: family=K5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/K.dbn
+    output: results/helix_annotations/K.helix
+    jobid: 116
+    wildcards: shadow=K
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/C5.dbn
+    output: results/gr_files/C5.gr
+    jobid: 127
+    wildcards: shadow=C5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/H.dbn
+    output: results/colored_dbn/band_diagram_H.tex
+    jobid: 162
+    wildcards: family=H
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/K4.dbn
+    output: results/helix_annotations/K4.helix
+    jobid: 120
+    wildcards: shadow=K4
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/K.dbn
+    output: results/gr_files/K.gr
+    jobid: 124
+    wildcards: shadow=K
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/H2.dbn
+    output: results/colored_dbn/band_diagram_H2.tex
+    jobid: 163
+    wildcards: family=H2
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/L.dbn
+    output: results/helix_annotations/L.helix
+    jobid: 117
+    wildcards: shadow=L
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/K4.dbn
+    output: results/gr_files/K4.gr
+    jobid: 128
+    wildcards: shadow=K4
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/K.dbn
+    output: results/colored_dbn/band_diagram_K.tex
+    jobid: 164
+    wildcards: family=K
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/K5.dbn
+    output: results/helix_annotations/K5.helix
+    jobid: 121
+    wildcards: shadow=K5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/L.dbn
+    output: results/gr_files/L.gr
+    jobid: 125
+    wildcards: shadow=L
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/L.dbn
+    output: results/colored_dbn/band_diagram_L.tex
+    jobid: 165
+    wildcards: family=L
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/H.dbn
+    output: results/helix_annotations/H.helix
+    jobid: 114
+    wildcards: shadow=H
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_helices:
+    input: resources/dbn_files/M.dbn
+    output: results/helix_annotations/M.helix
+    jobid: 118
+    wildcards: shadow=M
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/K5.dbn
+    output: results/gr_files/K5.gr
+    jobid: 129
+    wildcards: shadow=K5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/M.dbn
+    output: results/colored_dbn/band_diagram_M.tex
+    jobid: 166
+    wildcards: family=M
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule extract_gr:
+    input: resources/dbn_files/H.dbn
+    output: results/gr_files/H.gr
+    jobid: 122
+    wildcards: shadow=H
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:50:51 2024]
+rule band_diagram:
+    input: resources/dbn_files/C5.dbn
+    output: results/colored_dbn/band_diagram_C5.tex
+    jobid: 167
+    wildcards: family=C5
+
+Error submitting jobscript (exit code 127):
+
+Shutting down, this might take some time.
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /home/remipoul/pwb/auto-dp/.snakemake/log/2024-03-11T215051.628389.snakemake.log

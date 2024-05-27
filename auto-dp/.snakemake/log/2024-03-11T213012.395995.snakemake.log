@@ -1,0 +1,180 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: -1
+Job counts:
+	count	jobs
+	1	all
+	8	colored_dbn
+	8	compute_td
+	8	extract_gr
+	8	extract_helices
+	8	extremities_label
+	8	pdflatex_equations
+	8	process_helices
+	8	produce_latex_equations
+	1	state_of_the_results
+	8	textopdf
+	74
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/M.dbn
+    output: results/helix_annotations/M.helix
+    jobid: 32
+    wildcards: shadow=M
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/H.dbn
+    output: results/helix_annotations/H.helix
+    jobid: 20
+    wildcards: shadow=H
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/L.dbn
+    output: results/helix_annotations/L.helix
+    jobid: 29
+    wildcards: shadow=L
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/K5.dbn
+    output: results/helix_annotations/K5.helix
+    jobid: 41
+    wildcards: shadow=K5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/H.dbn
+    output: results/gr_files/H.gr
+    jobid: 59
+    wildcards: shadow=H
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/H2.dbn
+    output: results/gr_files/H2.gr
+    jobid: 61
+    wildcards: shadow=H2
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/M.dbn
+    output: results/gr_files/M.gr
+    jobid: 67
+    wildcards: shadow=M
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/C5.dbn
+    output: results/gr_files/C5.gr
+    jobid: 69
+    wildcards: shadow=C5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/K.dbn
+    output: results/helix_annotations/K.helix
+    jobid: 26
+    wildcards: shadow=K
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/H2.dbn
+    output: results/helix_annotations/H2.helix
+    jobid: 23
+    wildcards: shadow=H2
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+    jobid: 35
+    wildcards: shadow=C5
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_helices:
+    input: resources/dbn_files/K4.dbn
+    output: results/helix_annotations/K4.helix
+    jobid: 38
+    wildcards: shadow=K4
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/K.dbn
+    output: results/gr_files/K.gr
+    jobid: 63
+    wildcards: shadow=K
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/L.dbn
+    output: results/gr_files/L.gr
+    jobid: 65
+    wildcards: shadow=L
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/K4.dbn
+    output: results/gr_files/K4.gr
+    jobid: 71
+    wildcards: shadow=K4
+
+Error submitting jobscript (exit code 127):
+
+
+[Mon Mar 11 21:30:12 2024]
+rule extract_gr:
+    input: resources/dbn_files/K5.dbn
+    output: results/gr_files/K5.gr
+    jobid: 73
+    wildcards: shadow=K5
+
+Error submitting jobscript (exit code 127):
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/remipoul/pwb/auto-dp/.snakemake/log/2024-03-11T213012.395995.snakemake.log

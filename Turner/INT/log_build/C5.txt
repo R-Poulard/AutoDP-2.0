@@ -1,0 +1,102 @@
+label H0 ['21', '25', '36', '40']
+label H1 ['11', '15', '26', '30']
+label H2 ['31', '35', '46', '50']
+label H3 ['6', '10', '41', '45']
+label H4 ['1', '5', '16', '20']
+16
+['1', '5']
+inward??? True
+37
+38
+H2_0 ended
+36
+1
+26
+28
+29
+H0_0 ended
+H4_0
+H4_7
+6
+16
+H1_0 ended
+7
+10
+11
+H3_0 ended
+iciiiiiiiiiiiiiii H2_0 <autodp.equation_classes.CliqueCaseHelix object at 0x7f9aefcb9c10> BagType.CLIQUE
+condition       if(!evaluate(m,t-1)||!evaluate(n-1,s)){continue;}
+nooo BagType.CLIQUE 0
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n']
+iciiiiiiiiiiiiiii H0_0 <autodp.equation_classes.CliqueCaseHelix object at 0x7f9aefcb9a90> BagType.CLIQUE
+condition       if(!evaluate(i,p-1)||!evaluate(j-1,o)){continue;}
+nooo BagType.CLIQUE 0
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n']
+iciiiiiiiiiiiiiii 29 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb9990> BagType.TRANSITIONAL
+condition 
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n']
+iciiiiiiiiiiiiiii 28 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb98d0> BagType.TRANSITIONAL
+condition 
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n']
+iciiiiiiiiiiiiiii H1_0 <autodp.equation_classes.CliqueCaseHelix object at 0x7f9aefcb9790> BagType.CLIQUE
+condition       if(!evaluate(e,l-1)||!evaluate(f-1,k)){continue;}
+nooo BagType.CLIQUE 0
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n']
+iciiiiiiiiiiiiiii H3_0 <autodp.equation_classes.CliqueCaseHelix object at 0x7f9aefcb94d0> BagType.CLIQUE
+condition       if(!evaluate(c,r-1)||!evaluate(d-1,q)){continue;}
+nooo BagType.CLIQUE 0
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n', 'int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;\n', 'void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;\n']
+iciiiiiiiiiiiiiii 11 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb8710> BagType.TRANSITIONAL
+condition 
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n', 'int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;\n', 'void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;\n', 'int compute_G(HashTable *hashTable,int c,int e,int p,int r) ;\n', 'void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) ;\n']
+iciiiiiiiiiiiiiii 10 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb9510> BagType.TRANSITIONAL
+condition 
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n', 'int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;\n', 'void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;\n', 'int compute_G(HashTable *hashTable,int c,int e,int p,int r) ;\n', 'void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) ;\n', 'int compute_F(HashTable *hashTable,int b,int e,int p,int r) ;\n', 'void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) ;\n']
+iciiiiiiiiiiiiiii 16 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb96d0> BagType.TRANSITIONAL
+iciiiiiiiiiiiiiii 7 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb95d0> BagType.TRANSITIONAL
+condition 
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n', 'int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;\n', 'void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;\n', 'int compute_G(HashTable *hashTable,int c,int e,int p,int r) ;\n', 'void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) ;\n', 'int compute_F(HashTable *hashTable,int b,int e,int p,int r) ;\n', 'void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) ;\n', 'int compute_E(HashTable *hashTable,int b,int g,int k,int l,int p,int r) ;\n', 'void backtrace_E(HashTable *hashTable,int score,int b,int g,int k,int l,int p,int r) ;\n']
+res  INT_MAX INT_MIN
+3
+res  INT_MAX  INT_MIN 
+iciiiiiiiiiiiiiii 26 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb9810> BagType.TRANSITIONAL
+iciiiiiiiiiiiiiii H4_7 <autodp.equation_classes.DiagCaseHelix object at 0x7f9aefccd010> BagType.DIAG_SECOND
+condition               if(!evaluate(a,h-1)){continue;}
+nooo BagType.DIAG_SECOND 2
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n', 'int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;\n', 'void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;\n', 'int compute_G(HashTable *hashTable,int c,int e,int p,int r) ;\n', 'void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) ;\n', 'int compute_F(HashTable *hashTable,int b,int e,int p,int r) ;\n', 'void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) ;\n', 'int compute_E(HashTable *hashTable,int b,int g,int k,int l,int p,int r) ;\n', 'void backtrace_E(HashTable *hashTable,int score,int b,int g,int k,int l,int p,int r) ;\n', 'int compute_D0(HashTable *hashTable,int a, int h, int k,int l,int p,int r);\n', 'int compute_D1(HashTable *hashTable,int a, int h, int k,int l,int p,int r);\n', 'void backtrace_D0(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;\n', 'void backtrace_D1(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;\n', 'int compute_C(HashTable *hashTable,int a,int l,int n,int r) ;\n', 'void backtrace_C(HashTable *hashTable,int score,int a,int l,int n,int r) ;\n']
+iciiiiiiiiiiiiiii 1 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefccebd0> BagType.TRANSITIONAL
+condition 
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n', 'int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;\n', 'void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;\n', 'int compute_G(HashTable *hashTable,int c,int e,int p,int r) ;\n', 'void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) ;\n', 'int compute_F(HashTable *hashTable,int b,int e,int p,int r) ;\n', 'void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) ;\n', 'int compute_E(HashTable *hashTable,int b,int g,int k,int l,int p,int r) ;\n', 'void backtrace_E(HashTable *hashTable,int score,int b,int g,int k,int l,int p,int r) ;\n', 'int compute_D0(HashTable *hashTable,int a, int h, int k,int l,int p,int r);\n', 'int compute_D1(HashTable *hashTable,int a, int h, int k,int l,int p,int r);\n', 'void backtrace_D0(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;\n', 'void backtrace_D1(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;\n', 'int compute_C(HashTable *hashTable,int a,int l,int n,int r) ;\n', 'void backtrace_C(HashTable *hashTable,int score,int a,int l,int n,int r) ;\n', 'int compute_B(HashTable *hashTable,int a,int m,int n,int r) ;\n', 'void backtrace_B(HashTable *hashTable,int score,int a,int m,int n,int r) ;\n']
+iciiiiiiiiiiiiiii 38 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcb9b50> BagType.TRANSITIONAL
+iciiiiiiiiiiiiiii 36 <autodp.equation_classes.TransitionalEquation object at 0x7f9aefcce210> BagType.TRANSITIONAL
+condition 
+['//declarations', 'int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;\n', 'void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;\n', 'int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;\n', 'void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;\n', 'int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;\n', 'void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;\n', 'int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;\n', 'void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;\n', 'int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;\n', 'void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;\n', 'int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;\n', 'void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;\n', 'int compute_G(HashTable *hashTable,int c,int e,int p,int r) ;\n', 'void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) ;\n', 'int compute_F(HashTable *hashTable,int b,int e,int p,int r) ;\n', 'void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) ;\n', 'int compute_E(HashTable *hashTable,int b,int g,int k,int l,int p,int r) ;\n', 'void backtrace_E(HashTable *hashTable,int score,int b,int g,int k,int l,int p,int r) ;\n', 'int compute_D0(HashTable *hashTable,int a, int h, int k,int l,int p,int r);\n', 'int compute_D1(HashTable *hashTable,int a, int h, int k,int l,int p,int r);\n', 'void backtrace_D0(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;\n', 'void backtrace_D1(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;\n', 'int compute_C(HashTable *hashTable,int a,int l,int n,int r) ;\n', 'void backtrace_C(HashTable *hashTable,int score,int a,int l,int n,int r) ;\n', 'int compute_B(HashTable *hashTable,int a,int m,int n,int r) ;\n', 'void backtrace_B(HashTable *hashTable,int score,int a,int m,int n,int r) ;\n', 'int compute_A(HashTable *hashTable,int a,int t) ;\n', 'void backtrace_A(HashTable *hashTable,int score,int a,int t) ;\n']
+iciiii ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'] 9
+/home/remipoul/pwb/Turner/INT/C5.c: In function ‘main’:
+/home/remipoul/pwb/Turner/INT/C5.c:509:27: warning: passing argument 2 of ‘getline’ from incompatible pointer type [-Wincompatible-pointer-types]
+  509 |         len=getline(&line,&b_len, fp);
+      |                           ^~~~~~
+      |                           |
+      |                           int *
+In file included from /home/remipoul/pwb/Turner/INT/C5.c:1:
+/usr/include/stdio.h:617:46: note: expected ‘size_t * restrict’ {aka ‘long unsigned int * restrict’} but argument is of type ‘int *’
+  617 |                           size_t *__restrict __n,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+/home/remipoul/pwb/Turner/INT/C5.c:531:25: warning: passing argument 2 of ‘getline’ from incompatible pointer type [-Wincompatible-pointer-types]
+  531 |         len=getline(&ss,&b_len, fp);
+      |                         ^~~~~~
+      |                         |
+      |                         int *
+In file included from /home/remipoul/pwb/Turner/INT/C5.c:1:
+/usr/include/stdio.h:617:46: note: expected ‘size_t * restrict’ {aka ‘long unsigned int * restrict’} but argument is of type ‘int *’
+  617 |                           size_t *__restrict __n,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+/home/remipoul/pwb/Turner/INT/C5.c:534:36: warning: passing argument 2 of ‘getline’ from incompatible pointer type [-Wincompatible-pointer-types]
+  534 |         len=getline(&correct_score,&b_len, fp);
+      |                                    ^~~~~~
+      |                                    |
+      |                                    int *
+In file included from /home/remipoul/pwb/Turner/INT/C5.c:1:
+/usr/include/stdio.h:617:46: note: expected ‘size_t * restrict’ {aka ‘long unsigned int * restrict’} but argument is of type ‘int *’
+  617 |                           size_t *__restrict __n,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
