@@ -1,0 +1,2002 @@
+File name: /home/remipoul/pwb/test_sequence/example_M_little.txt
+Test: 1 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+..C..BBA.AcD.b.ba.ad
+Test: 2 Size of the Sequence: 21 ---Score -4.40 (backtrack impurty= 0)
+C.CB.A.Ac.cDD.b.aad.d
+Test: 3 Size of the Sequence: 20 ---Score -5.80 (backtrack impurty= 0)
+.C.B.Ac.DD.Dbad.dd..
+Test: 4 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CB...A.AcD....b.aad..
+Test: 5 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+.C.B..A.A.c..D.ba.ad
+Test: 6 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+C..BBAcDDD.bbad.d.d..
+Test: 7 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CB.B...A..c..DDbbadd
+Test: 8 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C.CB.Ac.c.Dbad......
+Test: 9 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CB.AAc..D....b.a.a..d
+Test: 10 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C...B.B.Ac.D.bb.ad.
+Test: 11 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+.CBAc.DD......b.ad.d
+Test: 12 Size of the Sequence: 21 ---Score -0.90 (backtrack impurty= 0)
+CBA..cDD..b..ad.d....
+Test: 13 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+.CCBB..Ac.cDb.bad...
+Test: 14 Size of the Sequence: 20 ---Score -1.30 (backtrack impurty= 0)
+C..B.BA....c.Db.ba.d
+Test: 15 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CB..AAc.D...b..aad.
+Test: 16 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CB.B.AA.AcDbba.a.ad..
+Test: 17 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+.C...B.BAc.D..b.ba.d.
+Test: 18 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.CB.BAc.D.Dbb..a..dd
+Test: 19 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+C.CB.BAccDb.b...a..d
+Test: 20 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+CB.A.AA.c..D..baa.ad.
+Test: 21 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+.CC.B.A....c.cDDbadd
+Test: 22 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CB.A.Ac.DD.baa...d.d
+Test: 23 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+CBAA.cD.D...ba.a.d.d
+Test: 24 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.CB.A..c...D.b..ad..
+Test: 25 Size of the Sequence: 21 ---Score -3.60 (backtrack impurty= 0)
+C.BA..cDDDbad.d.d....
+Test: 26 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+.CBAA.c.D.Dbaa...d.d
+Test: 27 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+C..B.B.AcD.Dbb.a..dd
+Test: 28 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+....CCBA..c.cDDbadd.
+Test: 29 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CBA.AA.c.D..b..aaad.
+Test: 30 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.C...BA.A.cD.Dbaa.dd
+Test: 31 Size of the Sequence: 21 ---Score -4.70 (backtrack impurty= 0)
+..CB.B..A..cDDbb..add
+Test: 32 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+CBA.Ac....Db.a.ad....
+Test: 33 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CBB...Ac.D.D.b.bad.d
+Test: 34 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+.CCBB.Ac.cDDbb.a.dd.
+Test: 35 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.CB.B.A..c.c.Dbba.d
+Test: 36 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.CB.A.cc....DDb.add
+Test: 37 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+.CB.A.AcD.Dba.a.d.d.
+Test: 38 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.CB....Ac.D.D..bad.d
+Test: 39 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+.C.CBA.Ac.c.DDba.add
+Test: 40 Size of the Sequence: 20 ---Score -3.80 (backtrack impurty= 0)
+.CB...AA.AcD.ba.a.ad
+Test: 41 Size of the Sequence: 20 ---Score -5.10 (backtrack impurty= 0)
+C...BBA.AcDD.bba.add
+Test: 42 Size of the Sequence: 21 ---Score -5.00 (backtrack impurty= 0)
+C.CCB..Ac.ccD.D.bad.d
+Test: 43 Size of the Sequence: 21 ---Score -7.50 (backtrack impurty= 0)
+.C.BBA.A.cDDbb..aad.d
+Test: 44 Size of the Sequence: 20 ---Score -3.20 (backtrack impurty= 0)
+.C.B.B.A.AcDDbbaa.dd
+Test: 45 Size of the Sequence: 21 ---Score -7.90 (backtrack impurty= 0)
+C..B.BB.BA.cD.bbb.bad
+Test: 46 Size of the Sequence: 21 ---Score -2.70 (backtrack impurty= 0)
+CC.B.AAc.c..Dba.a.d..
+Test: 47 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CC.C.BAc.c.c..Dba...d
+Test: 48 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+C...BAc.....DDba..dd
+Test: 49 Size of the Sequence: 21 ---Score -3.10 (backtrack impurty= 0)
+CB.B.AA...cDb.ba.a..d
+Test: 50 Size of the Sequence: 21 ---Score -9.00 (backtrack impurty= 0)
+CBB..AAc.D.Dbb.aa.d.d
+Test: 51 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CCB....A...c.c.Dbad.
+Test: 52 Size of the Sequence: 21 ---Score -4.30 (backtrack impurty= 0)
+...CBA..c..D.DDbadd.d
+Test: 53 Size of the Sequence: 21 ---Score 0.00 (backtrack impurty= 0)
+CB...A..c...D.ba...d.
+Test: 54 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB.Ac...Db..a..d....
+Test: 55 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+..CBBA.A.cDb.b..aa.d
+Test: 56 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.BA.cD.DDbadd.d....
+Test: 57 Size of the Sequence: 20 ---Score -5.60 (backtrack impurty= 0)
+.C.C.CBAAccc.Db.a.ad
+Test: 58 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CCBA.A.c.c.Dbaa...d.
+Test: 59 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CB..Ac..DDb.a.d.d....
+Test: 60 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+CB.B.AA.AcD.bbaa.ad..
+Test: 61 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+C.C.C...BAcccDbad...
+Test: 62 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+C.C..BAA..ccDb.a.a.d
+Test: 63 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+....CBA.AcDb.a.a.d..
+Test: 64 Size of the Sequence: 20 ---Score -6.10 (backtrack impurty= 0)
+.CBBBAcDDb.b.bad.d..
+Test: 65 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+C..B..AA.AcDb.aa.ad.
+Test: 66 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.C.BA...c.c.DD.badd
+Test: 67 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+C.B.BAcD......bb..ad
+Test: 68 Size of the Sequence: 20 ---Score -4.00 (backtrack impurty= 0)
+.C.CBAc.c.D.Dba.d.d.
+Test: 69 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+CBB..A.c.DDDbb.ad.dd
+Test: 70 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+CB...A.A.c.Db.a.a..d
+Test: 71 Size of the Sequence: 21 ---Score -4.40 (backtrack impurty= 0)
+C.B.B.BA.Ac.Db.bb.aad
+Test: 72 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+...C....B.BAcDb.ba.d
+Test: 73 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.C..BA.c.Db.a..d....
+Test: 74 Size of the Sequence: 21 ---Score -3.20 (backtrack impurty= 0)
+C.B.BA.cD.Db.b..ad.d.
+Test: 75 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CB.A.AcD.D.Db.aadd.d
+Test: 76 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+C..BAAcD..ba.a..d...
+Test: 77 Size of the Sequence: 21 ---Score -5.60 (backtrack impurty= 0)
+CB.B.A.Ac.DD.b.baad.d
+Test: 78 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+.CC.CBA.cc.cD....bad
+Test: 79 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+CBA.A..cD.D.b.aa.d.d
+Test: 80 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+C.B.B...AcD.Dbbad.d.
+Test: 81 Size of the Sequence: 21 ---Score -10.10 (backtrack impurty= 0)
+CB.BB.AAAcDbb.ba.aa.d
+Test: 82 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C....BA.AcDbaa....d.
+Test: 83 Size of the Sequence: 20 ---Score -5.60 (backtrack impurty= 0)
+C.B.BA.A.cDDbbaa.d.d
+Test: 84 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+CBBAA.cD.D.b.ba.ad.d
+Test: 85 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+.C.CB.AAc.cD.ba.a.d.
+Test: 86 Size of the Sequence: 21 ---Score -7.50 (backtrack impurty= 0)
+CBA.AA.cD.D.baaadd...
+Test: 87 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+...CB.BAcDDb.b..add.
+Test: 88 Size of the Sequence: 21 ---Score -5.10 (backtrack impurty= 0)
+CC..B.B.Ac.c.DDbba.dd
+Test: 89 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CCB....A.c.c.D..b..ad
+Test: 90 Size of the Sequence: 20 ---Score -4.00 (backtrack impurty= 0)
+C.CB.BA...c.cD.bba.d
+Test: 91 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CB.A.AcDD.....baad.d.
+Test: 92 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+CB.....A..c..DDba.dd
+Test: 93 Size of the Sequence: 21 ---Score -5.80 (backtrack impurty= 0)
+.CB...Ac...DD.Dbad.dd
+Test: 94 Size of the Sequence: 20 ---Score -5.20 (backtrack impurty= 0)
+C.CBBA..c.cDDbb.a.dd
+Test: 95 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB....AcD.b..ad(...)
+Test: 96 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C....B...A.AcDb.aad.
+Test: 97 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+C.C.BA.A.cc..Dba.ad.
+Test: 98 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CBA.c.D.Dbadd.......
+Test: 99 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CC.BB.Ac.cDDbb..ad.d
+Test: 100 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+C.B.BAc.D.D.bb.a.d.d
+Test: 101 Size of the Sequence: 20 ---Score -5.30 (backtrack impurty= 0)
+C.CBA.A.ccD.Db.a.add
+Test: 102 Size of the Sequence: 20 ---Score -5.60 (backtrack impurty= 0)
+C.C.BB.Ac.cDDb.bad.d
+Test: 103 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CB.BB.A..cD.bbbad...
+Test: 104 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+.CB..A...c...DDba.dd
+Test: 105 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+CC.B.BAc.cD...bb.ad.
+Test: 106 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+.C.C.B.AAc.cD...ba.ad
+Test: 107 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+CB.BA...cDDbba....dd
+Test: 108 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+.C.CCBAc.c.cDb..a..d
+Test: 109 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C...B..A.AcD.b..aad.
+Test: 110 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C.BBAc...D.b.b.a....d
+Test: 111 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+.C.C.CBAcc.c.D.bad..
+Test: 112 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CBA.....c.Db.ad.....
+Test: 113 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+CB.B.AAc.DDbb...aadd
+Test: 114 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+.CB..A.A.cD.Dbaa.d.d
+Test: 115 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+CB..A.AAcD.b.a.aad..
+Test: 116 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+C..B.B.AAcDbb.aad...
+Test: 117 Size of the Sequence: 20 ---Score -5.10 (backtrack impurty= 0)
+..C.BBBA..cDDb.bbadd
+Test: 118 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+.CB..A.AcD.Db.aad.d.
+Test: 119 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+.C.CB.A.c.cD..b.ad..
+Test: 120 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+.C.CB.B..AccDbb.ad...
+Test: 121 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.C.CB...Accc...Dbad
+Test: 122 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+.CCBAc.cDD.b.a...d.d
+Test: 123 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CCB.A....cc.Dbad....
+Test: 124 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBAA..c.D.D.b..aa.dd
+Test: 125 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CB.B.BAc..D...bbbad.
+Test: 126 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+C.CBA.A.c.c.D.b.aa.d
+Test: 127 Size of the Sequence: 21 ---Score -4.50 (backtrack impurty= 0)
+..CB.BAAc.DD.bba.ad.d
+Test: 128 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB.A....c..D.ba..d..
+Test: 129 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+.CB.A.AcDD.baa.dd...
+Test: 130 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+CCBAA.c.c..DDba.a.dd
+Test: 131 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CBAcDD.Dba..ddd......
+Test: 132 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CBBB.AcD.b.b.b.a..d..
+Test: 133 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+CBAA.Ac..Db..a.aa..d
+Test: 134 Size of the Sequence: 21 ---Score -8.80 (backtrack impurty= 0)
+.CCBBAc.cD.Dbb.a..d.d
+Test: 135 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+.C.CB.BAcc.D.bba.d..
+Test: 136 Size of the Sequence: 21 ---Score -2.20 (backtrack impurty= 0)
+C.CB.....A.c.cDba..d.
+Test: 137 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CB..A.c.DD.D.bad.d.d
+Test: 138 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.BB..A.c.D.b.bad...
+Test: 139 Size of the Sequence: 20 ---Score -3.80 (backtrack impurty= 0)
+C...BA.Ac.DDb.aa..dd
+Test: 140 Size of the Sequence: 21 ---Score -5.90 (backtrack impurty= 0)
+CBBBAcD.D.b.bb..a.d.d
+Test: 141 Size of the Sequence: 20 ---Score -9.90 (backtrack impurty= 0)
+C..BBAA.AcD.bb.aaad.
+Test: 142 Size of the Sequence: 20 ---Score -2.80 (backtrack impurty= 0)
+.CB.A.Ac..DDbaa.d.d.
+Test: 143 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+...CB..A.AAcDbaaad..
+Test: 144 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBA.......c.DD.bad.d
+Test: 145 Size of the Sequence: 21 ---Score -6.50 (backtrack impurty= 0)
+C.CCBBA.c.ccDD.bbadd.
+Test: 146 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CC.B.B..Acc..Dbba.d..
+Test: 147 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+C.CB..A.A.c.c.Db.aad
+Test: 148 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CCBAc.cDD...b.a.d.d.
+Test: 149 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB...AA.cDb....aa.d.
+Test: 150 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CB.B....AcDDbb.ad.d.
+Test: 151 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBB.A.c..Db.ba....d.
+Test: 152 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+..C..BBA.Ac.Db.baad..
+Test: 153 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+CC.BA....c.c.Db.a..d
+Test: 154 Size of the Sequence: 21 ---Score -3.00 (backtrack impurty= 0)
+..C.C.BAA..cc.Dba.ad.
+Test: 155 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C.BBAc...D.bb..ad..
+Test: 156 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+C.BAA.c.D.D...ba.add.
+Test: 157 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+C...BB.B.Ac.Dbb.b.ad
+Test: 158 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+C.CBA......c.cDDbadd
+Test: 159 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+CB...Ac..D.D.b.ad.d.
+Test: 160 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+..CB.A.Ac..D.b.a.a.d
+Test: 161 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.C..B.BA.AcDbbaa..d.
+Test: 162 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+CC.CB...A.c.c.cDbad.
+Test: 163 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+.CB.BAA...cDDbba.add
+Test: 164 Size of the Sequence: 20 ---Score -6.20 (backtrack impurty= 0)
+CB.BBAA..c.Dbbba.ad.
+Test: 165 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+C.B.AAAc.....Dbaa.ad.
+Test: 166 Size of the Sequence: 21 ---Score -4.00 (backtrack impurty= 0)
+CBB.AA..cD.D.b.baad.d
+Test: 167 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+..CB.BA..cD.D.bbadd.
+Test: 168 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+.CBBAcDD.bb.....a.dd
+Test: 169 Size of the Sequence: 21 ---Score -5.80 (backtrack impurty= 0)
+...CB.A.AcD.Dba.a.d.d
+Test: 170 Size of the Sequence: 20 ---Score -4.40 (backtrack impurty= 0)
+CBB.BA.cD.b.bb..a..d
+Test: 171 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+CBB....AcDDb.bad.d..
+Test: 172 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CBBA.c....DDbba...dd
+Test: 173 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CBBA.Ac..D..b.b.aa.d
+Test: 174 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+.C.BBA..cD..b.b...ad
+Test: 175 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB.A.c.....DDbad.d..
+Test: 176 Size of the Sequence: 21 ---Score -3.40 (backtrack impurty= 0)
+C.BA.c...D.D.ba..d.d.
+Test: 177 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+.CB.B.BAcDDb.bba.dd.
+Test: 178 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+C..B.BAc..Dbb.ad....
+Test: 179 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+.CC.B.A.Ac.cDb.aa.d.
+Test: 180 Size of the Sequence: 20 ---Score -4.30 (backtrack impurty= 0)
+C..BA.A.cD.Db.a.ad.d
+Test: 181 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+.CB.BAcD..b.b.ad....
+Test: 182 Size of the Sequence: 20 ---Score -3.10 (backtrack impurty= 0)
+CB.BA.Ac.D...b.baad.
+Test: 183 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.B.B.AAc...Dbb..aad
+Test: 184 Size of the Sequence: 21 ---Score -3.40 (backtrack impurty= 0)
+CB...A..c..D.D.ba.d.d
+Test: 185 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+..CBBA.AcD.b.ba.a.d.
+Test: 186 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+C.C.BB.A.A.ccDbbaad.
+Test: 187 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.BA.c...DDba...dd..
+Test: 188 Size of the Sequence: 20 ---Score -7.20 (backtrack impurty= 0)
+C.C.CBA.Acc.cDb..aad
+Test: 189 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CCBA..c.cDDba..d.d..
+Test: 190 Size of the Sequence: 20 ---Score -4.40 (backtrack impurty= 0)
+C.C.C.BAc.c.cDDbadd.
+Test: 191 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CCBAc.c..Dba....d..
+Test: 192 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CB..A.A..cD..baa.d..
+Test: 193 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.CBBAAc.Db.ba.a...d.
+Test: 194 Size of the Sequence: 20 ---Score -3.10 (backtrack impurty= 0)
+.CCBA.c.c.D.Db.a.d.d
+Test: 195 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+.CB.BAc..Dbba....d..
+Test: 196 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.CCBA...c.c..DDbad.d
+Test: 197 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+.CB..A.Ac....Dba.ad.
+Test: 198 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CBBA....cD.Db.bad.d..
+Test: 199 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+C.CB.BBAcc.Db.bb.ad..
+Test: 200 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CBAA..cD.Dba.add.....
+Test: 201 Size of the Sequence: 21 ---Score -6.70 (backtrack impurty= 0)
+.C.BB.A.Ac.Dbb.a.a..d
+Test: 202 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+CBB...Ac..DDbb.a.d.d.
+Test: 203 Size of the Sequence: 21 ---Score -1.50 (backtrack impurty= 0)
+.CB.B.BA..cDbbb.ad...
+Test: 204 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+..C.B.AcD.D..ba.d.d.
+Test: 205 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CB.BA.AcD.b.b..aa..d
+Test: 206 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+C.B.AA.AcD.b.a.aa.d.
+Test: 207 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C...BBAcDb.bad.....
+Test: 208 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+.C.BBBA.cDDb.bba.dd..
+Test: 209 Size of the Sequence: 21 ---Score -7.10 (backtrack impurty= 0)
+C.CBB.Acc.DD.bb..ad.d
+Test: 210 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CBAA.cD.D.D..ba.add.d
+Test: 211 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+C.CBBAA..c.cDbb.aad.
+Test: 212 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+.C.CBA.cc..Db.....ad
+Test: 213 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C...BAc....D.D..badd
+Test: 214 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.B...Ac.DD.ba.d.d..
+Test: 215 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.C.BAA.cDDb..a.add..
+Test: 216 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CB.BB.A.cD.bbba....d
+Test: 217 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+..C.B.B.AAc.Dbb.a.ad
+Test: 218 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C...BAA...c....Dba.ad
+Test: 219 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CB..AAc.D....baa.d...
+Test: 220 Size of the Sequence: 20 ---Score -1.30 (backtrack impurty= 0)
+CBA.A..c.D.ba.a..d..
+Test: 221 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.CB.B.A.c.cDb.ba.d.
+Test: 222 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CB.BA.c.DDbb.a..d.d.
+Test: 223 Size of the Sequence: 20 ---Score -5.60 (backtrack impurty= 0)
+CCB.BAA..c.cDbb.a.ad
+Test: 224 Size of the Sequence: 20 ---Score -2.80 (backtrack impurty= 0)
+.CBBA.cD.D.b.b.a.dd.
+Test: 225 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+C.B.A.A.AcD.ba.a.a.d
+Test: 226 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+CB.BBAcD.D.b.bbad.d.
+Test: 227 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+C..B.B.BA..cD.bbb.ad
+Test: 228 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CBB...A.AcDb.b.aad..
+Test: 229 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.....CCBAAccD.ba.ad.
+Test: 230 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+C.B.BAc.Db.b.a....d.
+Test: 231 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+.CCB..Ac.c.DD..b.a.dd
+Test: 232 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+..C.C.BBA..ccDb.bad.
+Test: 233 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB..AcDDb.....a..dd.
+Test: 234 Size of the Sequence: 21 ---Score -4.30 (backtrack impurty= 0)
+C..BBA.AcD...b.b.a.ad
+Test: 235 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+.CB..A.A.cDDba.ad.d.
+Test: 236 Size of the Sequence: 20 ---Score -2.80 (backtrack impurty= 0)
+CB.AAc.DD.ba.a.d.d..
+Test: 237 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB..A.AcD.b.aa...d..
+Test: 238 Size of the Sequence: 21 ---Score -4.50 (backtrack impurty= 0)
+CB.BAAc.D.D..bba.ad.d
+Test: 239 Size of the Sequence: 21 ---Score -4.30 (backtrack impurty= 0)
+C.C.BA.A...c.c.Dba.ad
+Test: 240 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.CCB.BA.A.c.c.Dbbaad
+Test: 241 Size of the Sequence: 21 ---Score -0.90 (backtrack impurty= 0)
+C.C..B....A..ccDb.ad.
+Test: 242 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+...C.BA.A.cDba.ad...
+Test: 243 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CB.....AAAc.Db.aa.ad
+Test: 244 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBB.AAc..D..bb.aad..
+Test: 245 Size of the Sequence: 21 ---Score -2.30 (backtrack impurty= 0)
+.CCB.Ac.c..D.Db..a.dd
+Test: 246 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C..BAcD.D.D.ba..d.dd
+Test: 247 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+CBB.A...c...D.b.ba.d
+Test: 248 Size of the Sequence: 20 ---Score -6.80 (backtrack impurty= 0)
+CBB.A.Ac.D.Dbbaad.d.
+Test: 249 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.CB.BAc....D.Dbbad.d
+Test: 250 Size of the Sequence: 21 ---Score -8.00 (backtrack impurty= 0)
+CCB..AA.c.cDDb.a.ad.d
+Test: 251 Size of the Sequence: 21 ---Score -4.70 (backtrack impurty= 0)
+C.CBAA.ccD.b...aad...
+Test: 252 Size of the Sequence: 20 ---Score -8.70 (backtrack impurty= 0)
+C.CBBAccD.Dbb..ad.d.
+Test: 253 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C..BB.BAcDbbba.d....
+Test: 254 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+.C.B.B.BAc..Dbbbad..
+Test: 255 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.C.BAA.AccDb.aa.a.d
+Test: 256 Size of the Sequence: 21 ---Score -8.60 (backtrack impurty= 0)
+CCBBBBA.c.cD.bbbba.d.
+Test: 257 Size of the Sequence: 21 ---Score -3.00 (backtrack impurty= 0)
+..C.C..BBAccDb.b...ad
+Test: 258 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+CC.B.BAA.ccDb.ba.ad.
+Test: 259 Size of the Sequence: 20 ---Score -4.30 (backtrack impurty= 0)
+C.CBAc.c..DDDb.ad.dd
+Test: 260 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CCBAc.c.D.b.....a..d
+Test: 261 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+.C.C..B.BAAccDbb.aad
+Test: 262 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+C.CCBA..c.ccDb.a..d.
+Test: 263 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+...CB..A.AcD.Dbaa.dd
+Test: 264 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+..C.B.B.AAcD.b.ba.ad
+Test: 265 Size of the Sequence: 21 ---Score -9.90 (backtrack impurty= 0)
+.CC.C..BAcc.cDDbadd..
+Test: 266 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+C.CB...Ac.cDb.a..d..
+Test: 267 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+..CC.B.A.Ac.cDb.aad.
+Test: 268 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+CBB..A.AAc.Dbba.aa.d
+Test: 269 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+...C.CBAccD...b..ad.
+Test: 270 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+...CBA.A.c.DDb..aadd.
+Test: 271 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CCBAc.c..Dba.....d.
+Test: 272 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C...BAA.c...DDbaa.dd
+Test: 273 Size of the Sequence: 21 ---Score -4.30 (backtrack impurty= 0)
+......C.CBBAc.cDb.bad
+Test: 274 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+.CC.C.BA..cc.cD..bad
+Test: 275 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+C.B...A.AA.cDba.a.ad
+Test: 276 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CB....A.A..c.Dba.ad.
+Test: 277 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.CB..AcD..b.ad......
+Test: 278 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+.....CCBAc.cD.ba..d..
+Test: 279 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+.C.BBAc..DD.bba...dd.
+Test: 280 Size of the Sequence: 21 ---Score -3.80 (backtrack impurty= 0)
+CB..A..c.DDD.b.ad.dd.
+Test: 281 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.CB....Ac....Dbad...
+Test: 282 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+C.CBAAc.c.D.b...aa.d
+Test: 283 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+.CB....Ac...DDb.ad.d
+Test: 284 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+CCB..AAc.c.DDba.ad.d
+Test: 285 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+CB...A.A.cDDDb..aaddd
+Test: 286 Size of the Sequence: 20 ---Score -8.50 (backtrack impurty= 0)
+CBA.c.DD.D.DDbaddddd
+Test: 287 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+CBA.Ac...D.D.ba.a.dd
+Test: 288 Size of the Sequence: 20 ---Score -5.10 (backtrack impurty= 0)
+.CBAA.Ac..DDbaa.a.dd
+Test: 289 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+...CCBBAc.cDb.bad...
+Test: 290 Size of the Sequence: 21 ---Score -6.90 (backtrack impurty= 0)
+CB.AA.A.A.cDb..a.aaad
+Test: 291 Size of the Sequence: 20 ---Score -4.40 (backtrack impurty= 0)
+.CCBBAc.cDDb.b.ad.d.
+Test: 292 Size of the Sequence: 20 ---Score -6.40 (backtrack impurty= 0)
+C..B.B.BAcDDb.bbad.d
+Test: 293 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CCCBA...c.c.c.Db.ad.
+Test: 294 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+...C.B.A.cDD..ba..d.d
+Test: 295 Size of the Sequence: 21 ---Score -5.40 (backtrack impurty= 0)
+C.CB..Ac.cDDba..d.d..
+Test: 296 Size of the Sequence: 21 ---Score -5.50 (backtrack impurty= 0)
+C.B.BA.AA.cDb.ba.a.ad
+Test: 297 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+...CB.A...c.Db..a.d.
+Test: 298 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CCBAc.c.DDba...dd...
+Test: 299 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CBB..Ac...D.bb.a.d...
+Test: 300 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+C..BBBAc.Db.bba..d..
+Test: 301 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CCCBA...c.c.cDb.a.d.
+Test: 302 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+.CBAc...D.DDbaddd....
+Test: 303 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CBBA.c..D.D.bbadd....
+Test: 304 Size of the Sequence: 21 ---Score -7.50 (backtrack impurty= 0)
+CB.B.BAcD.Dbb.b..a.dd
+Test: 305 Size of the Sequence: 20 ---Score -6.80 (backtrack impurty= 0)
+..C.CBAc.cDDD.bad.dd
+Test: 306 Size of the Sequence: 20 ---Score -2.80 (backtrack impurty= 0)
+CCB.AAc.cDb..a.a.d..
+Test: 307 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+C...B.A..cD.Dba.dd..
+Test: 308 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C.CBA.A.cc..D.baa.d.
+Test: 309 Size of the Sequence: 21 ---Score -2.40 (backtrack impurty= 0)
+.CB.A.AAcDb.a.aa...d.
+Test: 310 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C..BB.A.c..Db.ba.d..
+Test: 311 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB....A.c..Db....a.d
+Test: 312 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB...A...c.DDb..ad.d
+Test: 313 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+C...B.B.AcD.Dbbad.d.
+Test: 314 Size of the Sequence: 21 ---Score -8.00 (backtrack impurty= 0)
+C.CBA.ccDD.Db.addd...
+Test: 315 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+C.CB..AccDDba....d.d
+Test: 316 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+.CBAA...c..DDb.a.a.dd
+Test: 317 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.CCB..A.A.c.cDbaa.d.
+Test: 318 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+...C.BBAcD.b.ba....d
+Test: 319 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+.CCBA.Acc.Db...a.a.d.
+Test: 320 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+CB.BA.cD.Dbb..a..d.d
+Test: 321 Size of the Sequence: 20 ---Score -7.00 (backtrack impurty= 0)
+CB.B.BA.AcDbb.b.aad.
+Test: 322 Size of the Sequence: 21 ---Score -9.90 (backtrack impurty= 0)
+.CB.AAAc.DDba.aa.d.d.
+Test: 323 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CC.C...BA.cc.cD.bad.
+Test: 324 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB...A.c.Db.....ad..
+Test: 325 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+..CBAA.c..D.Dba.add.
+Test: 326 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.CBAA....cDDba.ad.d.
+Test: 327 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+C..B.BA.AcD..b.baad.
+Test: 328 Size of the Sequence: 20 ---Score -2.50 (backtrack impurty= 0)
+.C.CB.BA.cc.Db.b.ad.
+Test: 329 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CBAA.Ac...D..baaad..
+Test: 330 Size of the Sequence: 20 ---Score -5.10 (backtrack impurty= 0)
+CBB.B..AcDDbbbadd...
+Test: 331 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+.CBBBAc....D..b.bba.d
+Test: 332 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..C.CB.AccD...b.a.d.
+Test: 333 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CCB.BAc.c.D.bb...a.d
+Test: 334 Size of the Sequence: 21 ---Score -2.40 (backtrack impurty= 0)
+CB.BA..c...Db.ba...d.
+Test: 335 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+.CB.BAcD.D...bba.dd.
+Test: 336 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+...CB.A.AAc.Dba.a.ad
+Test: 337 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBAA.Ac..D.....baaad
+Test: 338 Size of the Sequence: 20 ---Score -6.50 (backtrack impurty= 0)
+CCC.CBBAcc.c.cDbb.ad
+Test: 339 Size of the Sequence: 21 ---Score -5.40 (backtrack impurty= 0)
+CBAA.c..D.D..b.a.ad.d
+Test: 340 Size of the Sequence: 21 ---Score -4.70 (backtrack impurty= 0)
+C.BAcD.D.Db..a.ddd...
+Test: 341 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CB...Ac.D.Dba.....dd
+Test: 342 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CC.BBAc.c..Dbb....a.d
+Test: 343 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.C......B.Ac.D..bad.
+Test: 344 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+CCBAc.c...DD.b.ad.d.
+Test: 345 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.C..BAA.cDb...a.ad..
+Test: 346 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+CCBA....c.c.DD.badd..
+Test: 347 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CB.....AAcDDbaa.dd...
+Test: 348 Size of the Sequence: 21 ---Score -5.50 (backtrack impurty= 0)
+CCB...AA.c.cDDba.a.dd
+Test: 349 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+CB..A.A.A...cDb.aaad
+Test: 350 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CCCBA..c.ccDb.a..d..
+Test: 351 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CBA..c..D.D.Dba.dd.d
+Test: 352 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+C.B..A.AA.cD.ba.a.ad
+Test: 353 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.C..B.BAcD.bb.ad....
+Test: 354 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CB.AA..c.....D.b..aad
+Test: 355 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C...BA.cD.D..b.a.dd.
+Test: 356 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+.C.BB...AcDD..b.bad.d
+Test: 357 Size of the Sequence: 21 ---Score -5.50 (backtrack impurty= 0)
+.C.CBAA..c.c.Db.a.ad.
+Test: 358 Size of the Sequence: 20 ---Score -7.00 (backtrack impurty= 0)
+C.B.B.BAc.DDb.b.badd
+Test: 359 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB...A..c..D....bad.
+Test: 360 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+.C.C..B..Ac.cD.b.a.d
+Test: 361 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+..C.C.B.A.AccDb.aad.
+Test: 362 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+CB.BA.Ac.Dbb...aad..
+Test: 363 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+.C.C.B..A.ccDDb..add
+Test: 364 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+....CB.BAc..Dbb..a.d
+Test: 365 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+..CBA.A.A..cD.baaad.
+Test: 366 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+CBAAc....D..ba.a.d..
+Test: 367 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+..C.BB.BAcDb.bb.ad..
+Test: 368 Size of the Sequence: 21 ---Score -9.90 (backtrack impurty= 0)
+.C.CBBA.A..ccDbbaa.d.
+Test: 369 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.C..BAcD.....ba.d...
+Test: 370 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+C...B.B.A.cDb.bad...
+Test: 371 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CBBAc..DD.b.b.a..d.d
+Test: 372 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.CB.B.A.AcDbb.aa..d.
+Test: 373 Size of the Sequence: 21 ---Score -5.60 (backtrack impurty= 0)
+CB.A.AA..cDDb...aaadd
+Test: 374 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.C.B.AcD...bad......
+Test: 375 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.CB.BAc...Db.ba..d..
+Test: 376 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+.CBB..Ac....DDb.bad.d
+Test: 377 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+C.B.AcDD.....b.a.d.d
+Test: 378 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+.CC..B.Ac.cDDb.ad.d.
+Test: 379 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.....CBA.A.c.D.baad.
+Test: 380 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CBAA..c...D.D.baadd.
+Test: 381 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+.CB....AAc.Dba.ad...
+Test: 382 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+...C.CCBAccc.Dba..d..
+Test: 383 Size of the Sequence: 21 ---Score -5.50 (backtrack impurty= 0)
+CBBB.A.A.c.D.b.b.baad
+Test: 384 Size of the Sequence: 21 ---Score -1.50 (backtrack impurty= 0)
+...CB...A.Ac.D.b.aad.
+Test: 385 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CC.BAA...ccD.b.a.ad.
+Test: 386 Size of the Sequence: 20 ---Score -6.30 (backtrack impurty= 0)
+C.CCB.BAc.c.cDbba..d
+Test: 387 Size of the Sequence: 21 ---Score -0.90 (backtrack impurty= 0)
+.C..BBA..c.D.b.b.a..d
+Test: 388 Size of the Sequence: 21 ---Score -1.30 (backtrack impurty= 0)
+C..B..A......cDDbad.d
+Test: 389 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+CC..BAc.c.DDb..add..
+Test: 390 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CC.CBA...cc.cD.b..ad
+Test: 391 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+..CCB.BA.ccDD.b.badd
+Test: 392 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+.CC.C...B.AAcccDba.ad
+Test: 393 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+.CBA.A.cD.Db...a.add
+Test: 394 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.......C.CBAccDb..ad
+Test: 395 Size of the Sequence: 21 ---Score -8.00 (backtrack impurty= 0)
+CBAA.AAcD.b.a.aaad...
+Test: 396 Size of the Sequence: 21 ---Score -7.20 (backtrack impurty= 0)
+CCBB..AA.c.cD..b.baad
+Test: 397 Size of the Sequence: 20 ---Score -6.90 (backtrack impurty= 0)
+CBBBA.Ac.Db.bb..a.ad
+Test: 398 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CCBA.c.c...DD.b.ad.d
+Test: 399 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+CBAA.A..cD.b..a.aad.
+Test: 400 Size of the Sequence: 21 ---Score -2.20 (backtrack impurty= 0)
+.C.B.Ac....D.Dba..d.d
+Test: 401 Size of the Sequence: 21 ---Score -9.90 (backtrack impurty= 0)
+CCBA.AA.c.cD..baa.ad.
+Test: 402 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB.B.BA..c.D.b.bbad.
+Test: 403 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CC.C.CB..A.c.cccDbad.
+Test: 404 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CC.B.Ac.cD.DDb.ad.dd
+Test: 405 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.CC.BA.cc..D.Dbadd..
+Test: 406 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+.C.B.B.AcD.D.bba.dd.
+Test: 407 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+..CB.A.Ac.D.ba.a.d..
+Test: 408 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+.CBA.A.c.DD...baa.dd.
+Test: 409 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+...CBA.cD.Db..a..dd.
+Test: 410 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+...CB..AAc...Dba.ad.
+Test: 411 Size of the Sequence: 20 ---Score -4.30 (backtrack impurty= 0)
+CBBA.A.cD.b.b.a.a.d.
+Test: 412 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+C.BBA.Ac.D.b.baa...d.
+Test: 413 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+....C.BA..c..DDbad.d
+Test: 414 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CB.AAAc..D..ba.a.ad..
+Test: 415 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+.CB.B.BA.Ac.Dbbba.ad
+Test: 416 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+..CB.B..Ac...D.bb.ad
+Test: 417 Size of the Sequence: 20 ---Score -3.10 (backtrack impurty= 0)
+.CBA.AAc..D.ba.a.a.d
+Test: 418 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CC.BAA.Ac.cDb..aa.ad
+Test: 419 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBB...AcDD..bba..d.d
+Test: 420 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+.C.B..AA.c.Db...a.ad.
+Test: 421 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CCB.A....cc.DD.ba.dd
+Test: 422 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CB.Ac.......DDb.ad.d
+Test: 423 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.BBAc..Dbb......a.d
+Test: 424 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB..A.cDDb...ad.d...
+Test: 425 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CC...B.A.c.cDDba.d.d
+Test: 426 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+CB...Ac..DDbadd.....
+Test: 427 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+..C.CBA.ccD.....b.ad
+Test: 428 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBB.A..c.D...bbad...
+Test: 429 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+C...BBA.AcD..bb.aa.d
+Test: 430 Size of the Sequence: 21 ---Score -5.20 (backtrack impurty= 0)
+CCBA.A.c.cDDDbaad.d.d
+Test: 431 Size of the Sequence: 20 ---Score -3.80 (backtrack impurty= 0)
+.CB.BAcD.Db.b...a.dd
+Test: 432 Size of the Sequence: 20 ---Score -2.80 (backtrack impurty= 0)
+.C.C.B..AccDDba.d.d.
+Test: 433 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CBAA.c....Dbaa.d...
+Test: 434 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBB.A.A..c.D.bbaa.d.
+Test: 435 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+..CC.B.AA.c.c.Dba.ad
+Test: 436 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+...C.B.BAc...Db.ba.d
+Test: 437 Size of the Sequence: 21 ---Score -5.50 (backtrack impurty= 0)
+C.CBAc.cD.DD.b..add.d
+Test: 438 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.C.C.BAc.cDba......d
+Test: 439 Size of the Sequence: 20 ---Score -5.30 (backtrack impurty= 0)
+CCB.BB.Ac.cD.b.b.bad
+Test: 440 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C.C.B.A.cc.D.Db.a.d.d
+Test: 441 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C...BA.c.DDb..a...dd
+Test: 442 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.B..AAcD....b.aad..
+Test: 443 Size of the Sequence: 21 ---Score -7.30 (backtrack impurty= 0)
+C.CBAAccD.DDbaadd.d..
+Test: 444 Size of the Sequence: 21 ---Score 0.00 (backtrack impurty= 0)
+CB.......A..cDba....d
+Test: 445 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CC..BBA..ccDb.b.a.d.
+Test: 446 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+.CBAc......DDba..d.d
+Test: 447 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+CB.BA..c.DDbb..ad.d.
+Test: 448 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+..CB..A.AcDDb..aa.dd
+Test: 449 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C.B...A..cDDDb.ad.dd
+Test: 450 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+...C.C..BAccD.b..ad..
+Test: 451 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+CBA.AcDDb.a.a..d.d..
+Test: 452 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+C.CCB.B...Ac.ccDbbad
+Test: 453 Size of the Sequence: 21 ---Score -10.10 (backtrack impurty= 0)
+CCB.BAAc.cD.Db.baadd.
+Test: 454 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+C.C..BBA..ccD..bba.d
+Test: 455 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+...CB.BAcD.D.bbadd..
+Test: 456 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+C.C.BA.A.cc.D..baa.d
+Test: 457 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+...CB...A..c...Dbad.
+Test: 458 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CBA.A..c.D...b..a.ad
+Test: 459 Size of the Sequence: 20 ---Score -5.10 (backtrack impurty= 0)
+CB.B.A.Ac...DDbbaadd
+Test: 460 Size of the Sequence: 21 ---Score -2.40 (backtrack impurty= 0)
+CB.BAcD.Db.ba.....dd.
+Test: 461 Size of the Sequence: 20 ---Score -3.80 (backtrack impurty= 0)
+C.CB.B.A.AccDbbaad..
+Test: 462 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C..BA..c.D.D.Db.addd
+Test: 463 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+C...B.BA...cDDb.badd
+Test: 464 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+CC.B.AAc.c.D.Dba.add
+Test: 465 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+C..BBAAcDD.bba.a.d.d
+Test: 466 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+C.BAAc.DDb.aadd.....
+Test: 467 Size of the Sequence: 21 ---Score -7.50 (backtrack impurty= 0)
+C.C.BBA.A.c.c.Dbba.ad
+Test: 468 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+.CBB.AcD.Dbb.a..dd..
+Test: 469 Size of the Sequence: 21 ---Score -1.30 (backtrack impurty= 0)
+.C.BBA..cDb.b....ad..
+Test: 470 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.C.BA.AcD.baa..d....
+Test: 471 Size of the Sequence: 21 ---Score -2.90 (backtrack impurty= 0)
+.CC.B..Ac.c.DD..bad.d
+Test: 472 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+C.C....BA.c.c.Db.a..d
+Test: 473 Size of the Sequence: 21 ---Score -9.90 (backtrack impurty= 0)
+C.BBA.AAcD.....bbaaad
+Test: 474 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+CCB.A.A...c.cD.Dbaadd
+Test: 475 Size of the Sequence: 20 ---Score -7.20 (backtrack impurty= 0)
+CB.BA.Ac.DD..bbaad.d
+Test: 476 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+C.CB.BA..cc.Dbb...ad
+Test: 477 Size of the Sequence: 20 ---Score -3.20 (backtrack impurty= 0)
+C.CBA.A.ccDDb.aa.dd.
+Test: 478 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.CB...A.A.c...Db.aad
+Test: 479 Size of the Sequence: 20 ---Score -4.40 (backtrack impurty= 0)
+CCB...A.AccD.Dbaadd.
+Test: 480 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+..CBBA.A.AcDb.baaad.
+Test: 481 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+....CCB.Ac.cD.b.ad..
+Test: 482 Size of the Sequence: 21 ---Score -4.70 (backtrack impurty= 0)
+.CC.BA..c.cDDba...d.d
+Test: 483 Size of the Sequence: 21 ---Score -5.50 (backtrack impurty= 0)
+C.B..AA.AcDb..a.aad..
+Test: 484 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+CC..BB.BAc.cD.bbb.ad
+Test: 485 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+C...BAA..cDDDba.addd
+Test: 486 Size of the Sequence: 20 ---Score -9.90 (backtrack impurty= 0)
+C.B.BAAc..DD.bbaad.d
+Test: 487 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CCBAAc.cD.b.aa..d...
+Test: 488 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CB.AA.cD.Db.a.a.d.d.
+Test: 489 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.C.BB.AcDDb.badd....
+Test: 490 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.BAA.cDb..aad.(...)
+Test: 491 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+.C.CB.B.BAc.cDbbba.d
+Test: 492 Size of the Sequence: 21 ---Score -5.10 (backtrack impurty= 0)
+C..BAA.cD.DDbaa.dd.d.
+Test: 493 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+.C.C.BAc.cDD.Dbad.dd.
+Test: 494 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.C..BB.B.A.cDb.bbad.
+Test: 495 Size of the Sequence: 20 ---Score -3.10 (backtrack impurty= 0)
+.C..BAA.cD.D.ba.ad.d
+Test: 496 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C.BA.c..D.D..b..add..
+Test: 497 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+CB..A.A...c..Db.a.ad
+Test: 498 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB......A.c..D.b.ad.
+Test: 499 Size of the Sequence: 21 ---Score -3.90 (backtrack impurty= 0)
+C..BA.A.AcD..baaa.d..
+Test: 500 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CC.B.B.Ac.cDDbba.dd.
+Test: 501 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+..C.CB..AAccDb.a.a.d
+Test: 502 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+C.BA.A.Ac...D..baaad.
+Test: 503 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+C.BBA.c.DDbb.ad.d...
+Test: 504 Size of the Sequence: 21 ---Score -11.30 (backtrack impurty= 0)
+CB.AcDD.DDDbad.d.dd.d
+Test: 505 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CB.A.A.Ac...Dbaa.a.d
+Test: 506 Size of the Sequence: 20 ---Score -3.10 (backtrack impurty= 0)
+..C....BA.AcDDba.add
+Test: 507 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+C.BA..c..DDb...a..dd
+Test: 508 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CB...A.c.....DDb.ad.d
+Test: 509 Size of the Sequence: 20 ---Score -7.20 (backtrack impurty= 0)
+C.BAcD.DD.DDbaddd.dd
+Test: 510 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+.CCBAA.c.cDba.ad.....
+Test: 511 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+CCBBB.A..c.cD.b.bbad
+Test: 512 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+CBBA.AcD..b.ba.a.d..
+Test: 513 Size of the Sequence: 21 ---Score -7.50 (backtrack impurty= 0)
+C.C.BB.Acc.DDbba...dd
+Test: 514 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+...CC.B..A.cc.D..b.ad
+Test: 515 Size of the Sequence: 20 ---Score -7.00 (backtrack impurty= 0)
+C.CB.BB.A..c.cDbbbad
+Test: 516 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CB.BA..c..DD.bbad.d.
+Test: 517 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CCBAA.c.c.D.ba.ad...
+Test: 518 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CCBAAc.cDb..(....)aad
+Test: 519 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CB......A.AcDDbaa.dd
+Test: 520 Size of the Sequence: 21 ---Score -1.50 (backtrack impurty= 0)
+CBA.Ac.......D..ba.ad
+Test: 521 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB..AA..c..Db.aa.d..
+Test: 522 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CCBAc.c.D...b.ad....
+Test: 523 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+.CC.CBAc.c.cDba...d.
+Test: 524 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.B.Ac...D.Dba...dd.
+Test: 525 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+..C.CBAcc.D..b..a..d
+Test: 526 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+C.B.B.A...c..D.b.bad
+Test: 527 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+C..BAA.A.c.D..baa.a.d
+Test: 528 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C.C.B..A.c.cD.Dbad.d
+Test: 529 Size of the Sequence: 21 ---Score -2.40 (backtrack impurty= 0)
+.CB...Ac..D.D.ba.d.d.
+Test: 530 Size of the Sequence: 21 ---Score -4.60 (backtrack impurty= 0)
+C.BBAc...D.Db.ba..d.d
+Test: 531 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+.C.CBAc.c.Db..ad....
+Test: 532 Size of the Sequence: 20 ---Score -6.00 (backtrack impurty= 0)
+CB..A.AcD.D.Dbaadd.d
+Test: 533 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CCC.CBAccccD.ba.d...
+Test: 534 Size of the Sequence: 21 ---Score -6.70 (backtrack impurty= 0)
+CBAc(....)D.DDba.dd.d
+Test: 535 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+...CCBAc.cDD..ba..dd.
+Test: 536 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+..C..B.BAAcDbba.a..d
+Test: 537 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CBA...c.D.D..b.ad.d.
+Test: 538 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.CBBA.cD.b.b.ad.....
+Test: 539 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+.C.B.AA.AcDDbaa.ad.d
+Test: 540 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+C.CBBA.Ac.cDDb.baadd
+Test: 541 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+.C.C.BAc.cDDbad.d...
+Test: 542 Size of the Sequence: 21 ---Score -3.00 (backtrack impurty= 0)
+.CB.A.AA.cDba.aa.d...
+Test: 543 Size of the Sequence: 21 ---Score -6.70 (backtrack impurty= 0)
+CB.B.BA.A.cDb.b.baad.
+Test: 544 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CBB..AA.cD..bb..a.ad
+Test: 545 Size of the Sequence: 21 ---Score -2.30 (backtrack impurty= 0)
+C.B.B...A..cDD.bba.dd
+Test: 546 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+.CB.....AAcD..baa..d.
+Test: 547 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..CC.BAc.c...D.ba..d
+Test: 548 Size of the Sequence: 20 ---Score -12.30 (backtrack impurty= 0)
+C.CB.AAc.cD.DDbaaddd
+Test: 549 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+...CC.C..BAccc.Dbad.
+Test: 550 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CCBAc.cDDba..dd......
+Test: 551 Size of the Sequence: 20 ---Score -7.10 (backtrack impurty= 0)
+CCCBAc.c.cD.D..bad.d
+Test: 552 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+CBA.A.cD.Dba.a.d.d..
+Test: 553 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C..BBB.Ac..D..bb.bad
+Test: 554 Size of the Sequence: 20 ---Score -9.90 (backtrack impurty= 0)
+C...BB.BAcDDbbb.a.dd
+Test: 555 Size of the Sequence: 21 ---Score -0.90 (backtrack impurty= 0)
+C.CBA.....ccD.b...a.d
+Test: 556 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB..A...cDb..ad.....
+Test: 557 Size of the Sequence: 21 ---Score -2.30 (backtrack impurty= 0)
+..C.CB...AA.cc..Dbaad
+Test: 558 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+CBBA.AAcD....bbaaad.
+Test: 559 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+..C.C.B.BAccD.bbad..
+Test: 560 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+....CB...A.cD...b.ad
+Test: 561 Size of the Sequence: 21 ---Score -4.50 (backtrack impurty= 0)
+.C.CB..A.AAccDba.aad.
+Test: 562 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+C.B.BAAcDbb.a.ad....
+Test: 563 Size of the Sequence: 20 ---Score -8.00 (backtrack impurty= 0)
+CCB.A.c.c.DDD.bad.dd
+Test: 564 Size of the Sequence: 20 ---Score -7.20 (backtrack impurty= 0)
+C.C.BB.Ac.cDD.bbad.d
+Test: 565 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+.C.BAAc....DDbaadd...
+Test: 566 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CCB..AAc.cDb....aa.d.
+Test: 567 Size of the Sequence: 21 ---Score -3.80 (backtrack impurty= 0)
+.C.CB.A.A.ccDDb.a.add
+Test: 568 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB.Ac...D...bad.....
+Test: 569 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.CB.....Ac.D.DDbaddd
+Test: 570 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CCBA..c.c....D.bad..
+Test: 571 Size of the Sequence: 21 ---Score -7.90 (backtrack impurty= 0)
+CCCBAc.c.c.DDba...d.d
+Test: 572 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBB.Ac...D.Dbba..dd.
+Test: 573 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+..CB.BAc.D.Dbb..add.
+Test: 574 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+CCC..BAc.c.cDb..a.d.
+Test: 575 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.CBA..c..Db..a..d...
+Test: 576 Size of the Sequence: 20 ---Score -8.00 (backtrack impurty= 0)
+.CB.AAA.c.D.Dba.aadd
+Test: 577 Size of the Sequence: 21 ---Score -6.80 (backtrack impurty= 0)
+CBAAAA.A.c.Dbaa.aaad.
+Test: 578 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+.C..BAc..DD.Dbad.dd.
+Test: 579 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.C..BA.cD..ba....d..
+Test: 580 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+CB........A.AcDba.ad
+Test: 581 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CBA...cD..ba..d.....
+Test: 582 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+.CBBAc.D.Dbba(....)dd
+Test: 583 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+..C.C.CBA.cccDbad...
+Test: 584 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+..CCB..A..c.c.Dbad..
+Test: 585 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB..Ac.....D.ba..d..
+Test: 586 Size of the Sequence: 21 ---Score -2.70 (backtrack impurty= 0)
+CC.B.B..Ac.c.Db.b..ad
+Test: 587 Size of the Sequence: 20 ---Score -4.00 (backtrack impurty= 0)
+C.C.B.A..c.cD.Dba.dd
+Test: 588 Size of the Sequence: 20 ---Score -8.00 (backtrack impurty= 0)
+C.CBBAc.cDDDb.bad.dd
+Test: 589 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.C.B..A.AcD.D.baadd.
+Test: 590 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C..B..AAc.Dbaad.....
+Test: 591 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+...CBA.A.cD..baad...
+Test: 592 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+..CC.B.A.c.cD.b..ad.
+Test: 593 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.C..BAA.cD...ba.a.d.
+Test: 594 Size of the Sequence: 20 ---Score -8.20 (backtrack impurty= 0)
+CC.CB.A.Ac.c.cDba.ad
+Test: 595 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.CBBA..c.Db.b.ad....
+Test: 596 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+CBA.A.AcDb..aa.a.d..
+Test: 597 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CBAAc...DD...b.a.ad.d
+Test: 598 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+CCBA....c.cD.Dba.d.d.
+Test: 599 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CBBA.AcD.Db.ba.a.d.d.
+Test: 600 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CC.B..Ac.c..D.ba...d
+Test: 601 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.BB.AAcDbb..a.a...d
+Test: 602 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+..CCBAAc.c.D.b.a.ad.
+Test: 603 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+.CBB..A.AcD.b.ba.a.d
+Test: 604 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C.B.BAcDbb...a..d...
+Test: 605 Size of the Sequence: 20 ---Score -2.70 (backtrack impurty= 0)
+CB.A.....cD.DDbad.dd
+Test: 606 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+C.CBA.c.cDDb..a..d.d
+Test: 607 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+CCB.....AccD.D.badd.
+Test: 608 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBA....c..DDb..a.d.d
+Test: 609 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CB..AA.cDD..ba.ad.d.
+Test: 610 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+.C.BAc.DDb...add.....
+Test: 611 Size of the Sequence: 20 ---Score -9.90 (backtrack impurty= 0)
+C.CBBAA.ccD..bb..aad
+Test: 612 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+..CCB.B.Ac.cD.bba..d
+Test: 613 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+CBB.BA.cD.Db.bba.d.d.
+Test: 614 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+C.CBAc.c..DDb..ad.d.
+Test: 615 Size of the Sequence: 21 ---Score -4.90 (backtrack impurty= 0)
+.CB.BA.cD.Db.ba.dd...
+Test: 616 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CCB.BA...c.cDb.ba.d.
+Test: 617 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+.CBAA.A..cD..b.aa.ad.
+Test: 618 Size of the Sequence: 20 ---Score -2.70 (backtrack impurty= 0)
+.CC.BB.Ac.cDb.ba.d..
+Test: 619 Size of the Sequence: 21 ---Score -5.40 (backtrack impurty= 0)
+..CB.B.BA..cD.bbb..ad
+Test: 620 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.CCCB..Ac.c.c..Dba.d
+Test: 621 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+.CBA.cD.D.DDbadd.dd..
+Test: 622 Size of the Sequence: 21 ---Score -5.80 (backtrack impurty= 0)
+.CC....BAc.cD.Dba.d.d
+Test: 623 Size of the Sequence: 21 ---Score -5.60 (backtrack impurty= 0)
+.C.CCBBA.c.ccDb.bad..
+Test: 624 Size of the Sequence: 20 ---Score -7.20 (backtrack impurty= 0)
+CCCBA.Acc.c.Dba.ad..
+Test: 625 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+C.C.BAc.c.......Dbad.
+Test: 626 Size of the Sequence: 20 ---Score -6.20 (backtrack impurty= 0)
+.CB.BA.A.AcDbbaaad..
+Test: 627 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CBB.BA.c..Dbb.ba.d..
+Test: 628 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CC.B.A..c.cDb..a..d.
+Test: 629 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+..CC.B..AAc.c.Dba.ad
+Test: 630 Size of the Sequence: 20 ---Score -7.90 (backtrack impurty= 0)
+CC.BBAAc.cDb.b..aad.
+Test: 631 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+CC.B.A.Ac.cD.baa..d.
+Test: 632 Size of the Sequence: 21 ---Score -3.50 (backtrack impurty= 0)
+..CCB.A.A.c.cD.b.aad.
+Test: 633 Size of the Sequence: 21 ---Score -8.40 (backtrack impurty= 0)
+CCB.BB.A.A.c.cDbbbaad
+Test: 634 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+C...B.BA..c....Db.bad
+Test: 635 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.C.B.B.BAc..Db.bbad.
+Test: 636 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..CBA...c.DDbadd....
+Test: 637 Size of the Sequence: 21 ---Score -4.30 (backtrack impurty= 0)
+CBBA.A.c.Db.b...a.a.d
+Test: 638 Size of the Sequence: 21 ---Score -3.90 (backtrack impurty= 0)
+C.B.B.AA.A.cDbbaa.a.d
+Test: 639 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+C.CBAA.c.c.Db.a.a.d.
+Test: 640 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.C.BBA.AcD.b.baad...
+Test: 641 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+CB.B.AcD.Db.b.a.d.d.
+Test: 642 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.CBA...cD.b...a.d...
+Test: 643 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+.CBB.A.c.D...b.bad..
+Test: 644 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+C.CB..Ac.c.DDba...dd
+Test: 645 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+C..BA.AcDb...a.ad...
+Test: 646 Size of the Sequence: 21 ---Score -7.30 (backtrack impurty= 0)
+CBAAc.DD.Db.a.ad.d.d.
+Test: 647 Size of the Sequence: 21 ---Score -4.30 (backtrack impurty= 0)
+CCBA.Ac.c..DDb..aad.d
+Test: 648 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CBA.AA.AcDDbaa.aad.d
+Test: 649 Size of the Sequence: 21 ---Score 0.00 (backtrack impurty= 0)
+..C.BAcDb.......a..d.
+Test: 650 Size of the Sequence: 20 ---Score -5.00 (backtrack impurty= 0)
+CBA.cDD.D.Dba..ddd.d
+Test: 651 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CBAc..DD.Dba...d.dd.
+Test: 652 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C.B.B.BAc.Dbb.ba.d.
+Test: 653 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+.C.C...B.BAcc.Dbb.ad
+Test: 654 Size of the Sequence: 20 ---Score -4.30 (backtrack impurty= 0)
+..C.CBBAc.cD.b.ba.d.
+Test: 655 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+CC..BA.c.cD.Dba..d.d
+Test: 656 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.....CCBAcc.D.b.ad..
+Test: 657 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+CB.BA.A..cDb.b...aad
+Test: 658 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..CB..A.A.cD.b.aa.d.
+Test: 659 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBBAc.DDb.b..a...dd.
+Test: 660 Size of the Sequence: 21 ---Score -9.90 (backtrack impurty= 0)
+.CCBB..Ac.cDDbbad.d..
+Test: 661 Size of the Sequence: 20 ---Score -0.60 (backtrack impurty= 0)
+C.C.BA...cc..Db..ad.
+Test: 662 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CBA.Ac.D......baad..
+Test: 663 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C.B...AAcD..b.a.ad..
+Test: 664 Size of the Sequence: 21 ---Score -6.10 (backtrack impurty= 0)
+.C..BBA.AAcD.b.baaad.
+Test: 665 Size of the Sequence: 20 ---Score -5.30 (backtrack impurty= 0)
+..C.CB.BBAccDbbb.a.d
+Test: 666 Size of the Sequence: 21 ---Score -9.00 (backtrack impurty= 0)
+CB.A.AAAcDDb.a.aaad.d
+Test: 667 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C.C.CB..A.AcccDba.ad
+Test: 668 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+C.CBB.Acc.DDb.ba.d.d
+Test: 669 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+CBA.AAc.Dba.aa..d...
+Test: 670 Size of the Sequence: 21 ---Score -5.50 (backtrack impurty= 0)
+.C...B.BA..cDDb.b.add
+Test: 671 Size of the Sequence: 20 ---Score -4.40 (backtrack impurty= 0)
+CC.B.BBAc.cD.b.b.bad
+Test: 672 Size of the Sequence: 20 ---Score -4.40 (backtrack impurty= 0)
+C.C.BA.Ac.cD.Db.aadd
+Test: 673 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.C..B.B.BAcDb.bb.a.d
+Test: 674 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+C.C..BAA.ccD.b.a.ad.
+Test: 675 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+C.CB..Acc.D..b.a..d.
+Test: 676 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.CBAAcc.D.Db.a.ad.d
+Test: 677 Size of the Sequence: 20 ---Score -2.70 (backtrack impurty= 0)
+CCB.BAc.c.DD.bba..dd
+Test: 678 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB.A.Ac.Db.aa.d.....
+Test: 679 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+....C.B.A..cDba.d...
+Test: 680 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+C.B.B..Ac..DDbb.add..
+Test: 681 Size of the Sequence: 21 ---Score -4.70 (backtrack impurty= 0)
+CC.B...A.A.c.c.Dbaa.d
+Test: 682 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.B...AA.c.D..ba.ad.
+Test: 683 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+CBBAc...Db.b...a...d
+Test: 684 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+CB.B.Ac.D.D.b.b.a.dd
+Test: 685 Size of the Sequence: 20 ---Score -8.80 (backtrack impurty= 0)
+CB.BA.A.c..DDb.baadd
+Test: 686 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+.CBBAcDD.b.b...ad.d.
+Test: 687 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CC....B.A.c.c.Db..ad
+Test: 688 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+CB.A.A.AcDba.aad....
+Test: 689 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+.C.C...B.BA.ccDbbad.
+Test: 690 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CC.CB..AAcc.cDba.ad.
+Test: 691 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C.BBA.AAc..Db.ba.aad.
+Test: 692 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.C.BAA.A.cDb.aaa...d
+Test: 693 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CBAcDDDb...a..d.dd..
+Test: 694 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+C.B.BAcDD....b.bad.d
+Test: 695 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.C..BAcD.D.Db.add.d.
+Test: 696 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C.C...B.B.AccDbb.ad.
+Test: 697 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB...AAcD.b.....aa.d
+Test: 698 Size of the Sequence: 21 ---Score -5.40 (backtrack impurty= 0)
+.C..B..A.AcD.D.baadd.
+Test: 699 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+C.BAc..D.....b...ad.
+Test: 700 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+CBB.A.A..c.Dbb.a.ad.
+Test: 701 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.CBA..c.D.D.Db.add.d
+Test: 702 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB...Ac.Db....ad....
+Test: 703 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+CB..Ac.D.DDb...addd.
+Test: 704 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.CC.BB.A..c.c.Dbbad.
+Test: 705 Size of the Sequence: 20 ---Score -5.10 (backtrack impurty= 0)
+..CC.B.BAc.cDDbbad.d
+Test: 706 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+C...B...A.c.Dbad....
+Test: 707 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+..CB.AAcD.b...a.a..d
+Test: 708 Size of the Sequence: 21 ---Score -5.40 (backtrack impurty= 0)
+....CB.A.AAcD.baaad..
+Test: 709 Size of the Sequence: 20 ---Score -5.60 (backtrack impurty= 0)
+C.B.BB.A.c.DDb.bbadd
+Test: 710 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+..CB.B.BA.c..Dbbbad.
+Test: 711 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+..CB.BA.Ac...Dbbaa.d
+Test: 712 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+.C.B..Ac...DDDb.addd
+Test: 713 Size of the Sequence: 21 ---Score -3.60 (backtrack impurty= 0)
+.CBA.A...cD.Db.a.ad.d
+Test: 714 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+.C...BAc..D.D..ba.dd.
+Test: 715 Size of the Sequence: 21 ---Score -8.70 (backtrack impurty= 0)
+CC..BBAc.cD.Dbba..dd.
+Test: 716 Size of the Sequence: 21 ---Score -3.60 (backtrack impurty= 0)
+C.B.BA.Ac.D.b.b..aad.
+Test: 717 Size of the Sequence: 20 ---Score -3.10 (backtrack impurty= 0)
+CCB.BAAc.cDb.b..aad.
+Test: 718 Size of the Sequence: 21 ---Score -7.70 (backtrack impurty= 0)
+C.CB.BB.A.c.cDDbbbadd
+Test: 719 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CC...B.A.c.cD..b.ad.
+Test: 720 Size of the Sequence: 20 ---Score -2.80 (backtrack impurty= 0)
+.C.CB.AccD.D..b..add
+Test: 721 Size of the Sequence: 21 ---Score -5.80 (backtrack impurty= 0)
+C.C.BA.Ac.cD....ba.ad
+Test: 722 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+..CB..A.c..D..ba..d.
+Test: 723 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C.CBA..cc.D....bad.
+Test: 724 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+CB...A.A..c.DDba.add
+Test: 725 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+..C.B..Ac.D.b.ad....
+Test: 726 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.C.B.BA.cDb.b...ad..
+Test: 727 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CB.BA.cDb.b.ad......
+Test: 728 Size of the Sequence: 21 ---Score -9.40 (backtrack impurty= 0)
+C.CBAccDDDDb.a.d.d.dd
+Test: 729 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+CCBBAc.cDD.b.ba...d.d
+Test: 730 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+C.C..B.BAc.cDbba..d.
+Test: 731 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+.CBA.c.D.Db....a.d.d
+Test: 732 Size of the Sequence: 20 ---Score -4.30 (backtrack impurty= 0)
+.CB.B.BAcDb.b.b...ad
+Test: 733 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBBB.AcD...b.bb.ad..
+Test: 734 Size of the Sequence: 20 ---Score -8.00 (backtrack impurty= 0)
+.C.BBBAAcDb.bb.a.ad.
+Test: 735 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CC.BAA.c.c..Dbaa.d..
+Test: 736 Size of the Sequence: 21 ---Score -9.00 (backtrack impurty= 0)
+CB...AA.Ac.D.Dbaaad.d
+Test: 737 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C.C..B.BAccD...bbad.
+Test: 738 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+.CB...A.A.c.D.Db.aadd
+Test: 739 Size of the Sequence: 20 ---Score -8.80 (backtrack impurty= 0)
+CB.B.A.A.cDDDbbaaddd
+Test: 740 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+.C.CC.BAc.cc.Dba..d.
+Test: 741 Size of the Sequence: 20 ---Score -5.90 (backtrack impurty= 0)
+CC.B.BBAc.c.Db.b.bad
+Test: 742 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.BA.Ac.D.Db...aa.dd
+Test: 743 Size of the Sequence: 21 ---Score -7.10 (backtrack impurty= 0)
+.C.C.BA.Acc..DDbaadd.
+Test: 744 Size of the Sequence: 20 ---Score -2.50 (backtrack impurty= 0)
+CB.A.A.cD.Db..a.add.
+Test: 745 Size of the Sequence: 21 ---Score -6.30 (backtrack impurty= 0)
+C.C.B.A.A..ccDDbaad.d
+Test: 746 Size of the Sequence: 20 ---Score -1.90 (backtrack impurty= 0)
+..C.C..B.BAccDb.bad.
+Test: 747 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+CBA.Ac.D.DDba.ad.d.d.
+Test: 748 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CCB.BA...c.cDbb...ad
+Test: 749 Size of the Sequence: 20 ---Score -1.30 (backtrack impurty= 0)
+CB...AcD.D...badd...
+Test: 750 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C..B.BAcDb.ba..d....
+Test: 751 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+(....)CCBAAcc...Dbaad
+Test: 752 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..C.CB.A....ccDb.ad.
+Test: 753 Size of the Sequence: 21 ---Score -1.50 (backtrack impurty= 0)
+.C.BA...c.DDba....d.d
+Test: 754 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+C.B...Ac.D...ba.d...
+Test: 755 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CBA...c.D.....b.ad..
+Test: 756 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CCBAc.c..Db.a......d
+Test: 757 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C..BAA..cDba.a.d...
+Test: 758 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+C.C..B.Ac.c.DDba.dd.
+Test: 759 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+C.C.CB.A.Accc.D..baad
+Test: 760 Size of the Sequence: 21 ---Score -6.00 (backtrack impurty= 0)
+.C.BB..A.cD.DDb.baddd
+Test: 761 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB...Ac..D...ba....d
+Test: 762 Size of the Sequence: 21 ---Score -9.00 (backtrack impurty= 0)
+CCBB.BAc.c.DDbb.ba.dd
+Test: 763 Size of the Sequence: 21 ---Score -2.40 (backtrack impurty= 0)
+CBAAAc...D..baa.a..d.
+Test: 764 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+...C.C.BAcc..Dba...d
+Test: 765 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C.BB.BAcDbbba.d.....
+Test: 766 Size of the Sequence: 20 ---Score -4.00 (backtrack impurty= 0)
+.CCBAA.Ac.cDba.aa.d.
+Test: 767 Size of the Sequence: 21 ---Score -7.60 (backtrack impurty= 0)
+C.CB.BA..c.cDD.bbad.d
+Test: 768 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBAA.c..D.b....aad..
+Test: 769 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+C.CB..A...c.c.Dba.d.
+Test: 770 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+C.CB..Ac.c.D.b.a..d.
+Test: 771 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CBA.....cDDb..a.d.d
+Test: 772 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C.B..A.AcD..baa.d....
+Test: 773 Size of the Sequence: 20 ---Score -9.90 (backtrack impurty= 0)
+CBBB.BAcDbb.bba...d.
+Test: 774 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+..CB.BAc...Db.b.ad..
+Test: 775 Size of the Sequence: 21 ---Score -3.50 (backtrack impurty= 0)
+C.CB.BA...c.cDbba...d
+Test: 776 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+..C.CB...AAccDbaa.d..
+Test: 777 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+..CB.BAc.D....b.bad.
+Test: 778 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+C..BAAAc.D...b.aaad.
+Test: 779 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+.C.CBAc.c.D...bad...
+Test: 780 Size of the Sequence: 20 ---Score -12.10 (backtrack impurty= 0)
+CC.BBAc.cDD.Dbbad.dd
+Test: 781 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+CBAcD.D.D..ba..d.dd.
+Test: 782 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+C.C.BB.Ac.c.D..bb.ad
+Test: 783 Size of the Sequence: 20 ---Score -0.90 (backtrack impurty= 0)
+C..B.B...A.cD.bbad..
+Test: 784 Size of the Sequence: 20 ---Score -1.30 (backtrack impurty= 0)
+CB.B..A.c..D..b.b.ad
+Test: 785 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+.C.CBBAccD...b.ba..d
+Test: 786 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+C.CB....A.c.cDb..ad.
+Test: 787 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+..CBB.BAcD.b.bbad...
+Test: 788 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CB...A.....cDDbadd.
+Test: 789 Size of the Sequence: 21 ---Score -11.30 (backtrack impurty= 0)
+C.CBAA.AccDDbaaa.d.d.
+Test: 790 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+...CC.BA..c.cD..ba.d
+Test: 791 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBAA.cD..b.(...)aad.
+Test: 792 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..C.CBBA.c.cD..b.bad
+Test: 793 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+..CBBA.A.c..Dbb.aad..
+Test: 794 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+CCBA...c.c..D.Dbad.d
+Test: 795 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+CBBBA..cD.b.b.ba...d
+Test: 796 Size of the Sequence: 21 ---Score -1.50 (backtrack impurty= 0)
+.C...B.B.A..cDb.ba.d.
+Test: 797 Size of the Sequence: 21 ---Score -3.40 (backtrack impurty= 0)
+C.C.B.Ac.cD...ba....d
+Test: 798 Size of the Sequence: 21 ---Score -3.90 (backtrack impurty= 0)
+...CBA.Ac..DDb.aadd..
+Test: 799 Size of the Sequence: 21 ---Score -4.60 (backtrack impurty= 0)
+...CB.A.A...cDDba.add
+Test: 800 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CBA.AAc..D.b.aaad....
+Test: 801 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+CB.BBAcD.b.b.ba....d
+Test: 802 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+C.CBAA.c.c.D..baad..
+Test: 803 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+.CBB.A.AcDbb....a.ad
+Test: 804 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CC..BAc.cD..ba....d.
+Test: 805 Size of the Sequence: 20 ---Score -3.70 (backtrack impurty= 0)
+...C.C.BA.A.ccDba.ad
+Test: 806 Size of the Sequence: 21 ---Score -8.80 (backtrack impurty= 0)
+C.B.B.AA.AcDb.b.aaa.d
+Test: 807 Size of the Sequence: 21 ---Score -2.80 (backtrack impurty= 0)
+C.CBA.....cc.DDbad.d.
+Test: 808 Size of the Sequence: 20 ---Score -6.30 (backtrack impurty= 0)
+C.BB.AA.AcD.b.baaa.d
+Test: 809 Size of the Sequence: 21 ---Score -6.70 (backtrack impurty= 0)
+CBA.AAcDDDb..aaa.d.dd
+Test: 810 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBB.A.A..cD.bbaad...
+Test: 811 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+C...B.B.BAcDbb.b..ad.
+Test: 812 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+CB..AA..cD.Db.aa.d.d
+Test: 813 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+.C.BB.A.cD.Dbb.ad.d.
+Test: 814 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+CCB...A.Ac.cDbaa.d..
+Test: 815 Size of the Sequence: 21 ---Score -3.00 (backtrack impurty= 0)
+C...B.BAA.cDbba.a.d..
+Test: 816 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CBAA.cDDb.....a.add..
+Test: 817 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+..CBA..c..DDD.bad.dd
+Test: 818 Size of the Sequence: 21 ---Score -6.20 (backtrack impurty= 0)
+C.B.BA.AcDDbbaa...d.d
+Test: 819 Size of the Sequence: 21 ---Score -4.70 (backtrack impurty= 0)
+CCB...AAc.c.Dba.a.d..
+Test: 820 Size of the Sequence: 21 ---Score -1.30 (backtrack impurty= 0)
+.C.CBAc.c.....Db.ad..
+Test: 821 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CB.BA.A.c.D...bb.aad
+Test: 822 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+C.CBA..c.cDD...ba.dd
+Test: 823 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+..CB.BA.cD..bb...ad..
+Test: 824 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+.CBBBA.cD.b.b.ba..d.
+Test: 825 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+C.CBB..AccDb.b....ad.
+Test: 826 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C.BB.A.c.D.bb.a.d..
+Test: 827 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CC.BA.c.c....DDba.dd
+Test: 828 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBB..A.cD.D.bba...dd
+Test: 829 Size of the Sequence: 20 ---Score -4.40 (backtrack impurty= 0)
+C.C.C.B..Ac.c.cDbad.
+Test: 830 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB.Ac.......D.ba..d.
+Test: 831 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+CB.BBA...c.Dbb.ba..d
+Test: 832 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+...C..B...A.c.Dba.d.
+Test: 833 Size of the Sequence: 21 ---Score -11.40 (backtrack impurty= 0)
+.C.CBAA.A.AccDbaaaa.d
+Test: 834 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+.C.CBA.c.cD...ba..d.
+Test: 835 Size of the Sequence: 20 ---Score -5.60 (backtrack impurty= 0)
+C.C.BBAccDD.b.b.ad.d
+Test: 836 Size of the Sequence: 20 ---Score -9.90 (backtrack impurty= 0)
+C...BBAAAcD..bba.aad
+Test: 837 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CBAcD.Db.a..dd.......
+Test: 838 Size of the Sequence: 20 ---Score -8.20 (backtrack impurty= 0)
+C.CBAAc.cDD.b.aa.d.d
+Test: 839 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C..B..A.AcD.b..aad...
+Test: 840 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CCB....Ac.cD..ba.d.
+Test: 841 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+CCB..A..c.cDDb.a.d.d
+Test: 842 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+C.BA.A.c.Db.a.a...d.
+Test: 843 Size of the Sequence: 21 ---Score -3.70 (backtrack impurty= 0)
+C...BA.AcD.D...baad.d
+Test: 844 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CCB.Ac.cD...b.a.d...
+Test: 845 Size of the Sequence: 21 ---Score -3.00 (backtrack impurty= 0)
+.C..BAA.AcD.b..a.aa.d
+Test: 846 Size of the Sequence: 20 ---Score -3.40 (backtrack impurty= 0)
+.C....BAc..D.Dba.d.d
+Test: 847 Size of the Sequence: 21 ---Score -3.40 (backtrack impurty= 0)
+C.CB....A..c.c..Dba.d
+Test: 848 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+CB..AAc.D.DDbaa...ddd
+Test: 849 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+C.BBAAc...Db.baad...
+Test: 850 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CBAA.Ac...D...b.aaad
+Test: 851 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+.CB.A..cD.D..b..add..
+Test: 852 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+CB.Ac......D.Dba.dd.
+Test: 853 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBAA.AcDb......aa.ad
+Test: 854 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CB...AAcDb....a.a.d.
+Test: 855 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CB.BA.c.Dbb.....ad..
+Test: 856 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+.C.CCB.BAc.c.cDbb.ad.
+Test: 857 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CBB.B.A..cD.bb.bad..
+Test: 858 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+CBA..c....D.D.ba.d.d
+Test: 859 Size of the Sequence: 21 ---Score -4.60 (backtrack impurty= 0)
+.C.C.C.BA....cccDbad.
+Test: 860 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+C...BAA..c.Dba.ad...
+Test: 861 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+..C.CBA.ccDb...ad...
+Test: 862 Size of the Sequence: 21 ---Score -3.00 (backtrack impurty= 0)
+CCC..BAcc.c.D...bad..
+Test: 863 Size of the Sequence: 21 ---Score -5.20 (backtrack impurty= 0)
+CB.B.B.BAc...Dbbb.bad
+Test: 864 Size of the Sequence: 21 ---Score -12.10 (backtrack impurty= 0)
+C.BB.BAAc..DDb.bbaadd
+Test: 865 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+.C.....B.BAcDb.ba..d
+Test: 866 Size of the Sequence: 21 ---Score -5.60 (backtrack impurty= 0)
+C.CBBBAcc.Db.bb...ad.
+Test: 867 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+..CB.A.c..Db.ad.....
+Test: 868 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBAA..c...D.b....aad
+Test: 869 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CC.B...A.Ac.cDb.aa.d
+Test: 870 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C....B.B.BAcDb.bbad.
+Test: 871 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+.CC.BA.cc...DDbadd..
+Test: 872 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+CB.B..AA.cD.Dbb.a.add
+Test: 873 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+CB......A.AcD.Dbaadd
+Test: 874 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+.CB.B..Ac..DDbb.add.
+Test: 875 Size of the Sequence: 21 ---Score -4.20 (backtrack impurty= 0)
+CB.B.A.AcDbb...aa..d.
+Test: 876 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB.A...cD....b...ad.
+Test: 877 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CBBA...c.D..b.ba.d..
+Test: 878 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CBA.A..cD.b.aad....
+Test: 879 Size of the Sequence: 21 ---Score -5.70 (backtrack impurty= 0)
+C..BBA.A.AcDb.baa.ad.
+Test: 880 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+..CB.B.BAcDbbbad....
+Test: 881 Size of the Sequence: 21 ---Score -5.40 (backtrack impurty= 0)
+C.C.CBA..cc.c..D.bad.
+Test: 882 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+...CCBAAc.c.Db..a.ad
+Test: 883 Size of the Sequence: 20 ---Score -5.60 (backtrack impurty= 0)
+.CCBB.Ac.c.DDbb..add
+Test: 884 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..C...BA.c.DDba.d.d.
+Test: 885 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CBA..cDD..ba...d.d..
+Test: 886 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+C.CB.A.A.c.c.DDbaadd
+Test: 887 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB...AcD....ba....d.
+Test: 888 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..C.BB..A....cDbb.ad
+Test: 889 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..CBA...c.DDba.dd...
+Test: 890 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+..C.B.BBA.cDbbb..a.d
+Test: 891 Size of the Sequence: 20 ---Score -4.60 (backtrack impurty= 0)
+CCBA.....ccDD.ba.d.d
+Test: 892 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB..Ac...Db.....ad..
+Test: 893 Size of the Sequence: 20 ---Score -6.60 (backtrack impurty= 0)
+CBA.A.AcD.baaa.d....
+Test: 894 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.C.BB..A...cDb.bad..
+Test: 895 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CB.A.A..cD..baad....
+Test: 896 Size of the Sequence: 20 ---Score -5.50 (backtrack impurty= 0)
+C.BB.BA.c.D..b.bbad.
+Test: 897 Size of the Sequence: 20 ---Score -8.10 (backtrack impurty= 0)
+CCB.AAAc.cDb..a.a.ad
+Test: 898 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C..BAAcD...b.aa.d....
+Test: 899 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+..C.BB.BA.c.Dbb.bad.
+Test: 900 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+C.B...Ac.....Db.a.d.
+Test: 901 Size of the Sequence: 21 ---Score -5.40 (backtrack impurty= 0)
+CB.A.Ac.DD.b..a.ad.d.
+Test: 902 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+...C.CBAcc.D.b.ad...
+Test: 903 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+C.C.BA.A.cc.DDba.add
+Test: 904 Size of the Sequence: 21 ---Score -1.50 (backtrack impurty= 0)
+C.B..A.AcDbaad.......
+Test: 905 Size of the Sequence: 20 ---Score -8.50 (backtrack impurty= 0)
+CC.CB.A.Acc.cDDbaadd
+Test: 906 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+C.B..A.A...c..Db.aad
+Test: 907 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C.B.A.AcDb...aad...
+Test: 908 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.CC.BAA.c.c...D.baad
+Test: 909 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.CB.AA.c.Dba.a...d..
+Test: 910 Size of the Sequence: 21 ---Score -5.10 (backtrack impurty= 0)
+.CB.AAAcD.Db..a.aadd.
+Test: 911 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+...CB.A.AcD.b.aa..d.
+Test: 912 Size of the Sequence: 21 ---Score -7.20 (backtrack impurty= 0)
+.C.B.BA.AcDDDbba.addd
+Test: 913 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+..C.BA.AcD.b...aa.d.
+Test: 914 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CBA.cD...b...ad.....
+Test: 915 Size of the Sequence: 21 ---Score -6.50 (backtrack impurty= 0)
+.CC.BBAc.c.DDDbbadd.d
+Test: 916 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+...C.B.BA.c.Db.ba.d.
+Test: 917 Size of the Sequence: 21 ---Score -6.10 (backtrack impurty= 0)
+C.BBAcDDDbb..a.d.d.d.
+Test: 918 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+CC.BB..Ac.cDb.b..ad.
+Test: 919 Size of the Sequence: 21 ---Score -4.80 (backtrack impurty= 0)
+CB.BA.Ac..DDbba.a.d.d
+Test: 920 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+...CBA.A.Ac.D..baaad
+Test: 921 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+...CBAc..Dba....d...
+Test: 922 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+CB.B.BA.Ac..Dbbbaa.d
+Test: 923 Size of the Sequence: 21 ---Score -7.60 (backtrack impurty= 0)
+.CB.BB.A.cD.D.bbbad.d
+Test: 924 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.CB.A.Ac..D...b.aad.
+Test: 925 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CBB.Ac...D.Dbba.dd..
+Test: 926 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CBAc.....D...b.a.d..
+Test: 927 Size of the Sequence: 20 ---Score -1.40 (backtrack impurty= 0)
+C..B...A.Ac.D.b..aad
+Test: 928 Size of the Sequence: 20 ---Score -2.30 (backtrack impurty= 0)
+..C.C.BBA.ccDb.ba.d.
+Test: 929 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+CCBA...c.cD.D...badd
+Test: 930 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+CCB.AA.c.cD.b...a.ad.
+Test: 931 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CCB.A.A..ccDb.a.a.d.
+Test: 932 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+C.C.B.Ac.cD.ba.....d
+Test: 933 Size of the Sequence: 21 ---Score -8.10 (backtrack impurty= 0)
+CC.B.BAc.cDDbba...dd.
+Test: 934 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+C.CB.BA.ccD.Dbbad.d.
+Test: 935 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+CB.BB.A.A.cDb.bba.a.d
+Test: 936 Size of the Sequence: 20 ---Score -3.10 (backtrack impurty= 0)
+C.CB.BAc.cDbb.ad....
+Test: 937 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+.CC.BA.c.cD.D.b.a.dd
+Test: 938 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+.C..BA.A.c.D.ba.a.d.
+Test: 939 Size of the Sequence: 20 ---Score -8.00 (backtrack impurty= 0)
+CB.B.A.c.D.DDbbadd.d
+Test: 940 Size of the Sequence: 21 ---Score -5.80 (backtrack impurty= 0)
+C.CB.Ac.cD.Db.ad.d...
+Test: 941 Size of the Sequence: 21 ---Score -3.30 (backtrack impurty= 0)
+C.B.A.A.c.D.b...aad..
+Test: 942 Size of the Sequence: 21 ---Score -4.70 (backtrack impurty= 0)
+CBBB..Ac..Db.bbad....
+Test: 943 Size of the Sequence: 20 ---Score -2.10 (backtrack impurty= 0)
+C.CB....A.c.c.D.bad.
+Test: 944 Size of the Sequence: 21 ---Score -2.10 (backtrack impurty= 0)
+CB.....A.Ac.Db....aad
+Test: 945 Size of the Sequence: 20 ---Score -2.90 (backtrack impurty= 0)
+.CB.A.c.D.D.Dbaddd..
+Test: 946 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+.C.B.BA.....cD.bbad.
+Test: 947 Size of the Sequence: 21 ---Score -7.50 (backtrack impurty= 0)
+C.CB.B..AAcc.Db.ba.ad
+Test: 948 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+CBBA.Ac...D..bb.a.ad
+Test: 949 Size of the Sequence: 21 ---Score -3.90 (backtrack impurty= 0)
+CB...AAc.D.Db..a.ad.d
+Test: 950 Size of the Sequence: 21 ---Score -8.60 (backtrack impurty= 0)
+CCCBA.Acc.cDD.ba.a.dd
+Test: 951 Size of the Sequence: 20 ---Score -5.70 (backtrack impurty= 0)
+CB.A..c..DD.Dbad.dd.
+Test: 952 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+...CB..Ac...D...ba.d
+Test: 953 Size of the Sequence: 20 ---Score -10.00 (backtrack impurty= 0)
+CCB..Ac.cDD.D.bad.dd
+Test: 954 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+...CB.Ac..D.Dbad.d..
+Test: 955 Size of the Sequence: 20 ---Score -3.90 (backtrack impurty= 0)
+..CB.BA.Ac.D..bbaa.d
+Test: 956 Size of the Sequence: 21 ---Score -6.70 (backtrack impurty= 0)
+C.BA..c..DD.Dba.d.dd.
+Test: 957 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+....C.C...BA.cc.Dbad
+Test: 958 Size of the Sequence: 20 ---Score -1.30 (backtrack impurty= 0)
+C...B.Ac.DD.ba...d.d
+Test: 959 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+CB...AcDb......ad...
+Test: 960 Size of the Sequence: 20 ---Score -5.40 (backtrack impurty= 0)
+CB.A.Ac.DD.b..a.ad.d
+Test: 961 Size of the Sequence: 21 ---Score -3.50 (backtrack impurty= 0)
+...CB.A.AAcDDb.a.aadd
+Test: 962 Size of the Sequence: 20 ---Score -3.60 (backtrack impurty= 0)
+CBA.A.cD.D..ba.ad.d.
+Test: 963 Size of the Sequence: 20 ---Score -9.90 (backtrack impurty= 0)
+.CB.AA.c.DDD.baad.dd
+Test: 964 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+...C..BAAcDbaa.d....
+Test: 965 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+C...B...A.AAcD.baaad
+Test: 966 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBAc..DD...b..ad.d..
+Test: 967 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+CBB.Ac..D...bba..d..
+Test: 968 Size of the Sequence: 20 ---Score -2.80 (backtrack impurty= 0)
+CB.BA.A.cD...b.baad.
+Test: 969 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.C.....B.AcD..b..a.d
+Test: 970 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+...CBAcDD..b.a.d.d..
+Test: 971 Size of the Sequence: 20 ---Score -3.50 (backtrack impurty= 0)
+.CBAA.cD.D.b..a.ad.d
+Test: 972 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+C.BBA.cDDb.ba...d.d.
+Test: 973 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+CB.BAAc.D.Dbbaadd...
+Test: 974 Size of the Sequence: 20 ---Score -1.50 (backtrack impurty= 0)
+CBA.cDD.ba.....d.d..
+Test: 975 Size of the Sequence: 20 ---Score -2.50 (backtrack impurty= 0)
+CB.BA..c.D.D.b.b.add
+Test: 976 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+..C.B.BAcDDbb...add.
+Test: 977 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CCB...A...c.cDDbadd.
+Test: 978 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C..BBAc.Db.bad.....
+Test: 979 Size of the Sequence: 20 ---Score -2.20 (backtrack impurty= 0)
+.CB.B..A..c.Db.bad..
+Test: 980 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.CC.BAc.cDb.....a.d.
+Test: 981 Size of the Sequence: 20 ---Score -7.50 (backtrack impurty= 0)
+CCBBAc.cDD..b.ba.d.d
+Test: 982 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+C..BAcD......bad....
+Test: 983 Size of the Sequence: 21 ---Score -3.50 (backtrack impurty= 0)
+CCB..Ac.c.D.D.b..a.dd
+Test: 984 Size of the Sequence: 20 ---Score -9.00 (backtrack impurty= 0)
+C.CBAA.ccD.Db..aad.d
+Test: 985 Size of the Sequence: 20 ---Score -3.00 (backtrack impurty= 0)
+CB...A.cD.D.Dba.dd.d
+Test: 986 Size of the Sequence: 20 ---Score 0.00 (backtrack impurty= 0)
+.CB......A..c..Db.ad
+Test: 987 Size of the Sequence: 20 ---Score -6.70 (backtrack impurty= 0)
+.C.BB.BA.cDb.bb..a.d
+Test: 988 Size of the Sequence: 20 ---Score -3.30 (backtrack impurty= 0)
+.C.BAA.c..D...b.aad.
+Test: 989 Size of the Sequence: 21 ---Score -6.60 (backtrack impurty= 0)
+..CC.BAAc.cD.ba.a.d..
+Test: 990 Size of the Sequence: 20 ---Score -0.60 (backtrack impurty= 0)
+CB.BAc.D...bb.ad....
+Test: 991 Size of the Sequence: 20 ---Score -4.20 (backtrack impurty= 0)
+CBAAc...DD.b..a.ad.d
+Test: 992 Size of the Sequence: 20 ---Score -1.30 (backtrack impurty= 0)
+C.B.B....AcD..b.bad.
+Test: 993 Size of the Sequence: 20 ---Score -4.80 (backtrack impurty= 0)
+.CBAc.DD.D.ba....ddd
+Test: 994 Size of the Sequence: 20 ---Score -4.70 (backtrack impurty= 0)
+CBBAA....cD..b.ba.ad
+Test: 995 Size of the Sequence: 21 ---Score -0.60 (backtrack impurty= 0)
+CB.A.Ac.D.b..aa..d...
+Test: 996 Size of the Sequence: 21 ---Score -9.00 (backtrack impurty= 0)
+CC.BB.AAAc.cDbba.a.ad
+Test: 997 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+..CB.B.BAc.Dbbba...d
+Test: 998 Size of the Sequence: 20 ---Score -2.40 (backtrack impurty= 0)
+..CBAA.A.cD.baa.ad..
+Test: 999 Size of the Sequence: 20 ---Score -7.30 (backtrack impurty= 0)
+CBAc.D.D.DDba.dd.d.d
+Test: 1000 Size of the Sequence: 20 ---Score -1.80 (backtrack impurty= 0)
+.C..B.B..Ac.DDb.badd
+End of file, 1000 tested Total execution time: 22.2066 seconds(mean 0.0212 seconds)

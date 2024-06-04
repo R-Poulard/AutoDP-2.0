@@ -4,9 +4,9 @@ void backtrace_CLIQUE0(HashTable *hashTable,int score,int i, int i2, int j2, int
         return ;
     }
     int tmp=compute_CLIQUE1(hashTable,i+1,i2,j2,j-1);
-    int sc=INTB(i,j,i,j);
+    int sc=INTB(i,j,-1,-1);
     if(score==add(sc,tmp)){
-        backtrace_INTB(sc,i,j,i,j);
+        backtrace_INTB(sc,i,j,-1,-1);
         backtrace_CLIQUE1(hashTable,tmp,i+1,i2,j2,j-1);
     }
 

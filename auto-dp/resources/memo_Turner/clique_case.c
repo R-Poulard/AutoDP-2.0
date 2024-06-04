@@ -1,20 +1,11 @@
 int compute_CLIQUE0(HashTable *hashTable,int i, int i2, int j2, int j){
-    int CLIQUE=-1;
-    int value;
-    int tab[] = {CLIQUE,i,i2,j2,j};
-    int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
         return INT_MAX;
     }
 
-    if (get(hashTable,tab,size,&value)) { 
-        return value;
-    }
-    
-    int min_value = add(INTB(i,j,i,j),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
+    int min_value = add(INTB(i,j,-1,-1),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
 
-    insert(hashTable,tab,size,min_value);
     return min_value;
 }
 

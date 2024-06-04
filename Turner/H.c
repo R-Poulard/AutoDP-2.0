@@ -4,6 +4,11 @@
 #include <math.h>
 #include <limits.h>
 #include <time.h>
+#include <ViennaRNA/fold_compound.h>
+#include <ViennaRNA/utils/basic.h>
+#include <ViennaRNA/utils/strings.h>
+#include <ViennaRNA/mfe.h>
+#include <ViennaRNA/loop_energies.h>
 
 //HASHING TABLE FUNCTION
 #define LOAD_FACTOR_THRESHOLD 0.7
@@ -11,7 +16,7 @@
 
 int TABLE_SIZE = 64019;
 int N = 10;
-int THETA_PAIRING=1;
+int THETA_PAIRING=3;
 int THETA = 100;
 
 void preset_tablesize(int size) {
@@ -309,6 +314,7 @@ int MAX;
 char * correct_score = NULL;
 char * structure=NULL;
 char bracket='A';
+vrna_fold_compound_t *fc ;
 
 int matching(char x, char y){
     if(x!='X' && x!='G' && x!='C' && x!='A' && x!='U' && x!='T'){
@@ -351,39 +357,119 @@ int add(int a,int b){
     return a+b;
 }
 
-int MFEFree(int a,int b){
-    if(b<a){
-        return 0;
+int write_structure(vrna_bp_stack_t *bp,int length){
+    int i,j,temp;
+    for (int k = 1; k <= bp[0].i; k++) {
+      i = bp[k].i;
+      j = bp[k].j;
+      if (i > length)
+        i -= length;
+
+      if (j > length)
+        j -= length;
+
+      if (i > j) {
+        temp  = i;
+        i     = j;
+        j     = temp;
+      }
+
+      if (i == j) {
+        /* Gquad bonds are marked as bp[i].i == bp[i].j */
+        structure[i - 1] = '+';
+      } else {
+        /* the following ones are regular base pairs */
+        structure[i - 1]  = '(';
+        structure[j - 1]  = ')';
+      }
     }
-    return -(b-a)-1;
 }
 
+int MFEFree(int a,int b){
+    if(a>b){
+        return 0;
+    }
+    a=a++;
+    b=b++;
+    int * indx = fc->jindx;
+    int ij = indx[b] + a;
+    int * fML =fc->matrices->fML;
+    return min(0,fML[ij]);
+}
+
+int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack){
+    int ret;
+    int p,q,comp1,comp2;
+    int s=0;
+    int b=bp_stack[0].i;
+    sect bt_stack[500]; /* stack of partial structures for backtracking */
+    //printf("a=%d,b=%d\n",i,j);
+    int BT=vrna_BT_mb_loop_split(fc, &i, &j, &p, &q, &comp1, &comp2, bp_stack, &b);
+    if(BT!=1){
+        return BT;
+    }
+    if (i > 0) {
+        bt_stack[++s].i = i;
+        bt_stack[s].j   = j;
+        bt_stack[s].ml  = comp1;
+    }
+
+    if (p > 0) {
+        bt_stack[++s].i = p;
+        bt_stack[s].j   = q;
+        bt_stack[s].ml  = comp2;
+    }
+    BT=backtrack(fc,bp_stack,bt_stack,s,NULL);
+    return BT;
+}
 
 void backtrace_MFEFree(int score, int a,int b){
-    for(int i=a;i<=b;i++){
-        if(score==MFEFree(i,b)){
-            for(int y=i;y<=b;y++){
-                 structure[y]=bracket-17;
-            }
-            return;
-        }
+    if(a>b || score==0){
+        return;
     }
+    a++;
+    b++;
+    vrna_bp_stack_t * bp=(vrna_bp_stack_t *)vrna_alloc(sizeof(vrna_bp_stack_t) * (4 * ( 1 + (b-a) / 2)));
+    int bt=compute_BT(fc,a,b,bp);
+    write_structure(bp,strlen(line));
+    free(bp);
 }
 
 int INTB(int a,int b,int c,int d){
-    int bp=bp_score(a,b);
-    int mfe=add(MFEFree(c,a-1),MFEFree(b+1,d));
-    return add(bp,mfe);
+    if(d==-1 && c==-1){
+        return 0;
+    }    
+    int stacking;
+    vrna_param_t *P = fc->params;
+    vrna_md_t *md=&(P->model_details);
+    int *rtype= &(md->rtype[0]);
+    int *ptype = fc->ptype;
+    int *indx = fc->jindx;
+    /*if (a==c && b==d){
+        a++;b++;c++;d++;
+        int ij=indx[c]+d;
+        int type = vrna_get_ptype(ij, ptype);
+        int kl=indx[a]+b;
+        int type_2  = rtype[vrna_get_ptype(kl, ptype)];
+        
+        int stacking_energy = P->stack[type][type_2];
+        return stacking_energy;
+    }*/
+    
+    a++;b++;
+
+    int energy_full = vrna_eval_int_loop(fc,c,d,a,b);
+    
+    return energy_full;
 }
 
 void backtrace_INTB(int score,int a,int b,int c,int d){
     structure[a]=bracket;
     structure[b]=bracket+32;
-
-    backtrace_MFEFree(MFEFree(c,a-1),c,a-1);
-    backtrace_MFEFree(MFEFree(b+1,d),b+1,d);
     return;
 }
+
+
 
 
 
@@ -490,6 +576,19 @@ int main(int argc, char ** argv) {
         char *ss = NULL;
         len=getline(&ss,&b_len, fp);
         createMatrix(MAX,ss);
+        if (len != -1) {
+            if (ss[len - 1] == '\n') {
+                ss[len - 1] = '\0'; // Replace newline character with null terminator
+                len--; // Decrement the length to exclude the removed '\n'
+            }
+        }
+        else{
+            destroyHashTable(hashTable);
+            free(line);
+            free(ss);
+            printf("No secondary structure found for test %d\n",nb_tests);
+            exit(-1);
+        }
         //reading the score
         len=getline(&correct_score,&b_len, fp);
         if (len != -1) {
@@ -521,11 +620,16 @@ int main(int argc, char ** argv) {
         //Start of test
         clock_t test_start_time = clock();
 
+        vrna_init_rand();
+        fc = vrna_fold_compound(line, NULL, VRNA_OPTION_DEFAULT);
+        vrna_constraints_add(fc, ss, VRNA_CONSTRAINT_DB_DEFAULT);
+        vrna_mfe(fc, NULL);
+        
         //folding
         int score = fold(hashTable);
         //retrieve backtrack
         backtrace(hashTable,score);
-        
+        vrna_fold_compound_free(fc);
         clock_t test_end_time = clock();
 
         double test_time = ((double)(test_end_time - test_start_time)) / CLOCKS_PER_SEC;
@@ -533,14 +637,12 @@ int main(int argc, char ** argv) {
         //end of test
         
         //sanity checks
-        if(score == number){
-            printf("Correct");
+        if(score == number || 1){//we autorise wrong score in the case of the Turner model
+            float fl=(float)score/100.0;
+            printf("Score %.2f ",fl);
             int nb=0;
             for(int i=0;i<MAX;i++){
-                if(structure[i]=='.'){
-                    printf("missing bt\n");
-                    break;
-                }
+                
                 if(structure[i]>64){
                     if(structure[i]<91){
                         
@@ -585,22 +687,13 @@ int main(int argc, char ** argv) {
 }
 
 int compute_CLIQUE0(HashTable *hashTable,int i, int i2, int j2, int j){
-    int CLIQUE=-1;
-    int value;
-    int tab[] = {CLIQUE,i,i2,j2,j};
-    int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
         return INT_MAX;
     }
 
-    if (get(hashTable,tab,size,&value)) { 
-        return value;
-    }
-    
-    int min_value = add(INTB(i,j,i,j),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
+    int min_value = add(INTB(i,j,-1,-1),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
 
-    insert(hashTable,tab,size,min_value);
     return min_value;
 }
 
@@ -639,21 +732,13 @@ int compute_CLIQUE1(HashTable *hashTable,int i, int i2, int j2, int j) {
 }
 
 int compute_C0(HashTable *hashTable,int a, int f, int c,int d){
-    int C0 = 67;
-    int value;
-
-    int tab[]={C0,a,f,c,d};
-    int size = 5;
-
+    
     if(a<0 || f<0 || f>=MAX || a>=MAX || a>f){
         return INT_MAX;
     }
-    if (get(hashTable,tab,size,&value)){
-        return value;
-    }
-    int min_value=add(INTB(a,f,a,f),compute_C1(hashTable,a+1,f-1,c,d));
+   
+    int min_value=add(INTB(a,f,-1,-1),compute_C1(hashTable,a+1,f-1,c,d));
 
-    insert(hashTable,tab,size,min_value);
     return min_value;
 }
 int compute_C1(HashTable *hashTable,int a, int f, int c,int d) {
@@ -751,9 +836,9 @@ void backtrace_CLIQUE0(HashTable *hashTable,int score,int i, int i2, int j2, int
         return ;
     }
     int tmp=compute_CLIQUE1(hashTable,i+1,i2,j2,j-1);
-    int sc=INTB(i,j,i,j);
+    int sc=INTB(i,j,-1,-1);
     if(score==add(sc,tmp)){
-        backtrace_INTB(sc,i,j,i,j);
+        backtrace_INTB(sc,i,j,-1,-1);
         backtrace_CLIQUE1(hashTable,tmp,i+1,i2,j2,j-1);
     }
 
@@ -793,9 +878,9 @@ void backtrace_C0(HashTable *hashTable, int score, int a, int f, int c,int d) {
         return;
     }
     int tmp=compute_C1(hashTable,a+1,f-1,c,d);
-    int sc=INTB(a,f,a,f);
+    int sc=INTB(a,f,-1,-1);
     if(score==add(sc,tmp)){
-        backtrace_INTB(sc,a,f,a,f);
+        backtrace_INTB(sc,a,f,-1,-1);
         backtrace_C1(hashTable,tmp,a+1,f-1,c,d);
     }
     return;

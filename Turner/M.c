@@ -8,6 +8,7 @@
 #include <ViennaRNA/utils/basic.h>
 #include <ViennaRNA/utils/strings.h>
 #include <ViennaRNA/mfe.h>
+#include <ViennaRNA/loop_energies.h>
 
 //HASHING TABLE FUNCTION
 #define LOAD_FACTOR_THRESHOLD 0.7
@@ -385,44 +386,130 @@ int write_structure(vrna_bp_stack_t *bp,int length){
 }
 
 int MFEFree(int a,int b){
-    if(a>=b || a<0 || b<0 || a>=MAX-1 || b>=MAX-1){
+    if(a>b){
         return 0;
     }
-    a=a+1;
-    b=b+1;
-    int * indx = fc->iindx;
+    a=a++;
+    b=b++;
+    int * indx = fc->jindx;
     int ij = indx[b] + a;
     int * fML =fc->matrices->fML;
     return min(0,fML[ij]);
 }
 
+int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack){
+    int ret;
+    int p,q,comp1,comp2;
+    int s=0;
+    int b=bp_stack[0].i;
+    sect bt_stack[500]; /* stack of partial structures for backtracking */
+    printf("a=%d,b=%d\n",i,j);
+    int BT=vrna_BT_mb_loop_split(fc, &i, &j, &p, &q, &comp1, &comp2, bp_stack, &b);
+    if(BT!=1){
+        return BT;
+    }
+    if (i > 0) {
+        bt_stack[++s].i = i;
+        bt_stack[s].j   = j;
+        bt_stack[s].ml  = comp1;
+    }
+
+    if (p > 0) {
+        bt_stack[++s].i = p;
+        bt_stack[s].j   = q;
+        bt_stack[s].ml  = comp2;
+    }
+    BT=backtrack(fc,bp_stack,bt_stack,s,NULL);
+    return BT;
+}
 
 void backtrace_MFEFree(int score, int a,int b){
-    if(a>=b-2 || a<0 || b<0 || a>=MAX-1 || b>=MAX-1){
+    if(a>b){
         return 0;
     }
     a++;
     b++;
-    int k,l,cmp1,cmp2;
     vrna_bp_stack_t * bp=(vrna_bp_stack_t *)vrna_alloc(sizeof(vrna_bp_stack_t) * (4 * ( 1 + (b-a) / 2)));
-    int nb=bp[0].i;
-    vrna_BT_mb_loop_split(fc,&a,&b,&k,&l,&cmp1,&cmp2,bp,&nb);
+    int bt=compute_BT(fc,a,b,bp);
     write_structure(bp,strlen(line));
     free(bp);
 }
 
+
+/*int INTB(int a,int b,int c,int d){
+    if(d==-1 && c==-1){
+        return 0;
+    }    
+    int penality;
+    vrna_param_t *P = fc->params;
+    vrna_md_t *md=&(P->model_details);
+    int *rtype= &(md->rtype[0]);
+    if (a==c && b==d){
+        penality=0;// add stacking?
+        int * indx = fc->jindx;
+        int ij= indx[(b+1)]+(a+1);
+
+        int type= vrna_get_ptype(ij, fc->ptype);
+        int type2=rtype[vrna_get_ptype(indx[(b)]+(a), fc->ptype)];
+        penality=P->stack[type][type2];
+        return penality;
+    }
+    else{
+        int penality=fc->params->MLclosing;
+    }
+    int mfe1=MFEFree(c,a-1);
+    int mfe2=MFEFree(b+1,d);
+    int min_value=add(mfe1,mfe2);
+    
+    return add(min_value,penality);
+}*/
+
 int INTB(int a,int b,int c,int d){
-    int bp=bp_score(a,b);
-    int mfe=add(MFEFree(c,a-1),MFEFree(b+1,d));
-    return add(bp,mfe);
+    if(d==-1 && c==-1){
+        return 0;
+    }    
+    int stacking;
+    vrna_param_t *P = fc->params;
+    vrna_md_t *md=&(P->model_details);
+    int *rtype= &(md->rtype[0]);
+    int *ptype = fc->ptype;
+    int *indx = fc->jindx;
+    if (a==c && b==d){
+        a++;b++;c++;d++;
+        int ij=indx[c]+d;
+        int type = vrna_get_ptype(ij, ptype);
+        int kl=indx[a]+b;
+        int type_2  = rtype[vrna_get_ptype(kl, ptype)];
+        
+        int stacking_energy = P->stack[type][type_2];
+        return stacking_energy;
+    }
+    
+    a++;b++;c++;d++;
+
+    int energy_full = vrna_eval_int_loop(fc,c,d,a,b);
+    /*if(u1+u2==1){
+        size_penalty= P->bulge[u1+u2];
+    }else if(u1==0 || u2 == 0){
+        size_penalty= P->bulge[u1+u2];
+    }
+    else{
+        size_penalty = P->internal_loop[u1 + u2];
+    }
+    int asymmetry_penalty = abs(u1 - u2) * md->internal_loop_asym;
+    int ptype1 = vrna_get_ptype_md(fc->ptype[a * fc->length + b], &(fc->exp_params->model_details));
+    int ptype2 = vrna_get_ptype_md(fc->ptype[c * fc->length + d], &(fc->exp_params->model_details));
+    int terminal_mismatch_penalty = 
+    P->mismatchI[ptype1][fc->sequence_encoding[a+1]][fc->sequence_encoding[b-1]] + 
+    P->mismatchI[ptype2][fc->sequence_encoding[c-1]][fc->sequence_encoding[d+1]];
+    int total_energy = size_penalty + asymmetry_penalty + terminal_mismatch_penalty;
+    */
+    return energy_full;
 }
 
 void backtrace_INTB(int score,int a,int b,int c,int d){
     structure[a]=bracket;
     structure[b]=bracket+32;
-
-    backtrace_MFEFree(MFEFree(c,a-1),c,a-1);
-    backtrace_MFEFree(MFEFree(b+1,d),b+1,d);
     return;
 }
 
@@ -611,14 +698,11 @@ int main(int argc, char ** argv) {
         //end of test
         
         //sanity checks
-        if(score == number){
-            printf("Correct");
+        if(score == number || 1){
+            float fl=(float)score/100.0;
+            printf("Score %.2f ",fl);
             int nb=0;
             for(int i=0;i<MAX;i++){
-                if(structure[i]=='.'){
-                    printf("missing bt\n");
-                    break;
-                }
                 if(structure[i]>64){
                     if(structure[i]<91){
                         
@@ -662,23 +746,11 @@ int main(int argc, char ** argv) {
     return 0;
 }
 
-int compute_CLIQUE0(HashTable *hashTable,int i, int i2, int j2, int j){
-    int CLIQUE=-1;
-    int value;
-    int tab[] = {CLIQUE,i,i2,j2,j};
-    int size= 5;
-
+int compute_CLIQUE0(HashTable *hashTable,int i, int i2, int j2, int j){  
    if(i2>=j2 || i2<i-1 || j2>j+1){
         return INT_MAX;
     }
-
-    if (get(hashTable,tab,size,&value)) { 
-        return value;
-    }
-    
-    int min_value = add(INTB(i,j,i,j),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
-
-    insert(hashTable,tab,size,min_value);
+    int min_value = add(INTB(i,j,-1,-1),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
     return min_value;
 }
 
@@ -960,9 +1032,9 @@ void backtrace_CLIQUE0(HashTable *hashTable,int score,int i, int i2, int j2, int
         return ;
     }
     int tmp=compute_CLIQUE1(hashTable,i+1,i2,j2,j-1);
-    int sc=INTB(i,j,i,j);
+    int sc=INTB(i,j,-1,-1);
     if(score==add(sc,tmp)){
-        backtrace_INTB(sc,i,j,i,j);
+        backtrace_INTB(sc,i,j,-1,-1);
         backtrace_CLIQUE1(hashTable,tmp,i+1,i2,j2,j-1);
     }
 
@@ -1183,7 +1255,7 @@ void backtrace_A(HashTable *hashTable,int score,int a,int p) {
     for (int i=a+4;i<p-3;i++) {
         for (int j=i+1;j<p-2;j++) {
             for (int n=j+2;n<p;n++) {
-
+              
 
               int tmp0= compute_B( hashTable,a,i,j,n);
               if(tmp0==INT_MAX){continue;}

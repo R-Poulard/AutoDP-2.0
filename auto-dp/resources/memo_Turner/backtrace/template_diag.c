@@ -4,9 +4,9 @@ void backtrace_MAINNAME0(HashTable *hashTable, int score, int V1, int V2, CONST_
         return;
     }
     int tmp=compute_MAINNAME1(hashTable,V1+1,V2-1,CONST);
-    int sc=INTB(V1,V2,V1,V2);
+    int sc=INTB(V1,V2,-1,-1);
     if(score==add(sc,tmp)){
-        backtrace_INTB(sc,V1,V2,V1,V2);
+        backtrace_INTB(sc,V1,V2,-1,-1);
         backtrace_MAINNAME1(hashTable,tmp,V1+1,V2-1,CONST);
     }
     return;

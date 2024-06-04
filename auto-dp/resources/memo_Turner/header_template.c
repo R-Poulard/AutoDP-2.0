@@ -4,6 +4,11 @@
 #include <math.h>
 #include <limits.h>
 #include <time.h>
+#include <ViennaRNA/fold_compound.h>
+#include <ViennaRNA/utils/basic.h>
+#include <ViennaRNA/utils/strings.h>
+#include <ViennaRNA/mfe.h>
+#include <ViennaRNA/loop_energies.h>
 
 //HASHING TABLE FUNCTION
 #define LOAD_FACTOR_THRESHOLD 0.7
@@ -309,6 +314,7 @@ int MAX;
 char * correct_score = NULL;
 char * structure=NULL;
 char bracket='A';
+vrna_fold_compound_t *fc ;
 
 int matching(char x, char y){
     if(x!='X' && x!='G' && x!='C' && x!='A' && x!='U' && x!='T'){
@@ -351,39 +357,102 @@ int add(int a,int b){
     return a+b;
 }
 
-int MFEFree(int a,int b){
-    if(b<a){
-        return 0;
+int write_structure(vrna_bp_stack_t *bp,int length){
+    int i,j,temp;
+    for (int k = 1; k <= bp[0].i; k++) {
+      i = bp[k].i;
+      j = bp[k].j;
+      if (i > length)
+        i -= length;
+
+      if (j > length)
+        j -= length;
+
+      if (i > j) {
+        temp  = i;
+        i     = j;
+        j     = temp;
+      }
+
+      if (i == j) {
+        /* Gquad bonds are marked as bp[i].i == bp[i].j */
+        structure[i - 1] = '+';
+      } else {
+        /* the following ones are regular base pairs */
+        structure[i - 1]  = '(';
+        structure[j - 1]  = ')';
+      }
     }
-    return -(b-a)-1;
 }
 
+int MFEFree(int a,int b){
+    if(a>b){
+        return 0;
+    }
+    a=a++;
+    b=b++;
+    int * indx = fc->jindx;
+    int ij = indx[b] + a;
+    int * fML =fc->matrices->fML;
+    return min(0,fML[ij]);
+}
+
+int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack){
+    int ret;
+    int p,q,comp1,comp2;
+    int s=0;
+    int b=bp_stack[0].i;
+    sect bt_stack[500]; /* stack of partial structures for backtracking */
+    //printf("a=%d,b=%d\n",i,j);
+    int BT=vrna_BT_mb_loop_split(fc, &i, &j, &p, &q, &comp1, &comp2, bp_stack, &b);
+    if(BT!=1){
+        return BT;
+    }
+    if (i > 0) {
+        bt_stack[++s].i = i;
+        bt_stack[s].j   = j;
+        bt_stack[s].ml  = comp1;
+    }
+
+    if (p > 0) {
+        bt_stack[++s].i = p;
+        bt_stack[s].j   = q;
+        bt_stack[s].ml  = comp2;
+    }
+    BT=backtrack(fc,bp_stack,bt_stack,s,NULL);
+    return BT;
+}
 
 void backtrace_MFEFree(int score, int a,int b){
-    for(int i=a;i<=b;i++){
-        if(score==MFEFree(i,b)){
-            for(int y=i;y<=b;y++){
-                 structure[y]=bracket-17;
-            }
-            return;
-        }
+    if(a>b || score==0){
+        return;
     }
+    a++;
+    b++;
+    vrna_bp_stack_t * bp=(vrna_bp_stack_t *)vrna_alloc(sizeof(vrna_bp_stack_t) * (4 * ( 1 + (b-a) / 2)));
+    int bt=compute_BT(fc,a,b,bp);
+    write_structure(bp,strlen(line));
+    free(bp);
 }
 
 int INTB(int a,int b,int c,int d){
-    int bp=bp_score(a,b);
-    int mfe=add(MFEFree(c,a-1),MFEFree(b+1,d));
-    return add(bp,mfe);
+    if(d==-1 && c==-1){
+        return 0;
+    }    
+    a++;b++;
+
+    int energy_full = vrna_eval_int_loop(fc,c,d,a,b);
+    
+    return energy_full;
 }
 
 void backtrace_INTB(int score,int a,int b,int c,int d){
     structure[a]=bracket;
     structure[b]=bracket+32;
-
-    backtrace_MFEFree(MFEFree(c,a-1),c,a-1);
-    backtrace_MFEFree(MFEFree(b+1,d),b+1,d);
     return;
 }
+
+
 
 
 

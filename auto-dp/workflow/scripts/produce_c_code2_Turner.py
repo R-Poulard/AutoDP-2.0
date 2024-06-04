@@ -709,7 +709,7 @@ main=main.replace('END',sorted_letters[-1])
 print("iciiii",sorted_letters,str(int(len(sorted_letters)/2)-1))
 main=main.replace('ANCH',str(int(len(sorted_letters)/2)-1))
 
-with open(DIRECTORY+'/'+PSEUDO+'testing.c',"w") as f:
+with open(DIRECTORY+'/'+PSEUDO+'.c',"w") as f:
     f.write(header+"\n")
     f.write("\n".join(declarations)+"\n")
     f.write(main+"\n")

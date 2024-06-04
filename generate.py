@@ -5,7 +5,7 @@ os.chdir("..")
 
 
 
-PSEUDO="C5"
+PSEUDO="H"
 #H generation
 if PSEUDO=="H":
     seq = "AGUC"
@@ -95,11 +95,24 @@ def generate(anchors,seq,ss,target_length,score):
     while len(seq) < target_length:
         #print("Sequence:", seq)
         #print("Anchors:", anchors)
-        choice = random.randint(0, 4)
+        choice = random.randint(0, 3)
         
         if choice <=2:  # Add 'X' (unlink) anywhere
             where = random.randint(0, len(seq))
-            seq = seq[:where] + "A" + seq[where:]
+            which = random.randint(0,3)
+            print("ici",which)
+            nuc=""
+            if which==0:
+                print("ici")
+                nuc="A"
+            elif which==1:
+                nuc="G"
+            elif which==2:
+                nuc="C"
+            elif which==3:
+                nuc="U"
+            print(nuc)
+            seq = seq[:where] + nuc + seq[where:]
             ss = ss[:where] + "x" + ss[where:]
             anchors = update_anchors(anchors, where)
             score=score-1
@@ -253,5 +266,5 @@ def check_result(path):
     return failed_lines
 
 
-create_file("test_sequence/example_"+PSEUDO+"_little",20,1000)
+create_file("test_sequence/example_"+PSEUDO+"_big",75,50)
 #print(check_result("logK4.txt"))

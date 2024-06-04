@@ -1,19 +1,11 @@
 int compute_MAINNAME0(HashTable *hashTable,int V1, int V2, CONST_INT){
-    int MAINNAME0 = INT_VALUE_NAME;
-    int value;
-
-    int tab[]={MAINNAME0,V1,V2,CONST};
-    int size = SIZE_ARRAY;
-
+    
     if(V1<0 || V2<0 || V2>=MAX || V1>=MAX || V1>V2){
         return INT_MAX;
     }
-    if (get(hashTable,tab,size,&value)){
-        return value;
-    }
-    int min_value=add(INTB(V1,V2,V1,V2),compute_MAINNAME1(hashTable,V1-1,V2+1,CONST));
+    
+    int min_value=add(INTB(V1,V2,-1,-1),compute_MAINNAME1(hashTable,V1-1,V2+1,CONST));
 
-    insert(hashTable,tab,size,min_value);
     return min_value;
 }
 int compute_MAINNAME1(HashTable *hashTable,int V1, int V2, CONST_INT) {
