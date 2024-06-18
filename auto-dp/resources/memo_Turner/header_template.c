@@ -419,7 +419,7 @@ int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack)
         bt_stack[s].j   = q;
         bt_stack[s].ml  = comp2;
     }
-    BT=backtrack(fc,bp_stack,bt_stack,s,NULL);
+    BT=vrna_backtrack_from_intervals(fc,bp_stack,bt_stack,s);
     return BT;
 }
 

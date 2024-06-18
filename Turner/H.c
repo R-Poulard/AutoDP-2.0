@@ -419,7 +419,7 @@ int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack)
         bt_stack[s].j   = q;
         bt_stack[s].ml  = comp2;
     }
-    BT=backtrack(fc,bp_stack,bt_stack,s,NULL);
+    BT=vrna_backtrack_from_intervals(fc,bp_stack,bt_stack,s);
     return BT;
 }
 
@@ -503,6 +503,7 @@ void backtrace_A(HashTable *hashTable,int score,int a,int h) ;
 int fold(HashTable * hashTable) {
     int min_value=INT_MAX;
     for(int h=0+3;h<=MAX;h++){
+        //fprintf(stderr,"%d/%d\n",h,MAX);
         for(int a=0;a<h-3;a++){
             int mfe1=MFEFree(0,a-1);
             int mfe2=MFEFree(h,MAX-1);
@@ -558,11 +559,11 @@ int main(int argc, char ** argv) {
             destroyHashTable(hashTable);
             free(line);
             free(correct_score);
-            printf("End of file, %d tested",nb_tests);
+            //printf("End of file, %d tested",nb_tests);
             break;
         }
         if(line[0]=='#'){
-            printf("%s",line);
+            //printf("%s",line);
             continue;
         }
         MAX=len;
@@ -586,7 +587,7 @@ int main(int argc, char ** argv) {
             destroyHashTable(hashTable);
             free(line);
             free(ss);
-            printf("No secondary structure found for test %d\n",nb_tests);
+            //printf("No secondary structure found for test %d\n",nb_tests);
             exit(-1);
         }
         //reading the score
@@ -608,7 +609,8 @@ int main(int argc, char ** argv) {
             exit(-1);
         }
         int number = atoi(correct_score);
-        printf("Test: %d Size of the Sequence: %d ---", nb_tests,MAX);
+        //printf("Test: %d Size of the Sequence: %d ---\n", nb_tests,MAX);
+        printf("%d;%d;", nb_tests,MAX);
         
         //elements used to record backtrack
         bracket='A';
@@ -623,7 +625,9 @@ int main(int argc, char ** argv) {
         vrna_init_rand();
         fc = vrna_fold_compound(line, NULL, VRNA_OPTION_DEFAULT);
         vrna_constraints_add(fc, ss, VRNA_CONSTRAINT_DB_DEFAULT);
-        vrna_mfe(fc, NULL);
+        char *structure2 = (char *)vrna_alloc(sizeof(char) * (MAX + 1));
+
+        float vrna_score=vrna_mfe(fc, structure2);
         
         //folding
         int score = fold(hashTable);
@@ -639,7 +643,8 @@ int main(int argc, char ** argv) {
         //sanity checks
         if(score == number || 1){//we autorise wrong score in the case of the Turner model
             float fl=(float)score/100.0;
-            printf("Score %.2f ",fl);
+            printf("%.2f;%.2f\n",fl,vrna_score);
+            fflush(stdout);
             int nb=0;
             for(int i=0;i<MAX;i++){
                 
@@ -654,7 +659,7 @@ int main(int argc, char ** argv) {
                     }
                 }
             }
-            printf("(backtrack impurty= %d)\n",nb);
+            //printf("(backtrack impurty= %d)\n",nb);
         }
         else{
             destroyHashTable(hashTable);
@@ -667,7 +672,8 @@ int main(int argc, char ** argv) {
         }
 
         
-        printf("%s\n",structure);
+        printf("AUTODP: %s\n",structure);
+        printf("VRNA: %s\n",structure2);
         
         //clean up
         destroyHashTable(hashTable);

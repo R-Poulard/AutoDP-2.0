@@ -1,0 +1,10 @@
+#>PKB246
+GACCGTGCACCATGAGCACGAATCCTAAACCTCA
+..................................
+0
+#AA.AAAA.....BBBBaaaa..aa......bbbb
+#>PKB179
+AACCCCCUGAUCCUAUUUCAGAACUUUGGCCGGCUCGGAAUAGAAUCAGGGGGUG
+.......................................................
+0
+#.AAAAAAAAAA.AAAAAAA.AA...BBBBBBBB.aaaaaaaaa.aaaaaaaaaa.
