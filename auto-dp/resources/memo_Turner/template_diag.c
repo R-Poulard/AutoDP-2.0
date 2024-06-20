@@ -9,7 +9,7 @@ int compute_MAINNAME0(HashTable *hashTable,int V1, int V2, CONST_INT){
     return min_value;
 }
 int compute_MAINNAME1(HashTable *hashTable,int V1, int V2, CONST_INT) {
-    int MAINNAME1 = -INT_VALUE_NAME;
+    int MAINNAME1 = INT_VALUE_NAME;
     int value;
 
     int tab[]={MAINNAME1,V1,V2,CONST};

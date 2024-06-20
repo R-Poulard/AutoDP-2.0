@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdbool.h": "c",
-        "random": "c"
+        "random": "c",
+        "ranges": "c"
     }
 }

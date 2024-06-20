@@ -1,10 +1,32 @@
 import random
 import os 
 
-os.chdir("..")
+#os.chdir("..")
 
+import math
+print(2)
+lol=0
+cant=100
+for num in range(500000,64019,-1):
+    """for i in range(2,num-1):
+        pls=num%i
+        
+        print(num,i,pls)
+        if(pls!=0):
+            break"""
+    if all(num%i!=0 for i in range(2,num-1)):
+        if lol==0:
+            print (num,",",end="",flush=True)
+            
+            lol=500
+            cant-=1
+            if cant==0 :
+                break
+        else:
+            lol-=1
+        
 
-
+exit()
 PSEUDO="H"
 #H generation
 if PSEUDO=="H":

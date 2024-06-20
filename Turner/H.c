@@ -16,7 +16,7 @@
 
 int TABLE_SIZE = 64019;
 int N = 10;
-int THETA_PAIRING=3;
+int THETA_PAIRING=1;
 int THETA = 100;
 
 void preset_tablesize(int size) {
@@ -89,12 +89,14 @@ typedef struct {
 } HashTable;
 
 // Hash function
-int hash(int keys[], HashTable *hashtable,int size) {
+int hash(int keys[],int capacity,int size) {
     int key = 0;
     for (int i = 0; i < size; i++) {
-        key += keys[i] * pow(N, TUPLE_SIZE-i);
+        //printf("%d,%d,%d,%d\n",keys[i],N,TUPLE_SIZE-i-1,(int)pow(N,TUPLE_SIZE-i-1));
+        key += keys[i] * (int)pow(N, TUPLE_SIZE-i-1);
     }
-    return ( hashtable->capacity + (key % hashtable->capacity) ) % hashtable->capacity;
+    //printf("%d,%d,%d\n",key,capacity,abs(key % capacity));
+    return abs(key % capacity);
 }
 
 
@@ -125,7 +127,7 @@ void destroyHashTable(HashTable *hashTable) {
 // Function to insert a key-value pair into the hash table
 void insert(HashTable *hashTable, int keys[], int size,int value) {
     // Combine the numbers into a single key
-    int index = hash(keys, hashTable,size);
+    int index = hash(keys, hashTable->capacity,size);
     // Create a new node
     HashNode *newNode = (HashNode *)malloc(sizeof(HashNode));
     newNode->key = createTuple(keys,size);
@@ -158,7 +160,7 @@ void insert(HashTable *hashTable, int keys[], int size,int value) {
             while (current != NULL) {
                 HashNode *temp = current;
                 current = current->next;
-                int new_index = hash(temp->key->values, hashTable,size);
+                int new_index = hash(temp->key->values, new_capacity,size);
                 temp->next = new_buckets[new_index];
                 new_buckets[new_index] = temp;
             }
@@ -172,7 +174,7 @@ void insert(HashTable *hashTable, int keys[], int size,int value) {
 // Function to retrieve a value from the hash table given a key
 bool get(HashTable *hashTable, int keys[], int size, int *value) {
     
-    int index = hash(keys, hashTable,size);
+    int index = hash(keys, hashTable->capacity,size);
     
     // Traverse the linked list at the index
     HashNode *current = hashTable->buckets[index];
@@ -194,6 +196,27 @@ void print_tuple(Tuple *tpl){
 
 }
 
+void print_table_stat(HashTable *hashTable){
+    printf("#-#--TABLE STAT REPORT-----\n#-#nb of elem: %d\n#-#capcaity: %d\n#-#initial capacity %d\n",hashTable->size,hashTable->capacity,TABLE_SIZE);
+    
+    int nb_chaines=0;
+    int biggest_chaines=0;
+    for (int i = 0; i < hashTable->capacity; i++) {
+        HashNode *current = hashTable->buckets[i];
+        int chaine_size=0;
+        if(current!=NULL && current->next!=NULL){
+            nb_chaines++;
+        }
+        while (current != NULL) {      
+            chaine_size++;
+            current = current->next;
+        }
+        biggest_chaines=max(biggest_chaines,chaine_size);
+        
+    }
+    printf("#-#Biggest chain: %d\n#-# avg chaine: %.3f (%d/%d)\n",biggest_chaines,(double)nb_chaines/hashTable->size,nb_chaines,hashTable->size);
+    printf("#-#--------------------------\n");
+}
 void print_table(HashTable *hashTable){
     
     int index = 0;
@@ -439,23 +462,6 @@ int INTB(int a,int b,int c,int d){
     if(d==-1 && c==-1){
         return 0;
     }    
-    int stacking;
-    vrna_param_t *P = fc->params;
-    vrna_md_t *md=&(P->model_details);
-    int *rtype= &(md->rtype[0]);
-    int *ptype = fc->ptype;
-    int *indx = fc->jindx;
-    /*if (a==c && b==d){
-        a++;b++;c++;d++;
-        int ij=indx[c]+d;
-        int type = vrna_get_ptype(ij, ptype);
-        int kl=indx[a]+b;
-        int type_2  = rtype[vrna_get_ptype(kl, ptype)];
-        
-        int stacking_energy = P->stack[type][type_2];
-        return stacking_energy;
-    }*/
-    
     a++;b++;
 
     int energy_full = vrna_eval_int_loop(fc,c,d,a,b);
@@ -503,8 +509,10 @@ void backtrace_A(HashTable *hashTable,int score,int a,int h) ;
 int fold(HashTable * hashTable) {
     int min_value=INT_MAX;
     for(int h=0+3;h<=MAX;h++){
-        //fprintf(stderr,"%d/%d\n",h,MAX);
+        //printf("%d/%d\n",h,MAX);
+        //fflush(NULL);
         for(int a=0;a<h-3;a++){
+            
             int mfe1=MFEFree(0,a-1);
             int mfe2=MFEFree(h,MAX-1);
             int mfe=add(mfe1,mfe2);
@@ -533,6 +541,7 @@ void backtrace(HashTable * hashTable,int score) {
     }
 }
 
+int doing_bt=0;
 
 int main(int argc, char ** argv) {
     printf("File name: %s\n",argv[1]);
@@ -547,6 +556,7 @@ int main(int argc, char ** argv) {
 
     start_time = clock();
     while(true){
+        doing_bt=0;
         HashTable *hashTable = createHashTable();
         int b_len=0;
 
@@ -559,11 +569,11 @@ int main(int argc, char ** argv) {
             destroyHashTable(hashTable);
             free(line);
             free(correct_score);
-            //printf("End of file, %d tested",nb_tests);
+            printf("End of file, %d tested",nb_tests);
             break;
         }
         if(line[0]=='#'){
-            //printf("%s",line);
+            printf("%s",line);
             continue;
         }
         MAX=len;
@@ -587,7 +597,7 @@ int main(int argc, char ** argv) {
             destroyHashTable(hashTable);
             free(line);
             free(ss);
-            //printf("No secondary structure found for test %d\n",nb_tests);
+            printf("No secondary structure found for test %d\n",nb_tests);
             exit(-1);
         }
         //reading the score
@@ -609,8 +619,7 @@ int main(int argc, char ** argv) {
             exit(-1);
         }
         int number = atoi(correct_score);
-        //printf("Test: %d Size of the Sequence: %d ---\n", nb_tests,MAX);
-        printf("%d;%d;", nb_tests,MAX);
+        printf("Test: %d Size of the Sequence: %d ---", nb_tests,MAX);
         
         //elements used to record backtrack
         bracket='A';
@@ -625,14 +634,17 @@ int main(int argc, char ** argv) {
         vrna_init_rand();
         fc = vrna_fold_compound(line, NULL, VRNA_OPTION_DEFAULT);
         vrna_constraints_add(fc, ss, VRNA_CONSTRAINT_DB_DEFAULT);
-        char *structure2 = (char *)vrna_alloc(sizeof(char) * (MAX + 1));
-
-        float vrna_score=vrna_mfe(fc, structure2);
+        vrna_mfe(fc, NULL);
         
         //folding
+        
         int score = fold(hashTable);
         //retrieve backtrack
+        printf("\n------------------ START OF THE BT------------------\n");
+        fflush(NULL);
+        doing_bt=1;
         backtrace(hashTable,score);
+        print_table_stat(hashTable);
         vrna_fold_compound_free(fc);
         clock_t test_end_time = clock();
 
@@ -643,8 +655,7 @@ int main(int argc, char ** argv) {
         //sanity checks
         if(score == number || 1){//we autorise wrong score in the case of the Turner model
             float fl=(float)score/100.0;
-            printf("%.2f;%.2f\n",fl,vrna_score);
-            fflush(stdout);
+            printf("Score %.2f ",fl);
             int nb=0;
             for(int i=0;i<MAX;i++){
                 
@@ -659,7 +670,7 @@ int main(int argc, char ** argv) {
                     }
                 }
             }
-            //printf("(backtrack impurty= %d)\n",nb);
+            printf("(backtrack impurty= %d)\n",nb);
         }
         else{
             destroyHashTable(hashTable);
@@ -672,8 +683,7 @@ int main(int argc, char ** argv) {
         }
 
         
-        printf("AUTODP: %s\n",structure);
-        printf("VRNA: %s\n",structure2);
+        printf("%s\n",structure);
         
         //clean up
         destroyHashTable(hashTable);
@@ -716,7 +726,9 @@ int compute_CLIQUE1(HashTable *hashTable,int i, int i2, int j2, int j) {
     if (get(hashTable,tab,size,&value)) { 
         return value;
     }
-    
+    if(doing_bt==1){
+    printf("missing CLIQUE1");
+    }
     int min_value = 0;
     int tmp;
     if (j == j2 && i <= i2) { 
@@ -748,7 +760,7 @@ int compute_C0(HashTable *hashTable,int a, int f, int c,int d){
     return min_value;
 }
 int compute_C1(HashTable *hashTable,int a, int f, int c,int d) {
-    int C1 = -67;
+    int C1 =67;
     int value;
 
     int tab[]={C1,a,f,c,d};
@@ -759,6 +771,9 @@ int compute_C1(HashTable *hashTable,int a, int f, int c,int d) {
     }
     if (get(hashTable,tab,size,&value)){
         return value;
+    }
+    if(doing_bt==1){
+    printf("missing C1");
     }
     int min_value=INT_MAX;
     int mfe1=MFEFree(a,c-1);
@@ -792,7 +807,9 @@ int compute_B(HashTable *hashTable,int c,int d,int f,int h) {
         return value;
     }
     int min_value = INT_MAX;
-    
+    if(doing_bt==1){
+    printf("missing B");
+    }
     for (int g=f;g<h;g++) {
       if(!evaluate(c,h-1)||!evaluate(d-1,g)){continue;}
       int mfe0 = MFEFree(f,g-1);
@@ -817,7 +834,9 @@ int compute_A(HashTable *hashTable,int a,int h) {
         return value;
     }
     int min_value = INT_MAX;
-    
+    if(doing_bt==1){
+    printf("missing A");
+    }
     for (int c=a+1;c<h-2;c++) {
         for (int d=c+1;d<h-1;d++) {
             for (int f=d+1;f<h;f++) {

@@ -84,12 +84,12 @@ typedef struct {
 } HashTable;
 
 // Hash function
-int hash(int keys[], HashTable *hashtable,int size) {
+int hash(int keys[], int capacity,int size) {
     int key = 0;
     for (int i = 0; i < size; i++) {
-        key += keys[i] * pow(N, TUPLE_SIZE-i);
+        key += keys[i] * (int)pow(N, TUPLE_SIZE-i-1);
     }
-    return ( hashtable->capacity + (key % hashtable->capacity) ) % hashtable->capacity;
+    return abs(key % capacity);
 }
 
 
@@ -120,7 +120,7 @@ void destroyHashTable(HashTable *hashTable) {
 // Function to insert a key-value pair into the hash table
 void insert(HashTable *hashTable, int keys[], int size,int value) {
     // Combine the numbers into a single key
-    int index = hash(keys, hashTable,size);
+    int index = hash(keys, hashTable->capacity,size);
     // Create a new node
     HashNode *newNode = (HashNode *)malloc(sizeof(HashNode));
     newNode->key = createTuple(keys,size);
@@ -153,7 +153,7 @@ void insert(HashTable *hashTable, int keys[], int size,int value) {
             while (current != NULL) {
                 HashNode *temp = current;
                 current = current->next;
-                int new_index = hash(temp->key->values, hashTable,size);
+                int new_index = hash(temp->key->values, new_capacity,size);
                 temp->next = new_buckets[new_index];
                 new_buckets[new_index] = temp;
             }
@@ -167,7 +167,7 @@ void insert(HashTable *hashTable, int keys[], int size,int value) {
 // Function to retrieve a value from the hash table given a key
 bool get(HashTable *hashTable, int keys[], int size, int *value) {
     
-    int index = hash(keys, hashTable,size);
+    int index = hash(keys, hashTable->capacity,size);
     
     // Traverse the linked list at the index
     HashNode *current = hashTable->buckets[index];
