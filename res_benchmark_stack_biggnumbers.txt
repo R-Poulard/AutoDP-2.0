@@ -1,0 +1,1405 @@
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15977609
+#-#initial capacity 15977609
+#-#Biggest chain: 8
+#-# prct chaine: 0.218 (1768869/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15977609;177.0824;8110603;127820900
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15977609
+#-#initial capacity 15977609
+#-#Biggest chain: 8
+#-# prct chaine: 0.218 (1768869/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15977609;176.0370;8110603;127820900
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15977609
+#-#initial capacity 15977609
+#-#Biggest chain: 8
+#-# prct chaine: 0.218 (1768869/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15977609;176.3361;8110603;127820900
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15646489
+#-#initial capacity 15646489
+#-#Biggest chain: 6
+#-# prct chaine: 0.184 (1495083/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15646489;174.3526;8110603;125171940
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15646489
+#-#initial capacity 15646489
+#-#Biggest chain: 6
+#-# prct chaine: 0.184 (1495083/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15646489;174.8768;8110603;125171940
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15646489
+#-#initial capacity 15646489
+#-#Biggest chain: 6
+#-# prct chaine: 0.184 (1495083/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15646489;175.1722;8110603;125171940
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15315259
+#-#initial capacity 15315259
+#-#Biggest chain: 6
+#-# prct chaine: 0.186 (1504762/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15315259;173.9348;8110603;122522100
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15315259
+#-#initial capacity 15315259
+#-#Biggest chain: 6
+#-# prct chaine: 0.186 (1504762/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15315259;173.8853;8110603;122522100
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15315259
+#-#initial capacity 15315259
+#-#Biggest chain: 6
+#-# prct chaine: 0.186 (1504762/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+15315259;173.9910;8110603;122522100
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14984819
+#-#initial capacity 14984819
+#-#Biggest chain: 5
+#-# prct chaine: 0.139 (1127191/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14984819;173.5567;8110603;119878580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14984819
+#-#initial capacity 14984819
+#-#Biggest chain: 5
+#-# prct chaine: 0.139 (1127191/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14984819;173.5116;8110603;119878580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14984819
+#-#initial capacity 14984819
+#-#Biggest chain: 5
+#-# prct chaine: 0.139 (1127191/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14984819;173.5107;8110603;119878580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14654509
+#-#initial capacity 14654509
+#-#Biggest chain: 6
+#-# prct chaine: 0.191 (1546398/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14654509;175.1562;8110603;117236100
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14654509
+#-#initial capacity 14654509
+#-#Biggest chain: 6
+#-# prct chaine: 0.191 (1546398/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14654509;174.6923;8110603;117236100
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14654509
+#-#initial capacity 14654509
+#-#Biggest chain: 6
+#-# prct chaine: 0.191 (1546398/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14654509;174.8017;8110603;117236100
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14324903
+#-#initial capacity 14324903
+#-#Biggest chain: 5
+#-# prct chaine: 0.208 (1688483/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14324903;174.3863;8110603;114599252
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14324903
+#-#initial capacity 14324903
+#-#Biggest chain: 5
+#-# prct chaine: 0.208 (1688483/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14324903;174.1222;8110603;114599252
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14324903
+#-#initial capacity 14324903
+#-#Biggest chain: 5
+#-# prct chaine: 0.208 (1688483/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+14324903;174.0679;8110603;114599252
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13995577
+#-#initial capacity 13995577
+#-#Biggest chain: 6
+#-# prct chaine: 0.195 (1579314/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13995577;174.6059;8110603;111964644
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13995577
+#-#initial capacity 13995577
+#-#Biggest chain: 6
+#-# prct chaine: 0.195 (1579314/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13995577;174.6392;8110603;111964644
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13995577
+#-#initial capacity 13995577
+#-#Biggest chain: 6
+#-# prct chaine: 0.195 (1579314/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13995577;174.5512;8110603;111964644
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13666729
+#-#initial capacity 13666729
+#-#Biggest chain: 6
+#-# prct chaine: 0.183 (1480830/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13666729;175.0625;8110603;109333860
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13666729
+#-#initial capacity 13666729
+#-#Biggest chain: 6
+#-# prct chaine: 0.183 (1480830/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13666729;175.1744;8110603;109333860
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13666729
+#-#initial capacity 13666729
+#-#Biggest chain: 6
+#-# prct chaine: 0.183 (1480830/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13666729;174.8688;8110603;109333860
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13337969
+#-#initial capacity 13337969
+#-#Biggest chain: 6
+#-# prct chaine: 0.186 (1510532/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13337969;175.0172;8110603;106703780
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13337969
+#-#initial capacity 13337969
+#-#Biggest chain: 6
+#-# prct chaine: 0.186 (1510532/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13337969;175.4656;8110603;106703780
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13337969
+#-#initial capacity 13337969
+#-#Biggest chain: 6
+#-# prct chaine: 0.186 (1510532/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13337969;175.5564;8110603;106703780
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13009019
+#-#initial capacity 13009019
+#-#Biggest chain: 6
+#-# prct chaine: 0.202 (1638775/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13009019;173.7088;8110603;104072180
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13009019
+#-#initial capacity 13009019
+#-#Biggest chain: 6
+#-# prct chaine: 0.202 (1638775/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13009019;173.7617;8110603;104072180
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13009019
+#-#initial capacity 13009019
+#-#Biggest chain: 6
+#-# prct chaine: 0.202 (1638775/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+13009019;173.6472;8110603;104072180
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12681707
+#-#initial capacity 12681707
+#-#Biggest chain: 6
+#-# prct chaine: 0.224 (1816765/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12681707;175.4908;8110603;101453684
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12681707
+#-#initial capacity 12681707
+#-#Biggest chain: 6
+#-# prct chaine: 0.224 (1816765/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12681707;175.7756;8110603;101453684
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12681707
+#-#initial capacity 12681707
+#-#Biggest chain: 6
+#-# prct chaine: 0.224 (1816765/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12681707;175.7983;8110603;101453684
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12355493
+#-#initial capacity 12355493
+#-#Biggest chain: 5
+#-# prct chaine: 0.181 (1471178/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12355493;174.4690;8110603;98843972
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12355493
+#-#initial capacity 12355493
+#-#Biggest chain: 5
+#-# prct chaine: 0.181 (1471178/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12355493;174.6523;8110603;98843972
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12355493
+#-#initial capacity 12355493
+#-#Biggest chain: 5
+#-# prct chaine: 0.181 (1471178/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12355493;174.6069;8110603;98843972
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12029063
+#-#initial capacity 12029063
+#-#Biggest chain: 8
+#-# prct chaine: 0.235 (1902069/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12029063;177.4238;8110603;96232532
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12029063
+#-#initial capacity 12029063
+#-#Biggest chain: 8
+#-# prct chaine: 0.235 (1902069/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12029063;177.2602;8110603;96232532
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12029063
+#-#initial capacity 12029063
+#-#Biggest chain: 8
+#-# prct chaine: 0.235 (1902069/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+12029063;177.5379;8110603;96232532
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11703061
+#-#initial capacity 11703061
+#-#Biggest chain: 7
+#-# prct chaine: 0.228 (1845700/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11703061;176.3235;8110603;93624516
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11703061
+#-#initial capacity 11703061
+#-#Biggest chain: 7
+#-# prct chaine: 0.228 (1845700/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11703061;176.5713;8110603;93624516
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11703061
+#-#initial capacity 11703061
+#-#Biggest chain: 7
+#-# prct chaine: 0.228 (1845700/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11703061;176.6726;8110603;93624516
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22758194
+#-#initial capacity 11379097
+#-#Biggest chain: 5
+#-# prct chaine: 0.132 (1069913/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11379097;178.7194;8110603;182065580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22758194
+#-#initial capacity 11379097
+#-#Biggest chain: 5
+#-# prct chaine: 0.132 (1069913/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11379097;178.5406;8110603;182065580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22758194
+#-#initial capacity 11379097
+#-#Biggest chain: 5
+#-# prct chaine: 0.132 (1069913/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11379097;178.5365;8110603;182065580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22108454
+#-#initial capacity 11054227
+#-#Biggest chain: 4
+#-# prct chaine: 0.111 (903033/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11054227;176.5492;8110603;176867660
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22108454
+#-#initial capacity 11054227
+#-#Biggest chain: 4
+#-# prct chaine: 0.111 (903033/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11054227;177.0182;8110603;176867660
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22108454
+#-#initial capacity 11054227
+#-#Biggest chain: 4
+#-# prct chaine: 0.111 (903033/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+11054227;176.6134;8110603;176867660
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 21459194
+#-#initial capacity 10729597
+#-#Biggest chain: 5
+#-# prct chaine: 0.128 (1037659/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10729597;176.9148;8110603;171673580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 21459194
+#-#initial capacity 10729597
+#-#Biggest chain: 5
+#-# prct chaine: 0.128 (1037659/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10729597;177.0177;8110603;171673580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 21459194
+#-#initial capacity 10729597
+#-#Biggest chain: 5
+#-# prct chaine: 0.128 (1037659/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10729597;176.8417;8110603;171673580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20815558
+#-#initial capacity 10407779
+#-#Biggest chain: 5
+#-# prct chaine: 0.116 (937943/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10407779;178.4439;8110603;166524492
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20815558
+#-#initial capacity 10407779
+#-#Biggest chain: 5
+#-# prct chaine: 0.116 (937943/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10407779;178.0673;8110603;166524492
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20815558
+#-#initial capacity 10407779
+#-#Biggest chain: 5
+#-# prct chaine: 0.116 (937943/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10407779;178.1482;8110603;166524492
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20169274
+#-#initial capacity 10084637
+#-#Biggest chain: 4
+#-# prct chaine: 0.122 (986767/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10084637;176.4853;8110603;161354220
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20169274
+#-#initial capacity 10084637
+#-#Biggest chain: 4
+#-# prct chaine: 0.122 (986767/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10084637;176.3084;8110603;161354220
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20169274
+#-#initial capacity 10084637
+#-#Biggest chain: 4
+#-# prct chaine: 0.122 (986767/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+10084637;176.3516;8110603;161354220
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 19522654
+#-#initial capacity 9761327
+#-#Biggest chain: 6
+#-# prct chaine: 0.167 (1353303/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9761327;180.7741;8110603;156181260
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 19522654
+#-#initial capacity 9761327
+#-#Biggest chain: 6
+#-# prct chaine: 0.167 (1353303/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9761327;180.8193;8110603;156181260
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 19522654
+#-#initial capacity 9761327
+#-#Biggest chain: 6
+#-# prct chaine: 0.167 (1353303/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9761327;180.7168;8110603;156181260
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18880618
+#-#initial capacity 9440309
+#-#Biggest chain: 4
+#-# prct chaine: 0.116 (942331/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9440309;176.2969;8110603;151044972
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18880618
+#-#initial capacity 9440309
+#-#Biggest chain: 4
+#-# prct chaine: 0.116 (942331/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9440309;176.4873;8110603;151044972
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18880618
+#-#initial capacity 9440309
+#-#Biggest chain: 4
+#-# prct chaine: 0.116 (942331/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9440309;176.1841;8110603;151044972
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18239498
+#-#initial capacity 9119749
+#-#Biggest chain: 5
+#-# prct chaine: 0.120 (970712/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9119749;177.6946;8110603;145916012
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18239498
+#-#initial capacity 9119749
+#-#Biggest chain: 5
+#-# prct chaine: 0.120 (970712/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9119749;177.6717;8110603;145916012
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18239498
+#-#initial capacity 9119749
+#-#Biggest chain: 5
+#-# prct chaine: 0.120 (970712/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+9119749;177.6742;8110603;145916012
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 17596342
+#-#initial capacity 8798171
+#-#Biggest chain: 5
+#-# prct chaine: 0.150 (1218758/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8798171;178.1474;8110603;140770764
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 17596342
+#-#initial capacity 8798171
+#-#Biggest chain: 5
+#-# prct chaine: 0.150 (1218758/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8798171;177.9875;8110603;140770764
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 17596342
+#-#initial capacity 8798171
+#-#Biggest chain: 5
+#-# prct chaine: 0.150 (1218758/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8798171;178.1577;8110603;140770764
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16961242
+#-#initial capacity 8480621
+#-#Biggest chain: 6
+#-# prct chaine: 0.190 (1540070/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8480621;179.7733;8110603;135689964
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16961242
+#-#initial capacity 8480621
+#-#Biggest chain: 6
+#-# prct chaine: 0.190 (1540070/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8480621;180.0181;8110603;135689964
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16961242
+#-#initial capacity 8480621
+#-#Biggest chain: 6
+#-# prct chaine: 0.190 (1540070/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8480621;179.6893;8110603;135689964
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16323526
+#-#initial capacity 8161763
+#-#Biggest chain: 6
+#-# prct chaine: 0.195 (1578871/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8161763;178.7319;8110603;130588236
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16323526
+#-#initial capacity 8161763
+#-#Biggest chain: 6
+#-# prct chaine: 0.195 (1578871/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8161763;178.5763;8110603;130588236
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16323526
+#-#initial capacity 8161763
+#-#Biggest chain: 6
+#-# prct chaine: 0.195 (1578871/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+8161763;178.6034;8110603;130588236
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15686926
+#-#initial capacity 7843463
+#-#Biggest chain: 6
+#-# prct chaine: 0.157 (1274833/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7843463;177.8264;8110603;125495436
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15686926
+#-#initial capacity 7843463
+#-#Biggest chain: 6
+#-# prct chaine: 0.157 (1274833/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7843463;177.8023;8110603;125495436
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15686926
+#-#initial capacity 7843463
+#-#Biggest chain: 6
+#-# prct chaine: 0.157 (1274833/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7843463;177.8636;8110603;125495436
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15053294
+#-#initial capacity 7526647
+#-#Biggest chain: 5
+#-# prct chaine: 0.184 (1488588/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7526647;179.1994;8110603;120426380
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15053294
+#-#initial capacity 7526647
+#-#Biggest chain: 5
+#-# prct chaine: 0.184 (1488588/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7526647;179.1305;8110603;120426380
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15053294
+#-#initial capacity 7526647
+#-#Biggest chain: 5
+#-# prct chaine: 0.184 (1488588/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7526647;179.1734;8110603;120426380
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14419334
+#-#initial capacity 7209667
+#-#Biggest chain: 6
+#-# prct chaine: 0.194 (1576304/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7209667;179.6987;8110603;115354700
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14419334
+#-#initial capacity 7209667
+#-#Biggest chain: 6
+#-# prct chaine: 0.194 (1576304/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7209667;179.4150;8110603;115354700
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14419334
+#-#initial capacity 7209667
+#-#Biggest chain: 6
+#-# prct chaine: 0.194 (1576304/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+7209667;179.1895;8110603;115354700
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13789082
+#-#initial capacity 6894541
+#-#Biggest chain: 6
+#-# prct chaine: 0.197 (1598218/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6894541;178.5467;8110603;110312684
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13789082
+#-#initial capacity 6894541
+#-#Biggest chain: 6
+#-# prct chaine: 0.197 (1598218/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6894541;178.4503;8110603;110312684
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13789082
+#-#initial capacity 6894541
+#-#Biggest chain: 6
+#-# prct chaine: 0.197 (1598218/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6894541;178.5213;8110603;110312684
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13162274
+#-#initial capacity 6581137
+#-#Biggest chain: 5
+#-# prct chaine: 0.184 (1492210/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6581137;177.9866;8110603;105298220
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13162274
+#-#initial capacity 6581137
+#-#Biggest chain: 5
+#-# prct chaine: 0.184 (1492210/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6581137;178.0562;8110603;105298220
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13162274
+#-#initial capacity 6581137
+#-#Biggest chain: 5
+#-# prct chaine: 0.184 (1492210/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6581137;178.2953;8110603;105298220
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12535238
+#-#initial capacity 6267619
+#-#Biggest chain: 5
+#-# prct chaine: 0.202 (1641845/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6267619;177.0775;8110603;100281932
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12535238
+#-#initial capacity 6267619
+#-#Biggest chain: 5
+#-# prct chaine: 0.202 (1641845/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6267619;177.7962;8110603;100281932
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12535238
+#-#initial capacity 6267619
+#-#Biggest chain: 5
+#-# prct chaine: 0.202 (1641845/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+6267619;177.4024;8110603;100281932
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11908822
+#-#initial capacity 5954411
+#-#Biggest chain: 6
+#-# prct chaine: 0.198 (1602775/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5954411;178.8676;8110603;95270604
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11908822
+#-#initial capacity 5954411
+#-#Biggest chain: 6
+#-# prct chaine: 0.198 (1602775/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5954411;178.8753;8110603;95270604
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11908822
+#-#initial capacity 5954411
+#-#Biggest chain: 6
+#-# prct chaine: 0.198 (1602775/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5954411;178.8733;8110603;95270604
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22574116
+#-#initial capacity 5643529
+#-#Biggest chain: 5
+#-# prct chaine: 0.158 (1282944/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5643529;182.7473;8110603;180592956
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22574116
+#-#initial capacity 5643529
+#-#Biggest chain: 5
+#-# prct chaine: 0.158 (1282944/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5643529;183.2441;8110603;180592956
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22574116
+#-#initial capacity 5643529
+#-#Biggest chain: 5
+#-# prct chaine: 0.158 (1282944/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5643529;182.8099;8110603;180592956
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 21328508
+#-#initial capacity 5332127
+#-#Biggest chain: 4
+#-# prct chaine: 0.105 (851447/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5332127;179.1862;8110603;170628092
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 21328508
+#-#initial capacity 5332127
+#-#Biggest chain: 4
+#-# prct chaine: 0.105 (851447/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5332127;179.2232;8110603;170628092
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 21328508
+#-#initial capacity 5332127
+#-#Biggest chain: 4
+#-# prct chaine: 0.105 (851447/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5332127;179.2251;8110603;170628092
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20092564
+#-#initial capacity 5023141
+#-#Biggest chain: 5
+#-# prct chaine: 0.114 (925887/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5023141;179.4749;8110603;160740540
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20092564
+#-#initial capacity 5023141
+#-#Biggest chain: 5
+#-# prct chaine: 0.114 (925887/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5023141;179.9328;8110603;160740540
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20092564
+#-#initial capacity 5023141
+#-#Biggest chain: 5
+#-# prct chaine: 0.114 (925887/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+5023141;179.5935;8110603;160740540
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18864004
+#-#initial capacity 4716001
+#-#Biggest chain: 5
+#-# prct chaine: 0.144 (1170273/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4716001;180.1651;8110603;150912060
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18864004
+#-#initial capacity 4716001
+#-#Biggest chain: 5
+#-# prct chaine: 0.144 (1170273/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4716001;180.4721;8110603;150912060
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18864004
+#-#initial capacity 4716001
+#-#Biggest chain: 5
+#-# prct chaine: 0.144 (1170273/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4716001;180.5863;8110603;150912060
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 17641556
+#-#initial capacity 4410389
+#-#Biggest chain: 6
+#-# prct chaine: 0.168 (1363181/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4410389;180.8970;8110603;141132476
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 17641556
+#-#initial capacity 4410389
+#-#Biggest chain: 6
+#-# prct chaine: 0.168 (1363181/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4410389;180.8024;8110603;141132476
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 17641556
+#-#initial capacity 4410389
+#-#Biggest chain: 6
+#-# prct chaine: 0.168 (1363181/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4410389;180.8167;8110603;141132476
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16415612
+#-#initial capacity 4103903
+#-#Biggest chain: 7
+#-# prct chaine: 0.175 (1418032/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4103903;180.8373;8110603;131324924
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16415612
+#-#initial capacity 4103903
+#-#Biggest chain: 7
+#-# prct chaine: 0.175 (1418032/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4103903;180.0067;8110603;131324924
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16415612
+#-#initial capacity 4103903
+#-#Biggest chain: 7
+#-# prct chaine: 0.175 (1418032/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+4103903;180.3566;8110603;131324924
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15202468
+#-#initial capacity 3800617
+#-#Biggest chain: 7
+#-# prct chaine: 0.176 (1431119/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3800617;180.1870;8110603;121619772
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15202468
+#-#initial capacity 3800617
+#-#Biggest chain: 7
+#-# prct chaine: 0.176 (1431119/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3800617;180.4001;8110603;121619772
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 15202468
+#-#initial capacity 3800617
+#-#Biggest chain: 7
+#-# prct chaine: 0.176 (1431119/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3800617;180.2590;8110603;121619772
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13993972
+#-#initial capacity 3498493
+#-#Biggest chain: 6
+#-# prct chaine: 0.208 (1690677/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3498493;181.4768;8110603;111951804
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13993972
+#-#initial capacity 3498493
+#-#Biggest chain: 6
+#-# prct chaine: 0.208 (1690677/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3498493;181.3139;8110603;111951804
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13993972
+#-#initial capacity 3498493
+#-#Biggest chain: 6
+#-# prct chaine: 0.208 (1690677/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3498493;181.3291;8110603;111951804
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12790772
+#-#initial capacity 3197693
+#-#Biggest chain: 8
+#-# prct chaine: 0.230 (1868774/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3197693;180.5911;8110603;102326204
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12790772
+#-#initial capacity 3197693
+#-#Biggest chain: 8
+#-# prct chaine: 0.230 (1868774/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3197693;180.6912;8110603;102326204
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 12790772
+#-#initial capacity 3197693
+#-#Biggest chain: 8
+#-# prct chaine: 0.230 (1868774/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+3197693;180.7265;8110603;102326204
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11597668
+#-#initial capacity 2899417
+#-#Biggest chain: 8
+#-# prct chaine: 0.236 (1917767/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2899417;183.0100;8110603;92781372
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11597668
+#-#initial capacity 2899417
+#-#Biggest chain: 8
+#-# prct chaine: 0.236 (1917767/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2899417;182.9507;8110603;92781372
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 11597668
+#-#initial capacity 2899417
+#-#Biggest chain: 8
+#-# prct chaine: 0.236 (1917767/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2899417;182.7966;8110603;92781372
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20824264
+#-#initial capacity 2603033
+#-#Biggest chain: 5
+#-# prct chaine: 0.147 (1191876/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2603033;181.1795;8110603;166594140
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20824264
+#-#initial capacity 2603033
+#-#Biggest chain: 5
+#-# prct chaine: 0.147 (1191876/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2603033;180.9245;8110603;166594140
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 20824264
+#-#initial capacity 2603033
+#-#Biggest chain: 5
+#-# prct chaine: 0.147 (1191876/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2603033;180.8276;8110603;166594140
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18467864
+#-#initial capacity 2308483
+#-#Biggest chain: 5
+#-# prct chaine: 0.174 (1411765/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2308483;181.9151;8110603;147742940
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18467864
+#-#initial capacity 2308483
+#-#Biggest chain: 5
+#-# prct chaine: 0.174 (1411765/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2308483;181.9284;8110603;147742940
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18467864
+#-#initial capacity 2308483
+#-#Biggest chain: 5
+#-# prct chaine: 0.174 (1411765/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2308483;181.9105;8110603;147742940
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16133576
+#-#initial capacity 2016697
+#-#Biggest chain: 5
+#-# prct chaine: 0.167 (1357359/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2016697;179.6070;8110603;129068636
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16133576
+#-#initial capacity 2016697
+#-#Biggest chain: 5
+#-# prct chaine: 0.167 (1357359/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2016697;179.7638;8110603;129068636
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 16133576
+#-#initial capacity 2016697
+#-#Biggest chain: 5
+#-# prct chaine: 0.167 (1357359/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+2016697;179.7278;8110603;129068636
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 9823766
+#-#capcaity: 27659056
+#-#initial capacity 1728691
+#-#Biggest chain: 7
+#-# prct chaine: 0.218 (2138167/9823766)
+#-# mean chaine size: 9823766.000
+#-#--------------------------
+1728691;236.5451;9823766;221272476
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 9823766
+#-#capcaity: 27659056
+#-#initial capacity 1728691
+#-#Biggest chain: 7
+#-# prct chaine: 0.218 (2138167/9823766)
+#-# mean chaine size: 9823766.000
+#-#--------------------------
+1728691;236.5689;9823766;221272476
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 9823766
+#-#capcaity: 27659056
+#-#initial capacity 1728691
+#-#Biggest chain: 7
+#-# prct chaine: 0.218 (2138167/9823766)
+#-# mean chaine size: 9823766.000
+#-#--------------------------
+1728691;236.4140;9823766;221272476
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 23088944
+#-#initial capacity 1443059
+#-#Biggest chain: 4
+#-# prct chaine: 0.137 (1114790/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+1443059;182.6676;8110603;184711580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 23088944
+#-#initial capacity 1443059
+#-#Biggest chain: 4
+#-# prct chaine: 0.137 (1114790/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+1443059;182.7795;8110603;184711580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 23088944
+#-#initial capacity 1443059
+#-#Biggest chain: 4
+#-# prct chaine: 0.137 (1114790/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+1443059;182.5081;8110603;184711580
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18586928
+#-#initial capacity 1161683
+#-#Biggest chain: 5
+#-# prct chaine: 0.121 (980650/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+1161683;180.1972;8110603;148695452
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18586928
+#-#initial capacity 1161683
+#-#Biggest chain: 5
+#-# prct chaine: 0.121 (980650/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+1161683;180.0458;8110603;148695452
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 18586928
+#-#initial capacity 1161683
+#-#Biggest chain: 5
+#-# prct chaine: 0.121 (980650/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+1161683;180.3869;8110603;148695452
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14159216
+#-#initial capacity 884951
+#-#Biggest chain: 5
+#-# prct chaine: 0.187 (1513533/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+884951;180.3153;8110603;113273756
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14159216
+#-#initial capacity 884951
+#-#Biggest chain: 5
+#-# prct chaine: 0.187 (1513533/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+884951;180.5664;8110603;113273756
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 14159216
+#-#initial capacity 884951
+#-#Biggest chain: 5
+#-# prct chaine: 0.187 (1513533/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+884951;180.7546;8110603;113273756
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 19669856
+#-#initial capacity 614683
+#-#Biggest chain: 5
+#-# prct chaine: 0.129 (1048539/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+614683;182.6434;8110603;157358876
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 19669856
+#-#initial capacity 614683
+#-#Biggest chain: 5
+#-# prct chaine: 0.129 (1048539/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+614683;182.5718;8110603;157358876
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 19669856
+#-#initial capacity 614683
+#-#Biggest chain: 5
+#-# prct chaine: 0.129 (1048539/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+614683;182.5352;8110603;157358876
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22613312
+#-#initial capacity 353333
+#-#Biggest chain: 5
+#-# prct chaine: 0.151 (1222238/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+353333;182.7949;8110603;180906524
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22613312
+#-#initial capacity 353333
+#-#Biggest chain: 5
+#-# prct chaine: 0.151 (1222238/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+353333;182.7220;8110603;180906524
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 22613312
+#-#initial capacity 353333
+#-#Biggest chain: 5
+#-# prct chaine: 0.151 (1222238/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+353333;182.3378;8110603;180906524
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13840256
+#-#initial capacity 108127
+#-#Biggest chain: 7
+#-# prct chaine: 0.228 (1848438/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+108127;185.4669;8110603;110722076
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13840256
+#-#initial capacity 108127
+#-#Biggest chain: 7
+#-# prct chaine: 0.228 (1848438/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+108127;185.5008;8110603;110722076
+#-#--TABLE STAT REPORT-----
+#-#nb of elem: 8110603
+#-#capcaity: 13840256
+#-#initial capacity 108127
+#-#Biggest chain: 7
+#-# prct chaine: 0.228 (1848438/8110603)
+#-# mean chaine size: 8110603.000
+#-#--------------------------
+108127;185.3577;8110603;110722076
+ Total execution time: 28469.8727 seconds(mean 0.0000 seconds)
