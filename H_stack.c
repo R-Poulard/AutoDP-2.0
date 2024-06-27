@@ -767,6 +767,7 @@ int main(int argc, char ** argv) {
         
         if(len<=0){
             destroyHashTable(hashTable);
+            freeStack(stack);
             free(line);
             free(correct_score);
             printf("End of file, %d tested",nb_tests);

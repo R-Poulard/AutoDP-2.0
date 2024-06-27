@@ -19,6 +19,10 @@ int N = 10;
 int THETA_PAIRING=1;
 int THETA = 100;
 
+//PAIRING FUNCTIONS
+int min(int a, int b) { if (a<b) {return a;} else {return b;}};
+int max(int a, int b) { if (a<b) {return b;} else {return a;}};
+
 void preset_tablesize(int size) {
     if (size > 0) {
         TABLE_SIZE = size;
@@ -89,13 +93,11 @@ typedef struct {
 } HashTable;
 
 // Hash function
-int hash(int keys[],int capacity,int size) {
+int hash(int keys[], int capacity,int size) {
     int key = 0;
     for (int i = 0; i < size; i++) {
-        //printf("%d,%d,%d,%d\n",keys[i],N,TUPLE_SIZE-i-1,(int)pow(N,TUPLE_SIZE-i-1));
         key += keys[i] * (int)pow(N, TUPLE_SIZE-i-1);
     }
-    //printf("%d,%d,%d\n",key,capacity,abs(key % capacity));
     return abs(key % capacity);
 }
 
@@ -181,6 +183,7 @@ bool get(HashTable *hashTable, int keys[], int size, int *value) {
     while (current != NULL) {
         if (compare_tuple(current->key, keys,size)) {
             *value = current->value;
+            //printf("\nvalue in hash +> %d",current->value);
             return true; // Key found
         }
         current = current->next;
@@ -201,6 +204,7 @@ void print_table_stat(HashTable *hashTable){
     
     int nb_chaines=0;
     int biggest_chaines=0;
+    int sum_chaines=0;
     for (int i = 0; i < hashTable->capacity; i++) {
         HashNode *current = hashTable->buckets[i];
         int chaine_size=0;
@@ -212,11 +216,12 @@ void print_table_stat(HashTable *hashTable){
             current = current->next;
         }
         biggest_chaines=max(biggest_chaines,chaine_size);
-        
+        sum_chaines+=chaine_size;
     }
-    printf("#-#Biggest chain: %d\n#-# avg chaine: %.3f (%d/%d)\n",biggest_chaines,(double)nb_chaines/hashTable->size,nb_chaines,hashTable->size);
+    printf("#-#Biggest chain: %d\n#-# prct chaine: %.3f (%d/%d)\n#-# mean chaine size: %.3f\n",biggest_chaines,(double)nb_chaines/hashTable->size,nb_chaines,hashTable->size,sum_chaines/nb_chaines);
     printf("#-#--------------------------\n");
 }
+
 void print_table(HashTable *hashTable){
     
     int index = 0;
@@ -327,10 +332,6 @@ void freeMatrix(int N) {
     }
     free(matrix);
 }
-
-//PAIRING FUNCTIONS
-int min(int a, int b) { if (a<b) {return a;} else {return b;}};
-int max(int a, int b) { if (a<b) {return b;} else {return a;}};
 
 char * line = NULL;
 int MAX;
@@ -477,71 +478,257 @@ void backtrace_INTB(int score,int a,int b,int c,int d){
 
 
 
+typedef struct Node {
+    Tuple* data;
+    struct Node* next;
+} Node;
+
+void freeNode(Node * node){
+    free(node->data);
+    free(node);
+}
+// Define the Stack structure
+typedef struct {
+    Node* top;
+} Stack;
+
+// Function to initialize the stack
+void initializeStack(Stack* stack) {
+    stack->top = NULL;
+}
+
+// Function to check if the stack is empty
+bool isStackEmpty(Stack* stack) {
+    return stack->top == NULL;
+}
+
+// Function to push a tuple onto the stack
+void push(Stack* stack,int tab[],int size) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    if (newNode == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+    newNode->data = createTuple(tab,size);
+    newNode->next = stack->top;
+    stack->top = newNode;
+}
+
+// Function to pop a tuple from the stack
+bool pop(Stack* stack, Tuple* item) {
+    if (isStackEmpty(stack)) {
+        //printf("Stack is empty. Cannot pop item.\n");
+        return false;
+    }
+    Node* temp = stack->top;
+    item = temp->data;
+    stack->top = stack->top->next;
+    free(temp);
+    return true;
+}
 
 
+// Function to free the stack
+void freeStack(Stack* stack) {
+    Node* current = stack->top;
+    Node* next;
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    stack->top = NULL;
+    free(stack);
+}
+void printStack(Stack* stack) {
+    Node* current = stack->top;
+    
+    Node* next;
+    printf("\n----Stack print-------\n");
+    while (current != NULL) {
+        next = current->next;
+        print_tuple(current->data);
+        printf("\n");
+        current = next;
+    }
+    printf("--------------------\n");
+}
 
 //declarations
-int compute_CLIQUE0(HashTable *hashTable, int i, int j, int k, int l);
+int get_CLIQUE1(HashTable *hashTable, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
 
-int compute_CLIQUE1(HashTable *hashTable, int i, int j, int k, int l);
+int get_CLIQUE0(HashTable *hashTable, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
+
+int compute_CLIQUE1(HashTable *hashTable,Node **first,Node** last, int i, int j, int k, int l);
 
 void backtrace_CLIQUE0(HashTable *hashTable, int score, int i,int j, int k, int l);
 
 void backtrace_CLIQUE1(HashTable *hashTable, int score, int i,int j, int k, int l);
+int get_C0(HashTable *hashTable,Node** first,Node** last,int * value,int a, int f, int c,int d);
 
-int compute_C0(HashTable *hashTable,int a, int f, int c,int d);
+int get_C1(HashTable *hashTable,Node** first,Node** last,int * value,int a, int f, int c,int d);
 
-int compute_C1(HashTable *hashTable,int a, int f, int c,int d);
+int compute_C1(HashTable *hashTable,Node** first,Node** last,int a, int f, int c,int d);
 
 void backtrace_C0(HashTable *hashTable, int score, int a, int f, int c,int d) ;
 
 void backtrace_C1(HashTable *hashTable, int score, int a, int f, int c,int d) ;
 
-int compute_B(HashTable *hashTable,int c,int d,int f,int h) ;
+int get_B(HashTable *hashTable,Node** first,Node** last,int * value,int c,int d,int f,int h);
+
+int compute_B(HashTable *hashTable,Node** first,Node** last,int c,int d,int f,int h);
 
 void backtrace_B(HashTable *hashTable,int score,int c,int d,int f,int h) ;
 
-int compute_A(HashTable *hashTable,int a,int h) ;
+int get_A(HashTable *hashTable,Node** first,Node** last,int * value,int a,int h);
+
+int compute_A(HashTable *hashTable,Node** first,Node** last,int a,int h);
 
 void backtrace_A(HashTable *hashTable,int score,int a,int h) ;
 
 
-int fold(HashTable * hashTable) {
-    int min_value=INT_MAX;
+int init_root(HashTable* HashTable,Stack * stack){  
+    int A = 65;
+    int size = 3;
     for(int h=0+3;h<=MAX;h++){
-        //printf("%d/%d\n",h,MAX);
-        //fflush(NULL);
         for(int a=0;a<h-3;a++){
-            
+            int tab[]={A,a,h};
+            Node* newNode = (Node*)malloc(sizeof(Node));
+            newNode->data = createTuple(tab,size);
+            newNode->next = NULL;
+            if(stack->top!=NULL){
+                newNode->next=stack->top;
+                stack->top=newNode;
+            }
+            stack->top=newNode;
+        }
+    }
+}
+
+int compute_root(HashTable * hashTable,Stack *stack) {
+    int min_value=INT_MAX; 
+    for(int h=0+3;h<=MAX;h++){
+        for(int a=0;a<h-3;a++){
             int mfe1=MFEFree(0,a-1);
             int mfe2=MFEFree(h,MAX-1);
             int mfe=add(mfe1,mfe2);
-            min_value = min(min_value,add(compute_A(hashTable,a,h),mfe));
+            int tmp;
+            get_A(hashTable,NULL,NULL,&tmp,a,h);
+            min_value = min(min_value,add(tmp,mfe));
         }
     }
     return min_value;
 }
 
-void backtrace(HashTable * hashTable,int score) {
+int fold(HashTable* hasTable, Stack * stack){
+    
+    init_root(hasTable,stack);
+    Node* topNode;
+    Node* nextNode;
+    Node* add_on_last;
+    Node* add_on_first;
+    while (!isStackEmpty(stack)) {
+        //pop(stack, &topTuple)
+        //printStack(stack);
+        topNode=stack->top;
+        nextNode=topNode->next;
+        Tuple * topTuple = topNode->data;
+        add_on_last=NULL;
+        add_on_first=NULL;
+        int a,b,c,d,e,f,g,h;
+        int i1,i2,j2,j1;
+        //printf("here\n");
+        //print_tuple(topTuple);
+        switch(topTuple->values[0]){
+            default: 
+            
+                 i1=topTuple->values[1];
+                 i2=topTuple->values[2];
+                 j2=topTuple->values[3];
+                 j1=topTuple->values[4];
+                if(compute_CLIQUE1(hasTable,&add_on_first,&add_on_last,i1,i2,j2,j1)==1){
+                    
+                    freeNode(topNode);
+                    stack->top=nextNode;
+                }
+                else{
+                    stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                }
+            break;//Clique
+
+             case 67:
+                 a=topTuple->values[1];
+                 f=topTuple->values[2];
+                 c=topTuple->values[3];
+                 d=topTuple->values[4];
+
+                 if(compute_C1(hasTable,&add_on_first,&add_on_last,a,f,c,d)==1){
+
+                    freeNode(topNode);
+                    stack->top=nextNode;
+                 }
+                 else{
+                    stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 66:
+                 c=topTuple->values[1];
+                 d=topTuple->values[2];
+                 f=topTuple->values[3];
+                 h=topTuple->values[4];
+
+                 if(compute_B(hasTable,&add_on_first,&add_on_last,c,d,f,h)==1){
+
+                    freeNode(topNode);
+                    stack->top=nextNode;
+                 }
+                 else{
+                    stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 65:
+                 a=topTuple->values[1];
+                 h=topTuple->values[2];
+
+                 if(compute_A(hasTable,&add_on_first,&add_on_last,a,h)==1){
+
+                    freeNode(topNode);
+                    stack->top=nextNode;
+                 }
+                 else{
+                    stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+        }
+    }
+    //printStack(stack);
+    return compute_root(hasTable,stack);
+}
+void backtrace(HashTable * hashTable,Stack* stack,int score) {
+    //int a=0;int h=MAX;
     for(int h=0+3;h<=MAX;h++){
         for(int a=0;a<h-3;a++){
-            
             int mfe1=MFEFree(0,a-1);
             int mfe2=MFEFree(h,MAX-1);
             int mfe=add(mfe1,mfe2);
-            int tmp0=compute_A(hashTable,a,h);
-            //printf("h = %d, a=%d, %d+%d %d,%d\n",h,a,mfe2,mfe1,score,compute_A(hashTable,a,h));
+            int tmp0;
+            get_A(hashTable,NULL,NULL,&tmp0,a,h);
             if(score==add(mfe,tmp0)){
                 backtrace_A(hashTable,tmp0,a,h);
                 backtrace_MFEFree(mfe1,0,a-1);
                 backtrace_MFEFree(mfe2,h,MAX-1);
                 return;
             }
-        }
+       }
     }
 }
-
-int doing_bt=0;
 
 int main(int argc, char ** argv) {
     printf("File name: %s\n",argv[1]);
@@ -556,17 +743,16 @@ int main(int argc, char ** argv) {
 
     start_time = clock();
     while(true){
-        doing_bt=0;
-        HashTable *hashTable = createHashTable();
+        
         int b_len=0;
 
         int len=0;
 
         //reading of the sequence
+
         len=getline(&line,&b_len, fp);
         
         if(len<=0){
-            destroyHashTable(hashTable);
             free(line);
             free(correct_score);
             printf("End of file, %d tested",nb_tests);
@@ -574,8 +760,13 @@ int main(int argc, char ** argv) {
         }
         if(line[0]=='#'){
             printf("%s",line);
+            free(line);
             continue;
         }
+        HashTable *hashTable = createHashTable();
+        Stack *stack = malloc(sizeof(Stack));
+        initializeStack(stack);
+        
         MAX=len;
         if(line[len-1]=='\n'){
             MAX=len-1;
@@ -595,6 +786,7 @@ int main(int argc, char ** argv) {
         }
         else{
             destroyHashTable(hashTable);
+            freeStack(stack);
             free(line);
             free(ss);
             printf("No secondary structure found for test %d\n",nb_tests);
@@ -612,6 +804,7 @@ int main(int argc, char ** argv) {
         }
         else{
             destroyHashTable(hashTable);
+            freeStack(stack);
             free(line);
             free(correct_score);
             free(ss);
@@ -637,14 +830,9 @@ int main(int argc, char ** argv) {
         vrna_mfe(fc, NULL);
         
         //folding
-        
-        int score = fold(hashTable);
+        int score = fold(hashTable,stack);
         //retrieve backtrack
-        printf("\n------------------ START OF THE BT------------------\n");
-        fflush(NULL);
-        doing_bt=1;
-        backtrace(hashTable,score);
-        print_table_stat(hashTable);
+        backtrace(hashTable,stack,score);
         vrna_fold_compound_free(fc);
         clock_t test_end_time = clock();
 
@@ -674,6 +862,7 @@ int main(int argc, char ** argv) {
         }
         else{
             destroyHashTable(hashTable);
+            freeStack(stack);
             free(line);
             free(correct_score);
             free(structure);
@@ -687,6 +876,7 @@ int main(int argc, char ** argv) {
         
         //clean up
         destroyHashTable(hashTable);
+        freeStack(stack);
         freeMatrix(MAX);
         free(structure);
         free(line);
@@ -702,33 +892,74 @@ int main(int argc, char ** argv) {
     return 0;
 }
 
-int compute_CLIQUE0(HashTable *hashTable,int i, int i2, int j2, int j){
+int get_CLIQUE0(HashTable *hashTable,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
+    int CLIQUE=1;
+    int tab[] = {CLIQUE,i+1,i2,j2,j-1};
+    int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
-        return INT_MAX;
+        *value=INT_MAX;
+        return 1;
     }
-
-    int min_value = add(INTB(i,j,-1,-1),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
-
-    return min_value;
+    if (get(hashTable,tab,size,value)){
+        //printf("*value = %d(+%d)\n",*value,INTB(i,j,-1,-1));
+        *value=add(INTB(i,j,-1,-1),*value);
+        //printf("*new _ value = %d\n",*value);
+        return 1;
+    }
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = createTuple(tab,size);
+    newNode->next = NULL;
+    if(*last!=NULL){
+        (*last)->next=newNode;
+    }
+    if(*first==NULL){
+        *first=newNode;
+    }
+    *last=newNode;
+    return 0;
 }
 
-int compute_CLIQUE1(HashTable *hashTable,int i, int i2, int j2, int j) {
+int get_CLIQUE1(HashTable *hashTable,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
+    int CLIQUE=1;
+    int tab[] = {CLIQUE,i,i2,j2,j};
+    int size= 5;
+
+   if(i2>=j2 || i2<i-1 || j2>j+1){
+        *value=INT_MAX;
+        return 1;
+    }
+    if (get(hashTable,tab,size,value)){
+        return 1;
+    }
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = createTuple(tab,size);
+    newNode->next = NULL;
+    if(*last!=NULL){
+        (*last)->next=newNode;
+    }
+    if(*first==NULL){
+        *first=newNode;
+    }
+    *last=newNode;
+    return 0;
+}
+
+
+int compute_CLIQUE1(HashTable *hashTable,Node** first,Node** last,int i, int i2, int j2, int j) {
     int CLIQUE=1;
     int value;
     int tab[] = {CLIQUE,i,i2,j2,j};
     int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
-        return INT_MAX;
+        return 1;
     }
 
     if (get(hashTable,tab,size,&value)) { 
-        return value;
+        return 1;
     }
-    if(doing_bt==1){
-    printf("missing CLIQUE1");
-    }
+    int possible=1;
     int min_value = 0;
     int tmp;
     if (j == j2 && i <= i2) { 
@@ -739,48 +970,99 @@ int compute_CLIQUE1(HashTable *hashTable,int i, int i2, int j2, int j) {
             if(evaluate(k,l) && l-k+1<=THETA && (k<i2 || l==j2)){
                 tmp=INTB(k,l,i,j);
                 if(tmp!=INT_MAX){
-                    min_value = min(min_value,add(compute_CLIQUE1(hashTable,k+1,i2,j2,l-1),tmp));
+                    int tmp2;
+                    if(get_CLIQUE1(hashTable,first,last,&tmp2,k+1,i2,j2,l-1)==0){
+                        possible=0;
+                    }
+                    if(possible==1){
+                        
+                    min_value = min(min_value,add(tmp2,tmp));
+                    }
                 }
             }
         }
     }
-    
-    insert(hashTable,tab,size,min_value);
-    return min_value;
-}
-
-int compute_C0(HashTable *hashTable,int a, int f, int c,int d){
-    
-    if(a<0 || f<0 || f>=MAX || a>=MAX || a>f){
-        return INT_MAX;
+    if(possible==1){
+        insert(hashTable,tab,size,min_value);
     }
-   
-    int min_value=add(INTB(a,f,-1,-1),compute_C1(hashTable,a+1,f-1,c,d));
-
-    return min_value;
+    return possible;
 }
-int compute_C1(HashTable *hashTable,int a, int f, int c,int d) {
-    int C1 =67;
-    int value;
 
+int get_C0(HashTable *hashTable,Node** first,Node** last,int * value,int a, int f, int c,int d){
+    int C1 = 67;
+    int tab[]={C1,a+1,f-1,c,d};
+    int size = 5;
+
+    if(a<0 || f<0 || f>=MAX || a>=MAX || a>f){
+        *value=INT_MAX;
+        return 1;
+    }   
+    if (get(hashTable,tab,size,value)){
+        *value=add(INTB(a,f,-1,-1),*value);
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(*last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(*first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+
+int get_C1(HashTable *hashTable,Node** first,Node** last,int * value,int a, int f, int c,int d){
+    int C1 = 67;
     int tab[]={C1,a,f,c,d};
     int size = 5;
 
     if(a<0 || f<0 || f>=MAX || a>=MAX || a>f){
-        return INT_MAX;
+        *value=INT_MAX;
+        return 1;
+    }  
+    if (get(hashTable,tab,size,value)){
+        //printf("value=>%d \n",*value);
+        return 1;
     }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(*last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(*first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+
+int compute_C1(HashTable *hashTable,Node** first,Node** last,int a, int f, int c,int d) {
+    int C1 = 67;
+    int tab[]={C1,a,f,c,d};
+    int size = 5;
+    int value;
+    if(a<0 || f<0 || f>=MAX || a>=MAX || a>f){
+        return 1;
+    } 
     if (get(hashTable,tab,size,&value)){
-        return value;
+        return 1;
     }
-    if(doing_bt==1){
-    printf("missing C1");
-    }
+    int possible=1;
     int min_value=INT_MAX;
     int mfe1=MFEFree(a,c-1);
     int mfe2=MFEFree(d,f);
     
     min_value=add(0,add(mfe1,mfe2));
 
+    
     loop:
     for(int tmp1=a;tmp1<=min(f-1,c-1);tmp1++){
         for(int tmp2=max(d,tmp1+2);tmp2<=f;tmp2++){
@@ -788,79 +1070,142 @@ int compute_C1(HashTable *hashTable,int a, int f, int c,int d) {
                 int tmp3=INTB(tmp1,tmp2,a,f);
 
                 if(tmp3!=INT_MAX){
-                    min_value=min(min_value,
-                    add(compute_C1(hashTable,tmp1+1,tmp2-1,c,d),tmp3));
+                    int tmp;
+                    if(get_C1(hashTable,first,last,&tmp,tmp1+1,tmp2-1,c,d)==0){
+                        possible=0;
+                    }
+                    if(possible==1){
+                        //printf("C1 res= %d",tmp);
+                        min_value=min(min_value, add(tmp,tmp3));
+                    }
                 }
             }
         }    
     }
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(hashTable,tab,size,min_value);
+    }
+    return possible;
 }
-int compute_B(HashTable *hashTable,int c,int d,int f,int h) {
+
+int get_B(HashTable *hashTable,Node** first,Node** last,int * value,int c,int d,int f,int h){
+    int B = 66;
+    int tab[]={B,c,d,f,h};
+    int size = 5;
+
+
+    if (get(hashTable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_B(HashTable *hashTable,Node** first,Node** last,int c,int d,int f,int h) {
     int B = 66;
     int value;
     int tab[]={B,c,d,f,h};
     int size = 5;
 
     if (get(hashTable,tab,size,&value)){
-        return value;
+        return 1;
     }
     int min_value = INT_MAX;
-    if(doing_bt==1){
-    printf("missing B");
-    }
+    int possible=1;
     for (int g=f;g<h;g++) {
       if(!evaluate(c,h-1)||!evaluate(d-1,g)){continue;}
       int mfe0 = MFEFree(f,g-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,c,d-1,g,h-1);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_CLIQUE0( hashTable,first,last,&tmp0,c,d-1,g,h-1)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(hashTable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_A(HashTable *hashTable,int a,int h) {
+int get_A(HashTable *hashTable,Node** first,Node** last,int * value,int a,int h){
+    int A = 65;
+    int tab[]={A,a,h};
+    int size = 3;
+
+
+    if (get(hashTable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_A(HashTable *hashTable,Node** first,Node** last,int a,int h) {
     int A = 65;
     int value;
     int tab[]={A,a,h};
     int size = 3;
 
     if (get(hashTable,tab,size,&value)){
-        return value;
+        return 1;
     }
     int min_value = INT_MAX;
-    if(doing_bt==1){
-    printf("missing A");
-    }
+    int possible=1;
     for (int c=a+1;c<h-2;c++) {
         for (int d=c+1;d<h-1;d++) {
             for (int f=d+1;f<h;f++) {
               if(!evaluate(a,f-1)){continue;}
 
-              int tmp0= compute_C0( hashTable,a,f-1,c,d);
-              if(tmp0==INT_MAX){continue;}
-              int tmp1= compute_B( hashTable,c,d,f,h);
-              if(tmp1==INT_MAX){continue;}
+              int tmp0;
+              if(get_C0( hashTable,first,last,&tmp0,a,f-1,c,d)==0){possible=0;}
+              else if(tmp0==INT_MAX){continue;}
+              int tmp1;
+              if(get_B( hashTable,first,last,&tmp1,c,d,f,h)==0){possible=0;}
+              else if(tmp1==INT_MAX){continue;}
 
-              min_value = min(min_value,add(add(tmp0,tmp1),0));
+              if(possible==1){
+                min_value = min(min_value,add(add(tmp0,tmp1),0));
+              }
             }
         }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(hashTable,tab,size,min_value);
+    }
+    return possible;
 }
 void backtrace_CLIQUE0(HashTable *hashTable,int score,int i, int i2, int j2, int j) {
     
    if(i2>=j2 || i2<i || j2>j){
-        return ;
+        return;
     }
-    int tmp=compute_CLIQUE1(hashTable,i+1,i2,j2,j-1);
+    int tmp;
+    get_CLIQUE1(hashTable,NULL,NULL,&tmp,i+1,i2,j2,j-1);
     int sc=INTB(i,j,-1,-1);
     if(score==add(sc,tmp)){
         backtrace_INTB(sc,i,j,-1,-1);
@@ -884,7 +1229,8 @@ void backtrace_CLIQUE1(HashTable *hashTable,int score,int i, int i2, int j2, int
             if(evaluate(k,l) && l-k+1<=THETA && (k<i2 || l==j2)){
                 tmp=INTB(k,l,i,j);
                 if(tmp!=INT_MAX){
-                    int tmp0=compute_CLIQUE1(hashTable,k+1,i2,j2,l-1);
+                    int tmp0;
+                    get_CLIQUE1(hashTable,NULL,NULL,&tmp0,k+1,i2,j2,l-1);
                     if(score==add(tmp0,tmp)){
                         backtrace_INTB(tmp,k,l,i,j); 
                         backtrace_CLIQUE1(hashTable,tmp0,k+1,i2,j2,l-1);                       
@@ -898,11 +1244,12 @@ void backtrace_CLIQUE1(HashTable *hashTable,int score,int i, int i2, int j2, int
 }
 
 void backtrace_C0(HashTable *hashTable, int score, int a, int f, int c,int d) {
-    
+
     if(a<0 || f<0 || f>=MAX || a>=MAX || a>f){
         return;
     }
-    int tmp=compute_C1(hashTable,a+1,f-1,c,d);
+    int tmp;
+    get_C1(hashTable,NULL,NULL,&tmp,a+1,f-1,c,d);
     int sc=INTB(a,f,-1,-1);
     if(score==add(sc,tmp)){
         backtrace_INTB(sc,a,f,-1,-1);
@@ -911,7 +1258,7 @@ void backtrace_C0(HashTable *hashTable, int score, int a, int f, int c,int d) {
     return;
 }
 void backtrace_C1(HashTable *hashTable, int score, int a, int f, int c,int d) {
-    
+
     if(a<0 || f<0 || f>=MAX || a>=MAX || a>f){
         return;
     }
@@ -934,7 +1281,8 @@ void backtrace_C1(HashTable *hashTable, int score, int a, int f, int c,int d) {
             if(evaluate(tmp1,tmp2) && tmp1-tmp2+1<=THETA){
                 int tmp3=INTB(tmp1,tmp2,a,f);
                 if(tmp3!=INT_MAX){
-                    int tmp0=compute_C1(hashTable,tmp1+1,tmp2-1,c,d);
+                    int tmp0;
+                    get_C1(hashTable,NULL,NULL,&tmp0,tmp1+1,tmp2-1,c,d);
                     if(score==add(tmp0,tmp3)){
                         backtrace_INTB(tmp3,tmp1,tmp2,a,f);
                         backtrace_C1(hashTable,tmp0,tmp1+1,tmp2-1,c,d);
@@ -952,13 +1300,14 @@ void backtrace_B(HashTable *hashTable,int score,int c,int d,int f,int h) {
       if(!evaluate(c,h-1)||!evaluate(d-1,g)){continue;}
       int mfe0 = MFEFree(f,g-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,c,d-1,g,h-1);
+      int tmp0;
+      get_CLIQUE0( hashTable,NULL,NULL,&tmp0,c,d-1,g,h-1);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
         backtrace_MFEFree(mfe0,f,g-1);
 
-        backtrace_CLIQUE0(hashTable,tmp0, c,d-1,g,h-1);
+        backtrace_CLIQUE0( hashTable,tmp0,c,d-1,g,h-1);
         bracket+=1;
 
         return;
@@ -975,16 +1324,18 @@ void backtrace_A(HashTable *hashTable,int score,int a,int h) {
             for (int f=d+1;f<h;f++) {
               if(!evaluate(a,f-1)){continue;}
 
-              int tmp0= compute_C0( hashTable,a,f-1,c,d);
+              int tmp0;
+              get_C0( hashTable,NULL,NULL,&tmp0,a,f-1,c,d);
               if(tmp0==INT_MAX){continue;}
-              int tmp1= compute_B( hashTable,c,d,f,h);
+              int tmp1;
+              get_B( hashTable,NULL,NULL,&tmp1,c,d,f,h);
               if(tmp1==INT_MAX){continue;}
 
               if(score==add(add(tmp0,tmp1),0)){
 
-                backtrace_C0(hashTable,tmp0, a,f-1,c,d);
+                backtrace_C0( hashTable,tmp0,a,f-1,c,d);
                 bracket+=1;
-                backtrace_B(hashTable,tmp1, c,d,f,h);
+                backtrace_B( hashTable,tmp1,c,d,f,h);
 
                 return;
               }
