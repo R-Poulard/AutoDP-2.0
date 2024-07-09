@@ -1,48 +1,66 @@
 
-int init_root(HashTable* HashTable,Stack * stack){  
+int init_root(pk_compound* pk){  
     int A = 65;
     int size = 3;
-    for(int END=0+ANCH;END<=MAX;END++){
+    for(int END=0+ANCH;END<=pk->MAX;END++){
         for(int a=0;a<END-ANCH;a++){
             int tab[]={A,a,END};
             Node* newNode = (Node*)malloc(sizeof(Node));
             newNode->data = createTuple(tab,size);
             newNode->next = NULL;
-            if(stack->top!=NULL){
-                newNode->next=stack->top;
-                stack->top=newNode;
+            if(pk->Stack->top!=NULL){
+                newNode->next=pk->Stack->top;
+                pk->Stack->top=newNode;
             }
-            stack->top=newNode;
+            pk->Stack->top=newNode;
         }
     }
 }
 
-int compute_root(HashTable * hashTable,Stack *stack) {
+int init_root_inter(pk_compound* pk,int a,int h){  
+    int A = 65;
+    int size = 3;
+    Stack* stack=pk->Stack;
+    int tab[]={A,a,h};
+            
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = createTuple(tab,size);
+    newNode->next = NULL;
+    if(stack->top!=NULL){
+        newNode->next=stack->top;
+        stack->top=newNode;
+    }
+    stack->top=newNode;
+}
+
+int compute_root(pk_compound* pk) {
     int min_value=INT_MAX; 
-    for(int END=0+ANCH;END<=MAX;END++){
+    for(int END=0+ANCH;END<=pk->MAX;END++){
         for(int a=0;a<END-ANCH;a++){
-            int mfe1=MFEFree(0,a-1);
-            int mfe2=MFEFree(END,MAX-1);
+            int mfe1=MFEFree(pk,0,a-1);
+            int mfe2=MFEFree(pk,END,pk->MAX-1);
             int mfe=add(mfe1,mfe2);
             int tmp;
-            get_A(hashTable,NULL,NULL,&tmp,a,END);
+            get_A(pk,NULL,NULL,&tmp,a,END);
             min_value = min(min_value,add(tmp,mfe));
         }
     }
     return min_value;
 }
 
-int fold(HashTable* hasTable, Stack * stack){
+
+int fold(pk_compound* pk){
     
-    init_root(hasTable,stack);
+    init_root(pk);
+    //printStack(stack);
     Node* topNode;
     Node* nextNode;
     Node* add_on_last;
     Node* add_on_first;
-    while (!isStackEmpty(stack)) {
+    while (!isStackEmpty(pk->Stack)) {
         //pop(stack, &topTuple)
         //printStack(stack);
-        topNode=stack->top;
+        topNode=pk->Stack->top;
         nextNode=topNode->next;
         Tuple * topTuple = topNode->data;
         add_on_last=NULL;
@@ -56,26 +74,27 @@ VARIABLE_PART
         }
     }
     //printStack(stack);
-    return compute_root(hasTable,stack);
+    return compute_root(pk);
 }
-void backtrace(HashTable * hashTable,Stack* stack,int score) {
-    //int a=0;int h=MAX;
-    for(int END=0+ANCH;END<=MAX;END++){
+void backtrace(pk_compound *pk,bt_struct* bt,int score) {
+    //int a=0;int h=pk->MAX;
+    for(int END=0+ANCH;END<=pk->MAX;END++){
         for(int a=0;a<END-ANCH;a++){
-            int mfe1=MFEFree(0,a-1);
-            int mfe2=MFEFree(END,MAX-1);
+            int mfe1=MFEFree(pk,0,a-1);
+            int mfe2=MFEFree(pk,END,pk->MAX-1);
             int mfe=add(mfe1,mfe2);
             int tmp0;
-            get_A(hashTable,NULL,NULL,&tmp0,a,END);
+            get_A(pk,NULL,NULL,&tmp0,a,END);
             if(score==add(mfe,tmp0)){
-                backtrace_A(hashTable,tmp0,a,END);
-                backtrace_MFEFree(mfe1,0,a-1);
-                backtrace_MFEFree(mfe2,END,MAX-1);
+                backtrace_A(pk,bt,tmp0,a,END);
+                backtrace_MFEFree(pk,bt,mfe1,0,a-1);
+                backtrace_MFEFree(pk,bt,mfe2,END,pk->MAX-1);
                 return;
             }
        }
     }
 }
+
 
 int main(int argc, char ** argv) {
     printf("File name: %s\n",argv[1]);
@@ -94,36 +113,31 @@ int main(int argc, char ** argv) {
         int b_len=0;
 
         int len=0;
-
+        char * line=NULL;
         //reading of the sequence
         len=getline(&line,&b_len, fp);
         
         if(len<=0){
             
             free(line);
-            free(correct_score);
             printf("End of file, %d tested",nb_tests);
             break;
         }
         if(line[0]=='#'){
             printf("%s",line);
+            free(line);
             continue;
         }
-        HashTable *hashTable = createHashTable();
-        Stack *stack = malloc(sizeof(Stack));
-        initializeStack(stack);
-        
-        MAX=len;
+
+        int MAX=len;
         if(line[len-1]=='\n'){
             MAX=len-1;
             nb_tests+=1;
         }
-        preset_N(MAX);
 
         //secondary structure
         char *ss = NULL;
         len=getline(&ss,&b_len, fp);
-        createMatrix(MAX,ss);
         if (len != -1) {
             if (ss[len - 1] == '\n') {
                 ss[len - 1] = '\0'; // Replace newline character with null terminator
@@ -131,14 +145,14 @@ int main(int argc, char ** argv) {
             }
         }
         else{
-            destroyHashTable(hashTable);
-            freeStack(stack);
+            
             free(line);
             free(ss);
             printf("No secondary structure found for test %d\n",nb_tests);
             exit(-1);
         }
         //reading the score
+        char * correct_score=NULL;
         len=getline(&correct_score,&b_len, fp);
         if (len != -1) {
             if (correct_score[len - 1] == '\n') {
@@ -149,8 +163,6 @@ int main(int argc, char ** argv) {
             
         }
         else{
-            destroyHashTable(hashTable);
-            freeStack(stack);
             free(line);
             free(correct_score);
             free(ss);
@@ -161,25 +173,21 @@ int main(int argc, char ** argv) {
         printf("Test: %d Size of the Sequence: %d ---", nb_tests,MAX);
         
         //elements used to record backtrack
-        bracket='A';
-        structure=malloc(sizeof(char)*(MAX+1));
-        structure[MAX]='\0';
-        for(int i=0;i<MAX;i++){
-            structure[i]='.';
-        }
+        
         //Start of test
         clock_t test_start_time = clock();
 
         vrna_init_rand();
-        fc = vrna_fold_compound(line, NULL, VRNA_OPTION_DEFAULT);
+        vrna_fold_compound_t * fc = vrna_fold_compound(line, NULL, VRNA_OPTION_DEFAULT);
         vrna_constraints_add(fc, ss, VRNA_CONSTRAINT_DB_DEFAULT);
+        pk_compound* pk=create_pk_compound(fc,line,ss);
         vrna_mfe(fc, NULL);
         
         //folding
-        int score = fold(hashTable,stack);
+        int score = fold(pk);
         //retrieve backtrack
-        backtrace(hashTable,stack,score);
-        vrna_fold_compound_free(fc);
+        bt_struct* bt=create_bt_struct(NULL,pk->MAX);
+        backtrace(pk,bt,score);
         clock_t test_end_time = clock();
 
         double test_time = ((double)(test_end_time - test_start_time)) / CLOCKS_PER_SEC;
@@ -191,42 +199,41 @@ int main(int argc, char ** argv) {
             float fl=(float)score/100.0;
             printf("Score %.2f ",fl);
             int nb=0;
-            for(int i=0;i<MAX;i++){
+            for(int i=0;i<pk->MAX;i++){
                 
-                if(structure[i]>64){
-                    if(structure[i]<91){
+                if(bt->structure[i]>64){
+                    if(bt->structure[i]<91){
                         
-                        nb+=structure[i];
+                        nb+=bt->structure[i];
                     }
                     else{
                         
-                        nb-=(structure[i]-32);
+                        nb-=(bt->structure[i]-32);
                     }
                 }
             }
             printf("(backtrack impurty= %d)\n",nb);
         }
         else{
-            destroyHashTable(hashTable);
-            freeStack(stack);
             free(line);
             free(correct_score);
-            free(structure);
+            free_pk(pk);
+            free_bt(bt);
             free(ss);
             printf("Failed (%d found, should be %d)\n",score,number);
             exit(nb_tests);
         }
 
         
-        printf("%s\n",structure);
+        printf("%s\n",bt->structure);
         
         //clean up
-        destroyHashTable(hashTable);
-        freeStack(stack);
-        freeMatrix(MAX);
-        free(structure);
+
+        free_pk(pk);
+        free_bt(bt);
         free(line);
         free(ss);
+        free(correct_score);
     }
     end_time = clock();
     double total_execution_time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;

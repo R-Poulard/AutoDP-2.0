@@ -1,4 +1,4 @@
-void backtrace_MAINNAME(HashTable *hashTable,int score,INT_INDICES) {
+void backtrace_MAINNAME(pk_compound *pk,bt_struct* bt,int score,INT_INDICES) {
     // index_start
 
 FOR_LOOP_NEW_VARIABLES_OPEN

@@ -1,10 +1,10 @@
-int get_MAINNAME(HashTable *hashTable,Node** first,Node** last,int * value,INT_INDICES){
+int get_MAINNAME(pk_compound *pk,Node** first,Node** last,int * value,INT_INDICES){
     int MAINNAME = INT_VALUE_NAME;
     int tab[]={MAINNAME,INDICES};
     int size = SIZE_ARRAY;
 
 
-    if (get(hashTable,tab,size,value)){
+    if (get(pk->hashtable,tab,size,value)){
         //printf("found\n");
         return 1;
     }
@@ -23,14 +23,14 @@ int get_MAINNAME(HashTable *hashTable,Node** first,Node** last,int * value,INT_I
         return 0;
     }
 }
-int compute_MAINNAME(HashTable *hashTable,Node** first,Node** last,INT_INDICES) {
+int compute_MAINNAME(pk_compound *pk,Node** first,Node** last,INT_INDICES) {
     // index_start
     int MAINNAME = INT_VALUE_NAME;
     int value;
     int tab[]={MAINNAME,INDICES};
     int size = SIZE_ARRAY;
 
-    if (get(hashTable,tab,size,&value)){
+    if (get(pk->hashtable,tab,size,&value)){
         return 1;
     }
     // index_end    
@@ -45,7 +45,7 @@ CHILDREN_SUM
   INDENT}
 FOR_LOOP_NEW_VARIABLES_CLOSE
     if(possible==1){
-        insert(hashTable,tab,size,min_value);
+        insert(pk->hashtable,tab,size,min_value);
     }
     return possible;
 }

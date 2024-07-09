@@ -4,6 +4,12 @@
 #include <math.h>
 #include <limits.h>
 #include <time.h>
+#include <string.h>
+#include <ViennaRNA/fold_compound.h>
+#include <ViennaRNA/utils/basic.h>
+#include <ViennaRNA/utils/strings.h>
+#include <ViennaRNA/mfe.h>
+#include <ViennaRNA/loop_energies.h>
 
 //HASHING TABLE FUNCTION
 #define LOAD_FACTOR_THRESHOLD 0.7
@@ -11,8 +17,56 @@
 
 int TABLE_SIZE = 64019;
 int N = 10;
-int THETA_PAIRING=1;
-int THETA = 100;
+
+
+typedef struct Tuple {
+    int values[TUPLE_SIZE];
+} Tuple;
+
+// Define a structure for each node in the hash table
+typedef struct HashNode {
+    struct Tuple* key;
+    int value;
+    struct HashNode* next;
+} HashNode;
+
+// Define the hash table structure
+typedef struct {
+    HashNode **buckets;
+    int size;
+    int capacity;
+} HashTable;
+
+typedef struct Node {
+    Tuple* data;
+    struct Node* next;
+} Node;
+
+// Define the Stack structure
+PUBLIC typedef struct {
+    Node* top;
+} Stack;
+
+PUBLIC typedef struct {
+    HashTable* hashtable;
+    Stack* Stack;
+    vrna_fold_compound_t* fc;
+    const char* line;
+    int** matrix;
+    int MAX;
+    int THETA;
+    int THETA_PAIRING;
+} pk_compound;
+
+PUBLIC typedef struct{
+    char * structure;
+    char bracket;
+} bt_struct;
+
+
+//PAIRING FUNCTIONS
+int min(int a, int b) { if (a<b) {return a;} else {return b;}};
+int max(int a, int b) { if (a<b) {return b;} else {return a;}};
 
 void preset_tablesize(int size) {
     if (size > 0) {
@@ -31,10 +85,6 @@ void preset_N(int n) {
         printf("N negative or null\n");
     }
 }
-
-typedef struct Tuple {
-    int values[TUPLE_SIZE];
-} Tuple;
 
 Tuple *createTuple(int val[],int size) {
     Tuple *tuple = (Tuple *)malloc(sizeof(Tuple));
@@ -69,27 +119,13 @@ int compare_tuple(Tuple *tp1, int val[], int size) {
     return 1; // Tuples are identical
 }
 
-// Define a structure for each node in the hash table
-typedef struct HashNode {
-    struct Tuple* key;
-    int value;
-    struct HashNode* next;
-} HashNode;
-
-// Define the hash table structure
-typedef struct {
-    HashNode **buckets;
-    int size;
-    int capacity;
-} HashTable;
-
 // Hash function
-int hash(int keys[], HashTable *hashtable,int size) {
+int hash(int keys[], int capacity,int size) {
     int key = 0;
     for (int i = 0; i < size; i++) {
-        key += keys[i] * pow(N, TUPLE_SIZE-i);
+        key += keys[i] * (int)pow(N, TUPLE_SIZE-i-1);
     }
-    return ( hashtable->capacity + (key % hashtable->capacity) ) % hashtable->capacity;
+    return abs(key % capacity);
 }
 
 
@@ -120,7 +156,7 @@ void destroyHashTable(HashTable *hashTable) {
 // Function to insert a key-value pair into the hash table
 void insert(HashTable *hashTable, int keys[], int size,int value) {
     // Combine the numbers into a single key
-    int index = hash(keys, hashTable,size);
+    int index = hash(keys, hashTable->capacity,size);
     // Create a new node
     HashNode *newNode = (HashNode *)malloc(sizeof(HashNode));
     newNode->key = createTuple(keys,size);
@@ -153,7 +189,7 @@ void insert(HashTable *hashTable, int keys[], int size,int value) {
             while (current != NULL) {
                 HashNode *temp = current;
                 current = current->next;
-                int new_index = hash(temp->key->values, hashTable,size);
+                int new_index = hash(temp->key->values, new_capacity,size);
                 temp->next = new_buckets[new_index];
                 new_buckets[new_index] = temp;
             }
@@ -167,13 +203,16 @@ void insert(HashTable *hashTable, int keys[], int size,int value) {
 // Function to retrieve a value from the hash table given a key
 bool get(HashTable *hashTable, int keys[], int size, int *value) {
     
-    int index = hash(keys, hashTable,size);
-    
+    int index = hash(keys, hashTable->capacity,size);
+
     // Traverse the linked list at the index
     HashNode *current = hashTable->buckets[index];
     while (current != NULL) {
         if (compare_tuple(current->key, keys,size)) {
+            
             *value = current->value;
+            
+            //printf("\nvalue in hash +> %d",current->value);
             return true; // Key found
         }
         current = current->next;
@@ -187,6 +226,29 @@ void print_tuple(Tuple *tpl){
         printf("%d,",tpl->values[i]);
     }
 
+}
+
+void print_table_stat(HashTable *hashTable){
+    printf("#-#--TABLE STAT REPORT-----\n#-#nb of elem: %d\n#-#capcaity: %d\n#-#initial capacity %d\n",hashTable->size,hashTable->capacity,TABLE_SIZE);
+    
+    int nb_chaines=0;
+    int biggest_chaines=0;
+    int sum_chaines=0;
+    for (int i = 0; i < hashTable->capacity; i++) {
+        HashNode *current = hashTable->buckets[i];
+        int chaine_size=0;
+        if(current!=NULL && current->next!=NULL){
+            nb_chaines++;
+        }
+        while (current != NULL) {      
+            chaine_size++;
+            current = current->next;
+        }
+        biggest_chaines=max(biggest_chaines,chaine_size);
+        sum_chaines+=chaine_size;
+    }
+    printf("#-#Biggest chain: %d\n#-# prct chaine: %.3f (%d/%d)\n#-# mean chaine size: %.3f\n",biggest_chaines,(double)nb_chaines/hashTable->size,nb_chaines,hashTable->size,sum_chaines/nb_chaines);
+    printf("#-#--------------------------\n");
 }
 
 void print_table(HashTable *hashTable){
@@ -207,14 +269,13 @@ void print_table(HashTable *hashTable){
     }
 }
 //SECONDARY STRUCTURE FUNCTION
-int **matrix = NULL; 
 
-void createMatrix(int N,char * ss) {
+void createMatrix(int *** matrix, int N,const char * ss) {
 
     // Allocate memory for the matrix
-    matrix = (int **)malloc(N * sizeof(int *));
+    *matrix = (int **)malloc(N * sizeof(int *));
     for (int i = 0; i < N; i++) {
-        matrix[i] = (int *)malloc(N * sizeof(int));
+        (*matrix)[i] = (int *)malloc(N * sizeof(int));
     }
 
     // Fill the matrix
@@ -222,33 +283,33 @@ void createMatrix(int N,char * ss) {
         for (int j = i; j < N; j++) {
             if(i==j){
                 if(ss[i]=='|'){
-                    matrix[i][j]=0;
+                    (*matrix)[i][j]=0;
                 }
                 else{
-                    matrix[i][j]=1;
+                    (*matrix)[i][j]=1;
                 }
                 continue;
             }
-            matrix[i][j] = 0;
-            matrix[j][i] = 0;
+            (*matrix)[i][j] = 0;
+            (*matrix)[j][i] = 0;
             if ( ss[i]=='x' || ss[j]=='x') {
-                matrix[i][j] = 0;
-                matrix[j][i] = 0;
+                (*matrix)[i][j] = 0;
+                (*matrix)[j][i] = 0;
                 continue;
             }
             if( (ss[i]=='(' && ss[j]==')') || (ss[j]=='(' && ss[i]==')')){
-                matrix[i][j]= 1;
-                matrix[j][i] = 1;
+                (*matrix)[i][j]= 1;
+                (*matrix)[j][i] = 1;
                 continue;
             }
             if( ss[i]=='>'){
-                matrix[i][j]= 0;
-                matrix[j][i]= 0;
+                (*matrix)[i][j]= 0;
+                (*matrix)[j][i]= 0;
                 continue;
             }
             if( (ss[i]=='.' || ss[i]=='<') && (ss[j]=='.' || ss[j]=='>')){
-                matrix[i][j]= 1;
-                matrix[j][i]= 1;
+                (*matrix)[i][j]= 1;
+                (*matrix)[j][i]= 1;
                 continue;
             }
             if(ss[i]=='['){
@@ -263,17 +324,17 @@ void createMatrix(int N,char * ss) {
                         }
                     }
                     if(matching==0){
-                        matrix[i][j]=1;
-                        matrix[j][i]=1;
+                        (*matrix)[i][j]=1;
+                        (*matrix)[j][i]=1;
                     }
                     else{
-                        matrix[i][j]=0;
-                        matrix[j][i]=0;
+                        (*matrix)[i][j]=0;
+                        (*matrix)[j][i]=0;
                     }
                 }
                 else{
-                    matrix[i][j] = 0;
-                    matrix[j][i] = 0;
+                    (*matrix)[i][j] = 0;
+                    (*matrix)[j][i] = 0;
                 }
                 continue;
             }
@@ -282,7 +343,7 @@ void createMatrix(int N,char * ss) {
 }
 
 // Function to display the matrix
-void displayMatrix(int N) {
+void displayMatrix(int** matrix,int N) {
     printf("Matrix:\n");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -293,22 +354,12 @@ void displayMatrix(int N) {
 }
 
 // Function to free the memory allocated for the matrix
-void freeMatrix(int N) {
+void freeMatrix(int ** matrix,int N) {
     for (int i = 0; i < N; i++) {
         free(matrix[i]);
     }
     free(matrix);
 }
-
-//PAIRING FUNCTIONS
-int min(int a, int b) { if (a<b) {return a;} else {return b;}};
-int max(int a, int b) { if (a<b) {return b;} else {return a;}};
-
-char * line = NULL;
-int MAX;
-char * correct_score = NULL;
-char * structure=NULL;
-char bracket='A';
 
 int matching(char x, char y){
     if(x!='X' && x!='G' && x!='C' && x!='A' && x!='U' && x!='T'){
@@ -329,19 +380,17 @@ int matching(char x, char y){
     return INT_MAX;
 }
 
-int evaluate(int x, int y) {
-    if(abs(x-y)<THETA_PAIRING || matrix[x][y]==0 || matching(line[x],line[y])==INT_MAX){
+int evaluate(pk_compound* pk,int x, int y) {
+    int a=abs(x-y)<pk->THETA_PAIRING;
+    int b=pk->matrix[x][y];
+    int c=matching(pk->line[x],pk->line[y]);
+
+    if(abs(x-y)<pk->THETA_PAIRING || pk->matrix[x][y]==0 || matching(pk->line[x],pk->line[y])==INT_MAX){
         return 0;
     }
     return 1;
 }
 
-int bp_score(int x, int y) {
-    if(abs(x-y)<THETA_PAIRING || matrix[x][y]==0){
-        return INT_MAX;
-    }
-    return matching(line[x],line[y]);
-}
 
 int add(int a,int b){
     if(a==INT_MAX || b==INT_MAX){
@@ -351,138 +400,639 @@ int add(int a,int b){
     return a+b;
 }
 
-int MFEFree(int a,int b){
-    if(b<a){
+int write_structure(pk_compound* pk,bt_struct* bt,vrna_bp_stack_t *bp){
+    int i,j,temp;
+    for (int k = 1; k <= bp[0].i; k++) {
+      i = bp[k].i;
+      j = bp[k].j;
+      if (i > pk->MAX)
+        i -= pk->MAX;
+
+      if (j > pk->MAX)
+        j -= pk->MAX;
+
+      if (i > j) {
+        temp  = i;
+        i     = j;
+        j     = temp;
+      }
+
+      if (i == j) {
+        /* Gquad bonds are marked as bp[i].i == bp[i].j */
+        bt->structure[i - 1] = '+';
+      } else {
+        /* the following ones are regular base pairs */
+        bt->structure[i - 1]  = '(';
+        bt->structure[j - 1]  = ')';
+      }
+    }
+}
+
+int MFEFree(pk_compound* pk,int a,int b){
+    if(a>b){
         return 0;
     }
-    return -(b-a)-1;
+    a=a++;
+    b=b++;
+
+    int * indx = pk->fc->jindx;
+    int ij = indx[b] + a;
+    int * fML =pk->fc->matrices->fML;
+    int up_energy=pk->fc->params->MLbase*(b-a+1);
+    return min(up_energy,fML[ij]);
+}
+
+int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack){
+    int ret;
+    int p,q,comp1,comp2;
+    int s=0;
+    int b=bp_stack[0].i;
+    sect bt_stack[500]; /* stack of partial structures for backtracking */
+    //printf("a=%d,b=%d\n",i,j);
+    int BT=vrna_BT_mb_loop_split(fc, &i, &j, &p, &q, &comp1, &comp2, bp_stack, &b);
+    if(BT!=1){
+        return BT;
+    }
+    if (i > 0) {
+        bt_stack[++s].i = i;
+        bt_stack[s].j   = j;
+        bt_stack[s].ml  = comp1;
+    }
+
+    if (p > 0) {
+        bt_stack[++s].i = p;
+        bt_stack[s].j   = q;
+        bt_stack[s].ml  = comp2;
+    }
+    BT=vrna_backtrack_from_intervals(fc,bp_stack,bt_stack,s);
+    return BT;
+}
+
+void backtrace_MFEFree(pk_compound* pk,bt_struct* bt,int score, int a,int b){
+    int up_energy=pk->fc->params->MLbase*(b-a+1);
+    if(a>b || score==up_energy){
+        return;
+    }
+    a++;
+    b++;
+    vrna_bp_stack_t * bp=(vrna_bp_stack_t *)vrna_alloc(sizeof(vrna_bp_stack_t) * (4 * ( 1 + (b-a) / 2)));
+    int score_bt=compute_BT(pk->fc,a,b,bp);
+    write_structure(pk,bt,bp);
+    free(bp);
+}
+
+int INTB(pk_compound* pk,int a,int b,int c,int d){
+    if(d==-1 && c==-1){
+        return 0;
+    }    
+    //printf("\na=%d,b=%d,c=%d,d=%d  ",a,b,c,d);
+    a++;b++;
+    int energy_full = vrna_eval_int_loop(pk->fc,c,d,a,b);
+    //printf("=%d\n",energy_full);
+    return energy_full;
+}
+
+void add_pairing(pk_compound* pk,bt_struct* bt, int score,int a,int b,int c,int d){
+    bt->structure[a]=bt->bracket;
+    bt->structure[b]=tolower(bt->bracket);
+    return;
+}
+
+void freeNode(Node * node){
+    free(node->data);
+    free(node);
+}
+
+// Function to initialize the stack
+void initializeStack(Stack* stack) {
+    stack->top = NULL;
+}
+
+// Function to check if the stack is empty
+bool isStackEmpty(Stack* stack) {
+    return stack->top == NULL;
+}
+
+// Function to push a tuple onto the stack
+void push(Stack* stack,int tab[],int size) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    if (newNode == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+    newNode->data = createTuple(tab,size);
+    newNode->next = stack->top;
+    stack->top = newNode;
+}
+
+// Function to pop a tuple from the stack
+bool pop(Stack* stack, Tuple* item) {
+    if (isStackEmpty(stack)) {
+        //printf("Stack is empty. Cannot pop item.\n");
+        return false;
+    }
+    Node* temp = stack->top;
+    item = temp->data;
+    stack->top = stack->top->next;
+    free(temp);
+    return true;
 }
 
 
-void backtrace_MFEFree(int score, int a,int b){
-    for(int i=a;i<=b;i++){
-        if(score==MFEFree(i,b)){
-            for(int y=i;y<=b;y++){
-                 structure[y]=bracket-17;
+// Function to free the stack
+void freeStack(Stack* stack) {
+    Node* current = stack->top;
+    Node* next;
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    stack->top = NULL;
+    free(stack);
+}
+void printStack(Stack* stack) {
+    Node* current = stack->top;
+    
+    Node* next;
+    printf("\n----Stack print-------\n");
+    while (current != NULL) {
+        next = current->next;
+        print_tuple(current->data);
+        printf("\n");
+        current = next;
+    }
+    printf("--------------------\n");
+}
+
+
+pk_compound* create_pk_compound(vrna_fold_compound_t *fc, char* seq,const char* ss){
+    pk_compound *pk=malloc(sizeof(pk_compound));
+    pk->fc=fc;
+    pk->hashtable=createHashTable();
+    pk->Stack=malloc(sizeof(Stack));
+    initializeStack(pk->Stack);
+    pk->line=seq;
+    pk->MAX=strlen(seq)-1;
+    createMatrix(&(pk->matrix),pk->MAX,ss);
+    preset_N(pk->MAX);
+    pk->THETA=100;
+    pk->THETA_PAIRING=1;
+}
+void free_pk(pk_compound* pk){
+    destroyHashTable(pk->hashtable);
+    freeMatrix(pk->matrix,pk->MAX);
+    freeStack(pk->Stack);
+    vrna_fold_compound_free(pk->fc);
+    free(pk);
+}
+
+bt_struct * create_bt_struct(char* structure,int MAX){
+    bt_struct* bt=malloc(sizeof(bt_struct));
+    bt->bracket='A';
+    if(structure==NULL){
+        bt->structure=malloc(sizeof(char)*(MAX+1));
+        bt->structure[MAX]='\0';
+        for(int i=0;i<MAX;i++){
+            bt->structure[i]='.';
+        }
+    }
+    else{
+        bt->structure=structure;
+    }
+    return bt;
+}
+void free_bt(bt_struct* bt){
+    free(bt->structure);
+    free(bt);
+}
+//declarations
+int get_CLIQUE1(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
+
+int get_CLIQUE0(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
+
+int compute_CLIQUE1(pk_compound *pk,Node **first,Node** last, int i, int j, int k, int l);
+
+void backtrace_CLIQUE0(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);
+
+void backtrace_CLIQUE1(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);
+int get_M(pk_compound *pk,Node** first,Node** last,int * value,int m,int n,int r,int t);
+
+int compute_M(pk_compound *pk,Node** first,Node** last,int m,int n,int r,int t);
+
+void backtrace_M(pk_compound *pk,bt_struct* bt,int score,int m,int n,int r,int t) ;
+
+int get_L(pk_compound *pk,Node** first,Node** last,int * value,int i,int k,int o,int p);
+
+int compute_L(pk_compound *pk,Node** first,Node** last,int i,int k,int o,int p);
+
+void backtrace_L(pk_compound *pk,bt_struct* bt,int score,int i,int k,int o,int p) ;
+
+int get_K(pk_compound *pk,Node** first,Node** last,int * value,int i,int k,int n,int p);
+
+int compute_K(pk_compound *pk,Node** first,Node** last,int i,int k,int n,int p);
+
+void backtrace_K(pk_compound *pk,bt_struct* bt,int score,int i,int k,int n,int p) ;
+
+int get_J(pk_compound *pk,Node** first,Node** last,int * value,int a,int h,int k,int n,int p);
+
+int compute_J(pk_compound *pk,Node** first,Node** last,int a,int h,int k,int n,int p);
+
+void backtrace_J(pk_compound *pk,bt_struct* bt,int score,int a,int h,int k,int n,int p) ;
+
+int get_I(pk_compound *pk,Node** first,Node** last,int * value,int b,int e,int g,int k,int l);
+
+int compute_I(pk_compound *pk,Node** first,Node** last,int b,int e,int g,int k,int l);
+
+void backtrace_I(pk_compound *pk,bt_struct* bt,int score,int b,int e,int g,int k,int l) ;
+
+int get_H(pk_compound *pk,Node** first,Node** last,int * value,int c,int e,int q,int r);
+
+int compute_H(pk_compound *pk,Node** first,Node** last,int c,int e,int q,int r);
+
+void backtrace_H(pk_compound *pk,bt_struct* bt,int score,int c,int e,int q,int r) ;
+
+int get_G(pk_compound *pk,Node** first,Node** last,int * value,int c,int e,int p,int r);
+
+int compute_G(pk_compound *pk,Node** first,Node** last,int c,int e,int p,int r);
+
+void backtrace_G(pk_compound *pk,bt_struct* bt,int score,int c,int e,int p,int r) ;
+
+int get_F(pk_compound *pk,Node** first,Node** last,int * value,int b,int e,int p,int r);
+
+int compute_F(pk_compound *pk,Node** first,Node** last,int b,int e,int p,int r);
+
+void backtrace_F(pk_compound *pk,bt_struct* bt,int score,int b,int e,int p,int r) ;
+
+int get_E(pk_compound *pk,Node** first,Node** last,int * value,int b,int g,int k,int l,int p,int r);
+
+int compute_E(pk_compound *pk,Node** first,Node** last,int b,int g,int k,int l,int p,int r);
+
+void backtrace_E(pk_compound *pk,bt_struct* bt,int score,int b,int g,int k,int l,int p,int r) ;
+
+int get_D0(pk_compound* pk,Node** first,Node** last,int * value,int a, int h, int k,int l,int p,int r);
+
+int get_D1(pk_compound* pk,Node** first,Node** last,int * value,int a, int h, int k,int l,int p,int r);
+
+int compute_D1(pk_compound* pk,Node** first,Node** last,int a, int h, int k,int l,int p,int r);
+
+void backtrace_D0(pk_compound *pk,bt_struct* bt, int score, int a, int h, int k,int l,int p,int r) ;
+
+void backtrace_D1(pk_compound *pk,bt_struct* bt, int score, int a, int h, int k,int l,int p,int r) ;
+
+int get_C(pk_compound *pk,Node** first,Node** last,int * value,int a,int l,int n,int r);
+
+int compute_C(pk_compound *pk,Node** first,Node** last,int a,int l,int n,int r);
+
+void backtrace_C(pk_compound *pk,bt_struct* bt,int score,int a,int l,int n,int r) ;
+
+int get_B(pk_compound *pk,Node** first,Node** last,int * value,int a,int m,int n,int r);
+
+int compute_B(pk_compound *pk,Node** first,Node** last,int a,int m,int n,int r);
+
+void backtrace_B(pk_compound *pk,bt_struct* bt,int score,int a,int m,int n,int r) ;
+
+int get_A(pk_compound *pk,Node** first,Node** last,int * value,int a,int t);
+
+int compute_A(pk_compound *pk,Node** first,Node** last,int a,int t);
+
+void backtrace_A(pk_compound *pk,bt_struct* bt,int score,int a,int t) ;
+
+
+int init_root(pk_compound* pk){  
+    int A = 65;
+    int size = 3;
+    for(int t=0+9;t<=pk->MAX;t++){
+        for(int a=0;a<t-9;a++){
+            int tab[]={A,a,t};
+            Node* newNode = (Node*)malloc(sizeof(Node));
+            newNode->data = createTuple(tab,size);
+            newNode->next = NULL;
+            if(pk->Stack->top!=NULL){
+                newNode->next=pk->Stack->top;
+                pk->Stack->top=newNode;
             }
-            return;
+            pk->Stack->top=newNode;
         }
     }
 }
 
-int INTB(int a,int b,int c,int d){
-    int bp=bp_score(a,b);
-    int mfe=add(MFEFree(c,a-1),MFEFree(b+1,d));
-    return add(bp,mfe);
+int init_root_inter(pk_compound* pk,int a,int h){  
+    int A = 65;
+    int size = 3;
+    Stack* stack=pk->Stack;
+    int tab[]={A,a,h};
+            
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = createTuple(tab,size);
+    newNode->next = NULL;
+    if(stack->top!=NULL){
+        newNode->next=stack->top;
+        stack->top=newNode;
+    }
+    stack->top=newNode;
 }
 
-void backtrace_INTB(int score,int a,int b,int c,int d){
-    structure[a]=bracket;
-    structure[b]=bracket+32;
-
-    backtrace_MFEFree(MFEFree(c,a-1),c,a-1);
-    backtrace_MFEFree(MFEFree(b+1,d),b+1,d);
-    return;
-}
-
-
-
-
-//declarations
-int compute_CLIQUE0(HashTable *hashTable, int i, int j, int k, int l);
-
-int compute_CLIQUE1(HashTable *hashTable, int i, int j, int k, int l);
-
-void backtrace_CLIQUE0(HashTable *hashTable, int score, int i,int j, int k, int l);
-
-void backtrace_CLIQUE1(HashTable *hashTable, int score, int i,int j, int k, int l);
-
-int compute_M(HashTable *hashTable,int m,int n,int r,int t) ;
-
-void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) ;
-
-int compute_L(HashTable *hashTable,int i,int k,int o,int p) ;
-
-void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) ;
-
-int compute_K(HashTable *hashTable,int i,int k,int n,int p) ;
-
-void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) ;
-
-int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) ;
-
-void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) ;
-
-int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) ;
-
-void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) ;
-
-int compute_H(HashTable *hashTable,int c,int e,int q,int r) ;
-
-void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) ;
-
-int compute_G(HashTable *hashTable,int c,int e,int p,int r) ;
-
-void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) ;
-
-int compute_F(HashTable *hashTable,int b,int e,int p,int r) ;
-
-void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) ;
-
-int compute_E(HashTable *hashTable,int b,int g,int k,int l,int p,int r) ;
-
-void backtrace_E(HashTable *hashTable,int score,int b,int g,int k,int l,int p,int r) ;
-
-int compute_D0(HashTable *hashTable,int a, int h, int k,int l,int p,int r);
-
-int compute_D1(HashTable *hashTable,int a, int h, int k,int l,int p,int r);
-
-void backtrace_D0(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;
-
-void backtrace_D1(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) ;
-
-int compute_C(HashTable *hashTable,int a,int l,int n,int r) ;
-
-void backtrace_C(HashTable *hashTable,int score,int a,int l,int n,int r) ;
-
-int compute_B(HashTable *hashTable,int a,int m,int n,int r) ;
-
-void backtrace_B(HashTable *hashTable,int score,int a,int m,int n,int r) ;
-
-int compute_A(HashTable *hashTable,int a,int t) ;
-
-void backtrace_A(HashTable *hashTable,int score,int a,int t) ;
-
-
-int fold(HashTable * hashTable) {
-    int min_value=INT_MAX;
-    for(int t=0+9;t<=MAX;t++){
+int compute_root(pk_compound* pk) {
+    int min_value=INT_MAX; 
+    for(int t=0+9;t<=pk->MAX;t++){
         for(int a=0;a<t-9;a++){
-            int mfe1=MFEFree(0,a-1);
-            int mfe2=MFEFree(t,MAX-1);
+            int mfe1=MFEFree(pk,0,a-1);
+            int mfe2=MFEFree(pk,t,pk->MAX-1);
             int mfe=add(mfe1,mfe2);
-            min_value = min(min_value,add(compute_A(hashTable,a,t),mfe));
+            int tmp;
+            get_A(pk,NULL,NULL,&tmp,a,t);
+            min_value = min(min_value,add(tmp,mfe));
         }
     }
     return min_value;
 }
 
-void backtrace(HashTable * hashTable,int score) {
-    for(int t=0+9;t<=MAX;t++){
-        for(int a=0;a<t-9;a++){
+
+int fold(pk_compound* pk){
+    
+    init_root(pk);
+    //printStack(stack);
+    Node* topNode;
+    Node* nextNode;
+    Node* add_on_last;
+    Node* add_on_first;
+    while (!isStackEmpty(pk->Stack)) {
+        //pop(stack, &topTuple)
+        //printStack(stack);
+        topNode=pk->Stack->top;
+        nextNode=topNode->next;
+        Tuple * topTuple = topNode->data;
+        add_on_last=NULL;
+        add_on_first=NULL;
+        int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t;
+        int i1,i2,j2,j1;
+        //printf("here\n");
+        //print_tuple(topTuple);
+        switch(topTuple->values[0]){
+            default: 
             
-            int mfe1=MFEFree(0,a-1);
-            int mfe2=MFEFree(t,MAX-1);
+                 i1=topTuple->values[1];
+                 i2=topTuple->values[2];
+                 j2=topTuple->values[3];
+                 j1=topTuple->values[4];
+                if(compute_CLIQUE1(pk,&add_on_first,&add_on_last,i1,i2,j2,j1)==1){
+                    
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                }
+                else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                }
+            break;//Clique
+
+             case 77:
+                 m=topTuple->values[1];
+                 n=topTuple->values[2];
+                 r=topTuple->values[3];
+                 t=topTuple->values[4];
+
+                 if(compute_M(pk,&add_on_first,&add_on_last,m,n,r,t)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 76:
+                 i=topTuple->values[1];
+                 k=topTuple->values[2];
+                 o=topTuple->values[3];
+                 p=topTuple->values[4];
+
+                 if(compute_L(pk,&add_on_first,&add_on_last,i,k,o,p)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 75:
+                 i=topTuple->values[1];
+                 k=topTuple->values[2];
+                 n=topTuple->values[3];
+                 p=topTuple->values[4];
+
+                 if(compute_K(pk,&add_on_first,&add_on_last,i,k,n,p)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 74:
+                 a=topTuple->values[1];
+                 h=topTuple->values[2];
+                 k=topTuple->values[3];
+                 n=topTuple->values[4];
+                 p=topTuple->values[5];
+
+                 if(compute_J(pk,&add_on_first,&add_on_last,a,h,k,n,p)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 73:
+                 b=topTuple->values[1];
+                 e=topTuple->values[2];
+                 g=topTuple->values[3];
+                 k=topTuple->values[4];
+                 l=topTuple->values[5];
+
+                 if(compute_I(pk,&add_on_first,&add_on_last,b,e,g,k,l)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 72:
+                 c=topTuple->values[1];
+                 e=topTuple->values[2];
+                 q=topTuple->values[3];
+                 r=topTuple->values[4];
+
+                 if(compute_H(pk,&add_on_first,&add_on_last,c,e,q,r)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 71:
+                 c=topTuple->values[1];
+                 e=topTuple->values[2];
+                 p=topTuple->values[3];
+                 r=topTuple->values[4];
+
+                 if(compute_G(pk,&add_on_first,&add_on_last,c,e,p,r)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 70:
+                 b=topTuple->values[1];
+                 e=topTuple->values[2];
+                 p=topTuple->values[3];
+                 r=topTuple->values[4];
+
+                 if(compute_F(pk,&add_on_first,&add_on_last,b,e,p,r)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 69:
+                 b=topTuple->values[1];
+                 g=topTuple->values[2];
+                 k=topTuple->values[3];
+                 l=topTuple->values[4];
+                 p=topTuple->values[5];
+                 r=topTuple->values[6];
+
+                 if(compute_E(pk,&add_on_first,&add_on_last,b,g,k,l,p,r)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 68:
+                 a=topTuple->values[1];
+                 h=topTuple->values[2];
+                 k=topTuple->values[3];
+                 l=topTuple->values[4];
+                 p=topTuple->values[5];
+                 r=topTuple->values[6];
+
+                 if(compute_D1(pk,&add_on_first,&add_on_last,a,h,k,l,p,r)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 67:
+                 a=topTuple->values[1];
+                 l=topTuple->values[2];
+                 n=topTuple->values[3];
+                 r=topTuple->values[4];
+
+                 if(compute_C(pk,&add_on_first,&add_on_last,a,l,n,r)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 66:
+                 a=topTuple->values[1];
+                 m=topTuple->values[2];
+                 n=topTuple->values[3];
+                 r=topTuple->values[4];
+
+                 if(compute_B(pk,&add_on_first,&add_on_last,a,m,n,r)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+             case 65:
+                 a=topTuple->values[1];
+                 t=topTuple->values[2];
+
+                 if(compute_A(pk,&add_on_first,&add_on_last,a,t)==1){
+
+                    freeNode(topNode);
+                    pk->Stack->top=nextNode;
+                 }
+                 else{
+                    pk->Stack->top=add_on_first;
+                    add_on_last->next=topNode;
+                 }
+                 break;
+
+        }
+    }
+    //printStack(stack);
+    return compute_root(pk);
+}
+void backtrace(pk_compound *pk,bt_struct* bt,int score) {
+    //int a=0;int h=pk->MAX;
+    for(int t=0+9;t<=pk->MAX;t++){
+        for(int a=0;a<t-9;a++){
+            int mfe1=MFEFree(pk,0,a-1);
+            int mfe2=MFEFree(pk,t,pk->MAX-1);
             int mfe=add(mfe1,mfe2);
-            int tmp0=compute_A(hashTable,a,t);
-            //printf("h = %d, a=%d, %d+%d %d,%d\n",h,a,mfe2,mfe1,score,compute_A(hashTable,a,h));
+            int tmp0;
+            get_A(pk,NULL,NULL,&tmp0,a,t);
             if(score==add(mfe,tmp0)){
-                backtrace_A(hashTable,tmp0,a,t);
-                backtrace_MFEFree(mfe1,0,a-1);
-                backtrace_MFEFree(mfe2,t,MAX-1);
+                backtrace_A(pk,bt,tmp0,a,t);
+                backtrace_MFEFree(pk,bt,mfe1,0,a-1);
+                backtrace_MFEFree(pk,bt,mfe2,t,pk->MAX-1);
                 return;
             }
-        }
+       }
     }
 }
 
@@ -500,37 +1050,50 @@ int main(int argc, char ** argv) {
 
     start_time = clock();
     while(true){
-        HashTable *hashTable = createHashTable();
+        
         int b_len=0;
 
         int len=0;
-
+        char * line=NULL;
         //reading of the sequence
         len=getline(&line,&b_len, fp);
         
         if(len<=0){
-            destroyHashTable(hashTable);
+            
             free(line);
-            free(correct_score);
             printf("End of file, %d tested",nb_tests);
             break;
         }
         if(line[0]=='#'){
             printf("%s",line);
+            free(line);
             continue;
         }
-        MAX=len;
+
+        int MAX=len;
         if(line[len-1]=='\n'){
             MAX=len-1;
             nb_tests+=1;
         }
-        preset_N(MAX);
 
         //secondary structure
         char *ss = NULL;
         len=getline(&ss,&b_len, fp);
-        createMatrix(MAX,ss);
+        if (len != -1) {
+            if (ss[len - 1] == '\n') {
+                ss[len - 1] = '\0'; // Replace newline character with null terminator
+                len--; // Decrement the length to exclude the removed '\n'
+            }
+        }
+        else{
+            
+            free(line);
+            free(ss);
+            printf("No secondary structure found for test %d\n",nb_tests);
+            exit(-1);
+        }
         //reading the score
+        char * correct_score=NULL;
         len=getline(&correct_score,&b_len, fp);
         if (len != -1) {
             if (correct_score[len - 1] == '\n') {
@@ -541,7 +1104,6 @@ int main(int argc, char ** argv) {
             
         }
         else{
-            destroyHashTable(hashTable);
             free(line);
             free(correct_score);
             free(ss);
@@ -552,20 +1114,21 @@ int main(int argc, char ** argv) {
         printf("Test: %d Size of the Sequence: %d ---", nb_tests,MAX);
         
         //elements used to record backtrack
-        bracket='A';
-        structure=malloc(sizeof(char)*(MAX+1));
-        structure[MAX]='\0';
-        for(int i=0;i<MAX;i++){
-            structure[i]='.';
-        }
+        
         //Start of test
         clock_t test_start_time = clock();
 
-        //folding
-        int score = fold(hashTable);
-        //retrieve backtrack
-        backtrace(hashTable,score);
+        vrna_init_rand();
+        vrna_fold_compound_t * fc = vrna_fold_compound(line, NULL, VRNA_OPTION_DEFAULT);
+        vrna_constraints_add(fc, ss, VRNA_CONSTRAINT_DB_DEFAULT);
+        pk_compound* pk=create_pk_compound(fc,line,ss);
+        vrna_mfe(fc, NULL);
         
+        //folding
+        int score = fold(pk);
+        //retrieve backtrack
+        bt_struct* bt=create_bt_struct(NULL,pk->MAX);
+        backtrace(pk,bt,score);
         clock_t test_end_time = clock();
 
         double test_time = ((double)(test_end_time - test_start_time)) / CLOCKS_PER_SEC;
@@ -573,46 +1136,45 @@ int main(int argc, char ** argv) {
         //end of test
         
         //sanity checks
-        if(score == number){
-            printf("Correct");
+        if(score == number || 1){//we autorise wrong score in the case of the Turner model
+            float fl=(float)score/100.0;
+            printf("Score %.2f ",fl);
             int nb=0;
-            for(int i=0;i<MAX;i++){
-                if(structure[i]=='.'){
-                    printf("missing bt\n");
-                    break;
-                }
-                if(structure[i]>64){
-                    if(structure[i]<91){
+            for(int i=0;i<pk->MAX;i++){
+                
+                if(bt->structure[i]>64){
+                    if(bt->structure[i]<91){
                         
-                        nb+=structure[i];
+                        nb+=bt->structure[i];
                     }
                     else{
                         
-                        nb-=(structure[i]-32);
+                        nb-=(bt->structure[i]-32);
                     }
                 }
             }
             printf("(backtrack impurty= %d)\n",nb);
         }
         else{
-            destroyHashTable(hashTable);
             free(line);
             free(correct_score);
-            free(structure);
+            free_pk(pk);
+            free_bt(bt);
             free(ss);
             printf("Failed (%d found, should be %d)\n",score,number);
             exit(nb_tests);
         }
 
         
-        printf("%s\n",structure);
+        printf("%s\n",bt->structure);
         
         //clean up
-        destroyHashTable(hashTable);
-        freeMatrix(MAX);
-        free(structure);
+
+        free_pk(pk);
+        free_bt(bt);
         free(line);
         free(ss);
+        free(correct_score);
     }
     end_time = clock();
     double total_execution_time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
@@ -624,457 +1186,890 @@ int main(int argc, char ** argv) {
     return 0;
 }
 
-int compute_CLIQUE0(HashTable *hashTable,int i, int i2, int j2, int j){
-    int CLIQUE=-1;
-    int value;
+
+int get_CLIQUE0(pk_compound* pk,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
+    int CLIQUE=1;
+    int tab[] = {CLIQUE,i+1,i2,j2,j-1};
+    int size= 5;
+
+   if(i2>=j2 || i2<i-1 || j2>j+1){
+        *value=INT_MAX;
+        return 1;
+    }
+    if (get(pk->hashtable,tab,size,value)){
+        //printf("*value = %d(+%d)\n",*value,INTB(i,j,-1,-1));
+        *value=add(INTB(pk,i,j,-1,-1),*value);
+        //printf("*new _ value = %d\n",*value);
+        return 1;
+    }
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = createTuple(tab,size);
+    newNode->next = NULL;
+    if(*last!=NULL){
+        (*last)->next=newNode;
+    }
+    if(*first==NULL){
+        *first=newNode;
+    }
+    *last=newNode;
+    return 0;
+}
+
+int get_CLIQUE1(pk_compound* pk,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
+    int CLIQUE=1;
     int tab[] = {CLIQUE,i,i2,j2,j};
     int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
-        return INT_MAX;
+        *value=INT_MAX;
+        return 1;
     }
-
-    if (get(hashTable,tab,size,&value)) { 
-        return value;
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
     }
-    
-    int min_value = add(INTB(i,j,i,j),compute_CLIQUE1(hashTable,i+1,i2,j2,j-1));
-
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = createTuple(tab,size);
+    newNode->next = NULL;
+    if(last!=NULL && *last!=NULL){
+        (*last)->next=newNode;
+    }
+    if(first!=NULL && *first==NULL){
+        *first=newNode;
+    }
+    *last=newNode;
+    return 0;
 }
 
-int compute_CLIQUE1(HashTable *hashTable,int i, int i2, int j2, int j) {
+
+int compute_CLIQUE1(pk_compound* pk,Node** first,Node** last,int i, int i2, int j2, int j) {
     int CLIQUE=1;
     int value;
     int tab[] = {CLIQUE,i,i2,j2,j};
     int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
-        return INT_MAX;
+        return 1;
     }
 
-    if (get(hashTable,tab,size,&value)) { 
-        return value;
+    if (get(pk->hashtable,tab,size,&value)) { 
+        return 1;
     }
-    
+    int possible=1;
     int min_value = 0;
     int tmp;
     if (j == j2 && i <= i2) { 
-        min_value = min(min_value, MFEFree(i,i2)); 
+        min_value = min(min_value, MFEFree(pk,i,i2)); 
     }
     for(int k=i;k<=i2;k++){
         for(int l=max(j2,k+1);l<=j;l++){
-            if(evaluate(k,l) && l-k+1<=THETA && (k<i2 || l==j2)){
-                tmp=INTB(k,l,i,j);
+            if(evaluate(pk,k,l) && l-k+1<=pk->THETA && (k<i2 || l==j2)){
+                tmp=INTB(pk,k,l,i,j);
                 if(tmp!=INT_MAX){
-                    min_value = min(min_value,add(compute_CLIQUE1(hashTable,k+1,i2,j2,l-1),tmp));
+                    int tmp2;
+                    if(get_CLIQUE1(pk,first,last,&tmp2,k+1,i2,j2,l-1)==0){
+                        possible=0;
+                    }
+                    if(possible==1){
+                        
+                    min_value = min(min_value,add(tmp2,tmp));
+                    }
                 }
             }
         }
     }
-    
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_M(HashTable *hashTable,int m,int n,int r,int t) {
+int get_M(pk_compound *pk,Node** first,Node** last,int * value,int m,int n,int r,int t){
+    int M = 77;
+    int tab[]={M,m,n,r,t};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_M(pk_compound *pk,Node** first,Node** last,int m,int n,int r,int t) {
     int M = 77;
     int value;
     int tab[]={M,m,n,r,t};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int s=r;s<t;s++) {
-      if(!evaluate(m,t-1)||!evaluate(n-1,s)){continue;}
-      int mfe0 = MFEFree(r,s-1);
+      if(!evaluate(pk,m,t-1)||!evaluate(pk,n-1,s)){continue;}
+      int mfe0 = MFEFree(pk,r,s-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,m,n-1,s,t-1);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_CLIQUE0( pk,first,last,&tmp0,m,n-1,s,t-1)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_L(HashTable *hashTable,int i,int k,int o,int p) {
+int get_L(pk_compound *pk,Node** first,Node** last,int * value,int i,int k,int o,int p){
+    int L = 76;
+    int tab[]={L,i,k,o,p};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_L(pk_compound *pk,Node** first,Node** last,int i,int k,int o,int p) {
     int L = 76;
     int value;
     int tab[]={L,i,k,o,p};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int j=i+1;j<k+1;j++) {
-      if(!evaluate(i,p-1)||!evaluate(j-1,o)){continue;}
-      int mfe0 = MFEFree(j,k-1);
+      if(!evaluate(pk,i,p-1)||!evaluate(pk,j-1,o)){continue;}
+      int mfe0 = MFEFree(pk,j,k-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,i,j-1,o,p-1);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_CLIQUE0( pk,first,last,&tmp0,i,j-1,o,p-1)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_K(HashTable *hashTable,int i,int k,int n,int p) {
+int get_K(pk_compound *pk,Node** first,Node** last,int * value,int i,int k,int n,int p){
+    int K = 75;
+    int tab[]={K,i,k,n,p};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_K(pk_compound *pk,Node** first,Node** last,int i,int k,int n,int p) {
     int K = 75;
     int value;
     int tab[]={K,i,k,n,p};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int o=n;o<p;o++) {
 
-      int mfe0 = MFEFree(n,o-1);
+      int mfe0 = MFEFree(pk,n,o-1);
 
-      int tmp0= compute_L( hashTable,i,k,o,p);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_L( pk,first,last,&tmp0,i,k,o,p)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_J(HashTable *hashTable,int a,int h,int k,int n,int p) {
+int get_J(pk_compound *pk,Node** first,Node** last,int * value,int a,int h,int k,int n,int p){
+    int J = 74;
+    int tab[]={J,a,h,k,n,p};
+    int size = 6;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_J(pk_compound *pk,Node** first,Node** last,int a,int h,int k,int n,int p) {
     int J = 74;
     int value;
     int tab[]={J,a,h,k,n,p};
     int size = 6;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int i=h;i<k;i++) {
 
-      int mfe0 = MFEFree(h,i-1);
+      int mfe0 = MFEFree(pk,h,i-1);
 
-      int tmp0= compute_K( hashTable,i,k,n,p);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_K( pk,first,last,&tmp0,i,k,n,p)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_I(HashTable *hashTable,int b,int e,int g,int k,int l) {
+int get_I(pk_compound *pk,Node** first,Node** last,int * value,int b,int e,int g,int k,int l){
+    int I = 73;
+    int tab[]={I,b,e,g,k,l};
+    int size = 6;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_I(pk_compound *pk,Node** first,Node** last,int b,int e,int g,int k,int l) {
     int I = 73;
     int value;
     int tab[]={I,b,e,g,k,l};
     int size = 6;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int f=e+1;f<g+1;f++) {
-      if(!evaluate(e,l-1)||!evaluate(f-1,k)){continue;}
-      int mfe0 = MFEFree(f,g-1);
+      if(!evaluate(pk,e,l-1)||!evaluate(pk,f-1,k)){continue;}
+      int mfe0 = MFEFree(pk,f,g-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,e,f-1,k,l-1);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_CLIQUE0( pk,first,last,&tmp0,e,f-1,k,l-1)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_H(HashTable *hashTable,int c,int e,int q,int r) {
+int get_H(pk_compound *pk,Node** first,Node** last,int * value,int c,int e,int q,int r){
+    int H = 72;
+    int tab[]={H,c,e,q,r};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_H(pk_compound *pk,Node** first,Node** last,int c,int e,int q,int r) {
     int H = 72;
     int value;
     int tab[]={H,c,e,q,r};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int d=c+1;d<e+1;d++) {
-      if(!evaluate(c,r-1)||!evaluate(d-1,q)){continue;}
-      int mfe0 = MFEFree(d,e-1);
+      if(!evaluate(pk,c,r-1)||!evaluate(pk,d-1,q)){continue;}
+      int mfe0 = MFEFree(pk,d,e-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,c,d-1,q,r-1);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_CLIQUE0( pk,first,last,&tmp0,c,d-1,q,r-1)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_G(HashTable *hashTable,int c,int e,int p,int r) {
+int get_G(pk_compound *pk,Node** first,Node** last,int * value,int c,int e,int p,int r){
+    int G = 71;
+    int tab[]={G,c,e,p,r};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_G(pk_compound *pk,Node** first,Node** last,int c,int e,int p,int r) {
     int G = 71;
     int value;
     int tab[]={G,c,e,p,r};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int q=p;q<r;q++) {
 
-      int mfe0 = MFEFree(p,q-1);
+      int mfe0 = MFEFree(pk,p,q-1);
 
-      int tmp0= compute_H( hashTable,c,e,q,r);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_H( pk,first,last,&tmp0,c,e,q,r)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_F(HashTable *hashTable,int b,int e,int p,int r) {
+int get_F(pk_compound *pk,Node** first,Node** last,int * value,int b,int e,int p,int r){
+    int F = 70;
+    int tab[]={F,b,e,p,r};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_F(pk_compound *pk,Node** first,Node** last,int b,int e,int p,int r) {
     int F = 70;
     int value;
     int tab[]={F,b,e,p,r};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int c=b;c<e;c++) {
 
-      int mfe0 = MFEFree(b,c-1);
+      int mfe0 = MFEFree(pk,b,c-1);
 
-      int tmp0= compute_G( hashTable,c,e,p,r);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_G( pk,first,last,&tmp0,c,e,p,r)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_E(HashTable *hashTable,int b,int g,int k,int l,int p,int r) {
+int get_E(pk_compound *pk,Node** first,Node** last,int * value,int b,int g,int k,int l,int p,int r){
+    int E = 69;
+    int tab[]={E,b,g,k,l,p,r};
+    int size = 7;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_E(pk_compound *pk,Node** first,Node** last,int b,int g,int k,int l,int p,int r) {
     int E = 69;
     int value;
     int tab[]={E,b,g,k,l,p,r};
     int size = 7;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int e=b+1;e<g;e++) {
 
 
-      int tmp0= compute_F( hashTable,b,e,p,r);
-      if(tmp0==INT_MAX){continue;}
-      int tmp1= compute_I( hashTable,b,e,g,k,l);
-      if(tmp1==INT_MAX){continue;}
+      int tmp0;
+      if(get_F( pk,first,last,&tmp0,b,e,p,r)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
+      int tmp1;
+      if(get_I( pk,first,last,&tmp1,b,e,g,k,l)==0){possible=0;}
+      else if(tmp1==INT_MAX){continue;}
 
-      min_value = min(min_value,add(add(tmp0,tmp1),0));
+      if(possible==1){
+        min_value = min(min_value,add(add(tmp0,tmp1),0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_D0(HashTable *hashTable,int a, int h, int k,int l,int p,int r){
-    int D0 = 68;
-    int value;
-
-    int tab[]={D0,a,h,k,l,p,r};
+int get_D0(pk_compound* pk,Node** first,Node** last,int * value,int a, int h, int k,int l,int p,int r){
+    int D1 = 68;
+    int tab[]={D1,a+1,h-1,k,l,p,r};
     int size = 7;
 
-    if(a<0 || h<0 || h>=MAX || a>=MAX || a>h){
-        return INT_MAX;
+    if(a<0 || h<0 || h>=pk->MAX || a>=pk->MAX || a>h){
+        *value=INT_MAX;
+        return 1;
+    }   
+    if (get(pk->hashtable,tab,size,value)){
+        *value=add(INTB(pk,a,h,-1,-1),*value);
+        return 1;
     }
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(*last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(*first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
     }
-    int min_value=add(INTB(a,h,a,h),compute_D1(hashTable,a+1,h-1,k,l,p,r));
-
-    insert(hashTable,tab,size,min_value);
-    return min_value;
 }
-int compute_D1(HashTable *hashTable,int a, int h, int k,int l,int p,int r) {
-    int D1 = -68;
-    int value;
 
+int get_D1(pk_compound *pk,Node** first,Node** last,int * value,int a, int h, int k,int l,int p,int r){
+    int D1 = 68;
     int tab[]={D1,a,h,k,l,p,r};
     int size = 7;
 
-    if(a<0 || h<0 || h>=MAX || a>=MAX || a>h){
-        return INT_MAX;
+    if(a<0 || h<0 || h>=pk->MAX || a>=pk->MAX || a>h){
+        *value=INT_MAX;
+        return 1;
+    }  
+    if (get(pk->hashtable,tab,size,value)){
+        //printf("value=>%d \n",*value);
+        return 1;
     }
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(*last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(*first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
     }
+}
+
+int compute_D1(pk_compound *pk,Node** first,Node** last,int a, int h, int k,int l,int p,int r) {
+    int D1 = 68;
+    int tab[]={D1,a,h,k,l,p,r};
+    int size = 7;
+    int value;
+    if(a<0 || h<0 || h>=pk->MAX || a>=pk->MAX || a>h){
+        return 1;
+    } 
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
+    }
+    int possible=1;
     int min_value=INT_MAX;
     
-    int tmp0= compute_E( hashTable,a,h+1,k,l,p,r);
-    if(tmp0==INT_MAX){ goto loop;}
+    int tmp0;
+    if(get_E( pk,first,last,&tmp0,a,h+1,k,l,p,r)==0){possible=0;}
+     else if(tmp0==INT_MAX){ goto loop;}
 
+    if(possible==1){
     min_value=add(tmp0,0);
-
+    }
+    
     loop:
     for(int tmp1=a;tmp1<=min(h-1,INT_MAX);tmp1++){
         for(int tmp2=max(INT_MIN,tmp1+3);tmp2<=h;tmp2++){
-            if(evaluate(tmp1,tmp2) && tmp1-tmp2+1<=THETA){
-                int tmp3=INTB(tmp1,tmp2,a,h);
+            if(evaluate(pk,tmp1,tmp2) && tmp1-tmp2+1<=pk->THETA){
+                int tmp3=INTB(pk,tmp1,tmp2,a,h);
 
                 if(tmp3!=INT_MAX){
-                    min_value=min(min_value,
-                    add(compute_D1(hashTable,tmp1+1,tmp2-1,k,l,p,r),tmp3));
+                    int tmp;
+                    if(get_D1(pk,first,last,&tmp,tmp1+1,tmp2-1,k,l,p,r)==0){
+                        possible=0;
+                    }
+                    if(possible==1){
+                        //printf("C1 res= %d",tmp);
+                        min_value=min(min_value, add(tmp,tmp3));
+                    }
                 }
             }
         }    
     }
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
-int compute_C(HashTable *hashTable,int a,int l,int n,int r) {
+
+int get_C(pk_compound *pk,Node** first,Node** last,int * value,int a,int l,int n,int r){
+    int C = 67;
+    int tab[]={C,a,l,n,r};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_C(pk_compound *pk,Node** first,Node** last,int a,int l,int n,int r) {
     int C = 67;
     int value;
     int tab[]={C,a,l,n,r};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int h=a+4;h<l-1;h++) {
         for (int k=h+1;k<l;k++) {
             for (int p=n+1;p<r;p++) {
-              if(!evaluate(a,h-1)){continue;}
+              if(!evaluate(pk,a,h-1)){continue;}
 
-              int tmp0= compute_D0( hashTable,a,h-1,k,l,p,r);
-              if(tmp0==INT_MAX){continue;}
-              int tmp1= compute_J( hashTable,a,h,k,n,p);
-              if(tmp1==INT_MAX){continue;}
+              int tmp0;
+              if(get_D0( pk,first,last,&tmp0,a,h-1,k,l,p,r)==0){possible=0;}
+              else if(tmp0==INT_MAX){continue;}
+              int tmp1;
+              if(get_J( pk,first,last,&tmp1,a,h,k,n,p)==0){possible=0;}
+              else if(tmp1==INT_MAX){continue;}
 
-              min_value = min(min_value,add(add(tmp0,tmp1),0));
+              if(possible==1){
+                min_value = min(min_value,add(add(tmp0,tmp1),0));
+              }
             }
         }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_B(HashTable *hashTable,int a,int m,int n,int r) {
+int get_B(pk_compound *pk,Node** first,Node** last,int * value,int a,int m,int n,int r){
+    int B = 66;
+    int tab[]={B,a,m,n,r};
+    int size = 5;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_B(pk_compound *pk,Node** first,Node** last,int a,int m,int n,int r) {
     int B = 66;
     int value;
     int tab[]={B,a,m,n,r};
     int size = 5;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int l=a+6;l<m+1;l++) {
 
-      int mfe0 = MFEFree(l,m-1);
+      int mfe0 = MFEFree(pk,l,m-1);
 
-      int tmp0= compute_C( hashTable,a,l,n,r);
-      if(tmp0==INT_MAX){continue;}
+      int tmp0;
+      if(get_C( pk,first,last,&tmp0,a,l,n,r)==0){possible=0;}
+      else if(tmp0==INT_MAX){continue;}
 
-      min_value = min(min_value,add(tmp0,mfe0));
+      if(possible==1){
+        min_value = min(min_value,add(tmp0,mfe0));
+      }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
 
-int compute_A(HashTable *hashTable,int a,int t) {
+int get_A(pk_compound *pk,Node** first,Node** last,int * value,int a,int t){
+    int A = 65;
+    int tab[]={A,a,t};
+    int size = 3;
+
+
+    if (get(pk->hashtable,tab,size,value)){
+        return 1;
+    }
+    else{
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = createTuple(tab,size);
+        newNode->next = NULL;
+        if(last!=NULL && *last!=NULL){
+            (*last)->next=newNode;
+        }
+        if(first!=NULL && *first==NULL){
+            *first=newNode;
+        }
+        *last=newNode;
+        return 0;
+    }
+}
+int compute_A(pk_compound *pk,Node** first,Node** last,int a,int t) {
     int A = 65;
     int value;
     int tab[]={A,a,t};
     int size = 3;
 
-    if (get(hashTable,tab,size,&value)){
-        return value;
+    if (get(pk->hashtable,tab,size,&value)){
+        return 1;
     }
     int min_value = INT_MAX;
-    
+    int possible=1;
     for (int m=a+6;m<t-3;m++) {
         for (int n=m+1;n<t-2;n++) {
             for (int r=n+2;r<t;r++) {
 
 
-              int tmp0= compute_B( hashTable,a,m,n,r);
-              if(tmp0==INT_MAX){continue;}
-              int tmp1= compute_M( hashTable,m,n,r,t);
-              if(tmp1==INT_MAX){continue;}
+              int tmp0;
+              if(get_B( pk,first,last,&tmp0,a,m,n,r)==0){possible=0;}
+              else if(tmp0==INT_MAX){continue;}
+              int tmp1;
+              if(get_M( pk,first,last,&tmp1,m,n,r,t)==0){possible=0;}
+              else if(tmp1==INT_MAX){continue;}
 
-              min_value = min(min_value,add(add(tmp0,tmp1),0));
+              if(possible==1){
+                min_value = min(min_value,add(add(tmp0,tmp1),0));
+              }
             }
         }
     }
 
-    insert(hashTable,tab,size,min_value);
-    return min_value;
+    if(possible==1){
+        insert(pk->hashtable,tab,size,min_value);
+    }
+    return possible;
 }
-void backtrace_CLIQUE0(HashTable *hashTable,int score,int i, int i2, int j2, int j) {
+void backtrace_CLIQUE0(pk_compound *pk,bt_struct* bt,int score,int i, int i2, int j2, int j) {
     
    if(i2>=j2 || i2<i || j2>j){
-        return ;
+        return;
     }
-    int tmp=compute_CLIQUE1(hashTable,i+1,i2,j2,j-1);
-    int sc=INTB(i,j,i,j);
+    int tmp;
+    get_CLIQUE1(pk,NULL,NULL,&tmp,i+1,i2,j2,j-1);
+    int sc=INTB(pk,i,j,-1,-1);
     if(score==add(sc,tmp)){
-        backtrace_INTB(sc,i,j,i,j);
-        backtrace_CLIQUE1(hashTable,tmp,i+1,i2,j2,j-1);
+        add_pairing(pk,bt,sc,i,j,-1,-1);
+        backtrace_CLIQUE1(pk,bt,tmp,i+1,i2,j2,j-1);
     }
 
     return;
 }
 
-void backtrace_CLIQUE1(HashTable *hashTable,int score,int i, int i2, int j2, int j) {
+void backtrace_CLIQUE1(pk_compound *pk,bt_struct* bt,int score,int i, int i2, int j2, int j) {
     
    if(i2>=j2 || i2<i || j2>j){
         return ;
     }
     int tmp;
-    if (j == j2 && i <= i2 && score==MFEFree(i,i2)) { 
-        backtrace_MFEFree(score,i,i2);
+    if (j == j2 && i <= i2 && score==MFEFree(pk,i,i2)) { 
+        backtrace_MFEFree(pk,bt,score,i,i2);
     }
     for(int k=i;k<=i2;k++){
         for(int l=max(j2,k+1);l<=j;l++){
-            if(evaluate(k,l) && l-k+1<=THETA && (k<i2 || l==j2)){
-                tmp=INTB(k,l,i,j);
+            if(evaluate(pk,k,l) && l-k+1<=pk->THETA && (k<i2 || l==j2)){
+                tmp=INTB(pk,k,l,i,j);
                 if(tmp!=INT_MAX){
-                    int tmp0=compute_CLIQUE1(hashTable,k+1,i2,j2,l-1);
+                    int tmp0;
+                    get_CLIQUE1(pk,NULL,NULL,&tmp0,k+1,i2,j2,l-1);
                     if(score==add(tmp0,tmp)){
-                        backtrace_INTB(tmp,k,l,i,j); 
-                        backtrace_CLIQUE1(hashTable,tmp0,k+1,i2,j2,l-1);                       
+                        add_pairing(pk,bt,tmp,k,l,i,j); 
+                        backtrace_CLIQUE1(pk,bt,tmp0,k+1,i2,j2,l-1);                       
                         return;
                     }
                 }
@@ -1083,21 +2078,21 @@ void backtrace_CLIQUE1(HashTable *hashTable,int score,int i, int i2, int j2, int
     }
     return;
 }
-
-void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) {
+void backtrace_M(pk_compound *pk,bt_struct* bt,int score,int m,int n,int r,int t) {
 
     for (int s=r;s<t;s++) {
-      if(!evaluate(m,t-1)||!evaluate(n-1,s)){continue;}
-      int mfe0 = MFEFree(r,s-1);
+      if(!evaluate(pk,m,t-1)||!evaluate(pk,n-1,s)){continue;}
+      int mfe0 = MFEFree(pk,r,s-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,m,n-1,s,t-1);
+      int tmp0;
+      get_CLIQUE0( pk,NULL,NULL,&tmp0,m,n-1,s,t-1);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,r,s-1);
+        backtrace_MFEFree(pk,bt,mfe0,r,s-1);
 
-        backtrace_CLIQUE0(hashTable,tmp0, m,n-1,s,t-1);
-        bracket+=1;
+        backtrace_CLIQUE0( pk,bt,tmp0,m,n-1,s,t-1);
+        bt->bracket+=1;
 
         return;
       }
@@ -1106,20 +2101,21 @@ void backtrace_M(HashTable *hashTable,int score,int m,int n,int r,int t) {
 
 }
 
-void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) {
+void backtrace_L(pk_compound *pk,bt_struct* bt,int score,int i,int k,int o,int p) {
 
     for (int j=i+1;j<k+1;j++) {
-      if(!evaluate(i,p-1)||!evaluate(j-1,o)){continue;}
-      int mfe0 = MFEFree(j,k-1);
+      if(!evaluate(pk,i,p-1)||!evaluate(pk,j-1,o)){continue;}
+      int mfe0 = MFEFree(pk,j,k-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,i,j-1,o,p-1);
+      int tmp0;
+      get_CLIQUE0( pk,NULL,NULL,&tmp0,i,j-1,o,p-1);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,j,k-1);
+        backtrace_MFEFree(pk,bt,mfe0,j,k-1);
 
-        backtrace_CLIQUE0(hashTable,tmp0, i,j-1,o,p-1);
-        bracket+=1;
+        backtrace_CLIQUE0( pk,bt,tmp0,i,j-1,o,p-1);
+        bt->bracket+=1;
 
         return;
       }
@@ -1128,19 +2124,20 @@ void backtrace_L(HashTable *hashTable,int score,int i,int k,int o,int p) {
 
 }
 
-void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) {
+void backtrace_K(pk_compound *pk,bt_struct* bt,int score,int i,int k,int n,int p) {
 
     for (int o=n;o<p;o++) {
 
-      int mfe0 = MFEFree(n,o-1);
+      int mfe0 = MFEFree(pk,n,o-1);
 
-      int tmp0= compute_L( hashTable,i,k,o,p);
+      int tmp0;
+      get_L( pk,NULL,NULL,&tmp0,i,k,o,p);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,n,o-1);
+        backtrace_MFEFree(pk,bt,mfe0,n,o-1);
 
-        backtrace_L(hashTable,tmp0, i,k,o,p);
+        backtrace_L( pk,bt,tmp0,i,k,o,p);
 
         return;
       }
@@ -1149,19 +2146,20 @@ void backtrace_K(HashTable *hashTable,int score,int i,int k,int n,int p) {
 
 }
 
-void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) {
+void backtrace_J(pk_compound *pk,bt_struct* bt,int score,int a,int h,int k,int n,int p) {
 
     for (int i=h;i<k;i++) {
 
-      int mfe0 = MFEFree(h,i-1);
+      int mfe0 = MFEFree(pk,h,i-1);
 
-      int tmp0= compute_K( hashTable,i,k,n,p);
+      int tmp0;
+      get_K( pk,NULL,NULL,&tmp0,i,k,n,p);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,h,i-1);
+        backtrace_MFEFree(pk,bt,mfe0,h,i-1);
 
-        backtrace_K(hashTable,tmp0, i,k,n,p);
+        backtrace_K( pk,bt,tmp0,i,k,n,p);
 
         return;
       }
@@ -1170,20 +2168,21 @@ void backtrace_J(HashTable *hashTable,int score,int a,int h,int k,int n,int p) {
 
 }
 
-void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) {
+void backtrace_I(pk_compound *pk,bt_struct* bt,int score,int b,int e,int g,int k,int l) {
 
     for (int f=e+1;f<g+1;f++) {
-      if(!evaluate(e,l-1)||!evaluate(f-1,k)){continue;}
-      int mfe0 = MFEFree(f,g-1);
+      if(!evaluate(pk,e,l-1)||!evaluate(pk,f-1,k)){continue;}
+      int mfe0 = MFEFree(pk,f,g-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,e,f-1,k,l-1);
+      int tmp0;
+      get_CLIQUE0( pk,NULL,NULL,&tmp0,e,f-1,k,l-1);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,f,g-1);
+        backtrace_MFEFree(pk,bt,mfe0,f,g-1);
 
-        backtrace_CLIQUE0(hashTable,tmp0, e,f-1,k,l-1);
-        bracket+=1;
+        backtrace_CLIQUE0( pk,bt,tmp0,e,f-1,k,l-1);
+        bt->bracket+=1;
 
         return;
       }
@@ -1192,20 +2191,21 @@ void backtrace_I(HashTable *hashTable,int score,int b,int e,int g,int k,int l) {
 
 }
 
-void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) {
+void backtrace_H(pk_compound *pk,bt_struct* bt,int score,int c,int e,int q,int r) {
 
     for (int d=c+1;d<e+1;d++) {
-      if(!evaluate(c,r-1)||!evaluate(d-1,q)){continue;}
-      int mfe0 = MFEFree(d,e-1);
+      if(!evaluate(pk,c,r-1)||!evaluate(pk,d-1,q)){continue;}
+      int mfe0 = MFEFree(pk,d,e-1);
 
-      int tmp0= compute_CLIQUE0( hashTable,c,d-1,q,r-1);
+      int tmp0;
+      get_CLIQUE0( pk,NULL,NULL,&tmp0,c,d-1,q,r-1);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,d,e-1);
+        backtrace_MFEFree(pk,bt,mfe0,d,e-1);
 
-        backtrace_CLIQUE0(hashTable,tmp0, c,d-1,q,r-1);
-        bracket+=1;
+        backtrace_CLIQUE0( pk,bt,tmp0,c,d-1,q,r-1);
+        bt->bracket+=1;
 
         return;
       }
@@ -1214,19 +2214,20 @@ void backtrace_H(HashTable *hashTable,int score,int c,int e,int q,int r) {
 
 }
 
-void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) {
+void backtrace_G(pk_compound *pk,bt_struct* bt,int score,int c,int e,int p,int r) {
 
     for (int q=p;q<r;q++) {
 
-      int mfe0 = MFEFree(p,q-1);
+      int mfe0 = MFEFree(pk,p,q-1);
 
-      int tmp0= compute_H( hashTable,c,e,q,r);
+      int tmp0;
+      get_H( pk,NULL,NULL,&tmp0,c,e,q,r);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,p,q-1);
+        backtrace_MFEFree(pk,bt,mfe0,p,q-1);
 
-        backtrace_H(hashTable,tmp0, c,e,q,r);
+        backtrace_H( pk,bt,tmp0,c,e,q,r);
 
         return;
       }
@@ -1235,19 +2236,20 @@ void backtrace_G(HashTable *hashTable,int score,int c,int e,int p,int r) {
 
 }
 
-void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) {
+void backtrace_F(pk_compound *pk,bt_struct* bt,int score,int b,int e,int p,int r) {
 
     for (int c=b;c<e;c++) {
 
-      int mfe0 = MFEFree(b,c-1);
+      int mfe0 = MFEFree(pk,b,c-1);
 
-      int tmp0= compute_G( hashTable,c,e,p,r);
+      int tmp0;
+      get_G( pk,NULL,NULL,&tmp0,c,e,p,r);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,b,c-1);
+        backtrace_MFEFree(pk,bt,mfe0,b,c-1);
 
-        backtrace_G(hashTable,tmp0, c,e,p,r);
+        backtrace_G( pk,bt,tmp0,c,e,p,r);
 
         return;
       }
@@ -1256,20 +2258,22 @@ void backtrace_F(HashTable *hashTable,int score,int b,int e,int p,int r) {
 
 }
 
-void backtrace_E(HashTable *hashTable,int score,int b,int g,int k,int l,int p,int r) {
+void backtrace_E(pk_compound *pk,bt_struct* bt,int score,int b,int g,int k,int l,int p,int r) {
 
     for (int e=b+1;e<g;e++) {
 
 
-      int tmp0= compute_F( hashTable,b,e,p,r);
+      int tmp0;
+      get_F( pk,NULL,NULL,&tmp0,b,e,p,r);
       if(tmp0==INT_MAX){continue;}
-      int tmp1= compute_I( hashTable,b,e,g,k,l);
+      int tmp1;
+      get_I( pk,NULL,NULL,&tmp1,b,e,g,k,l);
       if(tmp1==INT_MAX){continue;}
 
       if(score==add(add(tmp0,tmp1),0)){
 
-        backtrace_F(hashTable,tmp0, b,e,p,r);
-        backtrace_I(hashTable,tmp1, b,e,g,k,l);
+        backtrace_F( pk,bt,tmp0,b,e,p,r);
+        backtrace_I( pk,bt,tmp1,b,e,g,k,l);
 
         return;
       }
@@ -1278,33 +2282,35 @@ void backtrace_E(HashTable *hashTable,int score,int b,int g,int k,int l,int p,in
 
 }
 
-void backtrace_D0(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) {
-    
-    if(a<0 || h<0 || h>=MAX || a>=MAX || a>h){
+void backtrace_D0(pk_compound *pk,bt_struct* bt, int score, int a, int h, int k,int l,int p,int r) {
+
+    if(a<0 || h<0 || h>=pk->MAX || a>=pk->MAX || a>h){
         return;
     }
-    int tmp=compute_D1(hashTable,a+1,h-1,k,l,p,r);
-    int sc=INTB(a,h,a,h);
+    int tmp;
+    get_D1(pk,NULL,NULL,&tmp,a+1,h-1,k,l,p,r);
+    int sc=INTB(pk,a,h,-1,-1);
     if(score==add(sc,tmp)){
-        backtrace_INTB(sc,a,h,a,h);
-        backtrace_D1(hashTable,tmp,a+1,h-1,k,l,p,r);
+        add_pairing(pk,bt,sc,a,h,-1,-1);
+        backtrace_D1(pk,bt,tmp,a+1,h-1,k,l,p,r);
     }
     return;
 }
-void backtrace_D1(HashTable *hashTable, int score, int a, int h, int k,int l,int p,int r) {
-    
-    if(a<0 || h<0 || h>=MAX || a>=MAX || a>h){
+void backtrace_D1(pk_compound *pk,bt_struct* bt, int score, int a, int h, int k,int l,int p,int r) {
+
+    if(a<0 || h<0 || h>=pk->MAX || a>=pk->MAX || a>h){
         return;
     }
 
     
-    int tmp0= compute_E( hashTable,a,h+1,k,l,p,r);
-    if(tmp0==INT_MAX){ goto loop;}
+    int tmp0;
+    get_E( pk,NULL,NULL,&tmp0,a,h+1,k,l,p,r);
+     if(tmp0==INT_MAX){ goto loop;}
 
 
     if(score==add(tmp0,0)){
-               bracket+=1;
-       backtrace_E(hashTable,tmp0, a,h+1,k,l,p,r);
+               bt->bracket+=1;
+backtrace_E( pk,bt,tmp0,a,h+1,k,l,p,r);
 
         
         return;
@@ -1313,13 +2319,14 @@ void backtrace_D1(HashTable *hashTable, int score, int a, int h, int k,int l,int
     loop:
     for(int tmp1=a;tmp1<=min(h-1,INT_MAX);tmp1++){
         for(int tmp2=max(INT_MIN,tmp1+3);tmp2<=h;tmp2++){
-            if(evaluate(tmp1,tmp2) && tmp1-tmp2+1<=THETA){
-                int tmp3=INTB(tmp1,tmp2,a,h);
+            if(evaluate(pk,tmp1,tmp2) && tmp1-tmp2+1<=pk->THETA){
+                int tmp3=INTB(pk,tmp1,tmp2,a,h);
                 if(tmp3!=INT_MAX){
-                    int tmp0=compute_D1(hashTable,tmp1+1,tmp2-1,k,l,p,r);
+                    int tmp0;
+                    get_D1(pk,NULL,NULL,&tmp0,tmp1+1,tmp2-1,k,l,p,r);
                     if(score==add(tmp0,tmp3)){
-                        backtrace_INTB(tmp3,tmp1,tmp2,a,h);
-                        backtrace_D1(hashTable,tmp0,tmp1+1,tmp2-1,k,l,p,r);
+                        add_pairing(pk,bt,tmp3,tmp1,tmp2,a,h);
+                        backtrace_D1(pk,bt,tmp0,tmp1+1,tmp2-1,k,l,p,r);
                         return;
                     }
                 }
@@ -1328,22 +2335,24 @@ void backtrace_D1(HashTable *hashTable, int score, int a, int h, int k,int l,int
     }
     return;
 } 
-void backtrace_C(HashTable *hashTable,int score,int a,int l,int n,int r) {
+void backtrace_C(pk_compound *pk,bt_struct* bt,int score,int a,int l,int n,int r) {
 
     for (int h=a+4;h<l-1;h++) {
         for (int k=h+1;k<l;k++) {
             for (int p=n+1;p<r;p++) {
-              if(!evaluate(a,h-1)){continue;}
+              if(!evaluate(pk,a,h-1)){continue;}
 
-              int tmp0= compute_D0( hashTable,a,h-1,k,l,p,r);
+              int tmp0;
+              get_D0( pk,NULL,NULL,&tmp0,a,h-1,k,l,p,r);
               if(tmp0==INT_MAX){continue;}
-              int tmp1= compute_J( hashTable,a,h,k,n,p);
+              int tmp1;
+              get_J( pk,NULL,NULL,&tmp1,a,h,k,n,p);
               if(tmp1==INT_MAX){continue;}
 
               if(score==add(add(tmp0,tmp1),0)){
 
-                backtrace_D0(hashTable,tmp0, a,h-1,k,l,p,r);
-                backtrace_J(hashTable,tmp1, a,h,k,n,p);
+               backtrace_D0( pk,bt,tmp0,a,h-1,k,l,p,r);
+                backtrace_J( pk,bt,tmp1,a,h,k,n,p);
 
                 return;
               }
@@ -1354,19 +2363,20 @@ void backtrace_C(HashTable *hashTable,int score,int a,int l,int n,int r) {
 
 }
 
-void backtrace_B(HashTable *hashTable,int score,int a,int m,int n,int r) {
+void backtrace_B(pk_compound *pk,bt_struct* bt,int score,int a,int m,int n,int r) {
 
     for (int l=a+6;l<m+1;l++) {
 
-      int mfe0 = MFEFree(l,m-1);
+      int mfe0 = MFEFree(pk,l,m-1);
 
-      int tmp0= compute_C( hashTable,a,l,n,r);
+      int tmp0;
+      get_C( pk,NULL,NULL,&tmp0,a,l,n,r);
       if(tmp0==INT_MAX){continue;}
 
       if(score==add(tmp0,mfe0)){
-        backtrace_MFEFree(mfe0,l,m-1);
+        backtrace_MFEFree(pk,bt,mfe0,l,m-1);
 
-        backtrace_C(hashTable,tmp0, a,l,n,r);
+        backtrace_C( pk,bt,tmp0,a,l,n,r);
 
         return;
       }
@@ -1375,22 +2385,24 @@ void backtrace_B(HashTable *hashTable,int score,int a,int m,int n,int r) {
 
 }
 
-void backtrace_A(HashTable *hashTable,int score,int a,int t) {
+void backtrace_A(pk_compound *pk,bt_struct* bt,int score,int a,int t) {
 
     for (int m=a+6;m<t-3;m++) {
         for (int n=m+1;n<t-2;n++) {
             for (int r=n+2;r<t;r++) {
 
 
-              int tmp0= compute_B( hashTable,a,m,n,r);
+              int tmp0;
+              get_B( pk,NULL,NULL,&tmp0,a,m,n,r);
               if(tmp0==INT_MAX){continue;}
-              int tmp1= compute_M( hashTable,m,n,r,t);
+              int tmp1;
+              get_M( pk,NULL,NULL,&tmp1,m,n,r,t);
               if(tmp1==INT_MAX){continue;}
 
               if(score==add(add(tmp0,tmp1),0)){
 
-                backtrace_B(hashTable,tmp0, a,m,n,r);
-                backtrace_M(hashTable,tmp1, m,n,r,t);
+                backtrace_B( pk,bt,tmp0,a,m,n,r);
+                backtrace_M( pk,bt,tmp1,m,n,r,t);
 
                 return;
               }

@@ -196,12 +196,12 @@ def treat_bag(prev,node):
                            new_letter,'<',maximum,add_after,';',new_letter,'++) {\n'])
             introduced_marginalized.append(new_variable)
             if ord(new_letter)==ord(minimum)+1 and sorted_letters.index(new_letter)%2==0:
-                MFE_SUM.append("      int mfe"+str(mfe_itg)+" = MFEFree("+minimum+","+new_letter+"-1);\n")                
-                MFE_BACKTRACE.append("        backtrace_MFEFree(mfe"+str(mfe_itg)+","+minimum+","+new_letter+"-1);\n")
+                MFE_SUM.append("      int mfe"+str(mfe_itg)+" = MFEFree(pk,"+minimum+","+new_letter+"-1);\n")                
+                MFE_BACKTRACE.append("        backtrace_MFEFree(pk,bt,mfe"+str(mfe_itg)+","+minimum+","+new_letter+"-1);\n")
                 mfe_itg+=1
             elif ord(new_letter)==ord(maximum)-1 and sorted_letters.index(new_letter)%2==1:
-                MFE_SUM.append("      int mfe"+str(mfe_itg)+" = MFEFree("+new_letter+","+maximum+"-1);\n")
-                MFE_BACKTRACE.append("        backtrace_MFEFree(mfe"+str(mfe_itg)+","+new_letter+","+maximum+"-1);\n")
+                MFE_SUM.append("      int mfe"+str(mfe_itg)+" = MFEFree(pk,"+new_letter+","+maximum+"-1);\n")
+                MFE_BACKTRACE.append("        backtrace_MFEFree(pk,bt,mfe"+str(mfe_itg)+","+new_letter+","+maximum+"-1);\n")
                 mfe_itg+=1
         ##print("marginalization",repr(marginalization))
         marginalization = marginalization.rstrip('\n')
@@ -225,17 +225,17 @@ def treat_bag(prev,node):
             for sub_eq in sorted(equation.subterms,key= lambda x:children_depth[x]):
                 #print("iciiiiiiiiiiiiiii",reverse_equation[sub_eq],sub_eq,tree_dec.bag_type[reverse_equation[sub_eq]])
                 if tree_dec.bag_type[reverse_equation[sub_eq]]==BagType.TRANSITIONAL:
-                    sub_terms.append(sub_eq.c_code_print_get({},tree_dec.ext_to_letter).replace("(","( hashTable,first,last,DATA,"))
+                    sub_terms.append(sub_eq.c_code_print_get({},tree_dec.ext_to_letter).replace("(","( pk,first,last,DATA,"))
                 else:
-                    sub_terms.append(sub_eq.c_code_print_get({},tree_dec.ext_to_letter).replace("(","( hashTable,first,last,DATA,"))     
+                    sub_terms.append(sub_eq.c_code_print_get({},tree_dec.ext_to_letter).replace("(","( pk,first,last,DATA,"))     
                     if tree_dec.bag_type[reverse_equation[sub_eq]]==BagType.DIAG_SECOND:
                         if sub_eq.inward==False:
-                            CONDITIONS.append("!evaluate("+tree_dec.ext_to_letter[sub_eq.sorted_indices()[0]]+"-1,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[1]]+")")
+                            CONDITIONS.append("!evaluate(pk,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[0]]+"-1,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[1]]+")")
                         else:
-                            CONDITIONS.append("!evaluate("+tree_dec.ext_to_letter[sub_eq.sorted_indices()[0]]+","+tree_dec.ext_to_letter[sub_eq.sorted_indices()[1]]+"-1)")
+                            CONDITIONS.append("!evaluate(pk,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[0]]+","+tree_dec.ext_to_letter[sub_eq.sorted_indices()[1]]+"-1)")
                     else:
-                        CONDITIONS.append("!evaluate("+tree_dec.ext_to_letter[sub_eq.sorted_indices()[0]]+","+tree_dec.ext_to_letter[sub_eq.sorted_indices()[3]]+"-1)")
-                        CONDITIONS.append("!evaluate("+tree_dec.ext_to_letter[sub_eq.sorted_indices()[1]]+"-1,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[2]]+")")
+                        CONDITIONS.append("!evaluate(pk,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[0]]+","+tree_dec.ext_to_letter[sub_eq.sorted_indices()[3]]+"-1)")
+                        CONDITIONS.append("!evaluate(pk,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[1]]+"-1,"+tree_dec.ext_to_letter[sub_eq.sorted_indices()[2]]+")")
                    
                 bag_types.append(reverse_equation[sub_eq])
             if len(CONDITIONS)!=0:
@@ -249,17 +249,17 @@ def treat_bag(prev,node):
                 if tree_dec.bag_type[bag_types[len(sub_terms)-1-idv]]==BagType.TRANSITIONAL:
                     delim=i.find('(')
                     delim2=i.find('_')
-                    CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","    backtrace").replace("first,last,DATA","tmp"+str(idv))+";\n"
+                    CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","    backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"
                 else:
                    #print("nooo",tree_dec.bag_type[bag_types[len(sub_terms)-1-idv]],len(tree_dec.bag_adj[bag_types[len(sub_terms)-1-idv]]))
                     if tree_dec.bag_type[bag_types[len(sub_terms)-1-idv]]==BagType.DIAG_SECOND and len(tree_dec.bag_adj[bag_types[len(sub_terms)-1-idv]])>=2:
                         delim=i.find('(')
                         delim2=i.find('_')
-                        CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","   backtrace").replace("first,last,DATA","tmp"+str(idv))+";\n"
+                        CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","   backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"
                     else:
                         delim=i.find('(')
                         delim2=i.find('_')
-                        CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","    backtrace").replace("first,last,DATA","tmp"+str(idv))+";\n"+indent_marginalization+"    bracket+=1;\n"     
+                        CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","    backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"+indent_marginalization+"    bt->bracket+=1;\n"     
             CHILDREN_SUM=print_children(sub_terms,0,indent_marginalization)
             CHILDREN_SUM_BT=print_children_backtrace(sub_terms,0,indent_marginalization)
             CHILDREN_MAX=print_nested(len(sub_terms)-1)
@@ -427,13 +427,13 @@ def treat_bag(prev,node):
             CONST_MAX = '0'
             CONST_BACKTRACE = ""
             if BOUNDI!='INT_MAX' and ord(BOUNDI)==ord(variables[0])+2:
-                CONST_SUM="int mfe1=MFEFree("+variables[0]+","+BOUNDI+"-1);"
+                CONST_SUM="int mfe1=MFEFree(pk,"+variables[0]+","+BOUNDI+"-1);"
                 CONST_MAX="mfe1"
-                CONST_BACKTRACE="backtrace_MFEFree(mfe1,"+variables[0]+","+BOUNDI+"-1);\n"
+                CONST_BACKTRACE="backtrace_MFEFree(pk,bt,mfe1,"+variables[0]+","+BOUNDI+"-1);\n"
             if BOUNDJ!='INT_MIN' and ord(BOUNDJ)==ord(variables[1])-2:
-                CONST_SUM+="\n    int mfe2=MFEFree("+BOUNDJ+","+variables[1]+");"
+                CONST_SUM+="\n    int mfe2=MFEFree(pk,"+BOUNDJ+","+variables[1]+");"
                 CONST_MAX="add("+CONST_MAX+",mfe2)"
-                CONST_BACKTRACE+="        backtrace_MFEFree(mfe2,"+BOUNDJ+","+variables[1]+");\n"
+                CONST_BACKTRACE+="        backtrace_MFEFree(pk,bt,mfe2,"+BOUNDJ+","+variables[1]+");\n"
             CHILDREN_SUM = ''
             CHILDREN_SUM_BT = ''
             CHILDREN_MAX = '0'
@@ -452,7 +452,7 @@ def treat_bag(prev,node):
                         #print("variable",e)
                         letter_table[e] = tree_dec.ext_to_letter[e]
                     #print("iciiiiiiii",letter_table,tree_dec.ext_to_letter)
-                    sub_terms.append(sub_eq.c_code_print_get(letter_table, tree_dec.ext_to_letter).replace(","+variables[1],","+variables[1]+"+1").replace("(","( hashTable,first,last,DATA,"))
+                    sub_terms.append(sub_eq.c_code_print_get(letter_table, tree_dec.ext_to_letter).replace(","+variables[1],","+variables[1]+"+1").replace("(","( pk,first,last,DATA,"))
                     bag_types.append(tree_dec.bag_type[reverse_equation[sub_eq]])
 
                 for idv in range(0,len(sub_terms)):
@@ -460,9 +460,9 @@ def treat_bag(prev,node):
                     delim=i.find('(')
                     delim2=i.find('_')
                     if len(CHILDREN_BACKTRACE)==0:
-                        CHILDREN_BACKTRACE+="       bracket+=1;\n"+i.replace("get","backtrace").replace("first,last,DATA","tmp"+str(idv))+";\n"     
+                        CHILDREN_BACKTRACE+="       bt->bracket+=1;\n"+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"     
                     else:
-                        CHILDREN_BACKTRACE+="      backtrace_"+i.replace("get","backtrace").replace("first,last,DATA","tmp"+str(idv))+";\n"        
+                        CHILDREN_BACKTRACE+="      backtrace_"+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"        
                 CHILDREN_SUM=print_children_diag(sub_terms,0," ")
                 CHILDREN_SUM_BT=print_children_diag_backtrace(sub_terms,0," ")
                 CHILDREN_MAX=print_nested(len(sub_terms)-1)
@@ -605,13 +605,13 @@ def treat_bag(prev,node):
             CONST_MAX = '0'
             CONST_BACKTRACE = ""
             #if BOUNDI!='MAX-1' and ord(BOUNDI)==ord(variables[0])+2:
-            CONST_SUM="int mfe1=MFEFree("+variables[1]+","+BOUNDJ+");"
+            CONST_SUM="int mfe1=MFEFree(pk,"+variables[1]+","+BOUNDJ+");"
             CONST_MAX="mfe1"
-            CONST_BACKTRACE="backtrace_MFEFree(mfe1,"+variables[1]+","+BOUNDJ+");\n"
+            CONST_BACKTRACE="backtrace_MFEFree(pk,bt,mfe1,"+variables[1]+","+BOUNDJ+");\n"
             #if BOUNDJ!='0' and ord(BOUNDI)==ord(variables[0])-2:
-            CONST_SUM+="\n    int mfe2=MFEFree("+BOUNDI+","+variables[0]+");"
+            CONST_SUM+="\n    int mfe2=MFEFree(pk,"+BOUNDI+","+variables[0]+");"
             CONST_MAX="add("+CONST_MAX+",mfe2)"
-            CONST_BACKTRACE+="        backtrace_MFEFree(mfe2,"+BOUNDI+","+variables[0]+");\n"
+            CONST_BACKTRACE+="        backtrace_MFEFree(pk,bt,mfe2,"+BOUNDI+","+variables[0]+");\n"
             CHILDREN_SUM = ''
             CHILDREN_MAX = '0'
             CHILDREN_BACKTRACE=''
@@ -629,7 +629,7 @@ def treat_bag(prev,node):
                         #print("variable",e)
                         letter_table[e] = tree_dec.ext_to_letter[e]
                     #print("iciiiiiiii",letter_table,tree_dec.ext_to_letter)
-                    sub_terms.append(sub_eq.c_code_print(letter_table, tree_dec.ext_to_letter).replace("(","( hashTable,").replace(","+variables[0],","+variables[0]+"-1"))
+                    sub_terms.append(sub_eq.c_code_print(letter_table, tree_dec.ext_to_letter).replace("(","( pk,").replace(","+variables[0],","+variables[0]+"-1"))
                     bag_types.append(tree_dec.bag_type[reverse_equation[sub_eq]])
 
                 for idv in range(0,len(sub_terms)):
@@ -638,9 +638,9 @@ def treat_bag(prev,node):
                     delim=i.find('(')
                     delim2=i.find('_')
                     if len(CHILDREN_BACKTRACE)==0:
-                        CHILDREN_BACKTRACE+="       bracket+=1;\n       backtrace_"+i[delim2+1:delim+1]+"hashTable,tmp"+str(idv)+","+i[delim+1:].replace("hashTable,","")+";\n"     
+                        CHILDREN_BACKTRACE+="       bt->bracket+=1;\n       backtrace_"+i[delim2+1:delim+1]+"pk,bt,tmp"+str(idv)+","+i[delim+1:].replace("pk,","")+";\n"     
                     else:
-                        CHILDREN_BACKTRACE+="      backtrace_"+i[delim2+1:delim+1]+"hashTable,tmp"+str(idv)+","+i[delim+1:].replace("hashTable,","")+";\n"         
+                        CHILDREN_BACKTRACE+="      backtrace_"+i[delim2+1:delim+1]+"pk,bt,tmp"+str(idv)+","+i[delim+1:].replace("pk,","")+";\n"         
                 CHILDREN_SUM=print_children_diag(sub_terms,0,"      ")
                 CHILDREN_MAX=print_nested(len(sub_terms)-1)
             #print("heeeeeeerrrrreeeee",CHILDREN_BACKTRACE)
@@ -718,15 +718,15 @@ if clique:
 
     with open('resources/stack_Turner/clique_case.c','r') as f:
         functions.insert(0,f.read())
-    declarations.insert(1,"""int get_CLIQUE1(HashTable *hashTable, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
+    declarations.insert(1,"""int get_CLIQUE1(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
 
-int get_CLIQUE0(HashTable *hashTable, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
+int get_CLIQUE0(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
 
-int compute_CLIQUE1(HashTable *hashTable,Node **first,Node** last, int i, int j, int k, int l);
+int compute_CLIQUE1(pk_compound *pk,Node **first,Node** last, int i, int j, int k, int l);
 
-void backtrace_CLIQUE0(HashTable *hashTable, int score, int i,int j, int k, int l);
+void backtrace_CLIQUE0(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);
 
-void backtrace_CLIQUE1(HashTable *hashTable, int score, int i,int j, int k, int l);""")
+void backtrace_CLIQUE1(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);""")
     with open('resources/stack_Turner/backtrace/clique_case.c','r') as f:
         backtrace.insert(0,f.read())
 

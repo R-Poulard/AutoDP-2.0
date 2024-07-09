@@ -4,6 +4,7 @@
 #include <math.h>
 #include <limits.h>
 #include <time.h>
+#include <string.h>
 #include <ViennaRNA/fold_compound.h>
 #include <ViennaRNA/utils/basic.h>
 #include <ViennaRNA/utils/strings.h>
@@ -16,8 +17,52 @@
 
 int TABLE_SIZE = 64019;
 int N = 10;
-int THETA_PAIRING=1;
-int THETA = 100;
+
+
+typedef struct Tuple {
+    int values[TUPLE_SIZE];
+} Tuple;
+
+// Define a structure for each node in the hash table
+typedef struct HashNode {
+    struct Tuple* key;
+    int value;
+    struct HashNode* next;
+} HashNode;
+
+// Define the hash table structure
+typedef struct {
+    HashNode **buckets;
+    int size;
+    int capacity;
+} HashTable;
+
+typedef struct Node {
+    Tuple* data;
+    struct Node* next;
+} Node;
+
+// Define the Stack structure
+PUBLIC typedef struct {
+    Node* top;
+} Stack;
+
+PUBLIC typedef struct {
+    HashTable* hashtable;
+    Stack* Stack;
+    vrna_fold_compound_t* fc;
+    const char* line;
+    int** matrix;
+    int MAX;
+    int THETA;
+    int THETA_PAIRING;
+} pk_compound;
+
+PUBLIC typedef struct{
+    char * structure;
+    char bracket;
+} bt_struct;
+
 
 //PAIRING FUNCTIONS
 int min(int a, int b) { if (a<b) {return a;} else {return b;}};
@@ -40,10 +85,6 @@ void preset_N(int n) {
         printf("N negative or null\n");
     }
 }
-
-typedef struct Tuple {
-    int values[TUPLE_SIZE];
-} Tuple;
 
 Tuple *createTuple(int val[],int size) {
     Tuple *tuple = (Tuple *)malloc(sizeof(Tuple));
@@ -77,20 +118,6 @@ int compare_tuple(Tuple *tp1, int val[], int size) {
     }
     return 1; // Tuples are identical
 }
-
-// Define a structure for each node in the hash table
-typedef struct HashNode {
-    struct Tuple* key;
-    int value;
-    struct HashNode* next;
-} HashNode;
-
-// Define the hash table structure
-typedef struct {
-    HashNode **buckets;
-    int size;
-    int capacity;
-} HashTable;
 
 // Hash function
 int hash(int keys[], int capacity,int size) {
@@ -177,12 +204,14 @@ void insert(HashTable *hashTable, int keys[], int size,int value) {
 bool get(HashTable *hashTable, int keys[], int size, int *value) {
     
     int index = hash(keys, hashTable->capacity,size);
-    
+
     // Traverse the linked list at the index
     HashNode *current = hashTable->buckets[index];
     while (current != NULL) {
         if (compare_tuple(current->key, keys,size)) {
+            
             *value = current->value;
+            
             //printf("\nvalue in hash +> %d",current->value);
             return true; // Key found
         }
@@ -240,14 +269,13 @@ void print_table(HashTable *hashTable){
     }
 }
 //SECONDARY STRUCTURE FUNCTION
-int **matrix = NULL; 
 
-void createMatrix(int N,char * ss) {
+void createMatrix(int *** matrix, int N,const char * ss) {
 
     // Allocate memory for the matrix
-    matrix = (int **)malloc(N * sizeof(int *));
+    *matrix = (int **)malloc(N * sizeof(int *));
     for (int i = 0; i < N; i++) {
-        matrix[i] = (int *)malloc(N * sizeof(int));
+        (*matrix)[i] = (int *)malloc(N * sizeof(int));
     }
 
     // Fill the matrix
@@ -255,33 +283,33 @@ void createMatrix(int N,char * ss) {
         for (int j = i; j < N; j++) {
             if(i==j){
                 if(ss[i]=='|'){
-                    matrix[i][j]=0;
+                    (*matrix)[i][j]=0;
                 }
                 else{
-                    matrix[i][j]=1;
+                    (*matrix)[i][j]=1;
                 }
                 continue;
             }
-            matrix[i][j] = 0;
-            matrix[j][i] = 0;
+            (*matrix)[i][j] = 0;
+            (*matrix)[j][i] = 0;
             if ( ss[i]=='x' || ss[j]=='x') {
-                matrix[i][j] = 0;
-                matrix[j][i] = 0;
+                (*matrix)[i][j] = 0;
+                (*matrix)[j][i] = 0;
                 continue;
             }
             if( (ss[i]=='(' && ss[j]==')') || (ss[j]=='(' && ss[i]==')')){
-                matrix[i][j]= 1;
-                matrix[j][i] = 1;
+                (*matrix)[i][j]= 1;
+                (*matrix)[j][i] = 1;
                 continue;
             }
             if( ss[i]=='>'){
-                matrix[i][j]= 0;
-                matrix[j][i]= 0;
+                (*matrix)[i][j]= 0;
+                (*matrix)[j][i]= 0;
                 continue;
             }
             if( (ss[i]=='.' || ss[i]=='<') && (ss[j]=='.' || ss[j]=='>')){
-                matrix[i][j]= 1;
-                matrix[j][i]= 1;
+                (*matrix)[i][j]= 1;
+                (*matrix)[j][i]= 1;
                 continue;
             }
             if(ss[i]=='['){
@@ -296,17 +324,17 @@ void createMatrix(int N,char * ss) {
                         }
                     }
                     if(matching==0){
-                        matrix[i][j]=1;
-                        matrix[j][i]=1;
+                        (*matrix)[i][j]=1;
+                        (*matrix)[j][i]=1;
                     }
                     else{
-                        matrix[i][j]=0;
-                        matrix[j][i]=0;
+                        (*matrix)[i][j]=0;
+                        (*matrix)[j][i]=0;
                     }
                 }
                 else{
-                    matrix[i][j] = 0;
-                    matrix[j][i] = 0;
+                    (*matrix)[i][j] = 0;
+                    (*matrix)[j][i] = 0;
                 }
                 continue;
             }
@@ -315,7 +343,7 @@ void createMatrix(int N,char * ss) {
 }
 
 // Function to display the matrix
-void displayMatrix(int N) {
+void displayMatrix(int** matrix,int N) {
     printf("Matrix:\n");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -326,19 +354,12 @@ void displayMatrix(int N) {
 }
 
 // Function to free the memory allocated for the matrix
-void freeMatrix(int N) {
+void freeMatrix(int ** matrix,int N) {
     for (int i = 0; i < N; i++) {
         free(matrix[i]);
     }
     free(matrix);
 }
-
-char * line = NULL;
-int MAX;
-char * correct_score = NULL;
-char * structure=NULL;
-char bracket='A';
-vrna_fold_compound_t *fc ;
 
 int matching(char x, char y){
     if(x!='X' && x!='G' && x!='C' && x!='A' && x!='U' && x!='T'){
@@ -359,19 +380,17 @@ int matching(char x, char y){
     return INT_MAX;
 }
 
-int evaluate(int x, int y) {
-    if(abs(x-y)<THETA_PAIRING || matrix[x][y]==0 || matching(line[x],line[y])==INT_MAX){
+int evaluate(pk_compound* pk,int x, int y) {
+    int a=abs(x-y)<pk->THETA_PAIRING;
+    int b=pk->matrix[x][y];
+    int c=matching(pk->line[x],pk->line[y]);
+
+    if(abs(x-y)<pk->THETA_PAIRING || pk->matrix[x][y]==0 || matching(pk->line[x],pk->line[y])==INT_MAX){
         return 0;
     }
     return 1;
 }
 
-int bp_score(int x, int y) {
-    if(abs(x-y)<THETA_PAIRING || matrix[x][y]==0){
-        return INT_MAX;
-    }
-    return matching(line[x],line[y]);
-}
 
 int add(int a,int b){
     if(a==INT_MAX || b==INT_MAX){
@@ -381,16 +400,16 @@ int add(int a,int b){
     return a+b;
 }
 
-int write_structure(vrna_bp_stack_t *bp,int length){
+int write_structure(pk_compound* pk,bt_struct* bt,vrna_bp_stack_t *bp){
     int i,j,temp;
     for (int k = 1; k <= bp[0].i; k++) {
       i = bp[k].i;
       j = bp[k].j;
-      if (i > length)
-        i -= length;
+      if (i > pk->MAX)
+        i -= pk->MAX;
 
-      if (j > length)
-        j -= length;
+      if (j > pk->MAX)
+        j -= pk->MAX;
 
       if (i > j) {
         temp  = i;
@@ -400,25 +419,27 @@ int write_structure(vrna_bp_stack_t *bp,int length){
 
       if (i == j) {
         /* Gquad bonds are marked as bp[i].i == bp[i].j */
-        structure[i - 1] = '+';
+        bt->structure[i - 1] = '+';
       } else {
         /* the following ones are regular base pairs */
-        structure[i - 1]  = '(';
-        structure[j - 1]  = ')';
+        bt->structure[i - 1]  = '(';
+        bt->structure[j - 1]  = ')';
       }
     }
 }
 
-int MFEFree(int a,int b){
+int MFEFree(pk_compound* pk,int a,int b){
     if(a>b){
         return 0;
     }
     a=a++;
     b=b++;
-    int * indx = fc->jindx;
+
+    int * indx = pk->fc->jindx;
     int ij = indx[b] + a;
-    int * fML =fc->matrices->fML;
-    return min(0,fML[ij]);
+    int * fML =pk->fc->matrices->fML;
+    int up_energy=pk->fc->params->MLbase*(b-a+1);
+    return min(up_energy,fML[ij]);
 }
 
 int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack){
@@ -447,50 +468,40 @@ int compute_BT(vrna_fold_compound_t *fc, int i,int j, vrna_bp_stack_t *bp_stack)
     return BT;
 }
 
-void backtrace_MFEFree(int score, int a,int b){
-    if(a>b || score==0){
+void backtrace_MFEFree(pk_compound* pk,bt_struct* bt,int score, int a,int b){
+    int up_energy=pk->fc->params->MLbase*(b-a+1);
+    if(a>b || score==up_energy){
         return;
     }
     a++;
     b++;
     vrna_bp_stack_t * bp=(vrna_bp_stack_t *)vrna_alloc(sizeof(vrna_bp_stack_t) * (4 * ( 1 + (b-a) / 2)));
-    int bt=compute_BT(fc,a,b,bp);
-    write_structure(bp,strlen(line));
+    int score_bt=compute_BT(pk->fc,a,b,bp);
+    write_structure(pk,bt,bp);
     free(bp);
 }
 
-int INTB(int a,int b,int c,int d){
+int INTB(pk_compound* pk,int a,int b,int c,int d){
     if(d==-1 && c==-1){
         return 0;
     }    
+    //printf("\na=%d,b=%d,c=%d,d=%d  ",a,b,c,d);
     a++;b++;
-
-    int energy_full = vrna_eval_int_loop(fc,c,d,a,b);
-    
+    int energy_full = vrna_eval_int_loop(pk->fc,c,d,a,b);
+    //printf("=%d\n",energy_full);
     return energy_full;
 }
 
-void backtrace_INTB(int score,int a,int b,int c,int d){
-    structure[a]=bracket;
-    structure[b]=bracket+32;
+void add_pairing(pk_compound* pk,bt_struct* bt, int score,int a,int b,int c,int d){
+    bt->structure[a]=bt->bracket;
+    bt->structure[b]=tolower(bt->bracket);
     return;
 }
-
-
-
-typedef struct Node {
-    Tuple* data;
-    struct Node* next;
-} Node;
 
 void freeNode(Node * node){
     free(node->data);
     free(node);
 }
-// Define the Stack structure
-typedef struct {
-    Node* top;
-} Stack;
 
 // Function to initialize the stack
 void initializeStack(Stack* stack) {
@@ -552,4 +563,46 @@ void printStack(Stack* stack) {
         current = next;
     }
     printf("--------------------\n");
+}
+
+
+pk_compound* create_pk_compound(vrna_fold_compound_t *fc, char* seq,const char* ss){
+    pk_compound *pk=malloc(sizeof(pk_compound));
+    pk->fc=fc;
+    pk->hashtable=createHashTable();
+    pk->Stack=malloc(sizeof(Stack));
+    initializeStack(pk->Stack);
+    pk->line=seq;
+    pk->MAX=strlen(seq)-1;
+    createMatrix(&(pk->matrix),pk->MAX,ss);
+    preset_N(pk->MAX);
+    pk->THETA=100;
+    pk->THETA_PAIRING=1;
+}
+void free_pk(pk_compound* pk){
+    destroyHashTable(pk->hashtable);
+    freeMatrix(pk->matrix,pk->MAX);
+    freeStack(pk->Stack);
+    vrna_fold_compound_free(pk->fc);
+    free(pk);
+}
+
+bt_struct * create_bt_struct(char* structure,int MAX){
+    bt_struct* bt=malloc(sizeof(bt_struct));
+    bt->bracket='A';
+    if(structure==NULL){
+        bt->structure=malloc(sizeof(char)*(MAX+1));
+        bt->structure[MAX]='\0';
+        for(int i=0;i<MAX;i++){
+            bt->structure[i]='.';
+        }
+    }
+    else{
+        bt->structure=structure;
+    }
+    return bt;
+}
+void free_bt(bt_struct* bt){
+    free(bt->structure);
+    free(bt);
 }
