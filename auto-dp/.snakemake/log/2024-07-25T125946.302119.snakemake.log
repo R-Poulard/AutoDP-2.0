@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+concatenation               1
+state_of_the_results        1
+total                       3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:59:46 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/td_images/processed_C5.pdf, results/compact_td_images/compact_C5.pdf, results/latex_equations/C5_latex_equations.pdf
+    output: results/concatenations/concatenation_C5.pdf
+    jobid: 18
+    reason: Missing output files: results/concatenations/concatenation_C5.pdf
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:59:46 2024]
+Finished job 18.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:59:47 2024]
+localrule state_of_the_results:
+    input: results/latex_equations/C5_latex_equations.pdf
+    output: results/state_of_the_results.pdf
+    jobid: 21
+    reason: Updated input files: results/latex_equations/C5_latex_equations.pdf
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:59:47 2024]
+Finished job 21.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:59:47 2024]
+localrule all:
+    input: results/processed_td_files/processed_C5.td, results/td_files/C5.td, results/elim_order/C5.order, results/td_images/processed_C5.pdf, results/td_images/unprocessed_C5.pdf, results/colored_dbn/colored_dbn_C5.pdf, results/colored_dbn/band_diagram_C5.pdf, results/latex_equations/C5_latex_equations.pdf, results/binaries/C5_folding, results/concatenations/concatenation_C5.pdf, results/state_of_the_results.pdf
+    jobid: 0
+    reason: Input files updated by another job: results/concatenations/concatenation_C5.pdf, results/state_of_the_results.pdf
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:59:47 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-07-25T125946.302119.snakemake.log

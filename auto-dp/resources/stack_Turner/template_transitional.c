@@ -1,4 +1,4 @@
-int get_MAINNAME(pk_compound *pk,Node** first,Node** last,int * value,INT_INDICES){
+PRIVATE int get_MAINNAME(pk_compound *pk,Node** first,Node** last,int * value,INT_INDICES){
     int MAINNAME = INT_VALUE_NAME;
     int tab[]={MAINNAME,INDICES};
     int size = SIZE_ARRAY;
@@ -23,7 +23,7 @@ int get_MAINNAME(pk_compound *pk,Node** first,Node** last,int * value,INT_INDICE
         return 0;
     }
 }
-int compute_MAINNAME(pk_compound *pk,Node** first,Node** last,INT_INDICES) {
+PRIVATE int compute_MAINNAME(pk_compound *pk,Node** first,Node** last,INT_INDICES) {
     // index_start
     int MAINNAME = INT_VALUE_NAME;
     int value;
@@ -34,7 +34,7 @@ int compute_MAINNAME(pk_compound *pk,Node** first,Node** last,INT_INDICES) {
         return 1;
     }
     // index_end    
-    int min_value = INT_MAX;
+    int min_value = INF;
     int possible=1;
 FOR_LOOP_NEW_VARIABLES_OPEN
 CONDITIONS

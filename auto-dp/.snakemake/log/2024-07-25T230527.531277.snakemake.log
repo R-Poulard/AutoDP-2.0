@@ -1,0 +1,51 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+all                       1
+c_compilation             1
+produce_c_code_aux        1
+total                     3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 23:05:27 2024]
+localrule produce_c_code_aux:
+    input: results/c_code/C5_folding.c
+    output: results/c_code/auto_dp.c
+    jobid: 1
+    reason: Updated input files: results/c_code/C5_folding.c
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 23:05:28 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 23:05:28 2024]
+localrule c_compilation:
+    input: results/c_code/auto_dp.c
+    output: results/binaries/auto_dp
+    jobid: 7
+    reason: Missing output files: results/binaries/auto_dp; Input files updated by another job: results/c_code/auto_dp.c
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 23:05:28 2024]
+Error in rule c_compilation:
+    jobid: 7
+    input: results/c_code/auto_dp.c
+    output: results/binaries/auto_dp
+    shell:
+        gcc results/c_code/auto_dp.c -o results/binaries/auto_dp -lRNA -lm
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T230527.531277.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

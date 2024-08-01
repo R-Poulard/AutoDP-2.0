@@ -23,18 +23,18 @@
 \end{figure}
 \end{center}
 first and last anchors, already given: $ a , t $
-$$ A =\min_{ m,n,r } \left( B[r,n,m,a]+M[r,t,n,m]\right) $$
-$$ B\left[ a,m,n,r \right] =\min_{ l } \left( C[r,n,l,a]\right) $$
-$$ C\left[ a,l,n,r \right] =\min_{ h,k,p } \left( \colorbox{c4}{$D$}[a,h\mid r,p,l,k]+J[n,a,k,h,p]\right) $$
+$$ A\left[ a,t \right] =\min_{ m,n,r } \left( B[r,a,m,n]+M[r,t,m,n]\right) $$
+$$ B\left[ a,m,n,r \right] =\min_{ l } \left( C[r,a,l,n]\right) $$
+$$ C\left[ a,l,n,r \right] =\min_{ h,k,p } \left( \colorbox{c4}{$D$}[a,h\mid r,p,l,k]+J[h,n,p,k,a]\right) $$
 $$ \colorbox{c4}{$D$}' \left[a,h \mid  r,p,l,k \right] =  \min\begin{cases}\colorbox{c4}{$D$}'[ a , h-1\mid r,p,l,k ], &\text{if } h-1 ,\notin\{ a , r,p,l,k \} \\\colorbox{c4}{$D$}[ a+1 , h-1\mid r,p,l,k ]+\Delta G(a,h) &\text{if } \{ a+1 , h-1 \}\cap \{ r,p,l,k \}=\emptyset\end{cases}$$
-$$ \colorbox{c4}{$D$} \left[a,h \mid  r,p,l,k \right] =  \min\begin{cases}\colorbox{c4}{$D$}[ a+1 , h\mid r,p,l,k ], &\text{if } a+1 \notin\{ h , r,p,l,k \} \\\colorbox{c4}{$D$}'[ a , h-1\mid r,p,l,k ], &\text{if } h-1 ,\notin\{ a , r,p,l,k \} \\\colorbox{c4}{$D$}[ a+1 , h-1\mid r,p,l,k ]+\Delta G(a,h) &\text{if } \{ a+1 , h-1 \}\cap \{ r,p,l,k \}=\emptyset,\\E[h,k,r,p,l,a]\end{cases}$$
-$$ E\left[ b,g,k,l,p,r \right] =\min_{ e } \left( F[r,p,b,e]+I[k,e,g,l,b]\right) $$
+$$ \colorbox{c4}{$D$} \left[a,h \mid  r,p,l,k \right] =  \min\begin{cases}\colorbox{c4}{$D$}[ a+1 , h\mid r,p,l,k ], &\text{if } a+1 \notin\{ h , r,p,l,k \} \\\colorbox{c4}{$D$}'[ a , h-1\mid r,p,l,k ], &\text{if } h-1 ,\notin\{ a , r,p,l,k \} \\\colorbox{c4}{$D$}[ a+1 , h-1\mid r,p,l,k ]+\Delta G(a,h) &\text{if } \{ a+1 , h-1 \}\cap \{ r,p,l,k \}=\emptyset,\\E[l,r,p,k,h,a]\end{cases}$$
+$$ E\left[ b,g,k,l,p,r \right] =\min_{ e } \left( F[r,p,b,e]+I[l,e,k,g,b]\right) $$
 $$ F\left[ b,e,p,r \right] =\min_{ c } \left( G[r,p,c,e]\right) $$
-$$ G\left[ c,e,p,r \right] =\min_{ q } \left( H[r,c,e,q]\right) $$
+$$ G\left[ c,e,p,r \right] =\min_{ q } \left( H[r,q,c,e]\right) $$
 $$ H\left[ c,e,q,r \right] =\min_{ d } \left( \colorbox{c3}{$C_{\boxtimes}$}[c,d,q,r]\right) $$
 $$ I\left[ b,e,g,k,l \right] =\min_{ f } \left( \colorbox{c1}{$C_{\boxtimes}$}[e,f,k,l]\right) $$
-$$ J\left[ a,h,k,n,p \right] =\min_{ i } \left( K[n,i,p,k]\right) $$
-$$ K\left[ i,k,n,p \right] =\min_{ o } \left( L[p,o,i,k]\right) $$
+$$ J\left[ a,h,k,n,p \right] =\min_{ i } \left( K[n,p,k,i]\right) $$
+$$ K\left[ i,k,n,p \right] =\min_{ o } \left( L[p,k,o,i]\right) $$
 $$ L\left[ i,k,o,p \right] =\min_{ j } \left( \colorbox{c0}{$C_{\boxtimes}$}[i,j,o,p]\right) $$
 $$ M\left[ m,n,r,t \right] =\min_{ s } \left( \colorbox{c2}{$C_{\boxtimes}$}[m,n,s,t]\right) $$
 \end{document}

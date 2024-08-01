@@ -1,10 +1,10 @@
-int get_MAINNAME0(pk_compound* pk,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
+PRIVATE int get_MAINNAME0(pk_compound* pk,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
     int MAINNAME1 = INT_VALUE_NAME;
     int tab[]={MAINNAME1,V1+1,V2-1,CONST};
     int size = SIZE_ARRAY;
 
     if(V1<0 || V2<0 || V2>=pk->MAX || V1>=pk->MAX || V1>V2){
-        *value=INT_MAX;
+        *value=INF;
         return 1;
     }   
     if (get(pk->hashtable,tab,size,value)){
@@ -26,13 +26,13 @@ int get_MAINNAME0(pk_compound* pk,Node** first,Node** last,int * value,int V1, i
     }
 }
 
-int get_MAINNAME1(pk_compound *pk,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
+PRIVATE int get_MAINNAME1(pk_compound *pk,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
     int MAINNAME1 = INT_VALUE_NAME;
     int tab[]={MAINNAME1,V1,V2,CONST};
     int size = SIZE_ARRAY;
 
     if(V1<0 || V2<0 || V2>=pk->MAX || V1>=pk->MAX || V1>V2){
-        *value=INT_MAX;
+        *value=INF;
         return 1;
     }  
     if (get(pk->hashtable,tab,size,value)){
@@ -54,7 +54,7 @@ int get_MAINNAME1(pk_compound *pk,Node** first,Node** last,int * value,int V1, i
     }
 }
 
-int compute_MAINNAME1(pk_compound *pk,Node** first,Node** last,int V1, int V2, CONST_INT) {
+PRIVATE int compute_MAINNAME1(pk_compound *pk,Node** first,Node** last,int V1, int V2, CONST_INT) {
     int MAINNAME1 = INT_VALUE_NAME;
     int tab[]={MAINNAME1,V1,V2,CONST};
     int size = SIZE_ARRAY;
@@ -66,7 +66,7 @@ int compute_MAINNAME1(pk_compound *pk,Node** first,Node** last,int V1, int V2, C
         return 1;
     }
     int possible=1;
-    int min_value=INT_MAX;
+    int min_value=INF;
     CONST_SUM
     CHILDREN_SUM
     if(possible==1){
@@ -76,10 +76,10 @@ int compute_MAINNAME1(pk_compound *pk,Node** first,Node** last,int V1, int V2, C
     loop:
     for(int tmp1=V1;tmp1<=min(V2INC2,BOUNDIADJI);tmp1++){
         for(int tmp2=max(BOUNDJADJJ,tmp1+NB_HELIX);tmp2<=V2;tmp2++){
-            if(evaluate(pk,tmp1,tmp2) && tmp1-tmp2+1<=pk->THETA){
+            if(evaluate(pk,tmp1,tmp2)){
                 int tmp3=INTB(pk,tmp1,tmp2,V1,V2);
 
-                if(tmp3!=INT_MAX){
+                if(tmp3!=INF){
                     int tmp;
                     if(get_MAINNAME1(pk,first,last,&tmp,tmp1+1,tmp2-1,CONST)==0){
                         possible=0;

@@ -1,25 +1,27 @@
 configfile: "config/config.json"
 
-shadows = ['C5']
+shadows = ['H']
 
 rule all:
     input:
+        'results/c_code/auto_dp.c',
+        'results/binaries/auto_dp',
         expand('results/processed_td_files/processed_{family}.td', family=shadows),
         expand('results/td_files/{shadow}.td', shadow=shadows),
         expand('results/elim_order/{shadow}.order', shadow=shadows),
         expand('results/td_images/processed_{shadow}.pdf', shadow=shadows),
-        expand('results/decomposition_schemes/decomposition_{shadow}.pdf', shadow=shadows),
+        #expand('results/decomposition_schemes/decomposition_{shadow}.pdf', shadow=shadows),
         expand('results/td_images/unprocessed_{shadow}.pdf', shadow=shadows),
         expand('results/colored_dbn/colored_dbn_{shadow}.pdf',shadow=shadows),
         expand('results/colored_dbn/band_diagram_{shadow}.pdf',shadow=shadows),
-        expand('results/compact_td_images/compact_{shadow}.pdf',shadow=shadows),
-        expand('results/compact_td_images/compact_{shadow}_letters.pdf',shadow=shadows),
-        expand('results/compact_td_images/compact_{shadow}_equations.pdf',shadow=shadows),
+        #expand('results/compact_td_images/compact_{shadow}.pdf',shadow=shadows),
+        #expand('results/compact_td_images/compact_{shadow}_letters.pdf',shadow=shadows),
+        #expand('results/compact_td_images/compact_{shadow}_equations.pdf',shadow=shadows),
         expand('results/latex_equations/{shadow}_latex_equations.pdf',shadow=shadows),
-        expand('results/binaries/{shadow}_folding',shadow=shadows),
+        #expand('results/binaries/{shadow}_folding',shadow=shadows),
+        #expand('results/c_code/{shadow}_folding',shadow=shadows),
         expand('results/concatenations/concatenation_{shadow}.pdf',shadow=shadows),
         'results/state_of_the_results.pdf'
-
 rule state_of_the_results:
     input:
         expand('results/latex_equations/{shadow}_latex_equations.pdf',shadow=shadows)
@@ -30,12 +32,23 @@ rule state_of_the_results:
 
 rule c_compilation:
     input:
-        'results/c_code/{family}_folding.c'
+        'results/c_code/aux.c',
+        'results/c_code/auto_dp.c',
+        expand('results/c_code/{shadow}_folding.c',shadow=shadows)
     output:
-        'results/binaries/{family}_folding'
+        'results/binaries/auto_dp'
     shell:
-        'gcc {input} -o {output}'
+        'gcc {input} -o {output} -lRNA -lm'
 
+rule produce_c_code_aux:
+    input:
+        expand('results/c_code/{shadow}_folding.c', shadow=shadows)  # List of all shadow files
+    output:
+        'results/c_code/auto_dp.c',
+        'results/c_code/aux.c'
+    script:
+        'scripts/write_auto_dp.py'
+  
 rule decomposition_scheme:
     input:
         tdname='results/processed_td_files/processed_{family}.td',
@@ -67,9 +80,11 @@ rule produce_c_code:
         helix='results/helix_annotations/{family}.helix'
     output:
         'results/c_code/{family}_folding.c'
+    params:
+        pseudo='{family}',
+        directory='results/c_code/'
     script:
-        'scripts/produce_c_code.py'
-        
+        'scripts/produce_c_code2_Turner_stack.py'
 
 rule produce_latex_equations:
     input:
@@ -90,6 +105,8 @@ rule extremities_label:
     output:
         'results/json_files/extremities_label_{family}.json'
     run:
+        import sys
+        print(sys.version)
         from autodp.equation_tree import TreeOfEquations
 
         eq_tree = TreeOfEquations()
@@ -288,3 +305,4 @@ rule pdftops:
         'results/colored_dbn/colored_dbn_{family}.ps'
     shell:
         'pdf2ps {input} {output}'
+

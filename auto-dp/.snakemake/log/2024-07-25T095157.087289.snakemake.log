@@ -1,0 +1,152 @@
+Migrating .snakemake folder to new format...
+Migration complete
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+band_diagram                        1
+band_diagram_latextopdf             1
+c_compilation                       1
+colored_dbn                         1
+compact_dottopdf                    3
+compute_td                          1
+concatenation                       1
+decomposition_scheme                1
+dot_process                         1
+extract_compact_tree                1
+extract_compact_tree_letters        1
+extract_elimination_ordering        1
+extract_gr                          1
+extract_helices                     1
+extract_tree_equations              1
+extremities_label                   1
+make_dot_file                       1
+pdflatex_dec                        1
+pdflatex_equations                  1
+process_helices                     1
+produce_latex_equations             1
+state_of_the_results                1
+textopdf                            1
+unprocessed_from_td_to_dot          1
+unprocessed_td                      1
+total                              28
+
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 09:51:57 2024]
+localrule band_diagram:
+    input: resources/dbn_files/C5.dbn
+    output: results/colored_dbn/band_diagram_C5.tex
+    jobid: 16
+    reason: Missing output files: results/colored_dbn/band_diagram_C5.tex
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['band_diagram'] reported to scheduler.
+jobs registered as running before removal {band_diagram}
+[Thu Jul 25 09:51:57 2024]
+Finished job 16.
+1 of 28 steps (4%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 09:51:57 2024]
+localrule extract_gr:
+    input: resources/dbn_files/C5.dbn
+    output: results/gr_files/C5.gr
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Full Traceback (most recent call last):
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile", line 456, in __rule_extract_gr
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 1563, in script
+    executor.evaluate()
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 454, in evaluate
+    self.execute_script(fd.name, edit=edit)
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 697, in execute_script
+    self._execute_cmd(
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 482, in _execute_cmd
+    return shell(
+           ^^^^^^
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpqfok2u2p.dbn_to_gr.py' returned non-zero exit status 1.
+
+Full Traceback (most recent call last):
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile", line 456, in __rule_extract_gr
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 1563, in script
+    executor.evaluate()
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 454, in evaluate
+    self.execute_script(fd.name, edit=edit)
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 697, in execute_script
+    self._execute_cmd(
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/script/__init__.py", line 482, in _execute_cmd
+    return shell(
+           ^^^^^^
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpqfok2u2p.dbn_to_gr.py' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 209:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpqfok2u2p.dbn_to_gr.py' returned non-zero exit status 1.
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 209:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpqfok2u2p.dbn_to_gr.py' returned non-zero exit status 1.
+[Thu Jul 25 09:51:57 2024]
+Error in rule extract_gr:
+    jobid: 3
+    input: resources/dbn_files/C5.dbn
+    output: results/gr_files/C5.gr
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T095157.087289.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/remipoul/snakemake_env/lib/python3.11/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

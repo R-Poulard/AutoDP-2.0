@@ -14,7 +14,7 @@ for helixline in open(snakemake.input.helix).readlines():
     label = helixline.split(' ')[0]
     extremities = [c.replace(' ','') for c in helixline.split('(')[1].split(')')[0].split(',')]
     cluster_extremities[label] = extremities
-    
+print("iciii",open(snakemake.input.tdname).readlines(),open(snakemake.input.helix).readlines())
 dp_tables = compute_dp_table(open(snakemake.input.tdname).readlines(),
                              open(snakemake.input.helix).readlines(), 
                              open(snakemake.output[0],'w'))

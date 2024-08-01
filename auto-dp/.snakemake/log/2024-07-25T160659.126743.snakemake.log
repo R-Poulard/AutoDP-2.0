@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 5:
+Missing input files for rule all:
+    affected files:
+        results/c_code/auto_dp.c
+        results/c_code/C5.c

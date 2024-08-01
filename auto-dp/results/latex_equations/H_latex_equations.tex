@@ -23,8 +23,8 @@
 \end{figure}
 \end{center}
 first and last anchors, already given: $ a , h $
-$$ A =\min_{ c,d,f } \left( B[c,f,d,h]+\colorbox{c1}{$C$}[f,a\mid c,d]\right) $$
+$$ A\left[ a,h \right] =\min_{ c,d,f } \left( B[f,d,h,c]+\colorbox{c1}{$C$}[a,f\mid d,c]\right) $$
 $$ B\left[ c,d,f,h \right] =\min_{ g } \left( \colorbox{c0}{$C_{\boxtimes}$}[c,d,g,h]\right) $$
-$$ \colorbox{c1}{$C$}' \left[f,a \mid  c,d \right] =  \min\begin{cases}\colorbox{c1}{$C$}'[ f+1 , a\mid c,d ], &\text{if } f+1 \notin\{ a , c,d \} \\\end{cases}$$
-$$ \colorbox{c1}{$C$} \left[f,a \mid  c,d \right] =  \min\begin{cases}\colorbox{c1}{$C$}[ f , a-1\mid c,d ], &\text{if } a-1 ,\notin\{ f , c,d \} \\\colorbox{c1}{$C$}'[ f+1 , a\mid c,d ], &\text{if } f+1 \notin\{ a , c,d \} \\\colorbox{c1}{$C$}[ f+1 , a-1\mid c,d ]+\Delta G(f,a) &\text{if } \{ f+1 , a-1 \}\cap \{ c,d \}=\emptyset\end{cases}$$
+$$ \colorbox{c1}{$C$}' \left[a,f \mid  d,c \right] =  \min\begin{cases}\colorbox{c1}{$C$}'[ a , f-1\mid d,c ], &\text{if } f-1 ,\notin\{ a , d,c \} \\\colorbox{c1}{$C$}[ a+1 , f-1\mid d,c ]+\Delta G(a,f) &\text{if } \{ a+1 , f-1 \}\cap \{ d,c \}=\emptyset\end{cases}$$
+$$ \colorbox{c1}{$C$} \left[a,f \mid  d,c \right] =  \min\begin{cases}\colorbox{c1}{$C$}[ a+1 , f\mid d,c ], &\text{if } a+1 \notin\{ f , d,c \} \\\colorbox{c1}{$C$}'[ a , f-1\mid d,c ], &\text{if } f-1 ,\notin\{ a , d,c \} \\\colorbox{c1}{$C$}[ a+1 , f-1\mid d,c ]+\Delta G(a,f) &\text{if } \{ a+1 , f-1 \}\cap \{ d,c \}=\emptyset\end{cases}$$
 \end{document}

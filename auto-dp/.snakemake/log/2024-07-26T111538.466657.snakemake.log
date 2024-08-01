@@ -1,0 +1,58 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+c_compilation                  1
+colored_dbn                    1
+concatenation                  2
+extremities_label              1
+pdflatex_equations             1
+produce_c_code_aux             1
+produce_latex_equations        1
+state_of_the_results           1
+textopdf                       1
+total                         11
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:15:38 2024]
+localrule produce_c_code_aux:
+    input: results/c_code/H_folding.c, results/c_code/K_folding.c
+    output: results/c_code/auto_dp.c, results/c_code/aux.c
+    jobid: 1
+    reason: Updated input files: results/c_code/H_folding.c, results/c_code/K_folding.c
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:15:39 2024]
+Finished job 1.
+1 of 11 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:15:39 2024]
+localrule c_compilation:
+    input: results/c_code/aux.c, results/c_code/auto_dp.c, results/c_code/H_folding.c, results/c_code/K_folding.c
+    output: results/binaries/auto_dp
+    jobid: 12
+    reason: Missing output files: results/binaries/auto_dp; Input files updated by another job: results/c_code/aux.c, results/c_code/auto_dp.c
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:15:39 2024]
+Error in rule c_compilation:
+    jobid: 12
+    input: results/c_code/aux.c, results/c_code/auto_dp.c, results/c_code/H_folding.c, results/c_code/K_folding.c
+    output: results/binaries/auto_dp
+    shell:
+        gcc results/c_code/aux.c results/c_code/auto_dp.c results/c_code/H_folding.c results/c_code/K_folding.c -o results/binaries/auto_dp -lRNA -lm
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-26T111538.466657.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

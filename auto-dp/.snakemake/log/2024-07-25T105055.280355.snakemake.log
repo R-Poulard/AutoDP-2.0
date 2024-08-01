@@ -1,0 +1,54 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+band_diagram_latextopdf             1
+colored_dbn                         1
+compact_dottopdf                    3
+concatenation                       1
+decomposition_scheme                1
+dot_process                         1
+extract_compact_tree                1
+extract_compact_tree_letters        1
+extract_helices                     1
+extract_tree_equations              1
+extremities_label                   1
+make_dot_file                       1
+pdflatex_dec                        1
+pdflatex_equations                  1
+process_helices                     1
+produce_latex_equations             1
+state_of_the_results                1
+textopdf                            1
+total                              21
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 10:50:55 2024]
+localrule extract_helices:
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+    jobid: 4
+    reason: Missing output files: results/helix_annotations/C5.helix
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 217:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpx4s3vn31.annotate_helices.py' returned non-zero exit status 1.
+[Thu Jul 25 10:50:55 2024]
+Error in rule extract_helices:
+    jobid: 4
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T105055.280355.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

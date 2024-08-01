@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in rule c_compilation in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 33:
+Wildcards in input files cannot be determined from output files: (rule c_compilation, line 55, /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile)
+'shadow'

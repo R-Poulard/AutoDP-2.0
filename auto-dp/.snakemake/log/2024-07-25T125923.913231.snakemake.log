@@ -1,0 +1,70 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+concatenation                  1
+pdflatex_equations             1
+produce_latex_equations        1
+state_of_the_results           1
+total                          5
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:59:24 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/latex_equations/C5_latex_equations.tex
+    jobid: 16
+    reason: Missing output files: results/latex_equations/C5_latex_equations.tex; Updated input files: results/processed_td_files/processed_C5.td, results/colored_dbn/colored_dbn_C5.pdf, results/helix_annotations/C5.helix
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:59:24 2024]
+Finished job 16.
+1 of 5 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:59:24 2024]
+localrule pdflatex_equations:
+    input: results/latex_equations/C5_latex_equations.tex
+    output: results/latex_equations/C5_latex_equations.pdf
+    jobid: 15
+    reason: Input files updated by another job: results/latex_equations/C5_latex_equations.tex
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:59:24 2024]
+Finished job 15.
+2 of 5 steps (40%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:59:24 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/td_images/processed_C5.pdf, results/compact_td_images/compact_C5.pdf, results/latex_equations/C5_latex_equations.pdf
+    output: results/concatenations/concatenation_C5.pdf
+    jobid: 18
+    reason: Input files updated by another job: results/latex_equations/C5_latex_equations.pdf
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:59:24 2024]
+Error in rule concatenation:
+    jobid: 18
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/td_images/processed_C5.pdf, results/compact_td_images/compact_C5.pdf, results/latex_equations/C5_latex_equations.pdf
+    output: results/concatenations/concatenation_C5.pdf
+    shell:
+        pdftk results/colored_dbn/colored_dbn_C5.pdf results/latex_equations/C5_latex_equations.pdf results/td_images/processed_C5.pdf results/compact_td_images/compact_C5.pdf cat output results/concatenations/concatenation_C5.pdf
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T125923.913231.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

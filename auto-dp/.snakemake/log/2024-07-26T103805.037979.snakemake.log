@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule c_compilation in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 33:
+Missing input files for rule c_compilation:
+    output: results/binaries/auto_dp
+    affected files:
+        results/c_code/aux.c

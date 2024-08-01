@@ -6,9 +6,9 @@ import sys
 sys.setrecursionlimit(10000)
 
 # retrieve graph
-inter_helix_gap=True
+inter_helix_gap=snakemake.config["inter_helix_gap"]
 underlying_graph = MinimalExpansion()
-dbn = open("resources/dbn_files/K5.dbn").readlines()[0].rstrip('\n')
+dbn = open(snakemake.input.dbn).readlines()[0].rstrip('\n')
 underlying_graph.from_str(dbn, inter_helix_gap=inter_helix_gap)
 
 print(underlying_graph.helices)
@@ -17,7 +17,7 @@ print(underlying_graph.helices)
 tree_dec = TreeDecomposition()
 tree_dec.set_graph(underlying_graph)
 
-tree_dec.read_from_file("results/td_files/K5.td")
+tree_dec.read_from_file(snakemake.input.tdname)
 
 # preprocessing for faster computations later on.
 tree_dec.fill_vertices_below()
@@ -28,8 +28,8 @@ vert_above = tree_dec.vertices_above
 
 width = max([len(val) for key, val in tree_dec.bag_content.items()])-1
 
-# helix processing (for loop over helices).
-for hline in open("results/helix_annotations/K5.helix").readlines():
+# helix processing
+for hline in open(snakemake.input.helix).readlines():
 
     processed = False
 
@@ -37,8 +37,8 @@ for hline in open("results/helix_annotations/K5.helix").readlines():
     helixname = hline.split(' ')[0]
     print("helix ", hline)
 
-    i = int(extremities[0])    # (((((....)))))
-    ip = int(extremities[1])   # i   ip   jp  j
+    i = int(extremities[0]) 
+    ip = int(extremities[1])
     jp = int(extremities[2])
     j = int(extremities[3])
 
@@ -167,7 +167,7 @@ tree_dec.contract_identical_bags()
 
 
 # writing output (finally)
-f = open("results/processed_td_files/processed_K5.td",'w')
+f = open(snakemake.output[0],'w')
 
 # header line
 tree_dec.pick_root()

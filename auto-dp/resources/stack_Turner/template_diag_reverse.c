@@ -1,14 +1,14 @@
-int get_MAINNAME0(HashTable *hashTable,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
+PRIVATE int get_MAINNAME0(pk_compound* pk,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
     int MAINNAME1 = INT_VALUE_NAME;
     int tab[]={MAINNAME1,V1-1,V2+1,CONST};
     int size = SIZE_ARRAY;
 
-    if(V1<0 || V2<0 || V2>=MAX || V1>=MAX || V1>V2){
-        *value=INT_MAX;
+    if(V1<-1 || V2<-1 || V2>=pk->MAX || V1>=pk->MAX || V1>V2){
+        *value=INF;
         return 1;
     }   
-    if (get(hashTable,tab,size,value)){
-        *value=add(INTB(V1,V2,-1,-1),*value);
+    if (get(pk->hashtable,tab,size,value)){
+        *value=add(INTB(pk,V1,V2,-1,-1),*value);
         return 1;
     }
     else{
@@ -26,16 +26,16 @@ int get_MAINNAME0(HashTable *hashTable,Node** first,Node** last,int * value,int 
     }
 }
 
-int get_MAINNAME1(HashTable *hashTable,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
+PRIVATE int get_MAINNAME1(pk_compound *pk,Node** first,Node** last,int * value,int V1, int V2, CONST_INT){
     int MAINNAME1 = INT_VALUE_NAME;
     int tab[]={MAINNAME1,V1,V2,CONST};
     int size = SIZE_ARRAY;
 
-    if(V1<-1 || V2<-1 || V2>=MAX || V1>=MAX || V1>V2){
-        *value=INT_MAX;
+    if(V1<-1 || V2<-1 || V2>=pk->MAX || V1>=pk->MAX || V1>V2){
+        *value=INF;
         return 1;
     }  
-    if (get(hashTable,tab,size,value)){
+    if (get(pk->hashtable,tab,size,value)){
         //printf("value=>%d \n",*value);
         return 1;
     }
@@ -54,39 +54,37 @@ int get_MAINNAME1(HashTable *hashTable,Node** first,Node** last,int * value,int 
     }
 }
 
-int compute_MAINNAME1(HashTable *hashTable,Node** first,Node** last,int V1, int V2, CONST_INT) {
+PRIVATE int compute_MAINNAME1(pk_compound *pk,Node** first,Node** last,int V1, int V2, CONST_INT) {
     int MAINNAME1 = INT_VALUE_NAME;
     int tab[]={MAINNAME1,V1,V2,CONST};
     int size = SIZE_ARRAY;
     int value;
-    
-    if(V1<-1 || V2<-1 || V2>=MAX || V1>=MAX || V1>V2){
-        *value=INT_MAX;
+    if(V1<-1 || V2<-1 || V2>=pk->MAX || V1>=pk->MAX || V1>V2){
         return 1;
     } 
-    if (get(hashTable,tab,size,&value)){
+    if (get(pk->hashtable,tab,size,&value)){
         return 1;
     }
     int possible=1;
-    int min_value=INT_MAX;
+    int min_value=INF;
     CONST_SUM
     CHILDREN_SUM
+    if(possible==1){
     min_value=add(CHILDREN_MAX,CONST_MAX);
-
+    }
     
     loop:
     for(int tmp1=max(0,BOUNDIADJI);tmp1<=V1;tmp1++){
         for(int tmp2=V2;tmp2<=min(MAX-1,BOUNDJADJJ);tmp2++){
-            if(evaluate(tmp1,tmp2) && tmp1-tmp2+1<=THETA){
-                int tmp3=INTB(V1,V2,tmp1,tmp2);
+            if(evaluate(pk,tmp1,tmp2)){
+                int tmp3=INTB(pk,V1,V2,tmp1,tmp2);
 
-                if(tmp3!=INT_MAX){
+                if(tmp3!=INF){
                     int tmp;
-                    if(get_MAINNAME1(hashTable,first,last,&tmp,tmp1-1,tmp2+1,CONST)==0){
+                    if(get_MAINNAME1(pk,first,last,&tmp,tmp1-1,tmp2+1,CONST)==0){
                         possible=0;
                     }
                     if(possible==1){
-                        //printf("C1 res= %d",tmp);
                         min_value=min(min_value, add(tmp,tmp3));
                     }
                 }
@@ -94,7 +92,7 @@ int compute_MAINNAME1(HashTable *hashTable,Node** first,Node** last,int V1, int 
         }    
     }
     if(possible==1){
-        insert(hashTable,tab,size,min_value);
+        insert(pk->hashtable,tab,size,min_value);
     }
     return possible;
 }

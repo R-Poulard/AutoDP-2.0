@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+all                       1
+produce_c_code_aux        1
+total                     2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 17:18:11 2024]
+localrule produce_c_code_aux:
+    input: results/c_code/C5_folding.c
+    output: results/c_code/auto_dp.c
+    jobid: 1
+    reason: Missing output files: results/c_code/auto_dp.c
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 46:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpb5vqn5_t.write_auto_dp.py' returned non-zero exit status 1.
+[Thu Jul 25 17:18:11 2024]
+Error in rule produce_c_code_aux:
+    jobid: 1
+    input: results/c_code/C5_folding.c
+    output: results/c_code/auto_dp.c
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T171811.256852.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

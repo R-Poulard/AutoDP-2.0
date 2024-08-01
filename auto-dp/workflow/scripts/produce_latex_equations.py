@@ -214,7 +214,7 @@ for prev,u in tree_dec.dfs_edge_iterator(no_minus_one=False):
 
         equation = tree_dec.equations[u]
 
-        indices = [tree_dec.ext_to_letter[e] for e in sorted(list(equation.indices),key=lambda x: int(x))]
+        indices = [tree_dec.ext_to_letter[e] for e in sorted(list(equation.indices),key=lambda x: int(x)) if e in tree_dec.ext_to_letter]
         new_vars = [tree_dec.ext_to_letter[e] for e in sorted(list(equation.marginalization),key=lambda x: int(x)) if e not in [first_anchor, last_anchor]]
 
         if len(indices)==0:

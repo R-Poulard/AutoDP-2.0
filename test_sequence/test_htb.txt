@@ -1,7 +1,15 @@
-#>PKB109
 UUGUGGUGCAUACAAUAAUGCAUA
 ........................
 0
+UUGUGGUGCAUACAAUAAUGCAUAUUGUGGUGCAUACAAUAAUGCAUA
+................................................
+0
 AAAAAAAAAAAAAAAAAAAAAAAA
 ........................
+0
+UGCAGCGACCCAGGAGGUCCCGG
+...........x..x........
+0
+AACUAUCGAACUUCAAGAUACCUGAGCAUCAACGUGUCCGACAUUCGCGGAACACGUAUAGAAGACUGGCCCGCAA
+............................................................................
 0

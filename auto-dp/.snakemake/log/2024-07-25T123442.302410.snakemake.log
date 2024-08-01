@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+colored_dbn                         1
+compact_dottopdf                    3
+concatenation                       1
+decomposition_scheme                1
+dot_process                         1
+extract_compact_tree                1
+extract_compact_tree_letters        1
+extract_tree_equations              1
+extremities_label                   1
+make_dot_file                       1
+pdflatex_dec                        1
+pdflatex_equations                  1
+produce_latex_equations             1
+state_of_the_results                1
+textopdf                            1
+total                              18
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:34:42 2024]
+localrule decomposition_scheme:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/decomposition_schemes/decomposition_C5.tex
+    jobid: 9
+    reason: Missing output files: results/decomposition_schemes/decomposition_C5.tex
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 46:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpyfbnpf9a.display_decomposition_scheme.py' returned non-zero exit status 1.
+[Thu Jul 25 12:34:42 2024]
+Error in rule decomposition_scheme:
+    jobid: 9
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/decomposition_schemes/decomposition_C5.tex
+
+Removing output files of failed job decomposition_scheme since they might be corrupted:
+results/decomposition_schemes/decomposition_C5.tex
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T123442.302410.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

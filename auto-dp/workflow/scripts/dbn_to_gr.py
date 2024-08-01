@@ -1,16 +1,14 @@
 from autodp.minimal_expansion import MinimalExpansion
 
 # setting options
-inter_helix_gap = True # a Boolean stating whether
-                                                      # helices share extremities
-                                                      # or not
+inter_helix_gap = snakemake.config["inter_helix_gap"]
 overarching = True # overarching 1 <--> n (extremities) arc.
 
 # object init
 minimal_expansion = MinimalExpansion()
 
 # retrieve input
-dbn = open('resources/dbn_files/K5.dbn').readlines()[0].rstrip('\n')
+dbn = open(snakemake.input[0]).readlines()[0].rstrip('\n')
 
 # converting to graph of minimal expansion
 minimal_expansion.from_str(dbn, 
@@ -18,4 +16,4 @@ minimal_expansion.from_str(dbn,
                            overarching=overarching)
 
 # dumping to file
-minimal_expansion.dump_to_gr("results/gr_files/K5.gr")
+minimal_expansion.dump_to_gr(snakemake.output[0])

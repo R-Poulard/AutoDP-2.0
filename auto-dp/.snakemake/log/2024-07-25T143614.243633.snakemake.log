@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+c_compilation         1
+produce_c_code        1
+total                 3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 14:36:14 2024]
+localrule produce_c_code:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/c_code/C5_folding.c
+    jobid: 18
+    reason: Missing output files: results/c_code/C5_folding.c; Updated input files: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 71:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmp9_8h9hmh.produce_c_code.py' returned non-zero exit status 1.
+[Thu Jul 25 14:36:14 2024]
+Error in rule produce_c_code:
+    jobid: 18
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/c_code/C5_folding.c
+
+Removing output files of failed job produce_c_code since they might be corrupted:
+results/c_code/C5_folding.c
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T143614.243633.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

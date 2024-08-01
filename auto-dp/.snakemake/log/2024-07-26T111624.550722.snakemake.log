@@ -1,0 +1,180 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+c_compilation                  1
+colored_dbn                    1
+concatenation                  2
+extremities_label              1
+pdflatex_equations             1
+produce_c_code_aux             1
+produce_latex_equations        1
+state_of_the_results           1
+textopdf                       1
+total                         11
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:24 2024]
+localrule produce_c_code_aux:
+    input: results/c_code/H_folding.c, results/c_code/K_folding.c
+    output: results/c_code/auto_dp.c, results/c_code/aux.c
+    jobid: 1
+    reason: Updated input files: results/c_code/K_folding.c
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:25 2024]
+Finished job 1.
+1 of 11 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:25 2024]
+localrule c_compilation:
+    input: results/c_code/aux.c, results/c_code/auto_dp.c, results/c_code/H_folding.c, results/c_code/K_folding.c
+    output: results/binaries/auto_dp
+    jobid: 12
+    reason: Missing output files: results/binaries/auto_dp; Input files updated by another job: results/c_code/aux.c, results/c_code/auto_dp.c
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:25 2024]
+Finished job 12.
+2 of 11 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:25 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_H.pdf, results/td_images/processed_H.pdf, results/compact_td_images/compact_H.pdf, results/latex_equations/H_latex_equations.pdf
+    output: results/concatenations/concatenation_H.pdf
+    jobid: 37
+    reason: Updated input files: results/td_images/processed_H.pdf, results/compact_td_images/compact_H.pdf
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:26 2024]
+Finished job 37.
+3 of 11 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:26 2024]
+localrule extremities_label:
+    input: results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    output: results/json_files/extremities_label_K.json
+    jobid: 28
+    reason: Updated input files: results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:27 2024]
+Finished job 28.
+4 of 11 steps (36%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:27 2024]
+localrule colored_dbn:
+    input: resources/dbn_files/K.dbn, results/helix_annotations/K.helix, results/json_files/extremities_label_K.json
+    output: results/colored_dbn/colored_dbn_K.tex
+    jobid: 27
+    reason: Input files updated by another job: results/json_files/extremities_label_K.json
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:28 2024]
+Finished job 27.
+5 of 11 steps (45%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:28 2024]
+localrule textopdf:
+    input: results/colored_dbn/colored_dbn_K.tex
+    output: results/colored_dbn/colored_dbn_K.pdf
+    jobid: 26
+    reason: Input files updated by another job: results/colored_dbn/colored_dbn_K.tex
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:29 2024]
+Finished job 26.
+6 of 11 steps (55%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:29 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_K.pdf, results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    output: results/latex_equations/K_latex_equations.tex
+    jobid: 36
+    reason: Input files updated by another job: results/colored_dbn/colored_dbn_K.pdf
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:29 2024]
+Finished job 36.
+7 of 11 steps (64%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:29 2024]
+localrule pdflatex_equations:
+    input: results/latex_equations/K_latex_equations.tex
+    output: results/latex_equations/K_latex_equations.pdf
+    jobid: 35
+    reason: Input files updated by another job: results/latex_equations/K_latex_equations.tex
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:30 2024]
+Finished job 35.
+8 of 11 steps (73%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:30 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_K.pdf, results/td_images/processed_K.pdf, results/compact_td_images/compact_K.pdf, results/latex_equations/K_latex_equations.pdf
+    output: results/concatenations/concatenation_K.pdf
+    jobid: 40
+    reason: Input files updated by another job: results/latex_equations/K_latex_equations.pdf, results/colored_dbn/colored_dbn_K.pdf
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:31 2024]
+Finished job 40.
+9 of 11 steps (82%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:31 2024]
+localrule state_of_the_results:
+    input: results/latex_equations/H_latex_equations.pdf, results/latex_equations/K_latex_equations.pdf
+    output: results/state_of_the_results.pdf
+    jobid: 43
+    reason: Input files updated by another job: results/latex_equations/K_latex_equations.pdf
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:32 2024]
+Finished job 43.
+10 of 11 steps (91%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 11:16:32 2024]
+localrule all:
+    input: results/c_code/auto_dp.c, results/binaries/auto_dp, results/processed_td_files/processed_H.td, results/processed_td_files/processed_K.td, results/td_files/H.td, results/td_files/K.td, results/elim_order/H.order, results/elim_order/K.order, results/td_images/processed_H.pdf, results/td_images/processed_K.pdf, results/td_images/unprocessed_H.pdf, results/td_images/unprocessed_K.pdf, results/colored_dbn/colored_dbn_H.pdf, results/colored_dbn/colored_dbn_K.pdf, results/colored_dbn/band_diagram_H.pdf, results/colored_dbn/band_diagram_K.pdf, results/latex_equations/H_latex_equations.pdf, results/latex_equations/K_latex_equations.pdf, results/concatenations/concatenation_H.pdf, results/concatenations/concatenation_K.pdf, results/state_of_the_results.pdf
+    jobid: 0
+    reason: Input files updated by another job: results/state_of_the_results.pdf, results/concatenations/concatenation_K.pdf, results/latex_equations/K_latex_equations.pdf, results/concatenations/concatenation_H.pdf, results/binaries/auto_dp, results/colored_dbn/colored_dbn_K.pdf, results/c_code/auto_dp.c
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 11:16:32 2024]
+Finished job 0.
+11 of 11 steps (100%) done
+Complete log: .snakemake/log/2024-07-26T111624.550722.snakemake.log

@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+c_compilation        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul 31 11:44:54 2024]
+localrule c_compilation:
+    input: results/c_code/aux.c, results/c_code/auto_dp.c, results/c_code/H_folding.c
+    output: results/binaries/auto_dp
+    jobid: 7
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Wed Jul 31 11:44:55 2024]
+Finished job 7.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul 31 11:44:55 2024]
+localrule all:
+    input: results/c_code/auto_dp.c, results/binaries/auto_dp, results/processed_td_files/processed_H.td, results/td_files/H.td, results/elim_order/H.order, results/td_images/processed_H.pdf, results/td_images/unprocessed_H.pdf, results/colored_dbn/colored_dbn_H.pdf, results/colored_dbn/band_diagram_H.pdf, results/latex_equations/H_latex_equations.pdf, results/concatenations/concatenation_H.pdf, results/state_of_the_results.pdf
+    jobid: 0
+    reason: Input files updated by another job: results/binaries/auto_dp
+    resources: tmpdir=/tmp
+
+[Wed Jul 31 11:44:55 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-07-31T114453.935080.snakemake.log

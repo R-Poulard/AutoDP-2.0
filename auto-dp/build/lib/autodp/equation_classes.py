@@ -198,8 +198,8 @@ class CliqueCaseHelix(CommonEquationFeatures):
             if e not in letter_table.keys():
                 letter_table[e] = ext_to_letter[e]
         mask=["","-1","","-1"]
-        args=[letter_table[e] for e in self.indices]
-        for i in range(len(mask)):
+        args=[letter_table[e]+i for i in mask for e in self.indices]
+        for i in len(mask):
             args[i]=args[i]+mask[i]
         return "compute_CLIQUE2("+','.join(args)+')'
     
@@ -276,12 +276,7 @@ class DiagCaseHelix(CommonEquationFeatures):
         for e in self.sorted_indices():
             if e not in letter_table.keys():
                 letter_table[e] = ext_to_letter[e]
-        
-        mask=["","-1"]+[""]*(len(self.sorted_indices())-2)
-        args=[letter_table[e] for e in self.sorted_indices()]
-        for i in range(len(mask)):
-            args[i]=args[i]+mask[i]
-        return "compute_"+self.main_name+'2('+','.join(args)+')'
+        return "compute_"+self.main_name+'('+','.join([letter_table[e] for e in self.sorted_indices()])+')'
 
     def latex_print(self, letter_table, ext_to_letter):
 

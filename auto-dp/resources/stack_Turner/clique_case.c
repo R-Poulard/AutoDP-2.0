@@ -1,11 +1,11 @@
 
-int get_CLIQUE0(pk_compound* pk,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
+PRIVATE int get_CLIQUE0(pk_compound* pk,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
     int CLIQUE=1;
     int tab[] = {CLIQUE,i+1,i2,j2,j-1};
     int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
-        *value=INT_MAX;
+        *value=INF;
         return 1;
     }
     if (get(pk->hashtable,tab,size,value)){
@@ -27,13 +27,13 @@ int get_CLIQUE0(pk_compound* pk,Node** first,Node** last,int * value,int i, int 
     return 0;
 }
 
-int get_CLIQUE1(pk_compound* pk,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
+PRIVATE int get_CLIQUE1(pk_compound* pk,Node** first,Node** last,int * value,int i, int i2, int j2, int j){
     int CLIQUE=1;
     int tab[] = {CLIQUE,i,i2,j2,j};
     int size= 5;
 
    if(i2>=j2 || i2<i-1 || j2>j+1){
-        *value=INT_MAX;
+        *value=INF;
         return 1;
     }
     if (get(pk->hashtable,tab,size,value)){
@@ -53,7 +53,7 @@ int get_CLIQUE1(pk_compound* pk,Node** first,Node** last,int * value,int i, int 
 }
 
 
-int compute_CLIQUE1(pk_compound* pk,Node** first,Node** last,int i, int i2, int j2, int j) {
+PRIVATE int compute_CLIQUE1(pk_compound* pk,Node** first,Node** last,int i, int i2, int j2, int j) {
     int CLIQUE=1;
     int value;
     int tab[] = {CLIQUE,i,i2,j2,j};
@@ -74,9 +74,9 @@ int compute_CLIQUE1(pk_compound* pk,Node** first,Node** last,int i, int i2, int 
     }
     for(int k=i;k<=i2;k++){
         for(int l=max(j2,k+1);l<=j;l++){
-            if(evaluate(pk,k,l) && l-k+1<=pk->THETA && (k<i2 || l==j2)){
+            if(evaluate(pk,k,l) && (k<i2 || l==j2)){
                 tmp=INTB(pk,k,l,i,j);
-                if(tmp!=INT_MAX){
+                if(tmp!=INF){
                     int tmp2;
                     if(get_CLIQUE1(pk,first,last,&tmp2,k+1,i2,j2,l-1)==0){
                         possible=0;

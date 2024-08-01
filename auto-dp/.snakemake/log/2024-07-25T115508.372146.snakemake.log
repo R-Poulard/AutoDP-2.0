@@ -1,0 +1,54 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+colored_dbn                         1
+compact_dottopdf                    3
+concatenation                       1
+decomposition_scheme                1
+dot_process                         1
+extract_compact_tree                1
+extract_compact_tree_letters        1
+extract_tree_equations              1
+extremities_label                   1
+make_dot_file                       1
+pdflatex_dec                        1
+pdflatex_equations                  1
+process_helices                     1
+produce_latex_equations             1
+state_of_the_results                1
+textopdf                            1
+total                              19
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 11:55:08 2024]
+localrule process_helices:
+    input: resources/dbn_files/C5.dbn, results/td_files/C5.td, results/helix_annotations/C5.helix
+    output: results/processed_td_files/processed_C5.td
+    log: results/processed_td_files/exec_logs/C5_processing.log
+    jobid: 1
+    reason: Missing output files: results/processed_td_files/processed_C5.td; Updated input files: results/helix_annotations/C5.helix
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 230:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpecwvnx6j.process_helices.py' returned non-zero exit status 1.
+[Thu Jul 25 11:55:08 2024]
+Error in rule process_helices:
+    jobid: 1
+    input: resources/dbn_files/C5.dbn, results/td_files/C5.td, results/helix_annotations/C5.helix
+    output: results/processed_td_files/processed_C5.td
+    log: results/processed_td_files/exec_logs/C5_processing.log (check log file(s) for error details)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T115508.372146.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -240,6 +240,7 @@ def compute_dp_table(td_lines, helix_lines, f):
                                 clique_childs_letters[child_table] = child_letters
                             else:
                             # normal table below
+                                print(local_index_label,child_indices)
                                 normal_childs.append(child_table)
                                 child_letters = [local_index_label[i] for i in child_indices]
                                 normal_child_letters[child_table] = child_letters

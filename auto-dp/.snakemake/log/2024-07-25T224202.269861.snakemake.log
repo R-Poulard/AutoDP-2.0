@@ -1,0 +1,375 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+band_diagram                        1
+band_diagram_latextopdf             1
+colored_dbn                         1
+compact_dottopdf                    1
+compute_td                          1
+concatenation                       1
+dot_process                         1
+extract_compact_tree                1
+extract_elimination_ordering        1
+extract_gr                          1
+extract_helices                     1
+extremities_label                   1
+make_dot_file                       1
+pdflatex_equations                  1
+process_helices                     1
+produce_c_code                      1
+produce_c_code_aux                  1
+produce_latex_equations             1
+state_of_the_results                1
+textopdf                            1
+unprocessed_from_td_to_dot          1
+unprocessed_td                      1
+total                              23
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:02 2024]
+localrule extract_helices:
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+    jobid: 6
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:02 2024]
+Finished job 6.
+1 of 23 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:02 2024]
+localrule band_diagram:
+    input: resources/dbn_files/C5.dbn
+    output: results/colored_dbn/band_diagram_C5.tex
+    jobid: 16
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:02 2024]
+Finished job 16.
+2 of 23 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:02 2024]
+localrule extract_gr:
+    input: resources/dbn_files/C5.dbn
+    output: results/gr_files/C5.gr
+    jobid: 5
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:03 2024]
+Finished job 5.
+3 of 23 steps (13%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:03 2024]
+localrule compute_td:
+    input: results/gr_files/C5.gr
+    output: results/td_files/C5.td
+    jobid: 4
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:05 2024]
+Finished job 4.
+4 of 23 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:05 2024]
+localrule band_diagram_latextopdf:
+    input: results/colored_dbn/band_diagram_C5.tex
+    output: results/colored_dbn/band_diagram_C5.pdf
+    jobid: 15
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:05 2024]
+Finished job 15.
+5 of 23 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:05 2024]
+localrule extract_elimination_ordering:
+    input: results/td_files/C5.td
+    output: results/elim_order/C5.order
+    jobid: 7
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:06 2024]
+Finished job 7.
+6 of 23 steps (26%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:06 2024]
+localrule unprocessed_from_td_to_dot:
+    input: results/td_files/C5.td
+    output: results/dot_files/unprocessed_C5.td1.dot
+    jobid: 11
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:06 2024]
+Finished job 11.
+7 of 23 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:06 2024]
+localrule unprocessed_td:
+    input: results/dot_files/unprocessed_C5.td1.dot
+    output: results/td_images/unprocessed_C5.pdf
+    jobid: 10
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:06 2024]
+Finished job 10.
+8 of 23 steps (35%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:06 2024]
+localrule process_helices:
+    input: resources/dbn_files/C5.dbn, results/td_files/C5.td, results/helix_annotations/C5.helix
+    output: results/processed_td_files/processed_C5.td
+    log: results/processed_td_files/exec_logs/C5_processing.log
+    jobid: 3
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:06 2024]
+Finished job 3.
+9 of 23 steps (39%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:06 2024]
+localrule extract_compact_tree:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/compact_dot_files/compact_C5.dot
+    jobid: 21
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:07 2024]
+Finished job 21.
+10 of 23 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:07 2024]
+localrule produce_c_code:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/c_code/C5_folding.c
+    jobid: 2
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:07 2024]
+Finished job 2.
+11 of 23 steps (48%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:07 2024]
+localrule produce_c_code_aux:
+    input: results/c_code/C5_folding.c
+    output: results/c_code/auto_dp.c
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:07 2024]
+Finished job 1.
+12 of 23 steps (52%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:07 2024]
+localrule make_dot_file:
+    input: resources/dbn_files/C5.dbn, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/dot_files/processed_C5.dot
+    jobid: 9
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:07 2024]
+Finished job 9.
+13 of 23 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:08 2024]
+localrule dot_process:
+    input: results/dot_files/processed_C5.dot
+    output: results/td_images/processed_C5.pdf
+    jobid: 8
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:08 2024]
+Finished job 8.
+14 of 23 steps (61%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:08 2024]
+localrule compact_dottopdf:
+    input: results/compact_dot_files/compact_C5.dot
+    output: results/compact_td_images/compact_C5.pdf
+    jobid: 20
+    reason: Forced execution
+    wildcards: file=compact_C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:08 2024]
+Finished job 20.
+15 of 23 steps (65%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:08 2024]
+localrule extremities_label:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/json_files/extremities_label_C5.json
+    jobid: 14
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:09 2024]
+Finished job 14.
+16 of 23 steps (70%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:09 2024]
+localrule colored_dbn:
+    input: resources/dbn_files/C5.dbn, results/helix_annotations/C5.helix, results/json_files/extremities_label_C5.json
+    output: results/colored_dbn/colored_dbn_C5.tex
+    jobid: 13
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:09 2024]
+Finished job 13.
+17 of 23 steps (74%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:09 2024]
+localrule textopdf:
+    input: results/colored_dbn/colored_dbn_C5.tex
+    output: results/colored_dbn/colored_dbn_C5.pdf
+    jobid: 12
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:11 2024]
+Finished job 12.
+18 of 23 steps (78%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:11 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/latex_equations/C5_latex_equations.tex
+    jobid: 18
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:11 2024]
+Finished job 18.
+19 of 23 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:11 2024]
+localrule pdflatex_equations:
+    input: results/latex_equations/C5_latex_equations.tex
+    output: results/latex_equations/C5_latex_equations.pdf
+    jobid: 17
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:12 2024]
+Finished job 17.
+20 of 23 steps (87%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:12 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/td_images/processed_C5.pdf, results/compact_td_images/compact_C5.pdf, results/latex_equations/C5_latex_equations.pdf
+    output: results/concatenations/concatenation_C5.pdf
+    jobid: 19
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:12 2024]
+Finished job 19.
+21 of 23 steps (91%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:12 2024]
+localrule state_of_the_results:
+    input: results/latex_equations/C5_latex_equations.pdf
+    output: results/state_of_the_results.pdf
+    jobid: 22
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:13 2024]
+Finished job 22.
+22 of 23 steps (96%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 22:42:13 2024]
+localrule all:
+    input: results/c_code/auto_dp.c, results/processed_td_files/processed_C5.td, results/td_files/C5.td, results/elim_order/C5.order, results/td_images/processed_C5.pdf, results/td_images/unprocessed_C5.pdf, results/colored_dbn/colored_dbn_C5.pdf, results/colored_dbn/band_diagram_C5.pdf, results/latex_equations/C5_latex_equations.pdf, results/binaries/C5_folding, results/concatenations/concatenation_C5.pdf, results/state_of_the_results.pdf
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 22:42:13 2024]
+Finished job 0.
+23 of 23 steps (100%) done
+Complete log: .snakemake/log/2024-07-25T224202.269861.snakemake.log

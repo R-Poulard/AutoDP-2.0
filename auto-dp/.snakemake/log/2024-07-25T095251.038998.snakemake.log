@@ -1,0 +1,118 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+band_diagram_latextopdf             1
+c_compilation                       1
+colored_dbn                         1
+compact_dottopdf                    3
+concatenation                       1
+decomposition_scheme                1
+dot_process                         1
+extract_compact_tree                1
+extract_compact_tree_letters        1
+extract_elimination_ordering        1
+extract_helices                     1
+extract_tree_equations              1
+extremities_label                   1
+make_dot_file                       1
+pdflatex_dec                        1
+pdflatex_equations                  1
+process_helices                     1
+produce_latex_equations             1
+state_of_the_results                1
+textopdf                            1
+unprocessed_from_td_to_dot          1
+unprocessed_td                      1
+total                              25
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 09:52:51 2024]
+localrule c_compilation:
+    input: results/c_code/C5_folding.c
+    output: results/binaries/C5_folding
+    jobid: 25
+    reason: Missing output files: results/binaries/C5_folding
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 09:52:51 2024]
+Finished job 25.
+1 of 25 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 09:52:51 2024]
+localrule unprocessed_from_td_to_dot:
+    input: results/td_files/C5.td
+    output: results/dot_files/unprocessed_C5.td1.dot
+    jobid: 11
+    reason: Code has changed since last execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 09:52:51 2024]
+Finished job 11.
+2 of 25 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 09:52:51 2024]
+localrule unprocessed_td:
+    input: results/dot_files/unprocessed_C5.td1.dot
+    output: results/td_images/unprocessed_C5.pdf
+    jobid: 10
+    reason: Input files updated by another job: results/dot_files/unprocessed_C5.td1.dot
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 09:52:52 2024]
+Finished job 10.
+3 of 25 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 09:52:52 2024]
+localrule extract_elimination_ordering:
+    input: results/td_files/C5.td
+    output: results/elim_order/C5.order
+    jobid: 5
+    reason: Missing output files: results/elim_order/C5.order
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 09:52:52 2024]
+Finished job 5.
+4 of 25 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 09:52:52 2024]
+localrule extract_helices:
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+    jobid: 4
+    reason: Code has changed since last execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 217:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpk7stnpxz.annotate_helices.py' returned non-zero exit status 1.
+[Thu Jul 25 09:52:52 2024]
+Error in rule extract_helices:
+    jobid: 4
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T095251.038998.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

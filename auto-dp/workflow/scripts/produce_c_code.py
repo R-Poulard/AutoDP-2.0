@@ -2,10 +2,10 @@ from autodp.equation_tree import TreeOfEquations, BagType
 
 # extracting bags and tree from td file
 tree_dec = TreeOfEquations()
-tree_dec.read_from_file('results/processed_td_files/processed_C5.td')
+tree_dec.read_from_file(snakemake.input.tdname)
 
 # helices: sets a lot of useful variables
-tree_dec.set_helices(open('results/helix_annotations/C5.helix').readlines())
+tree_dec.set_helices(open(snakemake.input.helix).readlines())
 
 # contraction: 
 tree_dec.contract_to_skeleton()
@@ -65,7 +65,7 @@ print("", file=f)
 root_child = tree_dec.equations[tree_dec.bag_adj['-1'][0]]
 print('int compute_'+root_child.main_name+"();",file=f)
 for u in filtered_bag_list:
-    indices_raw = ['int '+tree_dec.ext_to_letter[v] for v in tree_dec.equations[u].sorted_indices()]
+    indices_raw = ['int '+tree_dec.ext_to_letter[v] for v in tree_dec.equations[u].sorted_indices() if v in tree_dec.ext_to_letter]
     indices = []
     for k, i in enumerate(indices_raw):
         if i in indices_raw[:k]:

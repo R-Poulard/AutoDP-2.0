@@ -1,0 +1,486 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+band_diagram                        1
+band_diagram_latextopdf             1
+colored_dbn                         1
+compact_dottopdf                    1
+compute_td                          1
+concatenation                       1
+dot_process                         1
+extract_compact_tree                1
+extract_elimination_ordering        1
+extract_gr                          1
+extract_helices                     1
+extremities_label                   1
+make_dot_file                       1
+pdflatex_equations                  1
+process_helices                     1
+produce_latex_equations             1
+state_of_the_results                1
+textopdf                            1
+unprocessed_from_td_to_dot          1
+unprocessed_td                      1
+total                              21
+
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:14 2024]
+localrule extract_gr:
+    input: resources/dbn_files/C5.dbn
+    output: results/gr_files/C5.gr
+    jobid: 3
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['extract_gr'] reported to scheduler.
+jobs registered as running before removal {extract_gr}
+[Thu Jul 25 15:18:14 2024]
+Finished job 3.
+1 of 21 steps (5%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:14 2024]
+localrule band_diagram:
+    input: resources/dbn_files/C5.dbn
+    output: results/colored_dbn/band_diagram_C5.tex
+    jobid: 14
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['band_diagram'] reported to scheduler.
+jobs registered as running before removal {band_diagram}
+[Thu Jul 25 15:18:14 2024]
+Finished job 14.
+2 of 21 steps (10%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:14 2024]
+localrule band_diagram_latextopdf:
+    input: results/colored_dbn/band_diagram_C5.tex
+    output: results/colored_dbn/band_diagram_C5.pdf
+    jobid: 13
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['band_diagram_latextopdf'] reported to scheduler.
+jobs registered as running before removal {band_diagram_latextopdf}
+[Thu Jul 25 15:18:15 2024]
+Finished job 13.
+3 of 21 steps (14%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:15 2024]
+localrule extract_helices:
+    input: resources/dbn_files/C5.dbn
+    output: results/helix_annotations/C5.helix
+    jobid: 4
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['extract_helices'] reported to scheduler.
+jobs registered as running before removal {extract_helices}
+[Thu Jul 25 15:18:15 2024]
+Finished job 4.
+4 of 21 steps (19%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:15 2024]
+localrule compute_td:
+    input: results/gr_files/C5.gr
+    output: results/td_files/C5.td
+    jobid: 2
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['compute_td'] reported to scheduler.
+jobs registered as running before removal {compute_td}
+[Thu Jul 25 15:18:18 2024]
+Finished job 2.
+5 of 21 steps (24%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:18 2024]
+localrule unprocessed_from_td_to_dot:
+    input: results/td_files/C5.td
+    output: results/dot_files/unprocessed_C5.td1.dot
+    jobid: 9
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['unprocessed_from_td_to_dot'] reported to scheduler.
+jobs registered as running before removal {unprocessed_from_td_to_dot}
+[Thu Jul 25 15:18:18 2024]
+Finished job 9.
+6 of 21 steps (29%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:18 2024]
+localrule extract_elimination_ordering:
+    input: results/td_files/C5.td
+    output: results/elim_order/C5.order
+    jobid: 5
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['extract_elimination_ordering'] reported to scheduler.
+jobs registered as running before removal {extract_elimination_ordering}
+[Thu Jul 25 15:18:18 2024]
+Finished job 5.
+7 of 21 steps (33%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:18 2024]
+localrule unprocessed_td:
+    input: results/dot_files/unprocessed_C5.td1.dot
+    output: results/td_images/unprocessed_C5.pdf
+    jobid: 8
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['unprocessed_td'] reported to scheduler.
+jobs registered as running before removal {unprocessed_td}
+[Thu Jul 25 15:18:18 2024]
+Finished job 8.
+8 of 21 steps (38%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:18 2024]
+localrule process_helices:
+    input: resources/dbn_files/C5.dbn, results/td_files/C5.td, results/helix_annotations/C5.helix
+    output: results/processed_td_files/processed_C5.td
+    log: results/processed_td_files/exec_logs/C5_processing.log
+    jobid: 1
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['process_helices'] reported to scheduler.
+jobs registered as running before removal {process_helices}
+[Thu Jul 25 15:18:19 2024]
+Finished job 1.
+9 of 21 steps (43%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:19 2024]
+localrule extract_compact_tree:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/compact_dot_files/compact_C5.dot
+    jobid: 19
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['extract_compact_tree'] reported to scheduler.
+jobs registered as running before removal {extract_compact_tree}
+[Thu Jul 25 15:18:19 2024]
+Finished job 19.
+10 of 21 steps (48%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:19 2024]
+localrule compact_dottopdf:
+    input: results/compact_dot_files/compact_C5.dot
+    output: results/compact_td_images/compact_C5.pdf
+    jobid: 18
+    reason: Forced execution
+    wildcards: file=compact_C5
+    resources: tmpdir=/tmp
+
+Completion of job ['compact_dottopdf'] reported to scheduler.
+jobs registered as running before removal {compact_dottopdf}
+[Thu Jul 25 15:18:19 2024]
+Finished job 18.
+11 of 21 steps (52%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:19 2024]
+localrule extremities_label:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/json_files/extremities_label_C5.json
+    jobid: 12
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+General args: ['--force', '--target-files-omit-workdir-adjustment', '--keep-storage-local-copies', '--max-inventory-time 0', '--nocolor', '--notemp', '--no-hooks', '--nolock', '--ignore-incomplete', '', '--verbose ', '--rerun-triggers params mtime input code software-env', '', '', '', '--conda-frontend mamba', '', '', '', '', '', '--shared-fs-usage source-cache persistence sources storage-local-copies software-deployment input-output', '', '--wrapper-prefix https://github.com/snakemake/snakemake-wrappers/raw/', '', '', '', '', '', '', '--latency-wait 5', '--scheduler ilp', '--local-storage-prefix .snakemake/storage', '--scheduler-solver-path /home/remipoul/snakemake_env/bin', '', '', '', '', '', '--default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI=']
+spawned job: cd /home/remipoul/LIX_WORK/pwb/auto-dp && /home/remipoul/snakemake_env/bin/python3.11 -m snakemake --snakefile /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile --target-jobs 'extremities_label:family=C5' --allowed-rules 'extremities_label' --cores 1 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --verbose  --rerun-triggers params mtime input code software-env --conda-frontend mamba --shared-fs-usage source-cache persistence sources storage-local-copies software-deployment input-output --wrapper-prefix https://github.com/snakemake/snakemake-wrappers/raw/ --latency-wait 5 --scheduler ilp --local-storage-prefix .snakemake/storage --scheduler-solver-path /home/remipoul/snakemake_env/bin --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode subprocess --local-groupid local
+Completion of job ['extremities_label'] reported to scheduler.
+jobs registered as running before removal {extremities_label}
+[Thu Jul 25 15:18:21 2024]
+Finished job 12.
+12 of 21 steps (57%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:21 2024]
+localrule make_dot_file:
+    input: resources/dbn_files/C5.dbn, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/dot_files/processed_C5.dot
+    jobid: 7
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['make_dot_file'] reported to scheduler.
+jobs registered as running before removal {make_dot_file}
+[Thu Jul 25 15:18:21 2024]
+Finished job 7.
+13 of 21 steps (62%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:21 2024]
+localrule dot_process:
+    input: results/dot_files/processed_C5.dot
+    output: results/td_images/processed_C5.pdf
+    jobid: 6
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['dot_process'] reported to scheduler.
+jobs registered as running before removal {dot_process}
+[Thu Jul 25 15:18:21 2024]
+Finished job 6.
+14 of 21 steps (67%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:21 2024]
+localrule colored_dbn:
+    input: resources/dbn_files/C5.dbn, results/helix_annotations/C5.helix, results/json_files/extremities_label_C5.json
+    output: results/colored_dbn/colored_dbn_C5.tex
+    jobid: 11
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['colored_dbn'] reported to scheduler.
+jobs registered as running before removal {colored_dbn}
+[Thu Jul 25 15:18:21 2024]
+Finished job 11.
+15 of 21 steps (71%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:21 2024]
+localrule textopdf:
+    input: results/colored_dbn/colored_dbn_C5.tex
+    output: results/colored_dbn/colored_dbn_C5.pdf
+    jobid: 10
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['textopdf'] reported to scheduler.
+jobs registered as running before removal {textopdf}
+[Thu Jul 25 15:18:23 2024]
+Finished job 10.
+16 of 21 steps (76%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:23 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/latex_equations/C5_latex_equations.tex
+    jobid: 16
+    reason: Forced execution
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['produce_latex_equations'] reported to scheduler.
+jobs registered as running before removal {produce_latex_equations}
+[Thu Jul 25 15:18:23 2024]
+Finished job 16.
+17 of 21 steps (81%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:23 2024]
+localrule pdflatex_equations:
+    input: results/latex_equations/C5_latex_equations.tex
+    output: results/latex_equations/C5_latex_equations.pdf
+    jobid: 15
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['pdflatex_equations'] reported to scheduler.
+jobs registered as running before removal {pdflatex_equations}
+[Thu Jul 25 15:18:24 2024]
+Finished job 15.
+18 of 21 steps (86%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:24 2024]
+localrule state_of_the_results:
+    input: results/latex_equations/C5_latex_equations.pdf
+    output: results/state_of_the_results.pdf
+    jobid: 20
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Completion of job ['state_of_the_results'] reported to scheduler.
+jobs registered as running before removal {state_of_the_results}
+[Thu Jul 25 15:18:25 2024]
+Finished job 20.
+19 of 21 steps (90%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:25 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/td_images/processed_C5.pdf, results/compact_td_images/compact_C5.pdf, results/latex_equations/C5_latex_equations.pdf
+    output: results/concatenations/concatenation_C5.pdf
+    jobid: 17
+    reason: Forced execution
+    wildcards: shadow=C5
+    resources: tmpdir=/tmp
+
+Completion of job ['concatenation'] reported to scheduler.
+jobs registered as running before removal {concatenation}
+[Thu Jul 25 15:18:25 2024]
+Finished job 17.
+20 of 21 steps (95%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Jul 25 15:18:25 2024]
+localrule all:
+    input: results/processed_td_files/processed_C5.td, results/td_files/C5.td, results/elim_order/C5.order, results/td_images/processed_C5.pdf, results/td_images/unprocessed_C5.pdf, results/colored_dbn/colored_dbn_C5.pdf, results/colored_dbn/band_diagram_C5.pdf, results/latex_equations/C5_latex_equations.pdf, results/binaries/C5_folding, results/concatenations/concatenation_C5.pdf, results/state_of_the_results.pdf
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Thu Jul 25 15:18:25 2024]
+Finished job 0.
+21 of 21 steps (100%) done
+Complete log: .snakemake/log/2024-07-25T151813.791568.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

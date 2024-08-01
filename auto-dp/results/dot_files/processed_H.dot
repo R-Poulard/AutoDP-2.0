@@ -1,0 +1,39 @@
+digraph G {
+    node [shape=box];
+    subgraph cluster0 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#8DD3C7";
+        H0_0 -> H0_1 -> H0_2 -> H0_3 -> H0_4 -> H0_5;
+        label="H0 (6-10-16-20) (clique)";
+    }
+    subgraph cluster1 {
+        node [style=filled,fillcolor=white];
+        labeljust="l";
+        style=filled;
+        color="#FFFFB3";
+        H1_0 -> H1_1 -> H1_2 -> H1_3 -> H1_4 -> H1_5 -> H1_6 -> H1_7;
+        label="H1 (1-5-11-15) (diag)";
+    }
+     -1 [shape=record,label= <{}> ];
+     1 [shape=record,label= <{ <b>1</b> <b>10</b> <b>15</b> <b>20</b> <b>6</b>}> ];
+     10 [shape=record,label= <{ <b>10</b> <b>15</b> <b>16</b> <b>20</b> <b>6</b>}> ];
+     1  ->  10;
+     H0_0 [shape=record,label= <{ <b>6</b> <b>20</b> 7|  <b>10</b> <b>16</b>}> ];
+     10  ->  H0_0;
+     H0_1 [shape=record,label= <{ 19 <b>20</b> 7|  <b>10</b> <b>16</b>}> ];
+     H0_2 [shape=record,label= <{ 8 19 7|  <b>10</b> <b>16</b>}> ];
+     H0_3 [shape=record,label= <{ 8 18 19|  <b>10</b> <b>16</b>}> ];
+     H0_4 [shape=record,label= <{ 8 18 9|  <b>10</b> <b>16</b>}> ];
+     H0_5 [shape=record,label= <{ 18 9 17|  <b>10</b> <b>16</b>}> ];
+     H1_0 [shape=record,label= <{ 2 <b>15</b> <b>1</b>|  <b>6</b> <b>10</b>}> ];
+     1  ->  H1_0;
+     H1_1 [shape=record,label= <{ 2 14 <b>15</b>|  <b>6</b> <b>10</b>}> ];
+     H1_2 [shape=record,label= <{ 2 14 3|  <b>6</b> <b>10</b>}> ];
+     H1_3 [shape=record,label= <{ 13 14 3|  <b>6</b> <b>10</b>}> ];
+     H1_4 [shape=record,label= <{ 13 3 4|  <b>6</b> <b>10</b>}> ];
+     H1_5 [shape=record,label= <{ 13 12 4|  <b>6</b> <b>10</b>}> ];
+     H1_6 [shape=record,label= <{ <b>5</b> 12 4|  <b>6</b> <b>10</b>}> ];
+     H1_7 [shape=record,label= <{ <b>5</b> <b>11</b> 12|  <b>6</b> <b>10</b>}> ];
+}

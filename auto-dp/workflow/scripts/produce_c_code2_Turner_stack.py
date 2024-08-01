@@ -2,24 +2,32 @@ from autodp.equation_tree import TreeOfEquations, BagType
 import math
 
 import os,sys
+
+"""
 os.chdir("../auto-dp/")
 if len(sys.argv)==1:
     
     PSEUDO="H"
-    DIRECTORY="../Turner/"
+    DIRECTORY="../test_multi/"
 else:
 
     PSEUDO=sys.argv[1]  
     DIRECTORY="../Turner/"+sys.argv[2]
-
+"""
+print("LOOOOOOOOOOOOOOOOOOOOOOOLLLLLLLLL\nLOOOOOOOOOOLLLLLLLLLLLLLLLLLLLLLLLLLLLL\nLOOOOOOOOOOOOOOOOOOOOOLLLLLLLLLLLLLLLLLLL")
+PSEUDO=snakemake.params.pseudo
+DIRECTORY=snakemake.params.directory
 # extracting bags and tree from td file
 tree_dec = TreeOfEquations()
-tree_dec.read_from_file('results/processed_td_files/processed_'+PSEUDO+'.td')
+
+tree_dec.read_from_file(snakemake.input.tdname)
 
 # helices: sets a lot of useful variables
-tree_dec.set_helices(open('results/helix_annotations/'+PSEUDO+'.helix').readlines())
-# contraction: 
+
+tree_dec.set_helices(open(snakemake.input.helix).readlines())
+
 tree_dec.contract_to_skeleton()
+
 # filter to anchor vertices only
 tree_dec.filter_anchors()
 if tree_dec.root[0]=="H":
@@ -70,27 +78,27 @@ bag_size=[0] #length of the max tuple put as key into the hashing table
 
 def print_children(lst,x,indent_marginalization):
     if len(lst) == 1:
-        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+"if("+lst[0].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"  else if(tmp"+str(x)+"==INT_MAX){continue;}\n"
+        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+"if("+lst[0].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"  else if(tmp"+str(x)+"==INF){continue;}\n"
     else:
-        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+"if("+lst[-1].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"  else if(tmp"+str(x)+"==INT_MAX){continue;}\n"+print_children(lst[:-1],x+1,indent_marginalization)
+        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+"if("+lst[-1].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"  else if(tmp"+str(x)+"==INF){continue;}\n"+print_children(lst[:-1],x+1,indent_marginalization)
 
 def print_children_backtrace(lst,x,indent_marginalization):
     if len(lst) == 1:
-        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+lst[0].replace("DATA","&tmp"+str(x))+";\n"+indent_marginalization+"  if(tmp"+str(x)+"==INT_MAX){continue;}\n"
+        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+lst[0].replace("DATA","&tmp"+str(x))+";\n"+indent_marginalization+"  if(tmp"+str(x)+"==INF){continue;}\n"
     else:
-        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+lst[-1].replace("DATA","&tmp"+str(x))+";\n"+indent_marginalization+"  if(tmp"+str(x)+"==INT_MAX){continue;}\n"+print_children_backtrace(lst[:-1],x+1,indent_marginalization)
+        return indent_marginalization+"  int tmp"+str(x)+";\n  "+indent_marginalization+lst[-1].replace("DATA","&tmp"+str(x))+";\n"+indent_marginalization+"  if(tmp"+str(x)+"==INF){continue;}\n"+print_children_backtrace(lst[:-1],x+1,indent_marginalization)
 
 def print_children_diag(lst,x,indent_marginalization):
     if len(lst) == 1:
-        return "int tmp"+str(x)+";\n   "+indent_marginalization+"if("+lst[0].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"    else if(tmp"+str(x)+"==INT_MAX){ goto loop;}\n"
+        return "int tmp"+str(x)+";\n   "+indent_marginalization+"if("+lst[0].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"    else if(tmp"+str(x)+"==INF){ goto loop;}\n"
     else:
-        return "  int tmp"+str(x)+";\n   "+indent_marginalization+"if("+lst[-1].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"    else if(tmp"+str(x)+"==INT_MAX){ goto loop;}\n"+print_children_diag(lst[:-1],x+1,indent_marginalization)
+        return "  int tmp"+str(x)+";\n   "+indent_marginalization+"if("+lst[-1].replace("DATA","&tmp"+str(x))+"==0){possible=0;}\n"+indent_marginalization+"    else if(tmp"+str(x)+"==INF){ goto loop;}\n"+print_children_diag(lst[:-1],x+1,indent_marginalization)
 
 def print_children_diag_backtrace(lst,x,indent_marginalization):
     if len(lst) == 1:
-        return "int tmp"+str(x)+";\n   "+indent_marginalization+lst[0].replace("first,last,DATA","NULL,NULL,&tmp"+str(x))+";\n"+indent_marginalization+"    if(tmp"+str(x)+"==INT_MAX){ goto loop;}\n"
+        return "int tmp"+str(x)+";\n   "+indent_marginalization+lst[0].replace("first,last,DATA","NULL,NULL,&tmp"+str(x))+";\n"+indent_marginalization+"    if(tmp"+str(x)+"==INF){ goto loop;}\n"
     else:
-        return "  int tmp"+str(x)+";\n   "+indent_marginalization+lst[-1].replace("first,last,DATA","NULL,NULL,&tmp"+str(x))+";\n"+indent_marginalization+"    if(tmp"+str(x)+"==INT_MAX){ goto loop;}\n"+print_children_diag_backtrace(lst[:-1],x+1,indent_marginalization)
+        return "  int tmp"+str(x)+";\n   "+indent_marginalization+lst[-1].replace("first,last,DATA","NULL,NULL,&tmp"+str(x))+";\n"+indent_marginalization+"    if(tmp"+str(x)+"==INF){ goto loop;}\n"+print_children_diag_backtrace(lst[:-1],x+1,indent_marginalization)
 
 def print_nested(x):
     if x== 0:
@@ -244,22 +252,23 @@ def treat_bag(prev,node):
             else:
                 CONDITIONS=""
            #print("condition",CONDITIONS)
+            
             for idv in range(0,len(sub_terms)):
                 i=sub_terms[len(sub_terms)-1-idv]
                 if tree_dec.bag_type[bag_types[len(sub_terms)-1-idv]]==BagType.TRANSITIONAL:
                     delim=i.find('(')
                     delim2=i.find('_')
-                    CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","    backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"
+                    CHILDREN_BACKTRACE+=indent_marginalization+"    int res"+str(idv)+"="+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"
                 else:
                    #print("nooo",tree_dec.bag_type[bag_types[len(sub_terms)-1-idv]],len(tree_dec.bag_adj[bag_types[len(sub_terms)-1-idv]]))
                     if tree_dec.bag_type[bag_types[len(sub_terms)-1-idv]]==BagType.DIAG_SECOND and len(tree_dec.bag_adj[bag_types[len(sub_terms)-1-idv]])>=2:
                         delim=i.find('(')
                         delim2=i.find('_')
-                        CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","   backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"
+                        CHILDREN_BACKTRACE+=indent_marginalization+"    int res"+str(idv)+"="+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"
                     else:
                         delim=i.find('(')
                         delim2=i.find('_')
-                        CHILDREN_BACKTRACE+=indent_marginalization+i.replace("get","    backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"+indent_marginalization+"    bt->bracket+=1;\n"     
+                        CHILDREN_BACKTRACE+=indent_marginalization+"    int res"+str(idv)+"="+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"+indent_marginalization+"    bt->bracket+=1;\n"     
             CHILDREN_SUM=print_children(sub_terms,0,indent_marginalization)
             CHILDREN_SUM_BT=print_children_backtrace(sub_terms,0,indent_marginalization)
             CHILDREN_MAX=print_nested(len(sub_terms)-1)
@@ -328,6 +337,7 @@ def treat_bag(prev,node):
             line = line.replace('FOR_LOOP_NEW_VARIABLES_OPEN', marginalization)
             line = line.replace('CHILDREN_SUM', CHILDREN_SUM_BT.replace("first,last","NULL,NULL"))
             line = line.replace('CHILDREN_BACKTRACE', CHILDREN_BACKTRACE)
+            line = line.replace('RETURN_CHECK', " && ".join(["res"+str(i) for i in range(0,len(sub_terms))]))
             line = line.replace('CHILDREN_MAX', CHILDREN_MAX)
             line = line.replace('MFE_SUM', MFE_SUM)
             line = line.replace('MFE_MAX', MFE_MAX)
@@ -367,7 +377,7 @@ def treat_bag(prev,node):
 
             terms = []
 
-            BOUNDI="INT_MAX"
+            BOUNDI="INF"
             BOUNDI_value=99999999
             BOUNDJ_value=-1
             BOUNDJ="INT_MIN"
@@ -404,7 +414,7 @@ def treat_bag(prev,node):
                     add_before="+"+str(cmp)
                     ADJJ=add_before
             ADJI=''
-            if BOUNDI!='INT_MAX':
+            if BOUNDI!='INF':
                 cmp=0
                 idx_boundI=sorted_letters.index(BOUNDI)
                 idx_V1=sorted_letters.index(variables[0])
@@ -426,14 +436,17 @@ def treat_bag(prev,node):
             CONST_SUM = ''
             CONST_MAX = '0'
             CONST_BACKTRACE = ""
-            if BOUNDI!='INT_MAX' and ord(BOUNDI)==ord(variables[0])+2:
+            nbres=0
+            if BOUNDI!='INF' and ord(BOUNDI)==ord(variables[0])+2:
                 CONST_SUM="int mfe1=MFEFree(pk,"+variables[0]+","+BOUNDI+"-1);"
                 CONST_MAX="mfe1"
-                CONST_BACKTRACE="backtrace_MFEFree(pk,bt,mfe1,"+variables[0]+","+BOUNDI+"-1);\n"
+                CONST_BACKTRACE="int res"+str(nbres)+"=backtrace_MFEFree(pk,bt,mfe1,"+variables[0]+","+BOUNDI+"-1);\n"
+                nbres+=1
             if BOUNDJ!='INT_MIN' and ord(BOUNDJ)==ord(variables[1])-2:
                 CONST_SUM+="\n    int mfe2=MFEFree(pk,"+BOUNDJ+","+variables[1]+");"
                 CONST_MAX="add("+CONST_MAX+",mfe2)"
-                CONST_BACKTRACE+="        backtrace_MFEFree(pk,bt,mfe2,"+BOUNDJ+","+variables[1]+");\n"
+                CONST_BACKTRACE+="        int res"+str(nbres)+"=backtrace_MFEFree(pk,bt,mfe2,"+BOUNDJ+","+variables[1]+");\n"
+                nbres+=1
             CHILDREN_SUM = ''
             CHILDREN_SUM_BT = ''
             CHILDREN_MAX = '0'
@@ -460,9 +473,10 @@ def treat_bag(prev,node):
                     delim=i.find('(')
                     delim2=i.find('_')
                     if len(CHILDREN_BACKTRACE)==0:
-                        CHILDREN_BACKTRACE+="       bt->bracket+=1;\n"+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"     
+                        CHILDREN_BACKTRACE+="       bt->bracket+=1;\n"+"int res"+str(nbres)+"="+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"     
                     else:
-                        CHILDREN_BACKTRACE+="      backtrace_"+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"        
+                        CHILDREN_BACKTRACE+="      backtrace_"+"int res"+str(nbres)+"="+i.replace("get","backtrace").replace("first,last,DATA","bt,tmp"+str(idv))+";\n"        
+                    nbres+=1
                 CHILDREN_SUM=print_children_diag(sub_terms,0," ")
                 CHILDREN_SUM_BT=print_children_diag_backtrace(sub_terms,0," ")
                 CHILDREN_MAX=print_nested(len(sub_terms)-1)
@@ -511,6 +525,7 @@ def treat_bag(prev,node):
                 line = line.replace('CONST_SUM',CONST_SUM)
                 line = line.replace('CONST_MAX',CONST_MAX)
                 line = line.replace('CONST_BACKTRACE',CONST_BACKTRACE)
+                line = line.replace('RETURN_CHECK', " && ".join(["res"+str(i) for i in range(0,nbres)]))
                 line = line.replace('ADJJ',ADJJ)
                 line = line.replace('ADJI',ADJI)
                 line = line.replace('NB_HELIX',str(nb_anch))
@@ -718,15 +733,15 @@ if clique:
 
     with open('resources/stack_Turner/clique_case.c','r') as f:
         functions.insert(0,f.read())
-    declarations.insert(1,"""int get_CLIQUE1(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
+    declarations.insert(1,"""PRIVATE int get_CLIQUE1(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
 
-int get_CLIQUE0(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
+PRIVATE int get_CLIQUE0(pk_compound *pk, Node **first, Node **last, int *value, int i, int i2, int j2, int j);
 
-int compute_CLIQUE1(pk_compound *pk,Node **first,Node** last, int i, int j, int k, int l);
+PRIVATE int compute_CLIQUE1(pk_compound *pk,Node **first,Node** last, int i, int j, int k, int l);
 
-void backtrace_CLIQUE0(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);
+PRIVATE int backtrace_CLIQUE0(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);
 
-void backtrace_CLIQUE1(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);""")
+PRIVATE int backtrace_CLIQUE1(pk_compound *pk,bt_struct* bt, int score, int i,int j, int k, int l);""")
     with open('resources/stack_Turner/backtrace/clique_case.c','r') as f:
         backtrace.insert(0,f.read())
 
@@ -737,22 +752,47 @@ header=header.replace("##MODIFY_SIZE_TUPLE##",str(bag_size[0]))
 #print("ici chg",bag_size[0])
 with open('resources/stack_Turner/main_template.c','r') as f:
     main=f.read()
-main=main.replace('ROOT',tree_dec.equations[tree_dec.root].main_name)
-
-main=main.replace('END',sorted_letters[-1])
-main=main.replace('ALL_ANC',",".join(sorted_letters))
-main=main.replace("VARIABLE_PART","\n".join(stack_cases))
+header=header.replace('ROOT',tree_dec.equations[tree_dec.root].main_name)
+header=header.replace('PSEUDO',PSEUDO)
+header=header.replace('END',sorted_letters[-1])
+header=header.replace('ALL_ANC',",".join(sorted_letters))
+header=header.replace("VARIABLE_PART","\n".join(stack_cases))
 print("iciiii",sorted_letters,str(int(len(sorted_letters)/2)-1))
-main=main.replace('ANCH',str(int(len(sorted_letters)/2)-1))
+header=header.replace('ANCH',str(int(len(sorted_letters)/2)-1))
+header=header.replace('##DECLARATIONS##',"\n".join(declarations))
+header=header.replace('##NAME##',PSEUDO)
 
+f = open(snakemake.output[0],'w')
+
+print(header+"\n",file=f)
+    #f.write("\n".join(declarations)+"\n")
+print(main+"\n",file=f)
+print("\n".join(functions),file=f)
+print("\n".join(backtrace),file=f)
+f.close()
+"""
 with open(DIRECTORY+'/'+PSEUDO+'.c',"w") as f:
     f.write(header+"\n")
-    f.write("\n".join(declarations)+"\n")
+    #f.write("\n".join(declarations)+"\n")
     f.write(main+"\n")
     f.write("\n".join(functions))
     f.write("\n".join(backtrace))
+"""
 #print("ext_to_letter",tree_dec.ext_to_letter)
 #print("all_extremities",tree_dec.all_extremities)
 
 #print("done")
+
+f = open(DIRECTORY+"/"+PSEUDO+"_folding.h",'w')
+print("#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n#include <math.h>\n#include <limits.h>\n#include <time.h>\n#include <string.h>\n#include <ViennaRNA/fold_compound.h>\n#include <ViennaRNA/utils/basic.h>\n#include <ViennaRNA/utils/strings.h>\n#include <ViennaRNA/mfe.h>\n#include <ViennaRNA/loop_energies.h>\n#include \"aux.h\"\n\nint setup_"+PSEUDO+"(vrna_fold_compound_t *fc,vrna_fold_compound_t *fc_aux,const char* seq, const char* con,bt_struct* BT);\n",file=f)
+f.close()
+exit()
+if True or not os.path.exists(DIRECTORY+"aux.c"):
+    f = open(DIRECTORY+"aux.c",'w')
+    with open('resources/stack_Turner/aux.c','r') as f2:
+        print("".join(f2.readlines()),file=f)
+if True or not os.path.exists(DIRECTORY+"aux.h"):
+    f = open(DIRECTORY+"aux.h",'w')
+    with open('resources/stack_Turner/aux.h','r') as f2:
+        print("".join(f2.readlines()),file=f)
 exit()

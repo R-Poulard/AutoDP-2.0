@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+concatenation                  1
+pdflatex_equations             1
+produce_latex_equations        1
+state_of_the_results           1
+total                          5
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:56:41 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/latex_equations/C5_latex_equations.tex
+    jobid: 16
+    reason: Missing output files: results/latex_equations/C5_latex_equations.tex; Updated input files: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 99:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpbdbjktoz.produce_latex_equations.py' returned non-zero exit status 1.
+[Thu Jul 25 12:56:41 2024]
+Error in rule produce_latex_equations:
+    jobid: 16
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/latex_equations/C5_latex_equations.tex
+
+Removing output files of failed job produce_latex_equations since they might be corrupted:
+results/latex_equations/C5_latex_equations.tex
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T125641.076037.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

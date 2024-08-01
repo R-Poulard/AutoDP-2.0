@@ -1,4 +1,4 @@
-void backtrace_MAINNAME(pk_compound *pk,bt_struct* bt,int score,INT_INDICES) {
+PRIVATE int backtrace_MAINNAME(pk_compound *pk,bt_struct* bt,int score,INT_INDICES) {
     // index_start
 
 FOR_LOOP_NEW_VARIABLES_OPEN
@@ -8,8 +8,8 @@ CHILDREN_SUM
 INDENT  if(score==add(CHILDREN_MAX,MFE_MAX)){
 MFE_BACKTRACE
 CHILDREN_BACKTRACE
-INDENT    return;
+INDENT    return RETURN_CHECK;
 INDENT  }
 FOR_LOOP_NEW_VARIABLES_CLOSE
-
+return 0;
 }

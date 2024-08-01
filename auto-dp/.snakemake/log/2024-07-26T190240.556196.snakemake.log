@@ -1,0 +1,691 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+all                                 1
+band_diagram                        2
+band_diagram_latextopdf             2
+c_compilation                       1
+colored_dbn                         2
+compact_dottopdf                    2
+compute_td                          2
+concatenation                       2
+dot_process                         2
+extract_compact_tree                2
+extract_elimination_ordering        2
+extract_gr                          2
+extract_helices                     2
+extremities_label                   2
+make_dot_file                       2
+pdflatex_equations                  2
+process_helices                     2
+produce_c_code                      2
+produce_c_code_aux                  1
+produce_latex_equations             2
+state_of_the_results                1
+textopdf                            2
+unprocessed_from_td_to_dot          2
+unprocessed_td                      2
+total                              44
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:40 2024]
+localrule extract_gr:
+    input: resources/dbn_files/H.dbn
+    output: results/gr_files/H.gr
+    jobid: 5
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:41 2024]
+Finished job 5.
+1 of 44 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:41 2024]
+localrule compute_td:
+    input: results/gr_files/H.gr
+    output: results/td_files/H.td
+    jobid: 4
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:41 2024]
+Finished job 4.
+2 of 44 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:41 2024]
+localrule unprocessed_from_td_to_dot:
+    input: results/td_files/H.td
+    output: results/dot_files/unprocessed_H.td1.dot
+    jobid: 20
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:42 2024]
+Finished job 20.
+3 of 44 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:42 2024]
+localrule unprocessed_td:
+    input: results/dot_files/unprocessed_H.td1.dot
+    output: results/td_images/unprocessed_H.pdf
+    jobid: 19
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:42 2024]
+Finished job 19.
+4 of 44 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:42 2024]
+localrule extract_helices:
+    input: resources/dbn_files/K.dbn
+    output: results/helix_annotations/K.helix
+    jobid: 11
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:42 2024]
+Finished job 11.
+5 of 44 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:42 2024]
+localrule extract_gr:
+    input: resources/dbn_files/K.dbn
+    output: results/gr_files/K.gr
+    jobid: 10
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:42 2024]
+Finished job 10.
+6 of 44 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:42 2024]
+localrule band_diagram:
+    input: resources/dbn_files/H.dbn
+    output: results/colored_dbn/band_diagram_H.tex
+    jobid: 30
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:43 2024]
+Finished job 30.
+7 of 44 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:43 2024]
+localrule band_diagram_latextopdf:
+    input: results/colored_dbn/band_diagram_H.tex
+    output: results/colored_dbn/band_diagram_H.pdf
+    jobid: 29
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:44 2024]
+Finished job 29.
+8 of 44 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:44 2024]
+localrule band_diagram:
+    input: resources/dbn_files/K.dbn
+    output: results/colored_dbn/band_diagram_K.tex
+    jobid: 32
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:44 2024]
+Finished job 32.
+9 of 44 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:44 2024]
+localrule band_diagram_latextopdf:
+    input: results/colored_dbn/band_diagram_K.tex
+    output: results/colored_dbn/band_diagram_K.pdf
+    jobid: 31
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:45 2024]
+Finished job 31.
+10 of 44 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:45 2024]
+localrule extract_helices:
+    input: resources/dbn_files/H.dbn
+    output: results/helix_annotations/H.helix
+    jobid: 6
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:45 2024]
+Finished job 6.
+11 of 44 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:45 2024]
+localrule process_helices:
+    input: resources/dbn_files/H.dbn, results/td_files/H.td, results/helix_annotations/H.helix
+    output: results/processed_td_files/processed_H.td
+    log: results/processed_td_files/exec_logs/H_processing.log
+    jobid: 3
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:45 2024]
+Finished job 3.
+12 of 44 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:46 2024]
+localrule produce_c_code:
+    input: results/processed_td_files/processed_H.td, results/helix_annotations/H.helix
+    output: results/c_code/H_folding.c
+    jobid: 2
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:46 2024]
+Finished job 2.
+13 of 44 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:46 2024]
+localrule compute_td:
+    input: results/gr_files/K.gr
+    output: results/td_files/K.td
+    jobid: 9
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:47 2024]
+Finished job 9.
+14 of 44 steps (32%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:47 2024]
+localrule extract_elimination_ordering:
+    input: results/td_files/K.td
+    output: results/elim_order/K.order
+    jobid: 14
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:47 2024]
+Finished job 14.
+15 of 44 steps (34%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:47 2024]
+localrule process_helices:
+    input: resources/dbn_files/K.dbn, results/td_files/K.td, results/helix_annotations/K.helix
+    output: results/processed_td_files/processed_K.td
+    log: results/processed_td_files/exec_logs/K_processing.log
+    jobid: 8
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:47 2024]
+Finished job 8.
+16 of 44 steps (36%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:47 2024]
+localrule make_dot_file:
+    input: resources/dbn_files/K.dbn, results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    output: results/dot_files/processed_K.dot
+    jobid: 18
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:48 2024]
+Finished job 18.
+17 of 44 steps (39%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:48 2024]
+localrule unprocessed_from_td_to_dot:
+    input: results/td_files/K.td
+    output: results/dot_files/unprocessed_K.td1.dot
+    jobid: 22
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:48 2024]
+Finished job 22.
+18 of 44 steps (41%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:48 2024]
+localrule unprocessed_td:
+    input: results/dot_files/unprocessed_K.td1.dot
+    output: results/td_images/unprocessed_K.pdf
+    jobid: 21
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:48 2024]
+Finished job 21.
+19 of 44 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:48 2024]
+localrule dot_process:
+    input: results/dot_files/processed_K.dot
+    output: results/td_images/processed_K.pdf
+    jobid: 17
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:49 2024]
+Finished job 17.
+20 of 44 steps (45%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:49 2024]
+localrule extract_compact_tree:
+    input: results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    output: results/compact_dot_files/compact_K.dot
+    jobid: 42
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:49 2024]
+Finished job 42.
+21 of 44 steps (48%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:49 2024]
+localrule compact_dottopdf:
+    input: results/compact_dot_files/compact_K.dot
+    output: results/compact_td_images/compact_K.pdf
+    jobid: 41
+    reason: Forced execution
+    wildcards: file=compact_K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:49 2024]
+Finished job 41.
+22 of 44 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:49 2024]
+localrule extract_compact_tree:
+    input: results/processed_td_files/processed_H.td, results/helix_annotations/H.helix
+    output: results/compact_dot_files/compact_H.dot
+    jobid: 39
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:49 2024]
+Finished job 39.
+23 of 44 steps (52%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:49 2024]
+localrule compact_dottopdf:
+    input: results/compact_dot_files/compact_H.dot
+    output: results/compact_td_images/compact_H.pdf
+    jobid: 38
+    reason: Forced execution
+    wildcards: file=compact_H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:49 2024]
+Finished job 38.
+24 of 44 steps (55%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:49 2024]
+localrule make_dot_file:
+    input: resources/dbn_files/H.dbn, results/processed_td_files/processed_H.td, results/helix_annotations/H.helix
+    output: results/dot_files/processed_H.dot
+    jobid: 16
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:50 2024]
+Finished job 16.
+25 of 44 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:50 2024]
+localrule dot_process:
+    input: results/dot_files/processed_H.dot
+    output: results/td_images/processed_H.pdf
+    jobid: 15
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:50 2024]
+Finished job 15.
+26 of 44 steps (59%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:50 2024]
+localrule produce_c_code:
+    input: results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    output: results/c_code/K_folding.c
+    jobid: 7
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:50 2024]
+Finished job 7.
+27 of 44 steps (61%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:50 2024]
+localrule produce_c_code_aux:
+    input: results/c_code/H_folding.c, results/c_code/K_folding.c
+    output: results/c_code/auto_dp.c, results/c_code/aux.c
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:51 2024]
+Finished job 1.
+28 of 44 steps (64%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:51 2024]
+localrule c_compilation:
+    input: results/c_code/aux.c, results/c_code/auto_dp.c, results/c_code/H_folding.c, results/c_code/K_folding.c
+    output: results/binaries/auto_dp
+    jobid: 12
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:52 2024]
+Finished job 12.
+29 of 44 steps (66%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:52 2024]
+localrule extremities_label:
+    input: results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    output: results/json_files/extremities_label_K.json
+    jobid: 28
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:53 2024]
+Finished job 28.
+30 of 44 steps (68%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:53 2024]
+localrule colored_dbn:
+    input: resources/dbn_files/K.dbn, results/helix_annotations/K.helix, results/json_files/extremities_label_K.json
+    output: results/colored_dbn/colored_dbn_K.tex
+    jobid: 27
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:53 2024]
+Finished job 27.
+31 of 44 steps (70%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:53 2024]
+localrule textopdf:
+    input: results/colored_dbn/colored_dbn_K.tex
+    output: results/colored_dbn/colored_dbn_K.pdf
+    jobid: 26
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:55 2024]
+Finished job 26.
+32 of 44 steps (73%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:55 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_K.pdf, results/processed_td_files/processed_K.td, results/helix_annotations/K.helix
+    output: results/latex_equations/K_latex_equations.tex
+    jobid: 36
+    reason: Forced execution
+    wildcards: family=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:55 2024]
+Finished job 36.
+33 of 44 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:55 2024]
+localrule pdflatex_equations:
+    input: results/latex_equations/K_latex_equations.tex
+    output: results/latex_equations/K_latex_equations.pdf
+    jobid: 35
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:56 2024]
+Finished job 35.
+34 of 44 steps (77%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:56 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_K.pdf, results/td_images/processed_K.pdf, results/compact_td_images/compact_K.pdf, results/latex_equations/K_latex_equations.pdf
+    output: results/concatenations/concatenation_K.pdf
+    jobid: 40
+    reason: Forced execution
+    wildcards: shadow=K
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:56 2024]
+Finished job 40.
+35 of 44 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:56 2024]
+localrule extract_elimination_ordering:
+    input: results/td_files/H.td
+    output: results/elim_order/H.order
+    jobid: 13
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:57 2024]
+Finished job 13.
+36 of 44 steps (82%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:57 2024]
+localrule extremities_label:
+    input: results/processed_td_files/processed_H.td, results/helix_annotations/H.helix
+    output: results/json_files/extremities_label_H.json
+    jobid: 25
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:58 2024]
+Finished job 25.
+37 of 44 steps (84%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:58 2024]
+localrule colored_dbn:
+    input: resources/dbn_files/H.dbn, results/helix_annotations/H.helix, results/json_files/extremities_label_H.json
+    output: results/colored_dbn/colored_dbn_H.tex
+    jobid: 24
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:02:58 2024]
+Finished job 24.
+38 of 44 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:02:58 2024]
+localrule textopdf:
+    input: results/colored_dbn/colored_dbn_H.tex
+    output: results/colored_dbn/colored_dbn_H.pdf
+    jobid: 23
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:03:00 2024]
+Finished job 23.
+39 of 44 steps (89%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:03:00 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_H.pdf, results/processed_td_files/processed_H.td, results/helix_annotations/H.helix
+    output: results/latex_equations/H_latex_equations.tex
+    jobid: 34
+    reason: Forced execution
+    wildcards: family=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:03:00 2024]
+Finished job 34.
+40 of 44 steps (91%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:03:00 2024]
+localrule pdflatex_equations:
+    input: results/latex_equations/H_latex_equations.tex
+    output: results/latex_equations/H_latex_equations.pdf
+    jobid: 33
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:03:01 2024]
+Finished job 33.
+41 of 44 steps (93%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:03:01 2024]
+localrule concatenation:
+    input: results/colored_dbn/colored_dbn_H.pdf, results/td_images/processed_H.pdf, results/compact_td_images/compact_H.pdf, results/latex_equations/H_latex_equations.pdf
+    output: results/concatenations/concatenation_H.pdf
+    jobid: 37
+    reason: Forced execution
+    wildcards: shadow=H
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:03:01 2024]
+Finished job 37.
+42 of 44 steps (95%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:03:01 2024]
+localrule state_of_the_results:
+    input: results/latex_equations/H_latex_equations.pdf, results/latex_equations/K_latex_equations.pdf
+    output: results/state_of_the_results.pdf
+    jobid: 43
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:03:02 2024]
+Finished job 43.
+43 of 44 steps (98%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jul 26 19:03:02 2024]
+localrule all:
+    input: results/c_code/auto_dp.c, results/binaries/auto_dp, results/processed_td_files/processed_H.td, results/processed_td_files/processed_K.td, results/td_files/H.td, results/td_files/K.td, results/elim_order/H.order, results/elim_order/K.order, results/td_images/processed_H.pdf, results/td_images/processed_K.pdf, results/td_images/unprocessed_H.pdf, results/td_images/unprocessed_K.pdf, results/colored_dbn/colored_dbn_H.pdf, results/colored_dbn/colored_dbn_K.pdf, results/colored_dbn/band_diagram_H.pdf, results/colored_dbn/band_diagram_K.pdf, results/latex_equations/H_latex_equations.pdf, results/latex_equations/K_latex_equations.pdf, results/concatenations/concatenation_H.pdf, results/concatenations/concatenation_K.pdf, results/state_of_the_results.pdf
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Fri Jul 26 19:03:02 2024]
+Finished job 0.
+44 of 44 steps (100%) done
+Complete log: .snakemake/log/2024-07-26T190240.556196.snakemake.log

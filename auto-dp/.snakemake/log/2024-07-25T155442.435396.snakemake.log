@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+c_compilation         1
+produce_c_code        1
+total                 3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 15:54:42 2024]
+localrule produce_c_code:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/c_code/C5_folding.c
+    jobid: 18
+    reason: Missing output files: results/c_code/C5_folding.c; Updated input files: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 15:54:42 2024]
+Finished job 18.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 15:54:42 2024]
+localrule c_compilation:
+    input: results/c_code/C5_folding.c
+    output: results/binaries/C5_folding
+    jobid: 17
+    reason: Input files updated by another job: results/c_code/C5_folding.c
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 15:54:43 2024]
+Error in rule c_compilation:
+    jobid: 17
+    input: results/c_code/C5_folding.c
+    output: results/binaries/C5_folding
+    shell:
+        gcc results/c_code/C5_folding.c -o results/binaries/C5_folding
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T155442.435396.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

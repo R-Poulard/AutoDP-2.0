@@ -1,0 +1,154 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+colored_dbn                    1
+compact_dottopdf               1
+concatenation                  1
+dot_process                    1
+extract_compact_tree           1
+extremities_label              1
+make_dot_file                  1
+pdflatex_equations             1
+produce_latex_equations        1
+state_of_the_results           1
+textopdf                       1
+total                         12
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:26 2024]
+localrule extremities_label:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/json_files/extremities_label_C5.json
+    jobid: 12
+    reason: Missing output files: results/json_files/extremities_label_C5.json; Updated input files: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:53:27 2024]
+Finished job 12.
+1 of 12 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:27 2024]
+localrule colored_dbn:
+    input: resources/dbn_files/C5.dbn, results/helix_annotations/C5.helix, results/json_files/extremities_label_C5.json
+    output: results/colored_dbn/colored_dbn_C5.tex
+    jobid: 11
+    reason: Input files updated by another job: results/json_files/extremities_label_C5.json
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:53:27 2024]
+Finished job 11.
+2 of 12 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:27 2024]
+localrule extract_compact_tree:
+    input: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/compact_dot_files/compact_C5.dot
+    jobid: 20
+    reason: Updated input files: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:53:27 2024]
+Finished job 20.
+3 of 12 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:27 2024]
+localrule compact_dottopdf:
+    input: results/compact_dot_files/compact_C5.dot
+    output: results/compact_td_images/compact_C5.pdf
+    jobid: 19
+    reason: Input files updated by another job: results/compact_dot_files/compact_C5.dot
+    wildcards: file=compact_C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:53:27 2024]
+Finished job 19.
+4 of 12 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:27 2024]
+localrule make_dot_file:
+    input: resources/dbn_files/C5.dbn, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/dot_files/processed_C5.dot
+    jobid: 7
+    reason: Updated input files: results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:53:27 2024]
+Finished job 7.
+5 of 12 steps (42%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:27 2024]
+localrule textopdf:
+    input: results/colored_dbn/colored_dbn_C5.tex
+    output: results/colored_dbn/colored_dbn_C5.pdf
+    jobid: 10
+    reason: Input files updated by another job: results/colored_dbn/colored_dbn_C5.tex
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:53:29 2024]
+Finished job 10.
+6 of 12 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:29 2024]
+localrule dot_process:
+    input: results/dot_files/processed_C5.dot
+    output: results/td_images/processed_C5.pdf
+    jobid: 6
+    reason: Missing output files: results/td_images/processed_C5.pdf; Input files updated by another job: results/dot_files/processed_C5.dot
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+[Thu Jul 25 12:53:29 2024]
+Finished job 6.
+7 of 12 steps (58%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul 25 12:53:29 2024]
+localrule produce_latex_equations:
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/latex_equations/C5_latex_equations.tex
+    jobid: 16
+    reason: Input files updated by another job: results/colored_dbn/colored_dbn_C5.pdf
+    wildcards: family=C5
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/remipoul/LIX_WORK/pwb/auto-dp/workflow/Snakefile, line 99:
+Command 'set -euo pipefail;  /home/remipoul/snakemake_env/bin/python3.11 /home/remipoul/LIX_WORK/pwb/auto-dp/.snakemake/scripts/tmpvfcp76br.produce_latex_equations.py' returned non-zero exit status 1.
+[Thu Jul 25 12:53:29 2024]
+Error in rule produce_latex_equations:
+    jobid: 16
+    input: results/colored_dbn/colored_dbn_C5.pdf, results/processed_td_files/processed_C5.td, results/helix_annotations/C5.helix
+    output: results/latex_equations/C5_latex_equations.tex
+
+Removing output files of failed job produce_latex_equations since they might be corrupted:
+results/latex_equations/C5_latex_equations.tex
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-25T125325.935767.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -23,12 +23,12 @@
 \end{figure}
 \end{center}
 first and last anchors, already given: $ a , l $
-$$ A =\min_{ f,h,k } \left( B[a,f,k,h]+G[f,k,h,l]\right) $$
-$$ B\left[ a,f,h,k \right] =\min_{ i } \left( C[a,f,i,k]\right) $$
-$$ C\left[ a,f,i,k \right] =\min_{ j } \left( \colorbox{c2}{$D$}[a,f\mid i,j]\right) $$
-$$ \colorbox{c2}{$D$}' \left[a,f \mid  i,j \right] =  \min\begin{cases}\colorbox{c2}{$D$}'[ a , f-1\mid i,j ], &\text{if } f-1 ,\notin\{ a , i,j \} \\\colorbox{c2}{$D$}[ a+1 , f-1\mid i,j ]+\Delta G(a,f) &\text{if } \{ a+1 , f-1 \}\cap \{ i,j \}=\emptyset\end{cases}$$
-$$ \colorbox{c2}{$D$} \left[a,f \mid  i,j \right] =  \min\begin{cases}\colorbox{c2}{$D$}[ a+1 , f\mid i,j ], &\text{if } a+1 \notin\{ f , i,j \} \\\colorbox{c2}{$D$}'[ a , f-1\mid i,j ], &\text{if } f-1 ,\notin\{ a , i,j \} \\\colorbox{c2}{$D$}[ a+1 , f-1\mid i,j ]+\Delta G(a,f) &\text{if } \{ a+1 , f-1 \}\cap \{ i,j \}=\emptyset,\\E[f,a,i,j]\end{cases}$$
-$$ E\left[ b,e,i,j \right] =\min_{ c } \left( F[e,c,i,j]\right) $$
+$$ A\left[ a,l \right] =\min_{ f,h,k } \left( B[h,f,a,k]+G[l,f,h,k]\right) $$
+$$ B\left[ a,f,h,k \right] =\min_{ i } \left( C[i,f,a,k]\right) $$
+$$ C\left[ a,f,i,k \right] =\min_{ j } \left( \colorbox{c2}{$D$}[f,a\mid i,j]\right) $$
+$$ \colorbox{c2}{$D$}' \left[f,a \mid  i,j \right] =  \min\begin{cases}\colorbox{c2}{$D$}'[ f , a-1\mid i,j ], &\text{if } a-1 ,\notin\{ f , i,j \} \\\colorbox{c2}{$D$}[ f+1 , a-1\mid i,j ]+\Delta G(f,a) &\text{if } \{ f+1 , a-1 \}\cap \{ i,j \}=\emptyset\end{cases}$$
+$$ \colorbox{c2}{$D$} \left[f,a \mid  i,j \right] =  \min\begin{cases}\colorbox{c2}{$D$}[ f+1 , a\mid i,j ], &\text{if } f+1 \notin\{ a , i,j \} \\\colorbox{c2}{$D$}'[ f , a-1\mid i,j ], &\text{if } a-1 ,\notin\{ f , i,j \} \\\colorbox{c2}{$D$}[ f+1 , a-1\mid i,j ]+\Delta G(f,a) &\text{if } \{ f+1 , a-1 \}\cap \{ i,j \}=\emptyset,\\E[i,f,j,a]\end{cases}$$
+$$ E\left[ b,e,i,j \right] =\min_{ c } \left( F[i,e,j,c]\right) $$
 $$ F\left[ c,e,i,j \right] =\min_{ d } \left( \colorbox{c0}{$C_{\boxtimes}$}[c,d,i,j]\right) $$
 $$ G\left[ f,h,k,l \right] =\min_{ g } \left( \colorbox{c1}{$C_{\boxtimes}$}[g,h,k,l]\right) $$
 \end{document}
