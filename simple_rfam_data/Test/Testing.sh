@@ -1,3 +1,4 @@
+#You might need to change the path to python and all the other programms
 cd ~/pwb/Turner/
 mkdir $1
 mkdir $1/log_test/

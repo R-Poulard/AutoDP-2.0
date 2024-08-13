@@ -1,5 +1,5 @@
 import re,sys
-
+#check wether a folding got the right shaped
 PSEUDO = sys.argv[1]  
 DIRECTORY = sys.argv[2]
 

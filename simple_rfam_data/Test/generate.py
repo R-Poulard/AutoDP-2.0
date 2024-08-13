@@ -2,6 +2,7 @@ import random
 import os 
 
 #os.chdir("..")
+#ce programme permet de generer les séquence pour le test ainsi que de tester le fichier de sortie 
 
 import math
 
@@ -128,10 +129,10 @@ def generate(anchors,seq,ss,target_length,score):
         if choice <=2:  # Add 'X' (unlink) anywhere
             where = random.randint(0, len(seq))
             which = random.randint(0,3)
-            print("ici",which)
+            
             nuc=""
             if which==0:
-                print("ici")
+                
                 nuc="A"
             elif which==1:
                 nuc="G"
@@ -295,4 +296,3 @@ def check_result(path):
 
 
 create_file("test_sequence/example_"+PSEUDO+"_big",75,50)
-#print(check_result("logK4.txt"))
