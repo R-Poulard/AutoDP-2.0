@@ -355,30 +355,33 @@ PRIVATE int backtrace_MFEFree(pk_compound*pk,bt_struct* bt,int score, int a,int 
     return 1;
 }
 
+
 PRIVATE int INTB(pk_compound* pk,int a,int b,int c,int d){
     
     if(d==-1 && c==-1){
         return 0;
-    } 
+    }
+    if(a-1-(c+1)<=pk->THETA_PAIRING && (d-1)-(b+1)<=pk->THETA_PAIRING-2){
+        a++;b++;d+=2;
+        return vrna_eval_int_loop(pk->fc_aux,c,d,a,b);
+    }
     int * fML =pk->fc_aux->matrices->fML;
     int * indx = pk->fc_aux->jindx;   
 
-    a++;b++;
+    a++;b++;d+=2;
 
     int right_index = indx[d] + b;
     int right_ml=fML[right_index];
-    int left_index = indx[c] + a;
+    int left_index = indx[a] + c;
     int left_ml=fML[left_index];
-
-    left_ml=-5;
-    right_ml=-5;
-
-
+    
+    //printf("%d %d %d %d=>left_ml %d, right_ml %d\n",a,b,c,d,left_ml,right_ml);
     int open=pk->fc_aux->params->MLclosing;//penality for creating multiloop
     
     //case C (multiloop with helix on each side)
-    
-    int free_energy= open+pk->fc_aux->params->MLintern[3]+right_ml+left_ml;
+
+
+    int free_energy= open+4*pk->fc_aux->params->MLintern[0]+right_ml+left_ml;
 
     //case A (interior loop)
     if(c-a+1<pk->THETA && d-b+1<pk->THETA){
@@ -388,26 +391,26 @@ PRIVATE int INTB(pk_compound* pk,int a,int b,int c,int d){
     }
     //case B (multiloop only on left loop)
     if(d-b+1<pk->THETA){
-        int unpaired=pk->fc_aux->params->MLbase;
-        free_energy = min(free_energy,unpaired+open+pk->fc_aux->params->MLintern[2]+left_ml);
+        int unpaired=pk->fc_aux->params->MLbase*(b-d+1);
+        free_energy = min(free_energy,unpaired+open+3*pk->fc_aux->params->MLintern[0]+left_ml);
 
     }
     //case B (multiloop loop)
     if(c-a+1<pk->THETA){
-        int unpaired=pk->fc_aux->params->MLbase;
-        free_energy = min(free_energy,unpaired+open+pk->fc_aux->params->MLintern[2]+right_ml);
+        int unpaired=pk->fc_aux->params->MLbase*(c-a+1);
+        free_energy = min(free_energy,unpaired+open+3*pk->fc_aux->params->MLintern[0]+right_ml);
         
     }
-    
-
     return free_energy;
 }
+
 
 PRIVATE void add_pairing(pk_compound* pk,bt_struct* bt, int score,int a,int b,int c,int d){
     bt->structure[a]=bt->bracket;
     bt->structure[b]=tolower(bt->bracket);
     return;
 }
+
 
 PRIVATE int backtrace_INTB(pk_compound* pk,bt_struct* bt, int score,int a,int b,int c,int d){
     
@@ -416,29 +419,29 @@ PRIVATE int backtrace_INTB(pk_compound* pk,bt_struct* bt, int score,int a,int b,
     //return 1;
     if(d==-1 && c==-1){
         return 1;
-    } 
+    }
+     
+    if(a-1-(c+1)<=pk->THETA_PAIRING && (d-1)-(b+1)<=pk->THETA_PAIRING-2){
+        return 1;
+    }
     int * fML =pk->fc_aux->matrices->fML;
     int * indx = pk->fc_aux->jindx;   
-    
-    a++;b++;
-    
+
+    a++;b++;d+=2;
+
     int right_index = indx[d] + b;
     int right_ml=fML[right_index];
-    int left_index = indx[c] + a;
+    int left_index = indx[a] + c;
     int left_ml=fML[left_index];
     
-    left_ml=-5;
-    right_ml=-5;
- 
 
     int open=pk->fc_aux->params->MLclosing;//penality for creating multiloop
 
     //case C (multiloop with helix on each side)
-    
-    if(score==open+pk->fc_aux->params->MLintern[3]+right_ml+left_ml){
-        
-        int res1= backtrace_MFEFree(pk,bt,left_ml,a--,c--);
-        int res2= backtrace_MFEFree(pk,bt,right_ml,b--,d--);
+    if(score==open+4*pk->fc_aux->params->MLintern[0]+right_ml+left_ml){
+
+        int res1= backtrace_MFEFree(pk,bt,left_ml,c,a-2);
+        int res2= backtrace_MFEFree(pk,bt,right_ml,b,d-3);
         return res1 && res2;
     }
     
@@ -452,23 +455,28 @@ PRIVATE int backtrace_INTB(pk_compound* pk,bt_struct* bt, int score,int a,int b,
     }
     //case B (multiloop only on left loop)
     if(d-b+1<pk->THETA){
-        int unpaired=pk->fc_aux->params->MLbase;
-        if(score==unpaired+open+pk->fc_aux->params->MLintern[2]+left_ml){
-            
-            return backtrace_MFEFree(pk,bt,left_ml,a--,c--);
+
+        int unpaired=pk->fc_aux->params->MLbase*(b-d+1);
+
+        if(score==unpaired+open+3*pk->fc_aux->params->MLintern[0]+left_ml){
+
+            return backtrace_MFEFree(pk,bt,left_ml,c,a-2);
         }
     }
     //case B (multiloop loop)
     if(c-a+1<pk->THETA){
-        int unpaired=pk->fc_aux->params->MLbase;
-        if(score==unpaired+open+pk->fc_aux->params->MLintern[2]+right_ml){
-            
-            return backtrace_MFEFree(pk,bt,right_ml,b--,d--);
+
+        int unpaired=pk->fc_aux->params->MLbase*(c-a+1);
+
+        if(score==unpaired+open+3*pk->fc_aux->params->MLintern[0]+right_ml){
+
+            return backtrace_MFEFree(pk,bt,right_ml,b,d-3);
         }
     }
 
     return 0;
 }
+
 
 
 

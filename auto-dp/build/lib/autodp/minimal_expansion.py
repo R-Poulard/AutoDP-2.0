@@ -70,12 +70,11 @@ class MinimalExpansion:
         # setting dbn
         self.dbn = dbn_str
 
-        print("dbn", dbn_str)
 
         # precomputation: helices
         self.extract_helices(inter_helix_gap=inter_helix_gap)
 
-        print("helices", self.helices)
+
 
         for i,ip,jp,j in self.helices:
             # first half

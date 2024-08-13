@@ -3,18 +3,6 @@ import math
 
 import os,sys
 
-"""
-os.chdir("../auto-dp/")
-if len(sys.argv)==1:
-    
-    PSEUDO="H"
-    DIRECTORY="../test_multi/"
-else:
-
-    PSEUDO=sys.argv[1]  
-    DIRECTORY="../Turner/"+sys.argv[2]
-"""
-print("LOOOOOOOOOOOOOOOOOOOOOOOLLLLLLLLL\nLOOOOOOOOOOLLLLLLLLLLLLLLLLLLLLLLLLLLLL\nLOOOOOOOOOOOOOOOOOOOOOLLLLLLLLLLLLLLLLLLL")
 PSEUDO=snakemake.params.pseudo
 DIRECTORY=snakemake.params.directory
 # extracting bags and tree from td file
@@ -351,11 +339,11 @@ def treat_bag(prev,node):
             if first:
                 first=False
                 declarations.append(line.replace("{",";"))
-               #print(declarations)
+
             tmp.append(line)
             bg=len([tree_dec.ext_to_letter[i] for i in equation.sorted_indices() if i in tree_dec.ext_to_letter])
             if bg+1>bag_size[0]:
-                #print("ICIIIII CHG BAGSIZE transitional",bg+1)
+
                 bag_size[0]=bg+1
         backtrace.append("".join(tmp))
     elif tree_dec.bag_type[node]==BagType.DIAG_FIRST:

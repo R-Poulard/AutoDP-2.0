@@ -159,14 +159,13 @@ class TreeOfEquations(TreeOfBags):
            
             # set representation_bags and which helix
             self.representation_bags[label] = []
-            print(label)
+
             for u in self.dfs_bag_iterator():
-                print(u)
+
                 if u.split('_')[0]==label:
                     self.representation_bags[label].append(u)
                     self.which_helix[u] = label
             # set const part
-            print(self.representation_bags[label])
             self.const_part[label] =set.intersection(*[set(self.bag_content[u]) for u in self.representation_bags[label]])
 
     @staticmethod

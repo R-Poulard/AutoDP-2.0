@@ -3,6 +3,7 @@ import math
 
 import os,sys
 
+#This is the start of the Boltzmann repartition extensions, not working yet
 
 os.chdir("../auto-dp/")
 if len(sys.argv)==1:
@@ -14,10 +15,6 @@ else:
     PSEUDO=sys.argv[1]  
     DIRECTORY="../Turner/"+sys.argv[2]
 
-#print("LOOOOOOOOOOOOOOOOOOOOOOOLLLLLLLLL\nLOOOOOOOOOOLLLLLLLLLLLLLLLLLLLLLLLLLLLL\nLOOOOOOOOOOOOOOOOOOOOOLLLLLLLLLLLLLLLLLLL")
-#PSEUDO=snakemake.params.pseudo
-#DIRECTORY=snakemake.params.directory
-# extracting bags and tree from td file
 tree_dec = TreeOfEquations()
 
 tree_dec.read_from_file('results/processed_td_files/processed_'+PSEUDO+'.td')
