@@ -1,0 +1,30 @@
+# STOCKHOLM 1.0
+#=GF ID    RF02424
+AAKY01000134.1/11265-11093             AAAAAGCCCGCUAUGCAUCGGCAUCAGCGGGCUUCGGUGCGGUACGACAGCGAUCGACUCGGGCCGGCUGCCGCCGGCCUUCGCUUUAGCUGUUUCGGGAAGUUGCCCCGCGUCCGCAAGCUGAAAUCAAAUCGACGCAAGGCGCCAUCCUAGCACGCUUCGGAAGAGCGUGC
+#=GR                                   ...<<<<<<<<<.<<<....>>>..>>>>>>>>>...[[[[.......<<<....<<..<.<<.<<<...>>>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))...........]]]]..............<<<<<<.......>>>>>>.
+ACFC01000001.1/1027058-1027231         AAAAAGCCCGCCAUGCGUCUGCAUCAGCGGGCUUCGGUGCGGUACGACAGCGAUCGACUCGGGCCGGCUGCCGCCGGCCUUCGCUUUAGCUGUUUUGGGAAGAAGCCCCGCGUCCGCAAGCUGAAAUCAAAUCGACGCAAGGCCACAUCCUAGCACGCUUCGGCACAAGCGUGC
+#=GR                                   ...<<<<<<<<..<<<....>>>...>>>>>>>>...[[[[.......<<<....<<..<.<<.<<<...>>>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))...........]]]]..............<<<<<<........>>>>>>.
+AEXE01001637.1/2208-2038               AAAAAGCCCGCCAUGCGUAUGCAUCGGCGGGCUUCGUGCGGUACGACAGCUCGACUCGGGCCGGCUGCCGCCGGCCUUCGCUUUAGCUGUUUGGGGUAUUCGCCCCGCGUCCGCAAGCUGAAAUCAAAUCGACGCAAGCCCACAUGCUAGCACGCUUCGGCAAACGCGUGC
+#=GR                                   ...<<<<<<<<<.<<<....>>>..>>>>>>>>>..[[[[.......<<<..<<..<.<<.<<<...>>>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))...........]]]]..............<<<<<..........>>>>>.
+CP002600.1/2295288-2295462             AAAAAGCCCGCGACGCGUCGGCAUCAGCGGGCUUCAGUGCGGUACCACAGCCUGGACUCCAGCCGGCGGUGCCGGCCUUCGCUUUAGCUGUUUCGGGGCGAUUGCCCCACGUCCGCAAGCUGAAUCAAAUCGACGCAAGGCGCAUCGUAACACGCGAGCGCGAAACGAUGCGCGC
+#=GR                                   ...<<<<<<<<...<<....>>....>>>>>>>>...[[[[.......<<<...<<..<..<.<<....>>>..>..>>.>>>((((((.....<<<........>>>.<....>..))))))..........]]]].............<.<<<<............>>>>.>.
+CP000011.2/1873350-1873536             CAAAAAGCCCGCUCAUGCGUCGGCAUCAGCGGGCUUGGUGUGCGGUACGAACAGCUAUCGACUCGGGCCGGCAUGGCGCUGCUCGCCGGCCUUCGCUUUAGCUGUUUCGGGUUGCCCCGCGUCCGCAAGCUGAAAUCAAAUCGACGCAAGGCCCCAUCGUAUCACGCCUUUUUGGCGACGUGCGCGG
+#=GR                                   ....<<<<<<<<<..<<<....>>>..>>>>>>>>>....[[[[........<<<....<<..<.<<.<<<...........>>>>>.>..>>.>>>((((((.....<<<....>>><<....>>.))))))...........]]]]..............<<<<.<........>.>>>>.....
+AECN01000095.1/2585-2404               CAAAAAGCCCGCUCAUGCGUCGGCAUCAGCGGGCUUGGUGUGCGGAGCAGCUAUCGACUCGGGCCGGCAUGGCGCUGCUCGCCGGCCUUCGCUUUAGCUGUUUCGGGUUGCCCCGCGUCCGCAAGCUGAAAUCAAAUCGACGCAAGGCCCCAUCGUAUCACGCCUUUUCGGUCGCGCGCGCG
+#=GR                                   ....<<<<<<<<<..<<<....>>>..>>>>>>>>>....[[[[....<<<....<<..<.<<.<<<...........>>>>>.>..>>.>>>((((((.....<<<....>>><<....>>.))))))...........]]]]..............<.<<<..........>>>.>....
+ABBE01000049.1/2526-2354               AAAAAGCCCGCCAUGCGUCAGCAUCAGCGGGCUUCGUGCGGUACGACAGCGGUCGACUCGGGCCGGCUGCCGCCGGCCUUCGCUUUAGCUGUUUUGGGAUGAAGCCCCGCGUCCGCAAGCUGAAAUCAAAUCGACGCAAGGCCACAUCCUAUCACGCCUGUACGGCGGCGUGC
+#=GR                                   ...<<<<<<<<..<<<....>>>...>>>>>>>>..[[[[.......<<<....<<..<.<<.<<<...>>>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))...........]]]]..............<<<<<<........>>>>>>.
+AM747721.1/1106587-1106411             CAAAAAGCCCGCUAUGCGUCGGCAUCAGCGGGCUUCGGUGCGGUACGACAGCGAUCGACUCGGGCCGGCUGCCGCCGGCCUUCGCUUUAGCUGUUUUGGGAAGUUGCCCCGCGUCCGCAAGCUGAUAUCAAAUCGACGCAAGGCCACAUCCUAUCACGCCUCGAUCGAAGCGUGCGC
+#=GR                                   ....<<<<<<<<<.<<<....>>>..>>>>>>>>>...[[[[.......<<<....<<..<.<<.<<<...>>>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))...........]]]]..............<<<<<..........>>>>>...
+CP000441.1/149635-149460               CAAAAAGCCCGCUAUGCGUCGGCAUCAGCGGGCUUCGGUGCGGUACGACAGCGAUCGACUCGGGCCGGCGCUCGCCGGCCUUCGCUUUAGCUGUUUUGGGAAGUCGCCCCGCGUCCGCAAGCUGAAUCAAAUCGACGCAAGGCCACAUCCUAGCACGCUUCGUCGGAAGCGUGCGC
+#=GR                                   ....<<<<<<<<<.<<<....>>>..>>>>>>>>>...[[[[.......<<<....<<..<.<<.<<<...>>>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))..........]]]]..............<<<<<<........>>>>>>...
+CP000615.1/1308771-1308596             CAAAAAGCCCGCUAUGCGUCGGCAUCAGCGGGCUUCGGUGCGGUACGACAGCGGUCGACUCGGGCCGGCUGCCGCCGGCCUUCGCUUUAGCUGUUUUGGGAGAUCGCCCCGCGUCCGCAAGCUGAAUCAAAUCGACGCAAGGCGCCAUCCUAUCACGCUUCGUCGCAAGCGUGCGC
+#=GR                                   ....<<<<<<<<<.<<<....>>>..>>>>>>>>>...[[[[.......<<<....<<..<.<<.<<<...>>>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))..........]]]]..............<<<<<<........>>>>>>...
+CP001504.2/1029372-1029203             AAAAAGCCCGCGAUGCGUCGGCAUCGGCGGGCUUCAGGUGCGGCAGCUUUCGACUCGGGCCGGCAUUCGGGCCGGCCUUCGCUUUAGCUGUUUCGGGUGACUGCCCCGCGUCCGCAAGCUGAGAUCAAAUCGACGCAGCGCCCAUCCUAACAUGUGUCACGACGGGCGCG
+#=GR                                   ...<<<<<<<<..<<<....>>>...>>>>>>>>....[[[[..<<<....<<..<.<<.<.........>>>.>..>>.>>>((((((.....<<<.......>>><<....>>.))))))...........]]]].............<.<<<..........>>>.>
+CP000271.1/179142-178964               AAAAAGCCCGCUUUUGCGUCGGCAUAAGCGGGCUUCAUGUGCGGGGGAAAGCUGGAGCGGAGGCGGAUGAGUGCGGCUUUUCCACCCUUCGCUUUAGCUGUUUCGGGUUGCCCCGCGUCCGCAAGCUGAGAUCAAAUCGACGCAAGCCGCCAUGCUAACACGCUCCCGGCGCGGCGUGC
+#=GR                                   ...<<<<<<<<<..<<<....>>>..>>>>>>>>>....[[[[......<<<...<<..<.<<.<<<...........>>>>>.>..>>.>>>((((((.....<<<....>>><<....>>.))))))...........]]]]..............<<<<<<........>>>>>>.
+CP001053.1/3183647-3183825             AAAAAGCCCGCUUUUGCGUCGGCAUAAGCGGGCUUCAUGUGCGGGGGAAAGCUGGAGCGGAGGUAGAUGAAUGCGGCUUUUCCACCAUUCGCUUUAGCUGUUUCGGGUUGCCCCGCGUCCGCAAGCUGAGUUCAAAUCGACGCAAGCCGUCAUGCUAACACGCUCCCGGCGCGGCGUGC
+#=GR                                   ...<<<<<<<<<..<<<....>>>..>>>>>>>>>....[[[[......<<<...<<..<.<<.<<<...........>>>>>.>..>>.>>>((((((.....<<<....>>><<....>>.))))))...........]]]]..............<<<<<<........>>>>>>.
+ABLD01000002.1/474853-474663           AAAAGCCCGCUUUGCGCCGGCGCUUUUUGCGUCGGUACAAACGGGCUUCAUGUGCGGGGAAAGCUGGAGCGGAGGCGGACAAGUGCGGCUUUUCCACCAUUCGCUUUAGCUGUUUCGGGUUGCCCCGCGUCCGCAAGCUGAGAUCAAAUCGACGCAAGCCAUCAUGCUAACACGCUCGCGGCGCGGCGUGC
+#=GR                                   ..<<<<<<<.<................<<<....>>>..>.>>>>>>>....[[[[.....<<<...<<..<.<<.<<<...........>>>>>.>..>>.>>>((((((.....<<<....>>><<....>>.))))))...........]]]]..............<<<<<<........>>>>>>.

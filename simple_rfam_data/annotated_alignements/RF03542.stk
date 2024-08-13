@@ -1,0 +1,26 @@
+# STOCKHOLM 1.0
+#=GF ID    RF03542
+NC_008604.2/10482-10571 CGCAAGGGAGGAUUUUCCUCGGGUACUGACCAUACCCCGACCCCAGUCCGAUAGGUCAUGGAAUGACCCCAUGGUGCUGAGAGGGCAUCC
+#=GR                    .((..((<<<<<...>>>>><<<<<.......>>>>>....))..))......<<<<<.....>>>>>....<<<<<<.....>>>>>>.
+NC_012671.1/10494-10595 CGCAAGGAAGGACACGUAAAUCACGUGUUCUUGGGAGUUGACGACUCUCCGCCCCCAGUCCCCAGGUCAGGGUAUGACUCCGUGGUGUUGAAAGGACACUAA
+#=GR                    .((..((<<<<<..<<.......>>..>>>>><<<<<<.....>>>>>>....))..)).....<<<<<.....>>>>>...<<<<<<<.....>>>>>>>.
+NC_021069.1/10493-10596 CGCAAGGAAGGAUGCGAUGAAAACGCUUGUCCUUGGGAGUUGACGACUCUCCGCCCCCAGUCCCCAGGUCAGGGUAUGACCCCGUGGUGUUGAAAGGACACUAA
+#=GR                    .((..((<<<<<..<<.......>>....>>>>><<<<<<.....>>>>>>....))..)).....<<<<<.....>>>>>...<<<<<<<.....>>>>>>>.
+NC_012671.1/10348-10447 CGCAAGGAGGGGUGUGUGUUUCACGCCCCUGGGAGUUAACGAUUCUCCGGCCCCAGUUCCUAGGUCCAGGGAGGGCCCCGUGGCGCUGAAAGGGCGCUGA
+#=GR                    .((..((<<<<<..<<.....>>..>>>>><<<<<<.....>>>>>>....))..)).....<<<<....>>...>>...<<<<<<<.....>>>>>>>.
+NC_021069.1/10347-10446 CGCAAGGAGGGACGUGUGCAUCACGUUUCUGGGAGUUAACGGCUCUCCGGCCCCAGUUCCUAGGUCCAGGUAGGAUCCCGUGGCGCUGUGAGGGCGCUAA
+#=GR                    .((..((<<<<<..<<.....>>..>>>>><<<<<<.....>>>>>>....))..)).....<<<<<.....>>>>>...<<<<<<<.....>>>>>>>.
+NC_008604.2/10369-10463 CGCAAGGAAGGACAUGGCUGUCCUUGGGUACGAACGACACCCCGCCCCCAGUUCUCAAGGUUAGAGUUAUAACCUCAGGGUGUUGGAAGACAUCC
+#=GR                    .((..((<<<<<<<....>>>>>>><<<<.........>>>>....))..))......<<<<<......>>>>>...<<<<<<<....>>>>>>>
+NC_012671.1/10249-10347 CGCAAGGAAGGGAAGCUUGAGGCUACCUUAGGUGGUGACGACACCUCGCCCCCAGUCUCCCGGGUUGGGGAUAAUACAACCUCGUUGGGCUACUGCCCC
+#=GR                    .((..((<<<<...<<.....>>..>>>><<<<<.......>>>>>....))..))......<<<<<.........>>>>>.....<<<<....>>>>.
+NC_021069.1/10248-10346 CGCAAGGAAGGAAAGCUGGACGCUACCUUAGGUGGUGACGACACCUCGCCCCCAGUCUCCCAGGUUGGGGAUCGUACAACUUCGUUGGGCUAUUGCCCC
+#=GR                    .((..((<<<<...<<.....>>..>>>><<<<<.......>>>>>....))..))......<<<<<.........>>>>>.....<<<<....>>>>.
+NC_021069.1/10625-10718 CGCAAGGGAGAGGGAUUCCCUCUCGGGUGUGGACGACACCCCGGCCCCAGUCCCCUAGGUCAUGGGAAAAACUGACCCCGAAGUGCUGCAAGGG
+#=GR                    .((..((<<<<<<<...>>>>>>><<<<<<.....>>>>>>....))..))......<<<<<..........>>>>>........<<....>>.
+NC_012671.1/10624-10717 CGCAAGGGAGAGGGAUCCCCUCUCGGGUUUGGACGACACCCCGGCCCCAGUCCCCCAGGUCAUGGGAAAAACUGACCCCGAAGUGCUGCAAGGG
+#=GR                    .((..((<<<<<<<...>>>>>>><<<<<<....>>.>>>>....))..))......<<<<<..........>>>>>........<<....>>.
+NC_008604.2/10250-10344 CGUAAGGAAGGACAAGGCUGUCCUUGAGUACUAACGACACUCCGGCCCCAGUUCCCAGAGCCAGGGUUUUAGCUCCACGGUGCUGGAAGUCACCC
+#=GR                    ..(..((<<<<<<<....>>>>>>><<<<.........>>>>....))..)<<<<<.......>>>....>>......<<<<<<...>>.>>>>.
+NC_008604.2/10602-10692 CGUAAGGAAAGCGCAAGCUUUGAGCAUUGACAACGCUCCGGCCCCAGUCCCCCAGGUUAUGGGAGAAUAACCCCGACGUGCUGGAAGGGCA
+#=GR                    .((..((<<<<<....>>>>><<<<.<.....>.>>>>....))..)).......<<..<<<..........>>>>>..<<<.....>>>.

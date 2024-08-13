@@ -1,0 +1,32 @@
+# STOCKHOLM 1.0
+#=GF ID    RF00625
+CP000075.1/2450746-2450611 AGAUGCGAGUUGGCACAAGCACUGCAUGGUCUCUUGCAGAUAAUUCAUAACACGCAGCCCUCAACGAUGAAGGCUGCGUCUCCCGAGAGAACGGGACCGGACAAAGGCGUCCUCGUCAGGCCACUGACGGGACGCC
+#=GR                       .........(((<<<.......>>>..........................<<<<<.<<.<<......>>.>>.>>>>>.<<<<<......>>>>>.....))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+AE016853.1/2548871-2548734 GUGAACACGAGUUGGCACAAGCGCUGCAUAGUCCCUUUCAGAUCAUUCAUAACGCGCAGCCUUCAACGAUGAAGGCUGCGCCUCCCGAGAGAACGGGACCGGACAAAGGCGUCCCCGUCAGGCAACUGGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>..........................<<<<<.<<.<<......>>.>>.>>>>>.<<<<<......>>>>>.....))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+AF112870.1/4018-4154       AAUAGCGCAAGUUGGCACGGCGCCUGCUUGGGUUCUCCCGACAAUCGACAACAAAGCGCCUGCCUCAACGACGAGGCGGCGUUUCCCGACCGAACGGGACCUGGACAAAGGCGUCCUGCUGGCAACAGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>............................<<<<<..<.<<......>>>..>>>>>.<<<<<......>>>>>......))).<<<<<<<.<<<<....>>>>.>>>>>>>
+CP000058.1/2429276-2429141 GAAUGCGAGUUGGCACAGGCGCUGCAUUGUCUUGUGCAGAUCAUUCAUAACGCGUAGCCCUCAACGAUGAAGGCUGCGCCUCCCGAUAGAACGGGACCGGACAAAGGCGUCCCCGUCAGGCAACUGGCGGGACGCC
+#=GR                       .........(((<<<.......>>>..........................<<<<<.<<.<<......>>.>>.>>>>>.<<<<<......>>>>>.....))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+CP000744.1/3650435-3650571 AAUAUCGCAAGUUGGCACGGCGCCUGCUUGGACUUUCCCGACAAUCGACAACACAGCGCCGACCUCAACGACGAGGCUGCGCUUCCCGACCGAACGGGACCUGGACAAAGGCGUCCUGCUGGCAACAGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>............................<<<<...<.<<......>>>...>>>>.<<<<<......>>>>>......))).<<<<<<<.<<<<....>>>>.>>>>>>>
+CP000680.1/2325584-2325446 CUUCGAGAAAGUUGGCACAGGCACUGCAUUGUUACUGGCAGCAAACACAUAAAGCGCGACCUUCAACGAAGAAGGCUGCACUUCCCGAUAGAACGGGACCUGGACAAAGGCGUCCUCGCUAGGUGACUAGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>..........................<.<<<.<<.<<......>>.>>.>>>.>.<<<<<......>>>>>......))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+AACY021569628.1/361-230    GAGUUGGCACAAGGGCUGCAUUCACAACUACCACAAACCACAUAAAGCGCGACCUUCAACGACGAAGGCUGCACUUCCCGAUAGAACGGGACCUGGACAAAGGCGUCCUCGCUAGGUGACUAGCGGGACGCC
+#=GR                       ...(((<<<.......>>>...........................<.<<<.<<.<<......>>.>>.>>>.>.<<<<<......>>>>>......))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+CP000304.1/2631424-2631562 GUAUUUCAGAAUUGGCACAGGCUCUGCAAAGCAAACGUCGAAGAUGACAUACGACCUGACCCUCAACGUGGAGCGGCAGGUUUCCCGACUGAGCGGGACACGGACAAAGGCGUCCUCACCGGAGAACCGGUGGGACGCC
+#=GR                       ...........(((<<<.......>>>..........................<<<<<.<..<<......>>..>.>>>>>.<<<<<......>>>>>......))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+CP001157.1/2336638-2336501 CAUCCGUGAAACUGGCACAGCCCCUGCAUCGAGAAAACCGACAGAUCACAUAAGCAUUGCCUUCAACGUGGAGGGCAGUGUUUCCCGACAGAACGGGAAUGGACAAAGGCGUCCUCGCUGGGUAACCGGCGGGACGCC
+#=GR                       ............((<<<.......>>>..........................<<<<<.<<.<<......>>.>>.>>>>>.<<<<<......>>>>>.....))..<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+CP000094.2/1982387-1982251 CCCGCCGCGACUUGGCACAACCACUGCAUUAACGUUUUCAACUGACAUAAAGCCCGACCUUCAACGACGAAGGCCAGGCUUCCCGAGAGAACGGGACAAGGACAAAGGCGUCCUCGCUAGGUAACUGGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>........................<<<.<.<<.<<......>>.>>.>.>>>.<<<<<......>>>>>......))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+AE004091.2/1928802-1928666 AACAGCGCAAGUUGGCACGGCGCCUGCUUGGGUUCUCCCGACAAUCGACAACAAAGCGCCUGCCUCAACGACGAGGCGGCGUUUCCCGACCGAACGGGACCUGGACAAAGGCGUCCUGCUGGCAACAGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>............................<<<<<..<.<<......>>>..>>>>>.<<<<<......>>>>>......))).<<<<<<<.<<<<....>>>>.>>>>>>>
+CP002727.1/3606931-3607057 UUUGAUGCUGAUUGGCACACUCCCUGCUCAUGUAUCCGCAGACAUCGAGCCUGUCGGCACACGGCAGGCUCCCCGAAACGAAUCGGGACCGGACAAAGGCGUCCUUGCACUCACGGUGCAGGACGCC
+#=GR                       ...........(((<<<.......>>>.....................<<<<<.<<.....>>.>>>>>..<<<<<......>>>>>......))).<<<<<<<.<<<<<<...>>>>>>>>>>>>>
+CP002620.1/2870847-2870985 UUCCGAGAAAGUUGGCACAAGCGCUGCAUUGUUACUGGCAGCAAACACAUAAAGCGCGACCUUCAACGAAGAAGGCUGCACUUCCCGAUAGAACGGGCUCUGGACAAAGGCGUCCUCGCUAGGUGACUAGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>..........................<.<<<.<<.<<......>>.>>.>>>.>..<<<<......>>>>.......))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+CP002585.1/2059414-2059278 CUUCGCGCCAGUUGGCACAACCACUGCAUAAUCCCUUUCAACAGACAUAAGGCAACGCCUCCAACGAUGAAGGCGGUGCUUCCCGAGAGAACGGGACCAGGACAAAGGCGUCCUCGCUAGCUUGCUAGCGGGACGCC
+#=GR                       ...........(((<<<.......>>>........................<<<.<.<<..<......>..>>.>.>>>.<<<<<......>>>>>......))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>
+CP002881.1/2488319-2488457 GCAUUUCAAAAUUGGCACAGGCUCUGCAAAGCAAACGUCGAAGAUGACAUACGACCUGACCCUCAACGUGGAGCGGCAGGUUUCCCGACUGAGCGGGACACGGACAAAGGCGUCCUCACCGGAGAACCGGUGGGACGCC
+#=GR                       ...........(((<<<.......>>>..........................<<<<<.<..<<......>>..>.>>>>>.<<<<<......>>>>>......))).<<<<<<<.<<<<<<....>>>>>>>>>>>>>

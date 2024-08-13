@@ -1,0 +1,32 @@
+# STOCKHOLM 1.0
+#=GF ID    RF04189
+NZ_LZMQ01000003.1/870921-871057 UCGAUGAUUUAAAAUUGAAGACUCGCCUCAUUGGCAAAAAGGCCUAUAAAACAGACCUGCUAAAAGCGAUUUGCAAAAUGCGGAAUAUGAGAGUGGCAGGGUAAAAACCUGACUCUGUAAAUUUAUCAAUAUCGAGG
+#=GR                            ((((((...((((........<<<<.<<..<..<<............<<.........<<.....>>..>>.>>.....>.>>....>>>>...<<<<<<.......>>>>.>>.......))))....))))))..
+NZ_CP015018.1/372885-373024     UCGAUGAUUUAAAAUAGAAGACUCGCCUCAUUGGCAUGGGGCCUGCUCUAAGGUAGGCCAGCUAAAAGCGACAUUGCAAAAUGUGGAAUGUGAGAGUGGCAGGGUUAAAACCUGACUCUGUAAAUUUAUCAAUAUUGAGG
+#=GR                            ((((((...((((........<<<<.<<.<<..<<........<<...............<<.....>>..>>..>>.....>>>>....>>>>...<<<<<<.......>>>>.>>.......))))....))))))..
+NZ_CP015016.1/479222-479360     CCGAUGAUUUAAAAUUGAAAGCUCGCCUCAUUCGCAUGGGGCCUGCUCUAAGGUGGGCCAGCUAAAAGCGACAUUGCAAAUGUGGAAUGUGAGAGUGGUAGGGUUAAAACCUGACUCUGUAAAUUUAUCAAUAUUGAGG
+#=GR                            .(((((...((((........<<<<.<<.<<..<<........<<...............<<.....>>..>>..>>....>>>>....>>>>...<<<<<<.......>>>>.>>.......))))....)))))...
+NC_010531.1/332403-332526       CUGACGAUUUAAAAUGAAAGACUCGCCUCAUUGGCAAUAGGUGCGCUAAAAGUGACUUGCAAAAUGUGGAUUUGAGAGUGACAGGGUAAAAAAACCUGACUCUGUAAUUUUUACAAUAUUGAGG
+#=GR                            .(((.(....(((........<<<<.<<.<<..<<....<<<..<<.....>>.>>>.>>.....>>>>...>>>>...<.<<<<.........>>>>..>.......))).....).)))...
+NZ_LOJI01000022.1/11490-11611   CCAAUGAUUUAAAAUGGAAGACUCGCUUCAUUGGCAAUAAGUGCGCUAAAAGCGACUUGCAAAAUGGGGAUUUGAGGGCGACAGGGUAAAAACCUGACUCUGUAAUUUUUUCAAAAUUGAGG
+#=GR                            .((((.....(((........<<<<.<<..<..<<....<<<..<<.....>>.>>>.>>.....>.>>...>>>>...<.<<<<.......>>>>..>.......)))......))))...
+NZ_LZFI01000004.1/270451-270330 CCGAUGAUUUAAAAUGGAAAACUCGCCUCAUUGGCAAAAGAUGCGCUAAAAGCGACUUGCAAAAUGUGGAUUUGAGAGCGACAGGGUAAAAACCUGACUCUGUAAUUUUUUCAAUAUUGAGG
+#=GR                            .(((((....(((........<<<<.<<.<<..<<....<.<..<<.....>>.>.>.>>.....>>>>...>>>>...<.<<<<.......>>>>..>.......))).....)))))...
+NZ_CP015922.1/342967-343088     CCAAUGAUUUAAAAUUGAAGACUCGCCUCAUUGGCAAAAGCCAGCUAAAAGCGGCUUCCAAAAUGCGGAAUAUGAGAGUGGCAGGGUAAAAACCUGACUCUGUAAAUUUAUCAAUAUCGAGG
+#=GR                            .(.(((...((((........<<<<.<<..<..<....<<<..<<.....>>.>>>..>.....>.>>....>>>>...<<<<<<.......>>>>.>>.......))))....))).)...
+NZ_LOJJ01000002.1/128294-128159 GCGAUGAUUUAAAAUAGCCUUCUUGGUCUUGUGCGCAAAGUACGCAAAAAAGCAGUCAAAAGCGCUUGGAGUGUGACGCACGGAAUCUGAGAGUGUUUCGGUAAAGGCCGAAACCUAAAAUUUAUCAAUAUUGAGG
+#=GR                            .(((((...((((.......<<<<<..<<.<<<<<<........<.........<<.....>>....>....>>...>>>>>>....>>>>>..<<.<<<<......>>>>.>>......))))....)))))...
+NC_020417.1/333790-333926       UCGAUGAUUUAAAAUAGACGUCUCGGUCCAGUGCGUGAAAUAACACCCAAGACAGCCAAAAGCGUCCGAAGUGUUGCGUGCGGAAUACGGGAGUGGUUCGGUAUAAGACCGAGCCCUAAUAUUUAUCCAUAUCGAGG
+#=GR                            ((((((...((((.......<<<<<..<<.<<<<<<.......<<<........<<.....>>.......>>>..>>>>>>>>....>>>>>..<<.<<<<.......>>>>.>>......))))....))))))..
+NZ_CP007501.1/355767-355903     UCGAUGAUUUAAAAUAGAUUUCUCGGUCCAGUGCGUGAAAUGACACCCAAGACAGCCAAAAGCGCCUGAAGUGUUGCGUACGGAAUGCGAGAGUGGUUCGGUAUAAGGCCGACCCCUAAUAUUUACCCAUAUCGAGG
+#=GR                            ((((((...((((.......<<<<<..<<.<<<<<<.......<<<........<<.....>>.......>>>..>>>>>>>>....>>>>>..<<.<<<<.......>>>>.>>......))))....))))))..
+CP061315.1/355066-355187        CCAAUGAUUUAAAAUGGAGGACUCGUCUCAUUGGCAAUUGGUGCGCUAAAAGCGACUUGCAAAAUGGGGAUUUGAGGGCGACAGGGUAAAAACCUGACUCUGUAAUUUGUUCAAUAUUGAGG
+#=GR                            .(((((.....((........<<<<.<<..<..<<....<<<..<<.....>>.>>>.>>.....>.>>...>>>>...<.<<<<.......>>>>..>.......))......)))))...
+CP061320.1/362346-362482        UCGAUGAUUUAAAAUAGAUUUCUCGGUCCAGUAUGUGAAAUUACACCCAAGACAGCCACAAGCGCCUGAAGUGUUGCAUACGGAAUGCGAGAGUGGUUCGGUAUAAGGCCGACCCCUAAUAUUUACCCAUAUCGAGG
+#=GR                            ((((((...((((.......<<<<<..<<.<<<<<<.......<<<........<<.....>>.......>>>..>>>>>>>>....>>>>>..<<.<<<<.......>>>>.>>......))))....))))))..
+CP061319.1/344505-344641        UCGAUGAUUUAAAAUAGAUGUCUCGGUCCAGUGCGUGAAAUAUCACCCAAGAUAGCCAAAAGCGCCUGAAGUGUUGCGCAUGGAACGCGAGAGUGGUUCGGUAUAAGGCCGAGCCCUAAUAUUUAUCCAUAUCGAGG
+#=GR                            ((((((...((((.......<<<<<..<<.<<<<<<.......<<<........<<.....>>.......>>>..>>>>>>>>....>>>>>..<<.<<<<.......>>>>.>>......))))....))))))..
+CP061295.1/368100-368221        CCGAUGAUUUAAAAUGGAAAACUCGCCUCAUUGGCAAAAGAUGCGCUACAAGCGACUUGCAAAAUGUGGAUUUGAGAGCGACAGGGUAAAAACCUGACUCUGUAAUUUUUUCAAUAUUGAGG
+#=GR                            .(((((....(((........<<<<.<<.<<..<<....<.<..<<.....>>.>.>.>>.....>>>>...>>>>...<.<<<<.......>>>>..>.......))).....)))))...
+LT606946.1/270013-270149        UCGAUGAUUUAAAGUAGAUGUCUCGGUCCAGUGCGUGAAAUGACACCCAAGACAGCCAAAAGCGCCUGAAGUGUUGCGUGCGGAAUGCGAGAGUGGUUCGGUAUAAGGCCGAGCCCUAAUAUUUAUCCAUAUCGAGG
+#=GR                            ((((((...((((.......<<<<<..<<.<<<<<<.......<<<........<<.....>>.......>>>..>>>>>>>>....>>>>>..<<.<<<<.......>>>>.>>......))))....))))))..
