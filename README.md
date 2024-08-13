@@ -12,10 +12,10 @@ La version modifiée du ViennaRNA Package, permettant l'ajout de la grammaire au
 - **`auto-dp/ressources/stack-Turner/`**  
   Contient les modèles utilisés pour la génération du code.
 
-- **`auto-dp/workflow/script/produce_code_2_Stack_Turner.py`**  
+- **`auto-dp/workflow/script/produce_code2_Stack_Turner.py`**  
   Script Python permettant de générer les fichiers `.C` nécessaires.
 
-- **`auto-dp/workflow/script/produce_code_2_Stack_Turner.py`**  
+- **`auto-dp/workflow/script/produce_code2_Stack_Turner.py`**  
   Un autre script Python pour la génération de code.
 
 - **`test_sequence/`**  
@@ -27,6 +27,12 @@ La version modifiée du ViennaRNA Package, permettant l'ajout de la grammaire au
 - **`simple_rfam_data/`**  
   Répertoire pour récupérer les séquences RFAM, en grande partie inspiré de ce [repository](https://github.com/bmarchand/simple_rfam_structure_extraction).
 
+- **`test_sequence/`**  
+  Ce répertoire contient les séquences de test pour le modèle de "base-pairing".
+
+- **`Test/`**
+  Ce répertoire contient les script nécessaire pour tester les séquences comme décrit dans le rapport
+  
 ## Informations Supplémentaires
 
 Pour plus d'informations sur le pipeline AutoDP et son utilisation, veuillez consulter le [repository GitHub originel de B. Marchand](https://github.com/bmarchand/auto-dp/tree/main).
